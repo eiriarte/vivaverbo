@@ -19,6 +19,7 @@ mongoose.connection.on('error', function(err) {
 	}
 );
 // Populate DB with sample data
+// TODO: Borrar (o comentar) esta línea y toda la lógica de SEED
 if(config.seedDB) { require('./config/seed'); }
 
 // Setup server

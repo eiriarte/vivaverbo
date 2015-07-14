@@ -22,9 +22,8 @@ angular.module('vivaverboApp')
           err = err.data;
           $scope.errors = {};
 
-          // Update validity of form fields that match the mongoose errors
+          // Update validity of form fields
           angular.forEach(err.errors, function(error, field) {
-            form[field].$setValidity('mongoose', false);
             $scope.errors[field] = error.message;
           });
         });

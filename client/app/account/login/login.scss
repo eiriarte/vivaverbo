@@ -15,11 +15,8 @@ $btnGithubBackgroundHighlight:      #ccc;
 // --------------------------------------------------
 
 .btn-facebook {
-  @include button-variant($btnText, $btnFacebookBackgroundHighlight, $btnFacebookBackgroundHighlight);
 }
 .btn-google-plus {
-  @include button-variant($btnText, $btnGooglePlusBackground, $btnGooglePlusBackgroundHighlight);
 }
 .btn-github {
-  @include button-variant($btnTextAlt, $btnGithubBackground, $btnGithubBackgroundHighlight);
 }

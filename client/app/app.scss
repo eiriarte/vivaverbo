@@ -1,12 +1,29 @@
-$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
-$fa-font-path: "/bower_components/font-awesome/fonts";
-
-@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
-@import 'font-awesome/scss/font-awesome';
-
 /**
  * App-wide Styles
  */
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
 .browsehappy {
     margin: 0.2em 0;
@@ -18,7 +35,6 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
-@import 'admin/admin.scss';
 @import 'main/main.scss';
-@import 'modal/modal.scss';
+@import 'navbar/navbar.scss';
 // endinjector

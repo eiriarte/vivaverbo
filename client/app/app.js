@@ -3,9 +3,7 @@
 angular.module('vivaverboApp', [
   'ngCookies',
   'ngResource',
-  'ngSanitize',
-  'ui.router',
-  'ui.bootstrap'
+  'ui.router'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
