@@ -9,6 +9,9 @@ module.exports = function (grunt) {
     localConfig = {};
   }
 
+  // Carga las tareas nggettext_extract y nggettext_compile
+  grunt.loadNpmTasks('grunt-angular-gettext');
+
   // Load grunt tasks automatically, when needed
   require('jit-grunt')(grunt, {
     express: 'grunt-express-server',
@@ -574,6 +577,23 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    nggettext_extract: {
+      pot: {
+        files: {
+          'po/vivaverbo.pot': ['{.tmp,<%= yeoman.client %>}/{app,components}/**/*.html']
+        }
+      },
+    },
+    nggettext_compile: {
+      all: {
+        options: {
+          module: 'vivaverboApp'
+        },
+        files: {
+          '<%= yeoman.client %>/app/translations.js': ['po/*.po']
+        }
+      },
     },
   });
 

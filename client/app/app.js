@@ -3,7 +3,8 @@
 angular.module('vivaverboApp', [
   'ngCookies',
   'ngResource',
-  'ui.router'
+  'ui.router',
+  'gettext'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Eduardo I. Iriarte Gahete <eiriarte@gmail.com>\n"
+"Language-Team: \n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: client/app/account/signup/signup.html:17
+msgid "A name is required"
+msgstr "Nomo estas necesa"
+
+#: client/app/account/login/login.html:7
+msgid ""
+"Accounts are reset on server restart from <code>server/config/seed.js</"
+"code>. Default account is <code>test@test.com</code> / <code>test</code>"
+msgstr ""
+"Kontoj rekreiĝas dum servila restarto disde <code>server/config/seed.js</"
+"code>. La apriora konto estas <code>test@test.com</code> / <code>test</code>"
+
+#: client/app/account/login/login.html:8
+msgid "Admin account is <code>admin@admin.com</code> / <code>admin</code>"
+msgstr "La Admin-konto estas <code>admin@admin.com</code> / <code>admin</code>"
+
+#: client/app/account/login/login.html:48
+#: client/app/account/signup/signup.html:61
+msgid "Connect with Facebook"
+msgstr "Ensaluti per Facebook"
+
+#: client/app/account/login/login.html:51
+#: client/app/account/signup/signup.html:64
+msgid "Connect with Google+"
+msgstr "Ensaluti per Google+"
+
+#: client/app/account/signup/signup.html:27
+msgid "Doesn't look like a valid email."
+msgstr "Tio ne ŝajnas valida retpoŝta adreso."
+
+#: client/app/account/login/login.html:14
+#: client/app/account/signup/signup.html:24
+msgid "Email"
+msgstr "Retpoŝta adreso"
+
+#: client/components/navbar/navbar.html:10
+msgid "Hello {{ getCurrentUser().name }}"
+msgstr "Saluton {{ getCurrentUser().name }}"
+
+#: client/app/account/login/login.html:37
+#: client/app/account/login/login.html:6
+#: client/app/account/signup/signup.html:53
+#: client/components/navbar/navbar.html:9
+msgid "Login"
+msgstr "Ensaluti"
+
+#: client/components/navbar/navbar.html:11
+msgid "Logout"
+msgstr "Elsaluti"
+
+#: client/app/main/main.html:2
+msgid "Main DIV"
+msgstr "Ĉefa DIV"
+
+#: client/app/account/signup/signup.html:13
+msgid "Name"
+msgstr "Nomo"
+
+#: client/app/account/login/login.html:20
+#: client/app/account/signup/signup.html:38
+msgid "Password"
+msgstr "Pasvorto"
+
+#: client/app/account/signup/signup.html:42
+msgid "Password must be at least 3 characters."
+msgstr "La pasvorto enhavu almenaŭ 3 signoj."
+
+#: client/app/account/login/login.html:29
+msgid "Please enter a valid email."
+msgstr "Bonvolu entajpi validan retpoŝtan adreson."
+
+#: client/app/account/login/login.html:26
+msgid "Please enter your email and password."
+msgstr "Bonvolu entajpi vian retpoŝtan adreson kaj pasvorton."
+
+#: client/app/account/login/login.html:40
+msgid "Register"
+msgstr "Aliĝi"
+
+#: client/app/account/signup/signup.html:50
+#: client/app/account/signup/signup.html:6
+#: client/components/navbar/navbar.html:8
+msgid "Sign up"
+msgstr "Registriĝi"
+
+#: client/app/account/signup/signup.html:30
+msgid "What's your email address?"
+msgstr "Kio estas via retpoŝta adreso?"
