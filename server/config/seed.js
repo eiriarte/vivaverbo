@@ -6,6 +6,7 @@
 'use strict';
 
 var User = require('../api/user/user.model');
+var winston = require('winston');
 
 User.find({}).remove(function() {
   User.create({
@@ -20,7 +21,7 @@ User.find({}).remove(function() {
     email: 'admin@admin.com',
     password: 'admin'
   }, function() {
-      console.log('finished populating users');
+      winston.info('Usuarios cargados');
     }
   );
 });

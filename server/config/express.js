@@ -15,6 +15,7 @@ var errorHandler = require('errorhandler');
 var path = require('path');
 var config = require('./environment');
 var passport = require('passport');
+var winston = require('winston');
 
 module.exports = function(app) {
   var env = app.get('env');
@@ -36,6 +37,9 @@ module.exports = function(app) {
   }
 
   if ('development' === env || 'test' === env) {
+    // Nivel de log: debug
+    winston.default.transports.console.level = 'debug';
+
     app.use(require('connect-livereload')());
     app.use(express.static(path.join(config.root, '.tmp')));
     app.use(express.static(path.join(config.root, 'client')));
