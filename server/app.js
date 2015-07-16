@@ -34,5 +34,12 @@ server.listen(config.port, config.ip, function () {
   winston.info('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
 
+process.on('SIGTERM', function() {
+  winston.info('Recibida SIGTERM: Terminando proceso…');
+  server.close(function() {
+    process.exit(0);
+  });
+});
+
 // Expose app
 exports = module.exports = app;
