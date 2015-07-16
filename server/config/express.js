@@ -31,7 +31,7 @@ module.exports = function(app) {
   app.use(passport.initialize());
   if ('production' === env) {
     app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
-    app.use(express.static(path.join(config.root, 'public')));
+    app.use(express.static(path.join(config.root, 'public'), { setHeaders: ieHeader }));
     app.set('appPath', path.join(config.root, 'public'));
     app.use(morgan('dev'));
   }
@@ -41,10 +41,17 @@ module.exports = function(app) {
     winston.default.transports.console.level = 'debug';
 
     app.use(require('connect-livereload')());
-    app.use(express.static(path.join(config.root, '.tmp')));
-    app.use(express.static(path.join(config.root, 'client')));
+    app.use(express.static(path.join(config.root, '.tmp'), { setHeaders: ieHeader }));
+    app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader }));
     app.set('appPath', path.join(config.root, 'client'));
     app.use(morgan('dev'));
     app.use(errorHandler()); // Error handler - has to be last
   }
 };
+
+function ieHeader(res, path, stat) {
+  if (path.slice(-5) === '.html') {
+    winston.debug('Sirviendo fichero estático %s', path);
+    res.header('X-UA-Compatible', 'IE=Edge');
+  }
+}
