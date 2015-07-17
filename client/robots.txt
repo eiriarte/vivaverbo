@@ -1,3 +1,12 @@
 # robotstxt.org
 
+User-agent: TurnitinBot
+Disallow: /
+
+User-agent: Spinn3r
+Disallow: /
+
 User-agent: *
+Disallow: /
+
+Crawl-delay: 1
