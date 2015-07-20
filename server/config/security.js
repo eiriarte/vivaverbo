@@ -42,7 +42,8 @@ module.exports = function(app) {
     scriptSrc: [
       "'self'",
       "'unsafe-inline'",
-      "'unsafe-eval'"
+      "'unsafe-eval'",
+      'linkhelp.clients.google.com'
     ],
     styleSrc: [
       "'self'",
