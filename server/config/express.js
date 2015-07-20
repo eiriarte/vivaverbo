@@ -16,6 +16,7 @@ var path = require('path');
 var config = require('./environment');
 var passport = require('passport');
 var winston = require('winston');
+var errors = require('../components/errors');
 
 module.exports = function(app) {
   var env = app.get('env');
@@ -38,6 +39,8 @@ module.exports = function(app) {
     app.use(express.static(path.join(config.root, 'public'), { setHeaders: ieHeader }));
     app.set('appPath', path.join(config.root, 'public'));
     app.use(morgan('dev'));
+    require('../routes')(app);
+    app.use(errors[500]);
   }
 
   if ('development' === env || 'test' === env) {
@@ -49,7 +52,8 @@ module.exports = function(app) {
     app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader }));
     app.set('appPath', path.join(config.root, 'client'));
     app.use(morgan('dev'));
-    app.use(errorHandler()); // Error handler - has to be last
+    require('../routes')(app);
+    app.use(errorHandler());
   }
 };
 
