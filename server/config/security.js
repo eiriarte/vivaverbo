@@ -47,7 +47,11 @@ module.exports = function(app) {
     ],
     styleSrc: [
       "'self'",
-      "'unsafe-inline'"
+      "'unsafe-inline'",
+      'fonts.googleapis.com'
+    ],
+    fontSrc: [
+      'fonts.gstatic.com'
     ],
     connectSrc: [ "'self'" ]
   }

@@ -8,7 +8,9 @@
     "angular-resource": "1.4.x",
     "angular-cookies": "1.4.x",
     "angular-ui-router": "0.2.x",
-    "angular-gettext": "~2.1.0"
+    "angular-gettext": "~2.1.0",
+    "angular-material": "0.10.1-rc3",
+    "angular-messages": "1.4.x"
   },
   "devDependencies": {
     "angular-mocks": "1.4.x",

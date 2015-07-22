@@ -3,6 +3,8 @@
 angular.module('vivaverboApp', [
   'ngCookies',
   'ngResource',
+  'ngMessages',
+  'ngMaterial',
   'ui.router',
   'gettext'
 ])

@@ -12,11 +12,11 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: client/app/account/signup/signup.html:17
-msgid "A name is required"
-msgstr "Nomo estas necesa"
+#: client/app/account/signup/signup.html:11
+msgid "A name is required."
+msgstr "Nomo estas necesa."
 
-#: client/app/account/login/login.html:7
+#: client/app/account/login/login.html:4
 msgid ""
 "Accounts are reset on server restart from <code>server/config/seed.js</"
 "code>. Default account is <code>test@test.com</code> / <code>test</code>"
@@ -24,26 +24,26 @@ msgstr ""
 "Kontoj rekreiĝas dum servila restarto disde <code>server/config/seed.js</"
 "code>. La apriora konto estas <code>test@test.com</code> / <code>test</code>"
 
-#: client/app/account/login/login.html:8
+#: client/app/account/login/login.html:5
 msgid "Admin account is <code>admin@admin.com</code> / <code>admin</code>"
 msgstr "La Admin-konto estas <code>admin@admin.com</code> / <code>admin</code>"
 
-#: client/app/account/login/login.html:48
-#: client/app/account/signup/signup.html:61
+#: client/app/account/login/login.html:43
+#: client/app/account/signup/signup.html:50
 msgid "Connect with Facebook"
 msgstr "Ensaluti per Facebook"
 
-#: client/app/account/login/login.html:51
-#: client/app/account/signup/signup.html:64
+#: client/app/account/login/login.html:46
+#: client/app/account/signup/signup.html:53
 msgid "Connect with Google+"
 msgstr "Ensaluti per Google+"
 
-#: client/app/account/signup/signup.html:27
+#: client/app/account/signup/signup.html:19
 msgid "Doesn't look like a valid email."
 msgstr "Tio ne ŝajnas valida retpoŝta adreso."
 
-#: client/app/account/login/login.html:14
-#: client/app/account/signup/signup.html:24
+#: client/app/account/login/login.html:10
+#: client/app/account/signup/signup.html:16
 msgid "Email"
 msgstr "Retpoŝta adreso"
 
@@ -51,10 +51,10 @@ msgstr "Retpoŝta adreso"
 msgid "Hello {{ getCurrentUser().name }}"
 msgstr "Saluton {{ getCurrentUser().name }}"
 
-#: client/app/account/login/login.html:37
-#: client/app/account/login/login.html:6
-#: client/app/account/signup/signup.html:53
-#: client/components/navbar/navbar.html:9
+#: client/app/account/login/login.html:3
+#: client/app/account/login/login.html:31
+#: client/app/account/signup/signup.html:41
+#: client/components/navbar/navbar.html:7
 msgid "Login"
 msgstr "Ensaluti"
 
@@ -62,41 +62,46 @@ msgstr "Ensaluti"
 msgid "Logout"
 msgstr "Elsaluti"
 
-#: client/app/main/main.html:2
+#: client/app/main/main.html:4
 msgid "Main DIV"
 msgstr "Ĉefa DIV"
 
-#: client/app/account/signup/signup.html:13
+#: client/app/account/signup/signup.html:8
 msgid "Name"
 msgstr "Nomo"
 
-#: client/app/account/login/login.html:20
-#: client/app/account/signup/signup.html:38
+#: client/app/account/login/login.html:19
+#: client/app/account/signup/signup.html:27
 msgid "Password"
 msgstr "Pasvorto"
 
-#: client/app/account/signup/signup.html:42
+#: client/app/account/signup/signup.html:32
 msgid "Password must be at least 3 characters."
 msgstr "La pasvorto enhavu almenaŭ 3 signoj."
 
-#: client/app/account/login/login.html:29
+#: client/app/account/login/login.html:14
 msgid "Please enter a valid email."
 msgstr "Bonvolu entajpi validan retpoŝtan adreson."
 
-#: client/app/account/login/login.html:26
-msgid "Please enter your email and password."
-msgstr "Bonvolu entajpi vian retpoŝtan adreson kaj pasvorton."
+#: client/app/account/login/login.html:13
+msgid "Please enter your email."
+msgstr "Bonvolu entajpi vian retpoŝtan adreson."
 
-#: client/app/account/login/login.html:40
+#: client/app/account/login/login.html:22
+#: client/app/account/signup/signup.html:31
+msgid "Please enter your password."
+msgstr "Bonvolu entajpi vian pasvorton."
+
+#: client/app/account/login/login.html:34
 msgid "Register"
 msgstr "Aliĝi"
 
-#: client/app/account/signup/signup.html:50
-#: client/app/account/signup/signup.html:6
-#: client/components/navbar/navbar.html:8
+#: client/app/account/signup/signup.html:3
+#: client/app/account/signup/signup.html:38
+#: client/components/navbar/navbar.html:4
 msgid "Sign up"
 msgstr "Registriĝi"
 
-#: client/app/account/signup/signup.html:30
+#: client/app/account/signup/signup.html:20
 msgid "What's your email address?"
 msgstr "Kio estas via retpoŝta adreso?"

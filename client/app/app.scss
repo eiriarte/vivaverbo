@@ -2,29 +2,6 @@
  * App-wide Styles
  */
 
-*, :after, :before {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.42857;
-  color: #333;
-  background-color: #fff;
-}
-
-a {
-  color: #428bca;
-  text-decoration: none;
-}
-
-.container {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -32,9 +9,33 @@ a {
     padding: 0.2em 0;
 }
 
+/**
+* Sign-up / Login
+*/
+
+.md-button.md-raised.btn-facebook,
+.md-button.md-raised.btn-facebook:not([disabled]):hover {
+  color: #fff;
+  background-color: #dd4b39;
+}
+
+.md-button.md-raised.btn-google-plus,
+.md-button.md-raised.btn-google-plus:not([disabled]):hover {
+  color: #fff;
+  background-color: #3b579d;
+}
+
+md-divider.social {
+  margin: 16px 0;
+}
+
+.msg-error {
+  color: rgb(244,67,54);
+  margin: 0 0 16px 0;
+}
+
 // Component styles are injected through grunt
 // injector
-@import 'account/login/login.scss';
 @import 'main/main.scss';
 @import 'navbar/navbar.scss';
 // endinjector

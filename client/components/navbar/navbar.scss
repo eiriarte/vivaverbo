@@ -1,50 +1,6 @@
 .navbar {
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #e7e7e7;
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 20px;
-
-  .navbar-brand {
-    float: left;
-    padding: 15px;
-    font-size: 18px;
-    line-height: 20px;
-    height: 50px;
-    color: #777;
-  }
-
-  .navbar-right {
-    float: right!important;
-  }
-
-  .nav {
-    padding-left: 0;
-    list-style: none;
-    margin: 0;
-    .active > a {
-      color: #555;
-      background-color: #e7e7e7;
-    }
-    .navbar-text {
-      margin: 15px;
-      float: left;
-      color: #777;
-    }
-    & > li {
-      position: relative;
-      display: block;
-      float: left;
-      & > a {
-        color: #777;
-        position: relative;
-        display: block;
-        padding: 10px 15px;
-        line-height: 20px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-      }
-    }
+  .active {
+    border-bottom: 1px rgba(255, 255, 255, 0.5) solid
   }
 }
 
