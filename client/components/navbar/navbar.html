@@ -1,14 +1,8 @@
 <div class="md-toolbar-tools">
   <h1><a href="/">vivaverbo</a></h1>
   <span flex></span>
-  <md-button ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}" href="/signup" translate>
-    Sign up
-  </md-button>
-  <md-button ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}" href="/login" translate>
-    Login
-  </md-button>
-  <p ng-show="isLoggedIn()" translate>Hello {{ getCurrentUser().name }}</p>
-  <md-button ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}" ng-click="logout()" translate>
+  <p translate>Hello {{ getCurrentUser().name }}</p>
+  <md-button translate>
     Logout
   </md-button>
 </div>

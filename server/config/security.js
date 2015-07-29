@@ -15,7 +15,7 @@ module.exports = function(app) {
   var env = app.get('env');
 
   // Protección contra ataques DoS por inundación (large payloads)
-  app.use(contentLength.validateMax());  
+  app.use(contentLength.validateMax());
 
   // Protección contra ataques de polución de parámetros
   app.use(hpp());
@@ -43,6 +43,7 @@ module.exports = function(app) {
       "'self'",
       "'unsafe-inline'",
       "'unsafe-eval'",
+      'ajax.googleapis.com',
       'linkhelp.clients.google.com'
     ],
     styleSrc: [

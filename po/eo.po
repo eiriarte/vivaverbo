@@ -12,96 +12,71 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: client/app/account/signup/signup.html:11
-msgid "A name is required."
-msgstr "Nomo estas necesa."
-
-#: client/app/account/login/login.html:4
-msgid ""
-"Accounts are reset on server restart from <code>server/config/seed.js</"
-"code>. Default account is <code>test@test.com</code> / <code>test</code>"
-msgstr ""
-"Kontoj rekreiĝas dum servila restarto disde <code>server/config/seed.js</"
-"code>. La apriora konto estas <code>test@test.com</code> / <code>test</code>"
-
-#: client/app/account/login/login.html:5
-msgid "Admin account is <code>admin@admin.com</code> / <code>admin</code>"
-msgstr "La Admin-konto estas <code>admin@admin.com</code> / <code>admin</code>"
-
-#: client/app/account/login/login.html:43
-#: client/app/account/signup/signup.html:50
-msgid "Connect with Facebook"
-msgstr "Ensaluti per Facebook"
-
-#: client/app/account/login/login.html:46
-#: client/app/account/signup/signup.html:53
-msgid "Connect with Google+"
-msgstr "Ensaluti per Google+"
-
-#: client/app/account/signup/signup.html:19
-msgid "Doesn't look like a valid email."
-msgstr "Tio ne ŝajnas valida retpoŝta adreso."
-
-#: client/app/account/login/login.html:10
-#: client/app/account/signup/signup.html:16
-msgid "Email"
-msgstr "Retpoŝta adreso"
-
-#: client/components/navbar/navbar.html:10
+#: client/components/navbar/navbar.html:4
 msgid "Hello {{ getCurrentUser().name }}"
 msgstr "Saluton {{ getCurrentUser().name }}"
 
-#: client/app/account/login/login.html:3
-#: client/app/account/login/login.html:31
-#: client/app/account/signup/signup.html:41
-#: client/components/navbar/navbar.html:7
-msgid "Login"
-msgstr "Ensaluti"
-
-#: client/components/navbar/navbar.html:11
+#: client/components/navbar/navbar.html:5
 msgid "Logout"
 msgstr "Elsaluti"
 
-#: client/app/main/main.html:4
+#: client/app/main/main.html:5
 msgid "Main DIV"
 msgstr "Ĉefa DIV"
 
-#: client/app/account/signup/signup.html:8
-msgid "Name"
-msgstr "Nomo"
+#~ msgid "Login"
+#~ msgstr "Ensaluti"
 
-#: client/app/account/login/login.html:19
-#: client/app/account/signup/signup.html:27
-msgid "Password"
-msgstr "Pasvorto"
+#~ msgid "Sign up"
+#~ msgstr "Registriĝi"
 
-#: client/app/account/signup/signup.html:32
-msgid "Password must be at least 3 characters."
-msgstr "La pasvorto enhavu almenaŭ 3 signoj."
+#~ msgid "A name is required."
+#~ msgstr "Nomo estas necesa."
 
-#: client/app/account/login/login.html:14
-msgid "Please enter a valid email."
-msgstr "Bonvolu entajpi validan retpoŝtan adreson."
+#~ msgid ""
+#~ "Accounts are reset on server restart from <code>server/config/seed.js</"
+#~ "code>. Default account is <code>test@test.com</code> / <code>test</code>"
+#~ msgstr ""
+#~ "Kontoj rekreiĝas dum servila restarto disde <code>server/config/seed.js</"
+#~ "code>. La apriora konto estas <code>test@test.com</code> / <code>test</"
+#~ "code>"
 
-#: client/app/account/login/login.html:13
-msgid "Please enter your email."
-msgstr "Bonvolu entajpi vian retpoŝtan adreson."
+#~ msgid "Admin account is <code>admin@admin.com</code> / <code>admin</code>"
+#~ msgstr ""
+#~ "La Admin-konto estas <code>admin@admin.com</code> / <code>admin</code>"
 
-#: client/app/account/login/login.html:22
-#: client/app/account/signup/signup.html:31
-msgid "Please enter your password."
-msgstr "Bonvolu entajpi vian pasvorton."
+#~ msgid "Connect with Facebook"
+#~ msgstr "Ensaluti per Facebook"
 
-#: client/app/account/login/login.html:34
-msgid "Register"
-msgstr "Aliĝi"
+#~ msgid "Connect with Google+"
+#~ msgstr "Ensaluti per Google+"
 
-#: client/app/account/signup/signup.html:3
-#: client/app/account/signup/signup.html:38
-#: client/components/navbar/navbar.html:4
-msgid "Sign up"
-msgstr "Registriĝi"
+#~ msgid "Doesn't look like a valid email."
+#~ msgstr "Tio ne ŝajnas valida retpoŝta adreso."
 
-#: client/app/account/signup/signup.html:20
-msgid "What's your email address?"
-msgstr "Kio estas via retpoŝta adreso?"
+#~ msgid "Email"
+#~ msgstr "Retpoŝta adreso"
+
+#~ msgid "Name"
+#~ msgstr "Nomo"
+
+#~ msgid "Password"
+#~ msgstr "Pasvorto"
+
+#~ msgid "Password must be at least 3 characters."
+#~ msgstr "La pasvorto enhavu almenaŭ 3 signoj."
+
+#~ msgid "Please enter a valid email."
+#~ msgstr "Bonvolu entajpi validan retpoŝtan adreson."
+
+#~ msgid "Please enter your email."
+#~ msgstr "Bonvolu entajpi vian retpoŝtan adreson."
+
+#~ msgid "Please enter your password."
+#~ msgstr "Bonvolu entajpi vian pasvorton."
+
+#~ msgid "Register"
+#~ msgstr "Aliĝi"
+
+#~ msgid "What's your email address?"
+#~ msgstr "Kio estas via retpoŝta adreso?"

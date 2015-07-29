@@ -16,6 +16,7 @@ var path = require('path');
 var config = require('./environment');
 var passport = require('passport');
 var winston = require('winston');
+var i18next = require('i18next');
 var errors = require('../components/errors');
 
 module.exports = function(app) {
@@ -30,6 +31,16 @@ module.exports = function(app) {
   app.use(methodOverride());
   app.use(cookieParser());
   app.use(passport.initialize());
+
+  // Idioma
+  i18next.init({
+    fallbackLng: 'en',
+    supportedLngs: ['en', 'eo'],
+    cookieName: 'lang',
+    debug: ('development' === env || 'test' === env)
+  });
+  app.use(i18next.handle);
+  i18next.registerAppHelper(app);
 
   // Medidas de seguridad
   require('./security')(app);
@@ -48,8 +59,8 @@ module.exports = function(app) {
     winston.default.transports.console.level = 'debug';
 
     app.use(require('connect-livereload')());
-    app.use(express.static(path.join(config.root, '.tmp'), { setHeaders: ieHeader }));
-    app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader }));
+    app.use(express.static(path.join(config.root, '.tmp'), { setHeaders: ieHeader, index: false }));
+    app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader, index: false }));
     app.set('appPath', path.join(config.root, 'client'));
     app.use(morgan('dev'));
     require('../routes')(app);

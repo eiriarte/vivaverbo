@@ -4,92 +4,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: client/app/account/signup/signup.html:11
-msgid "A name is required."
-msgstr ""
-
-#: client/app/account/login/login.html:4
-msgid "Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code>"
-msgstr ""
-
-#: client/app/account/login/login.html:5
-msgid "Admin account is <code>admin@admin.com</code> / <code>admin</code>"
-msgstr ""
-
-#: client/app/account/login/login.html:43
-#: client/app/account/signup/signup.html:50
-msgid "Connect with Facebook"
-msgstr ""
-
-#: client/app/account/login/login.html:46
-#: client/app/account/signup/signup.html:53
-msgid "Connect with Google+"
-msgstr ""
-
-#: client/app/account/signup/signup.html:19
-msgid "Doesn't look like a valid email."
-msgstr ""
-
-#: client/app/account/login/login.html:10
-#: client/app/account/signup/signup.html:16
-msgid "Email"
-msgstr ""
-
-#: client/components/navbar/navbar.html:10
+#: client/components/navbar/navbar.html:4
 msgid "Hello {{ getCurrentUser().name }}"
 msgstr ""
 
-#: client/app/account/login/login.html:3
-#: client/app/account/login/login.html:31
-#: client/app/account/signup/signup.html:41
-#: client/components/navbar/navbar.html:7
-msgid "Login"
-msgstr ""
-
-#: client/components/navbar/navbar.html:11
+#: client/components/navbar/navbar.html:5
 msgid "Logout"
 msgstr ""
 
-#: client/app/main/main.html:4
+#: client/app/main/main.html:5
 msgid "Main DIV"
-msgstr ""
-
-#: client/app/account/signup/signup.html:8
-msgid "Name"
-msgstr ""
-
-#: client/app/account/login/login.html:19
-#: client/app/account/signup/signup.html:27
-msgid "Password"
-msgstr ""
-
-#: client/app/account/signup/signup.html:32
-msgid "Password must be at least 3 characters."
-msgstr ""
-
-#: client/app/account/login/login.html:14
-msgid "Please enter a valid email."
-msgstr ""
-
-#: client/app/account/login/login.html:13
-msgid "Please enter your email."
-msgstr ""
-
-#: client/app/account/login/login.html:22
-#: client/app/account/signup/signup.html:31
-msgid "Please enter your password."
-msgstr ""
-
-#: client/app/account/login/login.html:34
-msgid "Register"
-msgstr ""
-
-#: client/app/account/signup/signup.html:3
-#: client/app/account/signup/signup.html:38
-#: client/components/navbar/navbar.html:4
-msgid "Sign up"
-msgstr ""
-
-#: client/app/account/signup/signup.html:20
-msgid "What's your email address?"
 msgstr ""

@@ -1,0 +1,48 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>vivaverbo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- build:css({.tmp,client}) app/landing.css -->
+    <link rel="stylesheet" href="app/landing.css">
+      <!-- injector:css -->
+      <!-- endinjector -->
+    <!-- endbuild -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  </head>
+  <body>
+    <!--[if lt IE 9]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div id="login">
+      <h1>vivaverbo</h1>
+      <form action="/auth/local">
+        <input type="email" id="email" name="email" placeholder="<%= t('login.email') %>" />
+        <input type="password" name="password" placeholder="<%= t('login.password') %>" />
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="error">
+          <p class="unauthorized"><%= t('login.unauthorizedError') %></p>
+          <p class="unexpected"><%= t('login.unexpectedError') %></p>
+        </div>
+        <input type="submit" value="<%= t('login.signIn') %>" />
+      </form>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!-- TODO: script de Google Analytics: ¿Tag Manager? -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- build:js(.tmp) app/landing.js -->
+      <script src="components/vendor/js.cookie.js"></script>
+      <script src="app/landing.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

@@ -30,9 +30,9 @@ angular.module('vivaverboApp', [
       // Intercept 401s and redirect you to login
       responseError: function(response) {
         if(response.status === 401) {
-          $location.path('/login');
           // remove any stale tokens
           $cookieStore.remove('token');
+          $window.location.pathname = '/';
           return $q.reject(response);
         }
         else {
@@ -42,13 +42,19 @@ angular.module('vivaverboApp', [
     };
   })
 
-  .run(function ($rootScope, $location, Auth) {
+  .run(function ($rootScope, $cookies, $location, gettextCatalog, Auth) {
+    // Idioma
+    let lang = $cookies.get('lang');
+    gettextCatalog.debug = true; // TODO: quitar esto en producción (o hacerlo condicional)
+    if ('eo' === lang) {
+      gettextCatalog.setCurrentLanguage(lang);
+    }
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$stateChangeStart', function (event, next) {
       Auth.isLoggedInAsync(function(loggedIn) {
         if (next.authenticate && !loggedIn) {
           event.preventDefault();
-          $location.path('/login');
+          $window.location.pathname = '/';
         }
       });
     });

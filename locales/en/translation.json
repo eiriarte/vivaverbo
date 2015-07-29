@@ -1,0 +1,9 @@
+{
+  "login": {
+    "signIn": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "unauthorizedError": "The email and/or password are incorrect.",
+    "unexpectedError": "Some error ocurred! Please, try again later."
+  }
+}

@@ -17,6 +17,7 @@
     "helmet": "^0.10.0",
     "helmet-crossdomain": "^0.1.0",
     "hpp": "^0.2.0",
+    "i18next": "^1.10.4",
     "jsonwebtoken": "^5.0.0",
     "lodash": "^3.0.0",
     "method-override": "^2.3.0",

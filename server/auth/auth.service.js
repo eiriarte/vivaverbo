@@ -2,12 +2,20 @@
 
 var mongoose = require('mongoose');
 var passport = require('passport');
+var winston = require('winston');
 var config = require('../config/environment');
 var jwt = require('jsonwebtoken');
 var expressJwt = require('express-jwt');
 var compose = require('composable-middleware');
 var User = require('../api/user/user.model');
-var validateJwt = expressJwt({ secret: config.secrets.session });
+// TODO: poner algo en config.secrets.session!!!
+var validateJwt = expressJwt({
+  secret: config.secrets.session
+});
+var validateJwtNoCreds = expressJwt({
+  secret: config.secrets.session,
+  credentialsRequired: false
+});
 
 /**
  * Attaches the user object to the request if authenticated
@@ -30,6 +38,38 @@ function isAuthenticated() {
         if (!user) return res.status(401).send('Unauthorized');
 
         req.user = user;
+        next();
+      });
+    });
+}
+
+/**
+ * Attaches the user object to the request if authenticated
+ * Otherwise user remains undefined
+ */
+function getUser() {
+  return compose()
+    // Validate jwt
+    .use(function(req, res, next) {
+      // allow access_token to be passed through query parameter as well
+      if(req.query && req.query.hasOwnProperty('access_token')) {
+        req.headers.authorization = 'Bearer ' + req.query.access_token;
+      } else if (req.cookies && req.cookies.token) {
+        req.headers.authorization = 'Bearer ' + req.cookies.token.slice(1, req.cookies.token.length - 1);
+      }
+      validateJwtNoCreds(req, res, next);
+    })
+    // Attach user to request
+    .use(function(req, res, next) {
+      if (!req.user) {
+        winston.debug('Sin credenciales');
+        return next();
+      }
+      winston.debug('Con credenciales: %s', req.user._id);
+      User.findById(req.user._id, function (err, user) {
+        if (err) return next(err);
+        req.user = user;
+
         next();
       });
     });
@@ -71,6 +111,7 @@ function setTokenCookie(req, res) {
 }
 
 exports.isAuthenticated = isAuthenticated;
+exports.getUser = getUser;
 exports.hasRole = hasRole;
 exports.signToken = signToken;
 exports.setTokenCookie = setTokenCookie;

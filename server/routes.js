@@ -5,6 +5,7 @@
 'use strict';
 
 var errors = require('./components/errors');
+var auth = require('./auth/auth.service');
 var path = require('path');
 var winston = require('winston');
 
@@ -21,9 +22,18 @@ module.exports = function(app) {
 
   // All other routes should redirect to the index.html
   app.route('/*')
-    .get(function(req, res) {
-      winston.debug('Sirviendo fichero estático /index.html');
+    .get(auth.getUser(), function(req, res) {
       res.header('X-UA-Compatible', 'IE=Edge');
-      res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
+      winston.debug('user = %j', req.user, {});
+      if (req.user) {
+        winston.debug('Usuario registrado. Sirviendo index.html');
+        res.sendFile(path.resolve(app.get('appPath') + '/../server/views/index.html'));
+      } else {
+        winston.debug('Usuario anónimo. Sirviendo landing.html');
+        res.render('landing', { csrfToken: req.csrfToken() }, function (err, html) {
+          if (err) { errors[500](err, req, res); }
+          res.send(html);
+        });
+      }
     });
 };

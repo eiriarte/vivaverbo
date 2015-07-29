@@ -1,0 +1,9 @@
+{
+  "login": {
+    "signIn": "Ensaluti",
+    "email": "Retpoŝtadreso",
+    "password": "Pasvorto",
+    "unauthorizedError": "Misa retpoŝtadreso aŭ pasvorto.",
+    "unexpectedError": "Okazis eraro! Bonvolu provi denove poste."
+  }
+}
