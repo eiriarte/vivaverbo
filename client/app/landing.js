@@ -1,3 +1,7 @@
+/* global Cookies */
+
+'use strict';
+
 jQuery(document).ready(() => {
 
   $('#login form').on('submit', function (e) {
@@ -10,9 +14,9 @@ jQuery(document).ready(() => {
     }).fail((jqXHR) => {
       Cookies.remove('token');
       if (401 === jqXHR.status) {
-        $form.find('.unauthorized').show()
+        $form.find('.unauthorized').show();
       } else {
-        $form.find('.unexpected').show()
+        $form.find('.unexpected').show();
       }
     });
   });

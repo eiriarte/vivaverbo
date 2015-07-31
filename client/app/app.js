@@ -16,7 +16,7 @@ angular.module('vivaverboApp', [
     $httpProvider.interceptors.push('authInterceptor');
   })
 
-  .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
+  .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $window) {
     return {
       // Add authorization token to headers
       request: function (config) {
@@ -42,7 +42,7 @@ angular.module('vivaverboApp', [
     };
   })
 
-  .run(function ($rootScope, $cookies, $location, gettextCatalog, Auth) {
+  .run(function ($rootScope, $cookies, $window, gettextCatalog, Auth) {
     // Idioma
     let lang = $cookies.get('lang');
     gettextCatalog.debug = true; // TODO: quitar esto en producción (o hacerlo condicional)

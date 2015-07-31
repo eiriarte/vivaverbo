@@ -67,6 +67,7 @@
     "grunt-usemin": "~2.1.1",
     "grunt-wiredep": "~1.8.0",
     "jit-grunt": "^0.5.0",
+    "jquery": "^2.1.4",
     "jshint-stylish": "~0.1.5",
     "karma": "~0.12.9",
     "karma-babel-preprocessor": "^5.2.1",
