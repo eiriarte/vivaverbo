@@ -18,7 +18,8 @@ describe('Controller: ReviewController', function () {
       'name': 'Jasmine Test User',
       'email': 'test@test.com',
       '__v': 0,
-      'role': 'user'
+      'role': 'user',
+      'prefs': { 'tarjetasPorRepaso': 10 }
     });
     $httpBackend.flush();
   }));
