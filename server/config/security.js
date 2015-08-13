@@ -54,7 +54,8 @@ module.exports = function(app) {
     fontSrc: [
       'fonts.gstatic.com'
     ],
-    connectSrc: [ "'self'" ]
+    connectSrc: [ "'self'" ],
+    imgSrc: [ "'self'", 'data:' ]
   }
   if ('development' === env) {
     // Livereload

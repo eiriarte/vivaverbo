@@ -3,9 +3,9 @@
 angular.module('vivaverboApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('main', {
+      .state('review', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'app/review/review.html',
+        controller: 'ReviewController'
       });
   });

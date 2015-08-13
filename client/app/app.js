@@ -6,7 +6,8 @@ angular.module('vivaverboApp', [
   'ngMessages',
   'ngMaterial',
   'ui.router',
-  'gettext'
+  'gettext',
+  'lokijs'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

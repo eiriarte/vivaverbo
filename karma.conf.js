@@ -22,6 +22,8 @@ module.exports = function(config) {
       'client/bower_components/angular-aria/angular-aria.js',
       'client/bower_components/angular-messages/angular-messages.js',
       'client/bower_components/angular-material/angular-material.js',
+      'client/bower_components/lokijs/src/lokijs.js',
+      'client/bower_components/lokijs/src/loki-angular.js',
       'client/components/vendor/js.cookie.js',
       'client/app/app.js',
       'client/app/**/*.js',
