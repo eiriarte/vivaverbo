@@ -2,9 +2,9 @@
 
 angular.module('vivaverboApp')
   .factory('reviewService', function ($q, $rootScope, Auth, cardService) {
-    let user = Auth.getCurrentUser();
-    let repaso = {};
-    let tarjetasRepaso = [];
+    const user = Auth.getCurrentUser();
+    const tarjetasRepaso = [];
+    const repaso = {};
     crearRepaso();
 
     // Public API
@@ -13,14 +13,14 @@ angular.module('vivaverboApp')
       tarjetasRepaso,
       /* jshint unused: false */
       marcar(recuerdo) {
-        let deferred = $q.defer();
+        const deferred = $q.defer();
         repaso.tarjetaActual++;
         repaso.finalizado = repaso.tarjetaActual === repaso.totalTarjetas;
         deferred.resolve();
         return deferred.promise;
       },
       borrar() {
-        let deferred = $q.defer();
+        const deferred = $q.defer();
         repaso.tarjetaActual++;
         repaso.finalizado = repaso.tarjetaActual === repaso.totalTarjetas;
         deferred.resolve();
@@ -32,18 +32,17 @@ angular.module('vivaverboApp')
 
     // Crea el repaso para hoy, si no existe ya
     function crearRepaso() {
-      let promise;
       let hoy = new Date();
       hoy = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
       if (!user.review || user.review.fecha < hoy) {
-        promise = cardService.getReview(user.prefs.tarjetasPorRepaso);
+        const promise = cardService.getReview(user.prefs.tarjetasPorRepaso);
         promise.then((review) => {
           user.review = review;
           angular.merge(repaso, review);
           prepararTarjetas();
         });
       } else {
-        repaso = user.review;
+        angular.merge(repaso, user.review);
         prepararTarjetas();
       }
     }
@@ -51,7 +50,7 @@ angular.module('vivaverboApp')
     // Función auxiliar de crearRepaso():
     // Obtiene el contenido de las tarjetas del array de IDs de tarjeta
     function prepararTarjetas(nuevoRepaso) {
-      let promise = cardService.getCards(user.review.tarjetas);
+      const promise = cardService.getCards(user.review.tarjetas);
       promise.then((cards) => {
         angular.merge(tarjetasRepaso, cards);
       });

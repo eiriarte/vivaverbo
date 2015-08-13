@@ -45,7 +45,7 @@ angular.module('vivaverboApp', [
 
   .run(function ($rootScope, $cookies, $window, gettextCatalog, Auth) {
     // Idioma
-    let lang = $cookies.get('lang');
+    const lang = $cookies.get('lang');
     gettextCatalog.debug = true; // TODO: quitar esto en producción (o hacerlo condicional)
     if ('eo' === lang) {
       gettextCatalog.setCurrentLanguage(lang);

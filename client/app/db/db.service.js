@@ -5,18 +5,20 @@ angular.module('vivaverboApp')
     // Service logic
     // TODO: ensureUniqueIndex, etc
     // TODO: configurar LocalForage
-    let lokiDB, cardsCollection;
-    let cardsAPI = $resource('/api/cards');
+    const cardsAPI = $resource('/api/cards');
+    const lokiDB = new Loki('vivaverbo.db');
+
     // Promesa que se resuelve cuando se han obtenido las tarjetas
     // (del servidor o de local)
-    let deferred = $q.defer();
-    let cardsReady = deferred.promise;
+    const deferred = $q.defer();
+    const cardsReady = deferred.promise;
 
-    lokiDB = new Loki('vivaverbo.db');
+    let cardsCollection;
+
       /* jshint unused: false */
     lokiDB.loadDatabase({}, (err) => {
-      let cols = lokiDB.listCollections();
-      if (0 === cols.length) {
+      const numCollections = lokiDB.listCollections().length;
+      if (0 === numCollections) {
         cardsCollection = lokiDB.addCollection('Cards');
         $log.debug('Obteniendo tarjetas del servidor…');
         cardsAPI.query().$promise.then((cards) => {
@@ -36,10 +38,10 @@ angular.module('vivaverboApp')
     return {
       lokiDB,
       getCards(list) {
-        let deferred = $q.defer();
+        const deferred = $q.defer();
         cardsReady.then(() => {
-          let cards = cardsCollection.find();
-          let reviewCards = [];
+          const cards = cardsCollection.find();
+          const reviewCards = [];
           for (let i = 0, len = list.length; i < len; i++) {
             reviewCards.push(cards[list[i]]);
           }

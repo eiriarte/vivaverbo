@@ -2,7 +2,7 @@
 
 angular.module('vivaverboApp')
   .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore) {
-    var currentUser = {};
+    let currentUser = {};
     if($cookieStore.get('token')) {
       currentUser = User.get();
     }
@@ -28,7 +28,7 @@ angular.module('vivaverboApp')
        * @return {Promise}
        */
       changePassword: function(oldPassword, newPassword, callback) {
-        var cb = callback || angular.noop;
+        let cb = callback || angular.noop;
 
         return User.changePassword({ id: currentUser._id }, {
           oldPassword: oldPassword,

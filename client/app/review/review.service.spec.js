@@ -39,15 +39,15 @@ describe('Service: reviewService', function () {
 
   it('debe cargar y contabilizar tarjetas', function () {
     $httpBackend.flush();
-    let lengthTarjetas = tarjetasRepaso.length;
-    let total = repaso.totalTarjetas;
+    const lengthTarjetas = tarjetasRepaso.length;
+    const total = repaso.totalTarjetas;
 
     expect(lengthTarjetas).toBe(total);
     expect(lengthTarjetas).toBeGreaterThan(0);
   });
 
   it('debe llegar al final', function() {
-    let total = repaso.totalTarjetas;
+    const total = repaso.totalTarjetas;
 
     expect(repaso.finalizado).toBe(false, 'porque acabamos de empezar');
     expect(repaso.tarjetaActual).toBe(0);

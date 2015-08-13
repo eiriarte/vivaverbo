@@ -7,8 +7,8 @@ angular.module('vivaverboApp')
       // Obtiene el próximo repaso (nuevo) para el usuario actual
       // La lista de tarjetas sólo contiene los IDs
       getReview(numTarjetas) {
-        let deferred = $q.defer();
-        let review = {
+        const deferred = $q.defer();
+        const review = {
           fecha: new Date(),
           finalizado: false,
           totalTarjetas: numTarjetas,
@@ -24,8 +24,8 @@ angular.module('vivaverboApp')
       // Obtiene las tarjetas para repasar, correspondientes a los IDs de idList
       // idList viene del repaso actual (nuevo o no) del usuario
       getCards(idList) {
-        let deferred = $q.defer();
-        let promise = db.getCards(idList);
+        const deferred = $q.defer();
+        const promise = db.getCards(idList);
         promise.then((cards) => {
           deferred.resolve(cards);
         });
