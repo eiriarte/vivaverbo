@@ -5,13 +5,5 @@ msgstr ""
 "Project-Id-Version: \n"
 
 #: client/components/navbar/navbar.html:4
-msgid "Hello {{ getCurrentUser().name }}"
-msgstr ""
-
-#: client/components/navbar/navbar.html:5
 msgid "Logout"
-msgstr ""
-
-#: client/app/main/main.html:5
-msgid "Main DIV"
 msgstr ""

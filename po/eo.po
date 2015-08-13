@@ -13,16 +13,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: client/components/navbar/navbar.html:4
-msgid "Hello {{ getCurrentUser().name }}"
-msgstr "Saluton {{ getCurrentUser().name }}"
-
-#: client/components/navbar/navbar.html:5
 msgid "Logout"
 msgstr "Elsaluti"
 
-#: client/app/main/main.html:5
-msgid "Main DIV"
-msgstr "Ĉefa DIV"
+#~ msgid "Hello {{ getCurrentUser().name }}"
+#~ msgstr "Saluton {{ getCurrentUser().name }}"
+
+#~ msgid "Main DIV"
+#~ msgstr "Ĉefa DIV"
 
 #~ msgid "Login"
 #~ msgstr "Ensaluti"
