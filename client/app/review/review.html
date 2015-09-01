@@ -1,4 +1,4 @@
-<md-toolbar class="navbar" ng-controller="NavbarCtrl" ng-include="'components/navbar/navbar.html'"></md-toolbar>
+<md-toolbar class="navbar" ng-controller="NavbarController" ng-include="'components/navbar/navbar.html'"></md-toolbar>
 <md-content class="repaso" flex>
   <div layout layout-align="center" class="num-tarjeta md-subhead" ng-hide="repaso.finalizado">{{ repaso.tarjetaActual + 1}}/{{repaso.totalTarjetas}}</div>
   <div layout layout-align="center" class="md-headline" ng-show="repaso.finalizado" translate>Awesome! You're done!</div>
