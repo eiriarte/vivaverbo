@@ -107,5 +107,12 @@ describe('Service: reviewService', function () {
     expect(repaso.finalizado).toBe(true);
     expect(repaso.tarjetaActual).
       not.toBeDefined('porque ha pasado de la última tarjeta');
+
+    // Nuevo repaso!!!
+    reviewService.newReview(() => {
+      expect(repaso.finalizado).toBe(false, 'porque es nuevo repaso');
+      expect(repaso.tarjetaActual).toBe(0);
+      expect(repaso.totalAprendidas).toBe(0);
+    });
   });
 });

@@ -20,4 +20,9 @@ angular.module('vivaverboApp')
       reviewService.marcar(1, true);
       $scope.tarjetaGirada = false;
     };
+
+    // Genera un nuevo repaso
+    $scope.newReview = () => {
+      reviewService.newReview();
+    };
   });

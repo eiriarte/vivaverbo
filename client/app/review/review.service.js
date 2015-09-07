@@ -43,6 +43,11 @@ angular.module('vivaverboApp')
           review.tarjetaActual = -1;
           review.tarjetaActual = siguienteTarjeta();
         }
+      },
+      // Fuerza un nuevo repaso ("repasar de nuevo!")
+      // done: callback a llamar cuando esté listo el repaso (opcional)
+      newReview(done) {
+        initReview(true, done);
       }
     };
 
@@ -62,14 +67,17 @@ angular.module('vivaverboApp')
     }
 
     // Crea el repaso para hoy, si no existe ya
-    function initReview() {
+    // force: crea el nuevo repaso incondicionalmente
+    // done: callback a llamar cuando esté listo el repaso
+    function initReview(force = false, done = () => {}) {
       let hoy = new Date();
       hoy = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
 
-      if (user.review.fecha === undefined || user.review.fecha < hoy) {
+      if (force || user.review.fecha === undefined || user.review.fecha < hoy) {
         const promise = memoryService.newReview();
         promise.then((review) => {
           angular.merge(user.review, review);
+          done();
         });
       }
     }

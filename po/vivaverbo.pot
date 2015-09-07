@@ -4,6 +4,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: client/app/review/review.html:5
+msgid "Awesome! You're done!"
+msgstr ""
+
 #: client/components/navbar/navbar.html:4
 msgid "Logout"
+msgstr ""
+
+#: client/app/review/review.html:23
+msgid "Ouch!"
+msgstr ""
+
+#: client/app/review/review.html:29
+msgid "Perfect!"
+msgstr ""
+
+#: client/app/review/review.html:17
+msgid "Remove card"
+msgstr ""
+
+#: client/app/review/review.html:6
+msgid "Review more cards!"
+msgstr ""
+
+#: client/app/review/review.html:26
+msgid "Yes but…"
 msgstr ""

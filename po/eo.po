@@ -12,9 +12,33 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: client/app/review/review.html:5
+msgid "Awesome! You're done!"
+msgstr "Bonege! Farite!"
+
 #: client/components/navbar/navbar.html:4
 msgid "Logout"
 msgstr "Elsaluti"
+
+#: client/app/review/review.html:23
+msgid "Ouch!"
+msgstr "Mi forgesis! :-("
+
+#: client/app/review/review.html:29
+msgid "Perfect!"
+msgstr "Bonege!"
+
+#: client/app/review/review.html:17
+msgid "Remove card"
+msgstr "Forigi karton"
+
+#: client/app/review/review.html:6
+msgid "Review more cards!"
+msgstr "Studi pli!"
+
+#: client/app/review/review.html:26
+msgid "Yes but…"
+msgstr "Jes, sed…"
 
 #~ msgid "Hello {{ getCurrentUser().name }}"
 #~ msgstr "Saluton {{ getCurrentUser().name }}"
