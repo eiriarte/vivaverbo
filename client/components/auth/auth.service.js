@@ -2,10 +2,8 @@
 
 angular.module('vivaverboApp')
   .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore) {
-    let currentUser = {};
-    if($cookieStore.get('token')) {
-      currentUser = User.get();
-    }
+    let currentUser = window.user;
+    // if($cookieStore.get('token')) { currentUser = User.get(); }
 
     return {
 
@@ -16,7 +14,8 @@ angular.module('vivaverboApp')
        */
       logout: function() {
         $cookieStore.remove('token');
-        currentUser = {};
+        // TODO: recargar la página para que cargue la landing page
+        // currentUser = {};
       },
 
       /**

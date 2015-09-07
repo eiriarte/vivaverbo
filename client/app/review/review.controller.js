@@ -3,7 +3,6 @@
 angular.module('vivaverboApp')
   .controller('ReviewController', function ($scope, reviewService) {
     $scope.repaso = reviewService.repaso;
-    $scope.tarjetas = reviewService.tarjetasRepaso;
     $scope.tarjetaGirada = false;
 
     // "Gira" la tarjeta para ver la respuesta
@@ -11,12 +10,14 @@ angular.module('vivaverboApp')
 
     // Marca el grado de recuerdo de la respuesta: 0, 0.5, 1
     $scope.marcar = (recuerdo) => {
-      reviewService.marcar(recuerdo).then(() => $scope.tarjetaGirada = false );
+      reviewService.marcar(recuerdo);
+      $scope.tarjetaGirada = false;
     };
 
     // Elimina la tarjeta (demasiado fácil) de posteriores repasos
     $scope.borrar = ($event) => {
       $event.stopPropagation();
-      reviewService.borrar().then(() => $scope.tarjetaGirada = false );
+      reviewService.marcar(1, true);
+      $scope.tarjetaGirada = false;
     };
   });
