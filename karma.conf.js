@@ -27,6 +27,7 @@ module.exports = function(config) {
       'client/bower_components/lokijs/src/loki-angular.js',
       'client/components/vendor/js.cookie.js',
       'client/app/app.js',
+      'client/app/dev-app.js',
       'client/app/**/*.js',
       'client/components/**/*.js',
       'client/app/**/*.html',
@@ -48,7 +49,7 @@ module.exports = function(config) {
       stripPrefix: 'client/'
     },
 
-    
+
     babelPreprocessor: {
       options: {
         sourceMap: 'inline'
@@ -60,7 +61,7 @@ module.exports = function(config) {
         return file.originalPath;
       }
     },
-    
+
 
     // list of files / patterns to exclude
     exclude: [],
