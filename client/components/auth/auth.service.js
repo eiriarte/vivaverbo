@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('vivaverboApp')
-  .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore) {
-    let currentUser = window.user;
-    // if($cookieStore.get('token')) { currentUser = User.get(); }
+  .factory('Auth', function Auth($location, $rootScope, $http, $cookieStore, User, db) {
+    const currentUser = db.syncUser(window.vvUser);
 
     return {
 

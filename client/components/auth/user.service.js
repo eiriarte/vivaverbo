@@ -15,7 +15,13 @@ angular.module('vivaverboApp')
       get: {
         method: 'GET',
         params: {
-          id:'me'
+          id: 'me'
+        }
+      },
+      update: {
+        method: 'POST',
+        params: {
+          id: 'me'
         }
       }
 	  });

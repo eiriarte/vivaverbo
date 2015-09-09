@@ -33,6 +33,7 @@ mock.run(function ($httpBackend) {
   $httpBackend.whenGET(/\/api\/memory/).respond(getServerMemories());
 
   $httpBackend.whenPOST('/api/memory').respond(getMemories);
+  $httpBackend.whenPOST('/api/users/me').respond(200);
 });
 
 // GET /api/memory
@@ -84,7 +85,8 @@ function getUser(prefs = {}) {
       'nuevasPorRepaso': prefs.nuevas || 5,
       'maxFallosPorRound': prefs.maxFallos || 4
     },
-    'review': {}
+    'review': {},
+    'updated': prefs.updated || new Date()
   };
 }
 
@@ -252,6 +254,20 @@ function getCards() {
 }
 
 // jshint ignore:start
+
+function windowBeforeTestSuite() {
+  const date = new Date();
+  window.localStorage.setItem('usr', JSON.stringify(getUser({ updated: date })));
+  window.vvUser = getUser({ updated: date });
+  window.dtDate = date.getTime();
+}
+
+function windowAfterTestSuite() {
+  localStorage.clear();
+  delete window.vvUser;
+  delete window.dtDate;
+}
+
 // GET /api/memory
 // Usada en db.service.spec.js
 function getMemory() {

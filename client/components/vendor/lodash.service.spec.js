@@ -7,9 +7,14 @@ describe('Service: lodash', function () {
 
   // instantiate service
   let lodash;
+
+  beforeAll(windowBeforeTestSuite);
+
   beforeEach(inject(function (_lodash_) {
     lodash = _lodash_;
   }));
+
+  afterAll(windowAfterTestSuite);
 
   it('debe ser un objeto lodash/underscore', function () {
     expect(typeof lodash).toBe('function');

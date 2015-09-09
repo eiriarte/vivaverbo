@@ -2,6 +2,8 @@
 
 describe('Service: MemoryClass', function () {
 
+  beforeAll(windowBeforeTestSuite);
+
   // load the service's module
   beforeEach(module('vivaverboApp'));
   // instantiate service
@@ -11,6 +13,8 @@ describe('Service: MemoryClass', function () {
   beforeEach(inject(function (_MemoryClass_) {
     MemoryClass = _MemoryClass_;
   }));
+
+  afterAll(windowAfterTestSuite);
 
   it('debe crear un objeto MemoryClass', function () {
     var f = () => {

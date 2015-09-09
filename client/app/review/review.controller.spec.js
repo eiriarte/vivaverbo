@@ -7,6 +7,8 @@ describe('Controller: ReviewController', function () {
   let ReviewController, scope, $rootScope;
   let $httpBackend;
 
+  beforeAll(windowBeforeTestSuite);
+
   beforeEach(function() {
     // Simula el "bootstrapping" de los datos de usuarios al cargar index.html
     // getUser() definida en dev-app.js
@@ -27,14 +29,13 @@ describe('Controller: ReviewController', function () {
     });
   }));
 
-  afterAll(function() {
-    localStorage.clear();
-  });
+  afterAll(windowAfterTestSuite);
 
   it('debe cargar y contabilizar tarjetas', function() {
     // GET /api/cards
     $httpBackend.expectGET('/api/cards').respond(getCards());
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.expectPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
     let lengthTarjetas = scope.repaso.tarjetas.length;

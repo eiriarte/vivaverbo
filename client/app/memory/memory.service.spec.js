@@ -1,16 +1,13 @@
 'use strict';
 
 describe('Service: memoryService', function () {
-  const tarjetasPorRepaso = 15;
+  // getUser() definida en dev-app.js
+  const tarjetasPorRepaso = getUser().prefs.tarjetasPorRepaso;
+
+  beforeAll(windowBeforeTestSuite);
 
   // load the service's module
   beforeEach(module('vivaverboApp'));
-
-  beforeEach(function() {
-    // Simula el "bootstrapping" de los datos de usuarios al cargar index.html
-    // getUser() definida en dev-app.js
-    window.user = getUser({ tarjetas: tarjetasPorRepaso });
-  });
 
   // instantiate service
   var db, memoryService, $httpBackend, $rootScope;
@@ -22,9 +19,7 @@ describe('Service: memoryService', function () {
           $rootScope = _$rootScope_;
         }));
 
-  afterAll(function() {
-    localStorage.clear();
-  });
+  afterAll(windowAfterTestSuite);
 
   it('debe generar un nuevo repaso', function () {
     const promise = memoryService.newReview();

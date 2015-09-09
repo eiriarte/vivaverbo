@@ -3,6 +3,8 @@
 describe('Service: reviewService', function () {
   const tarjetasPorRepaso = 10;
 
+  beforeAll(windowBeforeTestSuite);
+
   // load the service's module
   beforeEach(module('vivaverboApp'));
 
@@ -26,13 +28,12 @@ describe('Service: reviewService', function () {
     repaso = reviewService.repaso;
   }));
 
-  afterAll(function() {
-    localStorage.clear();
-  });
+  afterAll(windowAfterTestSuite);
 
   it('debe cargar y contabilizar el número deseado de tarjetas', function () {
     $httpBackend.expectGET('/api/cards').respond(getCards());
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.expectPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
     const lengthTarjetas = repaso.tarjetas.length;

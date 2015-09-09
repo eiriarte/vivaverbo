@@ -9,6 +9,23 @@ var auth = require('./auth/auth.service');
 var path = require('path');
 var winston = require('winston');
 
+// TODO: obtener los datos reales de los usuarios
+var mockUser = {
+  '_id': '55c06722591903e30543848a',
+  'provider': 'local',
+  'name': 'Jasmine Test User',
+  'email': 'test@test.com',
+  '__v': 0,
+  'role': 'user',
+  'prefs': {
+    'tarjetasPorRepaso': 10,
+    'nuevasPorRepaso': 5,
+    'maxFallosPorRound': 4
+  },
+  'review': {},
+  'updated': new Date() // fecha+hora en la que se updató x vez última
+};
+
 module.exports = function(app) {
 
   // Insert routes below
@@ -27,7 +44,10 @@ module.exports = function(app) {
       winston.debug('user = %j', req.user, {});
       if (req.user) {
         winston.debug('Usuario registrado. Sirviendo index.html');
-        res.sendFile(path.resolve(app.get('appPath') + '/../server/views/index.html'));
+        res.render('index', { user: mockUser }, function (err, html) {
+          if (err) { errors[500](err, req, res); }
+          res.send(html);
+        });
       } else {
         winston.debug('Usuario anónimo. Sirviendo landing.html');
         res.render('landing', { csrfToken: req.csrfToken() }, function (err, html) {

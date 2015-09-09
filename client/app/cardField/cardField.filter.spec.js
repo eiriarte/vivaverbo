@@ -2,6 +2,8 @@
 
 describe('Filter: cardField', function () {
 
+  beforeAll(windowBeforeTestSuite);
+
   // load the filter's module
   beforeEach(module('vivaverboApp'));
 
@@ -14,9 +16,7 @@ describe('Filter: cardField', function () {
     reviewCard = { cardId: '7f4165957e457a5742a856fc' };
   }));
 
-  afterAll(function() {
-    localStorage.clear();
-  });
+  afterAll(windowAfterTestSuite);
 
   it('debe devolver el valor del campo solicitado', function () {
     $httpBackend.expectGET('/api/cards').respond(getCards());

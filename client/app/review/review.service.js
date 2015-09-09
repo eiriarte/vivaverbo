@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('vivaverboApp')
-  .factory('reviewService', function ($q, $rootScope, $log, Auth, memoryService) {
+  .factory('reviewService', function ($q, $rootScope, $log, Auth, db, memoryService, dateTime) {
     const user = Auth.getCurrentUser();
     initReview();
 
@@ -43,6 +43,9 @@ angular.module('vivaverboApp')
           review.tarjetaActual = -1;
           review.tarjetaActual = siguienteTarjeta();
         }
+
+        // Persistimos los cambios en el repaso
+        db.updateUser(user);
       },
       // Fuerza un nuevo repaso ("repasar de nuevo!")
       // done: callback a llamar cuando esté listo el repaso (opcional)
@@ -70,15 +73,18 @@ angular.module('vivaverboApp')
     // force: crea el nuevo repaso incondicionalmente
     // done: callback a llamar cuando esté listo el repaso
     function initReview(force = false, done = () => {}) {
-      let hoy = new Date();
-      hoy = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+      const hoy = dateTime.today();
 
       if (force || user.review.fecha === undefined || user.review.fecha < hoy) {
+        $log.debug('Generando un nuevo repaso');
         const promise = memoryService.newReview();
         promise.then((review) => {
           angular.merge(user.review, review);
+          db.updateUser(user);
           done();
         });
+      } else {
+        $log.debug('Manteniendo el repaso existente');
       }
     }
   });

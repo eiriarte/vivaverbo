@@ -73,26 +73,14 @@
           <script src="app/translations.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
+          <script src="components/dateTime/dateTime.service.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
           <script src="components/vendor/lodash.service.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
       <script>
-        // TODO: bootstrap desde el servidor
-        window.user = {
-          '_id': '55c06722591903e30543848a',
-          'provider': 'local',
-          'name': 'Jasmine Test User',
-          'email': 'test@test.com',
-          '__v': 0,
-          'role': 'user',
-          'prefs': {
-            'tarjetasPorRepaso': 10,
-            'nuevasPorRepaso': 5,
-            'maxFallosPorRound': 4
-          },
-          'review': {}
-        };
+        window.vvUser = <%- JSON.stringify(user) %>;
+        window.dtDate = <%= Date.now() %>;
       </script>
   </body>
 </html>

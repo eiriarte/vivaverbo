@@ -2,7 +2,7 @@
 
 angular.module('vivaverboApp')
   .factory('db',
-      function ($resource, $q, $timeout, $log, $window, Loki, lodash, MemoryClass) {
+      function ($resource, $q, $timeout, $log, $window, Loki, lodash, User, MemoryClass) {
     // Service logic
     const lokiDB = new Loki('vivaverbo.db');
     const cardsAPI = $resource('/api/cards');
@@ -21,26 +21,36 @@ angular.module('vivaverboApp')
 
     // Public API
     return {
-      // Guarda "persiste" la base de datos
+      /* **********************************************************************
+       * Guarda "persiste" la base de datos
+       * **********************************************************************/
       save() {
         lokiDB.saveDatabase();
       },
-      // Se asegura de tener los datos sincronizados con el servidor
-      sync() {
+      /* **********************************************************************
+       * Se asegura de tener los datos sincronizados con el servidor
+       * **********************************************************************/
+      syncMemory() {
         /* jshint ignore:start */
-        syncMemory();
+        privateSyncMemory();
         /* jshint ignore:end */
       },
-      // Devuelve la tarjeta con identificador "id"
+      /* **********************************************************************
+       * Devuelve la tarjeta con identificador "id"
+       * **********************************************************************/
       getCard(id) {
         return cardsCollection.findOne({ _id: id });
       },
-      // Devuelve el documento de memoryCollection para la tarjeta "id"
+      /* **********************************************************************
+       * Devuelve el documento de memoryCollection para la tarjeta "id"
+       * **********************************************************************/
       getMemory(id) {
         return getMemoryFromCollection(id);
       },
-      // Actualiza/inserta el objeto en la BD (para reindexar, Changes API, etc.)
-      // mem: Objeto de la clase MemoryClass
+      /* **********************************************************************
+       * Actualiza/inserta el objeto en la BD (para reindexar, Changes API, etc.)
+       * mem: Objeto de la clase MemoryClass
+       * **********************************************************************/
       updateMemory(mem) {
         mem.synced = false;
         if (mem.hasOwnProperty('$loki')) {
@@ -51,7 +61,11 @@ angular.module('vivaverboApp')
         const changes = memoryCollection.getChanges();
         $log.debug('Cambios: ', changes);
       },
-      // Devuelve (promete) una array con las próximas tarjetas a repasar
+      /* *********************************************************************
+       * Devuelve (promete) una array con las próximas tarjetas a repasar
+       * tarjetasPorRepaso: nº total de tarjetas a repasar
+       * nuevasPorRepaso: nº de tarjetas a incluir, no repasadas previamente
+       * *********************************************************************/
       newReviewCards(tarjetasPorRepaso, nuevasPorRepaso) {
         const deferred = $q.defer();
         dbReady.then(() => {
@@ -86,6 +100,60 @@ angular.module('vivaverboApp')
           deferred.resolve(repaso.concat(nuevas));
         });
         return deferred.promise;
+      },
+      /* *******************************************************************
+       * Sincroniza el objeto User local con el del servidor.
+       * Devuelve el objeto más actualizado.
+       * serverUser: objeto User del servidor
+       * *******************************************************************/
+      syncUser(serverUser) {
+        const localUser = angular.fromJson($window.localStorage.getItem('usr'));
+        if (null === localUser) {
+          // Aún no hay copia local: la creamos
+          $log.debug('Creando copia de User en localStorage');
+          $window.localStorage.setItem('usr', angular.toJson(serverUser));
+          return serverUser;
+        } else {
+          serverUser.updated = new Date(serverUser.updated);
+          localUser.updated = new Date(localUser.updated);
+          if (serverUser.review.fecha) {
+            serverUser.review.fecha = new Date(serverUser.review.fecha);
+          }
+          if (localUser.review.fecha) {
+            localUser.review.fecha = new Date(localUser.review.fecha);
+          }
+          if (localUser.updated < serverUser.updated) {
+            // El objeto en el servidor está más actualizado
+            $log.debug('Actualizando copia de User en localStorage');
+            $window.localStorage.setItem('usr', angular.toJson(serverUser));
+            return serverUser;
+          } else if (localUser.updated > serverUser.updated) {
+            // El objeto en el cliente está más actualizado
+            $log.debug('Actualizando objeto User en el servidor');
+            User.update(localUser).$promise.then(() => {
+              $log.debug('Objeto User actualizado en el servidor');
+            }).catch(() =>{
+              $log.error('Actualización de objeto User en el servidor falló');
+            });
+            return localUser;
+          } else {
+            // Los objetos en cliente y servidor coinciden
+            $log.debug('Objetos User en servidor y cliente coinciden.');
+            return localUser;
+          }
+        }
+      },
+      /* *********************************************************************
+       * Persiste el objeto User en almacenamiento local y en el servidor
+       * user: objeto User modificado a persistir
+       * *********************************************************************/
+      updateUser(user) {
+        $window.localStorage.setItem('usr', angular.toJson(user));
+        User.update(user).$promise.then(() => {
+          $log.debug('Cambios en User persistidos en el servidor.');
+        }).catch(() => {
+          $log.error('Actualización de cambios en User en el servidor falló.');
+        });
       }
     };
 
@@ -167,7 +235,7 @@ angular.module('vivaverboApp')
           $log.debug(`Detectados ${changes.length} cambios sin sincronizar`);
           // Actualizamos los datos del servidor con los datos nuevos locales
           /* jshint ignore:start */
-          syncMemory({
+          privateSyncMemory({
             changes: changes,
             done: () => {
               memoryCollection.setChangesApi(true);
@@ -227,13 +295,13 @@ angular.module('vivaverboApp')
     // rerun: true si estamos reintentando o tratando nuevos cambios "solapados"
     // changes: array de cambios (objetos cambiados) a sincronizar
     // done: callback a llamar cuando se finalice la sincronización
-    function syncMemory({
+    function privateSyncMemory({
       skip = 0,
       rerun = false,
       changes = null,
       done = () => {}
     } = {}) {
-      $log.debug(`Invocada syncMemory(${skip},${rerun},${changes},${done})`);
+      $log.debug(`Invocada privateSyncMemory(${skip},${rerun},${changes},${done})`);
       // No volver a ejecutar mientras se espera respuesta del servidor
       if (!rerun && isSynchronizingMemory) { return false; }
       isSynchronizingMemory = true;
@@ -274,7 +342,7 @@ angular.module('vivaverboApp')
         // Si ha habido cambios nuevos mientras sincronizábamos
         if (skip < allChanges) {
           $log.debug(`¡Hay ${allChanges - skip} nuevo(s) cambio(s) sin sincronizar!`);
-          syncMemory({ skip: skip, rerun: true });
+          privateSyncMemory({ skip: skip, rerun: true });
         } else {
           $log.debug('No hay más cambios. Descartando historial…');
           memoryCollection.flushChanges();
@@ -289,7 +357,7 @@ angular.module('vivaverboApp')
         if (esInesperado) {
           $log.error('Error en la sincronización. Reintentando en 15 s…');
           // Quizá estamos offline, volveremos a intentarlo pasados 15 segundos
-          $timeout(() => syncMemory({ skip: skip, rerun: true }), 15000);
+          $timeout(() => privateSyncMemory({ skip: skip, rerun: true }), 15000);
         } else {
           isSynchronizingMemory = false;
           $log.debug('Sincronización finalizada con errores.');
@@ -298,7 +366,7 @@ angular.module('vivaverboApp')
       });
     }
 
-    // Auxiliar de syncMemory
+    // Auxiliar de privateSyncMemory
     // Devuelve un array con los objetos de memoryCollection insertados y/o
     // modificados, no sincronizados aún, exceptuando los "skip" primeros.
     function getMemoryChanges(skip) {

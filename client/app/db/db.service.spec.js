@@ -2,6 +2,8 @@
 
 describe('Service: db', function () {
 
+  beforeAll(windowBeforeTestSuite);
+
   // load the service's module
   beforeEach(module('vivaverboApp'));
 
@@ -17,9 +19,7 @@ describe('Service: db', function () {
     db = _db_;
   }));
 
-  afterAll(function() {
-    localStorage.clear();
-  });
+  afterAll(windowAfterTestSuite);
 
   it('debe devolver la tarjeta con el id indicado', function () {
     $httpBackend.expectGET('/api/cards').respond(getCards());
@@ -126,7 +126,7 @@ describe('Service: db', function () {
     db.save();
     window.vvUnsyncedServer = true;
     $httpBackend.expectPOST('/api/memory').respond(getMemories);
-    db.sync();
+    db.syncMemory();
     $rootScope.$digest();
     $httpBackend.flush();
     db.save();
@@ -135,5 +135,40 @@ describe('Service: db', function () {
     expect(serverMem.recallProbability).toBe(0.5);
   });
 
-});
+  it('debe sincronizar el objeto User con el servidor', function() {
+    const localDate = angular.fromJson(
+      window.localStorage.getItem('usr')).updated;
+    const haceUnaHora = new Date(Date.now() - 3600 * 1000);
+    const dentroDeUnaHora = new Date(Date.now() + 3600 * 1000);
 
+    let syncedUser = db.syncUser(getUser({ updated: haceUnaHora }));
+    expect(syncedUser.updated).toEqual(new Date(localDate));
+    $httpBackend.expectPOST('/api/users/me').respond(200);
+    $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.flush();
+
+    syncedUser = db.syncUser(getUser({ updated: dentroDeUnaHora }));
+    expect(syncedUser.updated).toEqual(dentroDeUnaHora);
+    const newLocal = new Date(
+      angular.fromJson(window.localStorage.getItem('usr')).updated);
+    expect(newLocal).toEqual(dentroDeUnaHora);
+
+    window.localStorage.removeItem('usr');
+    syncedUser = db.syncUser(getUser({ updated: haceUnaHora }));
+    expect(syncedUser.updated).toEqual(haceUnaHora);
+    window.localStorage.setItem('usr', 
+        angular.toJson(getUser({ updated: localDate })));
+  });
+
+  it('debe actualizar el objeto User', function() {
+    const dalaiLama = getUser();
+    dalaiLama.buenaPersona = true;
+    dalaiLama.name = 'Dalai Lama';
+    db.updateUser(dalaiLama);
+    const persistedUser = window.localStorage.getItem('usr');
+    expect(persistedUser).toEqual(angular.toJson(dalaiLama));
+    $httpBackend.expectPOST('/api/users/me').respond(200);
+    $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.flush();
+  });
+});
