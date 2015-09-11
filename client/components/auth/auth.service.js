@@ -1,20 +1,19 @@
 'use strict';
 
 angular.module('vivaverboApp')
-  .factory('Auth', function Auth($location, $rootScope, $http, $cookies, User, db) {
+  .factory('Auth', function Auth($window, $cookies, User, db) {
     const currentUser = db.syncUser(window.vvUser);
 
     return {
 
       /**
-       * Delete access token and user info
+       * Borra el token de acceso y recarga la página para volver a la landing
+       * page
        *
-       * @param  {Function}
        */
-      logout: function() {
+      logout() {
         $cookies.remove('token');
-        // TODO: recargar la página para que cargue la landing page
-        // currentUser = {};
+        $window.location.pathname = '/';
       },
 
       /**
@@ -25,7 +24,7 @@ angular.module('vivaverboApp')
        * @param  {Function} callback    - optional
        * @return {Promise}
        */
-      changePassword: function(oldPassword, newPassword, callback) {
+      changePassword(oldPassword, newPassword, callback) {
         let cb = callback || angular.noop;
 
         return User.changePassword({ id: currentUser._id }, {
@@ -43,7 +42,7 @@ angular.module('vivaverboApp')
        *
        * @return {Object} user
        */
-      getCurrentUser: function() {
+      getCurrentUser() {
         return currentUser;
       },
 
@@ -52,14 +51,14 @@ angular.module('vivaverboApp')
        *
        * @return {Boolean}
        */
-      isLoggedIn: function() {
+      isLoggedIn() {
         return currentUser.hasOwnProperty('role');
       },
 
       /**
        * Waits for currentUser to resolve before checking if user is logged in
        */
-      isLoggedInAsync: function(cb) {
+      isLoggedInAsync(cb) {
         if(currentUser.hasOwnProperty('$promise')) {
           currentUser.$promise.then(function() {
             cb(true);
@@ -78,14 +77,14 @@ angular.module('vivaverboApp')
        *
        * @return {Boolean}
        */
-      isAdmin: function() {
+      isAdmin() {
         return currentUser.role === 'admin';
       },
 
       /**
        * Get auth token
        */
-      getToken: function() {
+      getToken() {
         return $cookies.get('token');
       }
     };
