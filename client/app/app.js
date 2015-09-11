@@ -17,13 +17,13 @@ angular.module('vivaverboApp', [
     $httpProvider.interceptors.push('authInterceptor');
   })
 
-  .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $window) {
+  .factory('authInterceptor', function ($rootScope, $q, $cookies, $window) {
     return {
       // Add authorization token to headers
       request: function (config) {
         config.headers = config.headers || {};
-        if ($cookieStore.get('token')) {
-          config.headers.Authorization = 'Bearer ' + $cookieStore.get('token');
+        if ($cookies.get('token')) {
+          config.headers.Authorization = 'Bearer ' + $cookies.get('token');
         }
         return config;
       },
@@ -32,7 +32,7 @@ angular.module('vivaverboApp', [
       responseError: function(response) {
         if(response.status === 401) {
           // remove any stale tokens
-          $cookieStore.remove('token');
+          $cookies.remove('token');
           $window.location.pathname = '/';
           return $q.reject(response);
         }

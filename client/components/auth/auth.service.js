@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('vivaverboApp')
-  .factory('Auth', function Auth($location, $rootScope, $http, $cookieStore, User, db) {
+  .factory('Auth', function Auth($location, $rootScope, $http, $cookies, User, db) {
     const currentUser = db.syncUser(window.vvUser);
 
     return {
@@ -12,7 +12,7 @@ angular.module('vivaverboApp')
        * @param  {Function}
        */
       logout: function() {
-        $cookieStore.remove('token');
+        $cookies.remove('token');
         // TODO: recargar la página para que cargue la landing page
         // currentUser = {};
       },
@@ -86,7 +86,7 @@ angular.module('vivaverboApp')
        * Get auth token
        */
       getToken: function() {
-        return $cookieStore.get('token');
+        return $cookies.get('token');
       }
     };
   });

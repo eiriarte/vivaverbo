@@ -55,7 +55,7 @@ function getUser() {
       if(req.query && req.query.hasOwnProperty('access_token')) {
         req.headers.authorization = 'Bearer ' + req.query.access_token;
       } else if (req.cookies && req.cookies.token) {
-        req.headers.authorization = 'Bearer ' + req.cookies.token.slice(1, req.cookies.token.length - 1);
+        req.headers.authorization = 'Bearer ' + req.cookies.token;
       }
       validateJwtNoCreds(req, res, next);
     })
@@ -96,16 +96,21 @@ function hasRole(roleRequired) {
 /**
  * Returns a jwt token signed by the app secret
  */
-function signToken(id) {
-  return jwt.sign({ _id: id }, config.secrets.session, { expiresInMinutes: 60*5 });
+function signToken(id, role, expiresInMinutes) {
+  return jwt.sign({ _id: id, role: role }, config.secrets.session,
+      { expiresInMinutes: expiresInMinutes });
 }
 
 /**
  * Set token cookie directly for oAuth strategies
  */
 function setTokenCookie(req, res) {
-  if (!req.user) return res.status(404).json({ message: 'Something went wrong, please try again.'});
-  var token = signToken(req.user._id, req.user.role);
+  if (!req.user) {
+    return res.status(404).json(
+        { message: 'Something went wrong, please try again.' });
+  }
+  var token =
+    signToken(req.user._id, req.user.role, config.tokenDuration.session);
   res.cookie('token', JSON.stringify(token));
   res.redirect('/');
 }

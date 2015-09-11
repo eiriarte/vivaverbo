@@ -9,7 +9,7 @@ jQuery(document).ready(() => {
     e.preventDefault();
     $form.find('.unauthorized, .unexpected').hide();
     $.post($form.attr('action'), $form.serialize()).done((data) => {
-      Cookies.set('token', `"${data.token}"`);
+      Cookies.set('token', data.token, { expires: 30 });
       window.location.pathname = '/';
     }).fail((jqXHR) => {
       Cookies.remove('token');

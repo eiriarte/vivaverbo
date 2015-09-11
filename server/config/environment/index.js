@@ -24,9 +24,13 @@ var all = {
   // Server IP
   ip: process.env.IP || 'localhost',
 
-  // Secret for session, you will want to change this and make it an environment variable
+  // TODO: Secret for session, you will want to change this and make it an environment variable
   secrets: {
     session: 'vivaverbo-secret'
+  },
+
+  tokenDuration: {
+    session: 60 * 24 * 30
   },
 
   // List of user roles
