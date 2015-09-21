@@ -364,14 +364,15 @@ angular.module('vivaverboApp')
         }
       }).catch((response) => {
         // Error de sincronización. Comprobar el error:
-        const esInesperado = true;
-        if (esInesperado) {
+        if (response.status !== 400 && response.status !== 500) {
           $log.error('Error en la sincronización. Reintentando en 15 s…');
           // Quizá estamos offline, volveremos a intentarlo pasados 15 segundos
           $timeout(() => privateSyncMemory({ skip: skip, rerun: true }), 15000);
         } else {
           isSynchronizingMemory = false;
           $log.debug('Sincronización finalizada con errores.');
+          const msg = gettextCatalog.getString('Could\'t synchronize with server.');
+          $mdToast.showSimple(msg);
         }
         done();
       });
