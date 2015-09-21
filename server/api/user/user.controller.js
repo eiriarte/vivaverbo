@@ -4,9 +4,33 @@ var User = require('./user.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
+var winston = require('winston');
 
 var validationError = function(res, err) {
   return res.status(422).json(err);
+};
+
+/**
+ * Actualiza el estado del usuario actual
+ */
+exports.update = function (req, res) {
+  winston.debug('user.controller::update() iniciando actualización…');
+  var userID = req.user && req.user._id && req.user._id.toString();
+
+  req.user.prefs = req.body.prefs;
+  req.user.review = req.body.review;
+  req.user.updated = new Date(req.body.updated);
+  req.user.save().then(function(user, numAffected) {
+    winston.debug('user.controller::update() req.user.save completado');
+    if (0 === numAffected) {
+      return res.status(400).json({ message: 'Unknown user' });
+    } else {
+      return res.json(user);
+    }
+  }).then(null, function(err) {
+    winston.error('user.controller::update() Error en req.user.save');
+    res.status(500).json({ message: 'Error updating the user state' });
+  });
 };
 
 /**

@@ -16,6 +16,14 @@ msgstr ""
 msgid "Awesome! You're done!"
 msgstr "Bonege! Farite!"
 
+#: client/app/review/review.service.js:87
+msgid "Could not generate a review. Try reloading the app."
+msgstr "Ne povis krei refreŝiĝon. Provu reŝarĝi la aplikaĵon."
+
+#: client/app/db/db.service.js:254
+msgid "Could't synchronize with server."
+msgstr "Ne povis aktualigi la datumojn."
+
 #: client/components/navbar/navbar.html:4
 msgid "Logout"
 msgstr "Elsaluti"
@@ -35,6 +43,10 @@ msgstr "Forigi karton"
 #: client/app/review/review.html:6
 msgid "Review more cards!"
 msgstr "Studi pli!"
+
+#: client/app/db/db.service.js:255
+msgid "We'll try next time."
+msgstr "Mi reprovos en alia okazo."
 
 #: client/app/review/review.html:26
 msgid "Yes but…"

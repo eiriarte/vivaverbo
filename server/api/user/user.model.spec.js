@@ -2,6 +2,7 @@
 
 var should = require('should');
 var app = require('../../app');
+var request = require('supertest');
 var User = require('./user.model');
 
 var user = new User({
@@ -12,25 +13,44 @@ var user = new User({
 });
 
 describe('User Model', function() {
-  before(function(done) {
-    // Clear users before testing
-    User.remove().exec().then(function() {
-      done();
-    });
+  it('debe actualizar el estado del usuario', function(done) {
+    var prefs = {
+      tarjetasPorRepaso: 22,
+      nuevasPorRepaso: 11,
+      maxFallosPorRound: 2
+    }
+    request(app)
+      .post('/api/users/me')
+      .set('Accept', 'application/json')
+      .set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NWYwMDBjZTQ0NzMxY2RlMGZjY2U4ZmYiLCJyb2xlIjoidXNlciIsImlhdCI6MTQ0MjQ5NTgzN30.quIF_kIMsST99z2jO4Jj7G163Jro247aTvQSboAwjuE')
+      .send({ prefs: prefs, review: {}, updated: '2015-09-17T12:14:04.963Z' })
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end(function(err, res) {
+        if (err) return done(err);
+        res.body.prefs.should.match(prefs);
+        done();
+      });
   });
+  //before(function(done) {
+  //  // Clear users before testing
+  //  User.remove().exec().then(function() {
+  //    done();
+  //  });
+  //});
 
-  afterEach(function(done) {
-    User.remove().exec().then(function() {
-      done();
-    });
-  });
+  //afterEach(function(done) {
+  //  User.remove().exec().then(function() {
+  //    done();
+  //  });
+  //});
 
-  it('should begin with no users', function(done) {
-    User.find({}, function(err, users) {
-      users.should.have.length(0);
-      done();
-    });
-  });
+  //it('should begin with no users', function(done) {
+  //  User.find({}, function(err, users) {
+  //    users.should.have.length(0);
+  //    done();
+  //  });
+  //});
 
   it('should fail when saving a duplicate user', function(done) {
     user.save(function() {

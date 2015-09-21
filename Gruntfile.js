@@ -62,6 +62,7 @@ module.exports = function (grunt) {
           '<%= yeoman.client %>/{app,components}/**/*.js',
           '!<%= yeoman.client %>/{app,components}/**/*.spec.js',
           '!<%= yeoman.client %>/{app,components}/**/*.mock.js',
+          '!<%= yeoman.client %>/app/dev-app.js',
           '!<%= yeoman.client %>/app/app.js'],
         tasks: ['injector:scripts']
       },
@@ -532,6 +533,7 @@ module.exports = function (grunt) {
                [
                  '.tmp/{app,components}/**/*.js',
                  '!{.tmp,<%= yeoman.client %>}/app/app.js',
+                 '!{.tmp,<%= yeoman.client %>}/app/dev-app.js',
                  '!{.tmp,<%= yeoman.client %>}/app/landing.js',
                  '!{.tmp,<%= yeoman.client %>}/components/vendor/js.cookie.js',
                  '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.spec.js',
@@ -582,7 +584,10 @@ module.exports = function (grunt) {
     nggettext_extract: {
       pot: {
         files: {
-          'po/vivaverbo.pot': ['{.tmp,<%= yeoman.client %>}/{app,components}/**/*.html']
+          'po/vivaverbo.pot': [
+            '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.html',
+            '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.js'
+          ]
         }
       },
     },

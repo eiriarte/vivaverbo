@@ -1,3 +1,5 @@
+/* jshint unused: false */
+
 'use strict';
 
 const mock = angular.module('vivaverboMock', [
@@ -28,7 +30,6 @@ mock.config(function ($provide) {
 mock.run(function ($httpBackend) {
   $httpBackend.whenGET(/\.html$/).passThrough();
 
-  $httpBackend.whenGET('/api/users/me').respond(getUser());
   $httpBackend.whenGET('/api/cards').respond(getCards());
   $httpBackend.whenGET(/\/api\/memory/).respond(getServerMemories());
 

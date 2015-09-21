@@ -2,7 +2,8 @@
 
 angular.module('vivaverboApp')
   .factory('db',
-      function ($resource, $q, $timeout, $log, $window, Loki, lodash, User, MemoryClass) {
+      function ($resource, $q, $timeout, $log, $window, $mdToast,
+        gettextCatalog, Loki, lodash, User, MemoryClass, dateTime) {
     // Service logic
     const lokiDB = new Loki('vivaverbo.db');
     const cardsAPI = $resource('/api/cards');
@@ -98,6 +99,8 @@ angular.module('vivaverboApp')
           nuevas = reviewFromCards(nuevas);
 
           deferred.resolve(repaso.concat(nuevas));
+        }).catch(() => {
+          deferred.reject();
         });
         return deferred.promise;
       },
@@ -123,12 +126,12 @@ angular.module('vivaverboApp')
             localUser.review.fecha = new Date(localUser.review.fecha);
           }
           if (localUser.updated < serverUser.updated) {
-            // El objeto en el servidor está más actualizado
+            // El objeto en el cliente está desactualizado
             $log.debug('Actualizando copia de User en localStorage');
             $window.localStorage.setItem('usr', angular.toJson(serverUser));
             return serverUser;
           } else if (localUser.updated > serverUser.updated) {
-            // El objeto en el cliente está más actualizado
+            // El objeto en el servidor está desactualizado
             $log.debug('Actualizando objeto User en el servidor');
             User.update(localUser).$promise.then(() => {
               $log.debug('Objeto User actualizado en el servidor');
@@ -148,6 +151,7 @@ angular.module('vivaverboApp')
        * user: objeto User modificado a persistir
        * *********************************************************************/
       updateUser(user) {
+        user.updated = dateTime.now();
         $window.localStorage.setItem('usr', angular.toJson(user));
         User.update(user).$promise.then(() => {
           $log.debug('Cambios en User persistidos en el servidor.');
@@ -189,11 +193,12 @@ angular.module('vivaverboApp')
           proto: MemoryClass
         }
       }, () => {
-        const numCollections = lokiDB.listCollections().length;
-        if (0 === numCollections) {
+        cardsCollection = lokiDB.getCollection('cards');
+        memoryCollection = lokiDB.getCollection('memory');
+        if (!cardsCollection || 0 === cardsCollection.count()) {
           // No tenemos BD local: la creamos
-          cardsCollection = lokiDB.addCollection('cards');
-          memoryCollection = lokiDB.addCollection('memory', {
+          cardsCollection = cardsCollection || lokiDB.addCollection('cards');
+          memoryCollection = memoryCollection || lokiDB.addCollection('memory', {
             disableChangesApi: false
           });
 
@@ -204,12 +209,12 @@ angular.module('vivaverboApp')
             cardsCollection.insert(cards);
             deferred.resolve();
             lokiDB.saveDatabase();
+          }).catch(() => {
+            $log.error('Error cargando las tarjetas del servidor.');
+            deferred.reject();
           });
 
         } else {
-          $log.debug('Obteniendo tarjetas de almacén local…');
-          cardsCollection = lokiDB.getCollection('cards');
-          memoryCollection = lokiDB.getCollection('memory');
           deferred.resolve();
         }
       });
@@ -243,6 +248,11 @@ angular.module('vivaverboApp')
           });
           /* jshint ignore:end */
         }
+      }).catch(() => {
+        $log.error('Error al cargar datos de sincronización de memoria');
+        const msg1 = gettextCatalog.getString('Could\'t synchronize with server.');
+        const msg2 = gettextCatalog.getString('We\'ll try next time.');
+        $mdToast.showSimple(msg1).then(() => $mdToast.showSimple(msg2));
       });
     }
 
@@ -263,6 +273,7 @@ angular.module('vivaverboApp')
       if (mems.length) {
         $log.debug(`${mems.length} repasos del servidor incorporados.`);
         lokiDB.saveDatabase();
+        $window.localStorage.setItem('memSyncDate', dateTime.timestamp());
       }
     }
 
@@ -299,7 +310,7 @@ angular.module('vivaverboApp')
       skip = 0,
       rerun = false,
       changes = null,
-      done = () => {}
+      done = angular.noop
     } = {}) {
       $log.debug(`Invocada privateSyncMemory(${skip},${rerun},${changes},${done})`);
       // No volver a ejecutar mientras se espera respuesta del servidor
@@ -307,6 +318,7 @@ angular.module('vivaverboApp')
       isSynchronizingMemory = true;
 
       changes = changes || getMemoryChanges(skip);
+      const changesBefore = memoryCollection.getChanges().length;
       const syncData = {
         fromDate: getLastMemorySyncDate(),
         changes: changes
@@ -337,12 +349,11 @@ angular.module('vivaverboApp')
 
         // Comprobamos si ha habido nuevos cambios en nuestra "ausencia"
         const allChanges = memoryCollection.getChanges().length;
-        skip += changes.length;
 
         // Si ha habido cambios nuevos mientras sincronizábamos
-        if (skip < allChanges) {
+        if (changesBefore < allChanges) {
           $log.debug(`¡Hay ${allChanges - skip} nuevo(s) cambio(s) sin sincronizar!`);
-          privateSyncMemory({ skip: skip, rerun: true });
+          privateSyncMemory({ skip: changesBefore, rerun: true });
         } else {
           $log.debug('No hay más cambios. Descartando historial…');
           memoryCollection.flushChanges();
@@ -375,7 +386,9 @@ angular.module('vivaverboApp')
       const inserts = {}, updates = {};
 
       for (let i = skip, len = changes.length; i < len; i++) {
-        const mem = changes[i].obj;
+        const props = ['_id', 'card', 'date', 'recallProbability', 'recalls'];
+        const mem = _.pick(changes[i].obj, props);
+        mem.recalls = _.reject(mem.recalls, '_id');
         if (mem._id !== undefined) {
           updates[mem._id] = mem;
         } else {

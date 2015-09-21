@@ -15,7 +15,7 @@ module.exports = function(app) {
   var env = app.get('env');
 
   // Protección contra ataques DoS por inundación (large payloads)
-  app.use(contentLength.validateMax());
+  app.use(contentLength.validateMax({ max: 9999 }));
 
   // Protección contra ataques de polución de parámetros
   app.use(hpp());
@@ -23,14 +23,14 @@ module.exports = function(app) {
   // Protección contra ataques XSRF
   var fnCSRF = csrf({ cookie: true });
   app.use(function(req, res, next) {
-    if (req.isRobot) {
+    if (req.isRobot || 'test' === env) {
       next();
     } else {
       fnCSRF(req, res, next);
     }
   });
   app.use(function(req, res, next) {
-    if (!req.isRobot) {
+    if (!req.isRobot && 'test' !== env) {
       res.cookie('XSRF-TOKEN', req.csrfToken());
     }
     next();
@@ -43,16 +43,16 @@ module.exports = function(app) {
       "'self'",
       "'unsafe-inline'",
       "'unsafe-eval'",
-      'ajax.googleapis.com',
-      'linkhelp.clients.google.com'
+      'https://ajax.googleapis.com',
+      'https://linkhelp.clients.google.com'
     ],
     styleSrc: [
       "'self'",
       "'unsafe-inline'",
-      'fonts.googleapis.com'
+      'https://fonts.googleapis.com'
     ],
     fontSrc: [
-      'fonts.gstatic.com'
+      'https://fonts.gstatic.com'
     ],
     connectSrc: [ "'self'" ],
     imgSrc: [ "'self'", 'data:' ]

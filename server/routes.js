@@ -4,31 +4,17 @@
 
 'use strict';
 
-var errors = require('./components/errors');
-var auth = require('./auth/auth.service');
 var path = require('path');
 var winston = require('winston');
-
-// TODO: obtener los datos reales de los usuarios
-var mockUser = {
-  '_id': '55c06722591903e30543848a',
-  'provider': 'local',
-  'name': 'Jasmine Test User',
-  'email': 'test@test.com',
-  '__v': 0,
-  'role': 'user',
-  'prefs': {
-    'tarjetasPorRepaso': 10,
-    'nuevasPorRepaso': 5,
-    'maxFallosPorRound': 4
-  },
-  'review': {},
-  'updated': new Date() // fecha+hora en la que se updató x vez última
-};
+var _ = require('lodash');
+var errors = require('./components/errors');
+var auth = require('./auth/auth.service');
 
 module.exports = function(app) {
 
   // Insert routes below
+  app.use('/api/memory', require('./api/memory'));
+  app.use('/api/cards', require('./api/card'));
   app.use('/api/users', require('./api/user'));
 
   app.use('/auth', require('./auth'));
@@ -40,11 +26,15 @@ module.exports = function(app) {
   // All other routes should redirect to the index.html
   app.route('/*')
     .get(auth.getUser(), function(req, res) {
+      var props = ['prefs', 'review', 'updated', 'email', 'name', 'provider'];
+      var user;
+
       res.header('X-UA-Compatible', 'IE=Edge');
       winston.debug('user = %j', req.user, {});
       if (req.user) {
         winston.debug('Usuario registrado. Sirviendo index.html');
-        res.render('index', { user: mockUser }, function (err, html) {
+        user = _.pick(req.user, props);
+        res.render('index', { user: user }, function (err, html) {
           if (err) { errors[500](err, req, res); }
           res.send(html);
         });

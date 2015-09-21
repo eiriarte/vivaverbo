@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400&subset=latin,latin-ext'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Slab:300,400&subset=latin,latin-ext'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- build:css(client) app/vendor.css -->
       <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
@@ -23,7 +23,7 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="vivaverboMock" layout>
+  <body ng-app="vivaverboApp" layout>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -52,11 +52,6 @@
       <script src="bower_components/lokijs/src/lokijs.js"></script>
       <script src="bower_components/lokijs/src/loki-angular.js"></script>
     <!-- endbuild -->
-    <!-- Desarrollo: Backend mock -->
-      <script src="bower_components/angular-mocks/angular-mocks.js"></script>
-      <script src="app/dev-app.js"></script>
-    <!-- Fin Desarrollo -->
-
 
         <!-- build:js(.tmp) app/app.js -->
 
@@ -64,7 +59,6 @@
           <!-- injector:js -->
           <script src="app/cardField/cardField.filter.js"></script>
           <script src="app/db/db.service.js"></script>
-          <script src="app/dev-app.js"></script>
           <script src="app/memory/MemoryClass.service.js"></script>
           <script src="app/memory/memory.service.js"></script>
           <script src="app/review/review.controller.js"></script>

@@ -24,18 +24,23 @@ module.exports[500] = function error500(err, req, res, next) {
   var viewFilePath = '500';
   var result = {};
   var type = req.accepts('html', 'json');
-  var error = { message: err.message, stack: err.stack };
+  var error = { code: err.code, message: err.message, stack: err.stack };
+
+  winston.error('error500: %j', error, {});
 
   if (err.code === 'EBADCSRFTOKEN') {
     result.status = 403;
-    result.message = 'La sesión ha expirado o se ha corrompido. Por favor, vuelve a iniciar sesión.';
+    result.message = 'Your session has been corrupted. Please, try signing in again.';
+  } else if (401 === err.status) {
+    result.status = err.status;
+    result.message = 'Session has expired. Please, try signing in again.';
   } else {
     result.status = 500;
-    result.message = 'Se ha producido un error en el servidor. Por favor, intenta más tarde.';
+    result.message = 'An unexpected error ocurred in the server. Please, try again later.';
   }
 
   if ('json' === type) {
-      return res.status(result.status).json(result);
+    return res.status(result.status).json(result);
   } else if ('html' === type) {
     res.render(viewFilePath, result, function (err, html) {
       if (err) { return res.status(result.status).json(result); }
@@ -45,6 +50,4 @@ module.exports[500] = function error500(err, req, res, next) {
   } else {
     res.sendStatus(406); // Not acceptable
   }
-
-  winston.error('error500: %j', error, {});
 };

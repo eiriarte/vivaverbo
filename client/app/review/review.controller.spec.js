@@ -51,6 +51,7 @@ describe('Controller: ReviewController', function () {
   });
 
   it('debe llegar al final', function() {
+    $httpBackend.expectPOST('/api/users/me').respond(200);
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
     $rootScope.$digest();
     $httpBackend.flush();

@@ -64,7 +64,11 @@ module.exports = function(app) {
     app.set('appPath', path.join(config.root, 'client'));
     app.use(morgan('dev'));
     require('../routes')(app);
-    app.use(errorHandler());
+    if ('development' === env) {
+      app.use(errorHandler());
+    } else {
+      app.use(errors[500]);
+    }
   }
 };
 

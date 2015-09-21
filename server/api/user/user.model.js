@@ -3,21 +3,36 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
-var authTypes = ['github', 'twitter', 'facebook', 'google'];
+var authTypes = ['facebook', 'google'];
 
 var UserSchema = new Schema({
   name: String,
   email: { type: String, lowercase: true },
-  role: {
-    type: String,
-    default: 'user'
+  prefs: {
+    tarjetasPorRepaso: Number,
+    nuevasPorRepaso: Number,
+    maxFallosPorRound: Number
   },
+  review: {
+    fecha: Date,
+    finalizado: Boolean,
+    totalTarjetas: Number,
+    totalAprendidas: Number,
+    tarjetaActual: Number,
+    numFallos: Number,
+    tarjetas: [{
+      cardId: Schema.Types.ObjectId,
+      firstTry: Boolean,
+      learned: Boolean
+    }]
+  },
+  role: { type: String, default: 'user' },
   hashedPassword: String,
-  provider: String,
   salt: String,
+  provider: String,
   facebook: {},
   google: {},
-  github: {}
+  updated: { type: Date, default: Date.now }
 });
 
 /**

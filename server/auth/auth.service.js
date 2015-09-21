@@ -25,6 +25,7 @@ function isAuthenticated() {
   return compose()
     // Validate jwt
     .use(function(req, res, next) {
+      winston.debug('auth.service::isAuthenticated() Iniciando autenticación…');
       // allow access_token to be passed through query parameter as well
       if(req.query && req.query.hasOwnProperty('access_token')) {
         req.headers.authorization = 'Bearer ' + req.query.access_token;
@@ -34,9 +35,16 @@ function isAuthenticated() {
     // Attach user to request
     .use(function(req, res, next) {
       User.findById(req.user._id, function (err, user) {
-        if (err) return next(err);
-        if (!user) return res.status(401).send('Unauthorized');
+        if (err) {
+          winston.error('auth.service::isAuthenticated() Error buscando usuario');
+          return next(err);
+        }
+        if (!user) {
+          winston.error('auth.service::isAuthenticated() Usuario %s no encontrado', req.user._id);
+          return res.status(401).send('Unauthorized');
+        }
 
+        winston.debug('auth.service::isAuthenticated() Usuario validado');
         req.user = user;
         next();
       });

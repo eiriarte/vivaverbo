@@ -25,6 +25,8 @@ angular.module('vivaverboApp')
             tarjetas: reviewCards
           };
           deferred.resolve(review);
+        }).catch(() => {
+          deferred.reject();
         });
         return deferred.promise;
       },

@@ -8,6 +8,14 @@ msgstr ""
 msgid "Awesome! You're done!"
 msgstr ""
 
+#: client/app/review/review.service.js:87
+msgid "Could not generate a review. Try reloading the app."
+msgstr ""
+
+#: client/app/db/db.service.js:254
+msgid "Could't synchronize with server."
+msgstr ""
+
 #: client/components/navbar/navbar.html:4
 msgid "Logout"
 msgstr ""
@@ -26,6 +34,10 @@ msgstr ""
 
 #: client/app/review/review.html:6
 msgid "Review more cards!"
+msgstr ""
+
+#: client/app/db/db.service.js:255
+msgid "We'll try next time."
 msgstr ""
 
 #: client/app/review/review.html:26

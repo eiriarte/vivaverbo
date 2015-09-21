@@ -5,6 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/vivaverbo-dev'
+    uri: 'mongodb://localhost/vivaverbo-dev',
+    debug: true
   },
 };

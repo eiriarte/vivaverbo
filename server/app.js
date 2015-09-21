@@ -13,6 +13,7 @@ var winston = require('winston');
 var config = require('./config/environment');
 
 // Connect to database
+mongoose.set('debug', config.mongo.debug);
 mongoose.connect(config.mongo.uri, config.mongo.options);
 mongoose.connection.on('error', function(err) {
 	winston.error('MongoDB connection error: ' + err);

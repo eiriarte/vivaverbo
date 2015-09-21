@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('vivaverboApp')
-  .factory('reviewService', function ($q, $rootScope, $log, Auth, db, memoryService, dateTime) {
+  .factory('reviewService', function ($q, $rootScope, $log, $mdToast,
+        gettextCatalog, Auth, db, memoryService, dateTime) {
     const user = Auth.getCurrentUser();
     initReview();
 
@@ -72,7 +73,7 @@ angular.module('vivaverboApp')
     // Crea el repaso para hoy, si no existe ya
     // force: crea el nuevo repaso incondicionalmente
     // done: callback a llamar cuando esté listo el repaso
-    function initReview(force = false, done = () => {}) {
+    function initReview(force = false, done = angular.noop) {
       const hoy = dateTime.today();
 
       if (force || user.review.fecha === undefined || user.review.fecha < hoy) {
@@ -82,6 +83,10 @@ angular.module('vivaverboApp')
           angular.merge(user.review, review);
           db.updateUser(user);
           done();
+        }).catch(() => {
+          const msg = gettextCatalog.getString('Could not generate a review. Try reloading the app.');
+          $log.error('Error en initReview: no se pudo generar el repaso');
+          $mdToast.showSimple(msg);
         });
       } else {
         $log.debug('Manteniendo el repaso existente');
