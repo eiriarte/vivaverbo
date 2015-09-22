@@ -46,9 +46,9 @@ module.exports = function(app) {
   require('./security')(app);
 
   if ('production' === env) {
-    app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
-    app.use(express.static(path.join(config.root, 'public'), { setHeaders: ieHeader }));
-    app.set('appPath', path.join(config.root, 'public'));
+    app.use(favicon(path.join(config.root, 'client', 'favicon.ico')));
+    app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader }));
+    app.set('appPath', path.join(config.root, 'client'));
     app.use(morgan('dev'));
     require('../routes')(app);
     app.use(errors[500]);

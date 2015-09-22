@@ -67,7 +67,7 @@ exports.show = function (req, res, next) {
 
   User.findById(userId, function (err, user) {
     if (err) return next(err);
-    if (!user) return res.status(401).send('Unauthorized');
+    if (!user) return res.status(404).send('Unauthorized');
     res.json(user.profile);
   });
 };

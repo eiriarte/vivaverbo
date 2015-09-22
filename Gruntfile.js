@@ -108,7 +108,7 @@ module.exports = function (grunt) {
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.css',
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.html',
           '.tmp/{app,components}/**/*.js',
-          '!{.tmp,<%= yeoman.client %>}{app,components}/**/*.spec.js',
+          '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.spec.js',
           '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js',
           '<%= yeoman.client %>/assets/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
@@ -172,9 +172,7 @@ module.exports = function (grunt) {
           src: [
             '.tmp',
             '<%= yeoman.dist %>/*',
-            '!<%= yeoman.dist %>/.git*',
-            '!<%= yeoman.dist %>/.openshift',
-            '!<%= yeoman.dist %>/Procfile'
+            '<%%= yeoman.dist %>/!(.git*|.openshift|Procfile)**'
           ]
         }]
       },
@@ -244,10 +242,9 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
-            '<%= yeoman.dist %>/public/{,*/}*.js',
-            '<%= yeoman.dist %>/public/{,*/}*.css',
-            '<%= yeoman.dist %>/public/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%= yeoman.dist %>/public/assets/fonts/*'
+            '<%%= yeoman.dist %>/client/!(bower_components){,*/}*.{js,css}',
+            '<%= yeoman.dist %>/client/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+            '<%= yeoman.dist %>/client/assets/fonts/*'
           ]
         }
       }
@@ -259,19 +256,19 @@ module.exports = function (grunt) {
     useminPrepare: {
       html: ['server/views/*.html'],
       options: {
-        dest: '<%= yeoman.dist %>/public'
+        dest: '<%= yeoman.dist %>/client'
       }
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
       html: ['<%= yeoman.dist %>/server/views/*.html'],
-      css: ['<%= yeoman.dist %>/public/{,*/}*.css'],
-      js: ['<%= yeoman.dist %>/public/{,*/}*.js'],
+      css: ['<%%= yeoman.dist %>/client/!(bower_components){,*/}*.css'],
+      js: ['<%%= yeoman.dist %>/client/!(bower_components){,*/}*.js'],
       options: {
         assetsDirs: [
-          '<%= yeoman.dist %>/public',
-          '<%= yeoman.dist %>/public/assets/images'
+          '<%= yeoman.dist %>/client',
+          '<%= yeoman.dist %>/client/assets/images'
         ],
         // This is so we update image references in our ng-templates
         patterns: {
@@ -289,7 +286,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= yeoman.client %>/assets/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= yeoman.dist %>/public/assets/images'
+          dest: '<%= yeoman.dist %>/client/assets/images'
         }]
       }
     },
@@ -300,7 +297,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= yeoman.client %>/assets/images',
           src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/public/assets/images'
+          dest: '<%= yeoman.dist %>/client/assets/images'
         }]
       }
     },
@@ -360,7 +357,7 @@ module.exports = function (grunt) {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.client %>',
-          dest: '<%= yeoman.dist %>/public',
+          dest: '<%= yeoman.dist %>/client',
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
@@ -371,7 +368,7 @@ module.exports = function (grunt) {
         }, {
           expand: true,
           cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/public/assets/images',
+          dest: '<%= yeoman.dist %>/client/assets/images',
           src: ['generated/*']
         }, {
           expand: true,

@@ -128,7 +128,7 @@ function updateMemory(mem, userID, result, unsynced, done) {
 exports.show = function(req, res) {
   Memory.findById(req.params.id, function (err, memory) {
     if(err) { return handleError(res, err); }
-    if(!memory) { return res.send(404); }
+    if(!memory) { return res.sendStatus(404); }
     return res.json(memory);
   });
 };
@@ -138,7 +138,7 @@ exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
   Memory.findById(req.params.id, function (err, memory) {
     if (err) { return handleError(res, err); }
-    if(!memory) { return res.send(404); }
+    if(!memory) { return res.sendStatus(404); }
     var updated = _.merge(memory, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
@@ -151,10 +151,10 @@ exports.update = function(req, res) {
 exports.destroy = function(req, res) {
   Memory.findById(req.params.id, function (err, memory) {
     if(err) { return handleError(res, err); }
-    if(!memory) { return res.send(404); }
+    if(!memory) { return res.sendStatus(404); }
     memory.remove(function(err) {
       if(err) { return handleError(res, err); }
-      return res.send(204);
+      return res.sendStatus(204);
     });
   });
 };

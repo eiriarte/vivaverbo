@@ -16,7 +16,7 @@ exports.index = function(req, res) {
 exports.show = function(req, res) {
   Card.findById(req.params.id, function (err, card) {
     if(err) { return handleError(res, err); }
-    if(!card) { return res.send(404); }
+    if(!card) { return res.sendStatus(404); }
     return res.json(card);
   });
 };
@@ -34,7 +34,7 @@ exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
   Card.findById(req.params.id, function (err, card) {
     if (err) { return handleError(res, err); }
-    if(!card) { return res.send(404); }
+    if(!card) { return res.sendStatus(404); }
     var updated = _.merge(card, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
@@ -47,10 +47,10 @@ exports.update = function(req, res) {
 exports.destroy = function(req, res) {
   Card.findById(req.params.id, function (err, card) {
     if(err) { return handleError(res, err); }
-    if(!card) { return res.send(404); }
+    if(!card) { return res.sendStatus(404); }
     card.remove(function(err) {
       if(err) { return handleError(res, err); }
-      return res.send(204);
+      return res.sendStatus(204);
     });
   });
 };
