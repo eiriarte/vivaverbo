@@ -54,7 +54,10 @@ var all = {
     clientID:     process.env.GOOGLE_ID || 'id',
     clientSecret: process.env.GOOGLE_SECRET || 'secret',
     callbackURL:  (process.env.DOMAIN || '') + '/auth/google/callback'
-  }
+  },
+
+  // ID de Google Analytics
+  analytics: process.env.ANALYTICS_PROPERTY_ID || undefined
 };
 
 // Export the config object based on the NODE_ENV

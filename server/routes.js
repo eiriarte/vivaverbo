@@ -10,7 +10,7 @@ var _ = require('lodash');
 var errors = require('./components/errors');
 var auth = require('./auth/auth.service');
 
-module.exports = function(app) {
+module.exports = function(app, config) {
 
   // Insert routes below
   app.use('/api/memory', require('./api/memory'));
@@ -27,23 +27,25 @@ module.exports = function(app) {
   app.route('/*')
     .get(auth.getUser(), function(req, res) {
       var props = ['prefs', 'review', 'updated', 'email', 'name', 'provider'];
-      var user;
+      var view, locals;
 
-      res.header('X-UA-Compatible', 'IE=Edge');
-      winston.debug('user = %j', req.user, {});
       if (req.user) {
         winston.debug('Usuario registrado. Sirviendo index.html');
-        user = _.pick(req.user, props);
-        res.render('index', { user: user }, function (err, html) {
-          if (err) { errors[500](err, req, res); }
-          res.send(html);
-        });
+        view = 'index';
+        locals = { user: _.pick(req.user, props) };
       } else {
         winston.debug('Usuario anónimo. Sirviendo landing.html');
-        res.render('landing', { csrfToken: req.csrfToken() }, function (err, html) {
-          if (err) { errors[500](err, req, res); }
-          res.send(html);
-        });
+        view = 'landing';
+        locals = { csrfToken: req.csrfToken() };
       }
+
+      locals.analytics = config.analytics;
+      res.header('X-UA-Compatible', 'IE=Edge');
+      winston.debug('user = %j', req.user, {});
+
+      res.render(view, locals, function (err, html) {
+        if (err) { errors[500](err, req, res); }
+        res.send(html);
+      });
     });
 };

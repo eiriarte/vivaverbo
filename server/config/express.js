@@ -50,7 +50,7 @@ module.exports = function(app) {
     app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader }));
     app.set('appPath', path.join(config.root, 'client'));
     app.use(morgan('dev'));
-    require('../routes')(app);
+    require('../routes')(app, config);
     app.use(errors[500]);
   }
 
@@ -63,7 +63,7 @@ module.exports = function(app) {
     app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader, index: false }));
     app.set('appPath', path.join(config.root, 'client'));
     app.use(morgan('dev'));
-    require('../routes')(app);
+    require('../routes')(app, config);
     if ('development' === env) {
       app.use(errorHandler());
     } else {

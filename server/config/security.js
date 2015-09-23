@@ -43,8 +43,9 @@ module.exports = function(app) {
       "'self'",
       "'unsafe-inline'",
       "'unsafe-eval'",
+      'https://linkhelp.clients.google.com',
       'https://ajax.googleapis.com',
-      'https://linkhelp.clients.google.com'
+      'https://www.google-analytics.com'
     ],
     styleSrc: [
       "'self'",
