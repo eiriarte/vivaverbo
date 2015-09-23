@@ -48,8 +48,7 @@ describe('Service: reviewService', function () {
     var f = function() {
       reviewService.repaso = repaso;
     }
-    expect(f).toThrowError(TypeError,
-      'setting a property that has only a getter');
+    expect(f).toThrowError(TypeError);
   });
 
   it('debe marcar correctamente el grado de recuerdo', function() {
