@@ -2,7 +2,7 @@
 
 angular.module('vivaverboApp')
   .factory('Auth', function Auth($window, $cookies, User, db) {
-    const currentUser = db.syncUser(window.vvUser);
+    const currentUser = db.syncUser(window.vivaverboConfig.user);
 
     return {
 

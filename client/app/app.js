@@ -9,12 +9,12 @@ angular.module('vivaverboApp', [
   'gettext',
   'lokijs'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-    $urlRouterProvider
-      .otherwise('/');
-
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider,
+        $httpProvider, $logProvider) {
+    $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
+    $logProvider.debugEnabled(window.vivaverboConfig.debug);
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookies, $window) {
@@ -46,7 +46,7 @@ angular.module('vivaverboApp', [
   .run(function ($rootScope, $cookies, $window, gettextCatalog, Auth) {
     // Idioma
     const lang = $cookies.get('lang');
-    gettextCatalog.debug = true; // TODO: quitar esto en producción (o hacerlo condicional)
+    gettextCatalog.debug = window.vivaverboConfig.debug;
     if ('eo' === lang) {
       gettextCatalog.setCurrentLanguage(lang);
     }

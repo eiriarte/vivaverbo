@@ -40,6 +40,7 @@ module.exports = function(app, config) {
       }
 
       locals.analytics = config.analytics;
+      locals.debugON = config.debug;
       res.header('X-UA-Compatible', 'IE=Edge');
       winston.debug('user = %j', req.user, {});
 

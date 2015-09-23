@@ -259,13 +259,13 @@ function getCards() {
 function windowBeforeTestSuite() {
   const date = new Date();
   window.localStorage.setItem('usr', JSON.stringify(getUser({ updated: date })));
-  window.vvUser = getUser({ updated: date });
+  window.vivaverboConfig = { user: getUser({ updated: date }), debug: true };
   window.dtDate = date.getTime();
 }
 
 function windowAfterTestSuite() {
   localStorage.clear();
-  delete window.vvUser;
+  delete window.vivaverboConfig;
   delete window.dtDate;
 }
 

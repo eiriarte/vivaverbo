@@ -85,8 +85,11 @@
           <!-- endinjector -->
         <!-- endbuild -->
       <script>
-        window.vvUser = <%- JSON.stringify(user) %>;
         window.dtDate = <%= Date.now() %>;
+        window.vivaverboConfig = {
+          user: <%- JSON.stringify(user) %>,
+          debug: <%= debugON %>
+        }
       </script>
   </body>
 </html>

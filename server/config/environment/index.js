@@ -15,6 +15,8 @@ function requiredProcessEnv(name) {
 var all = {
   env: process.env.NODE_ENV,
 
+  debug: true,
+
   // Root path of server
   root: path.normalize(__dirname + '/../../..'),
 
