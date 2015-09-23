@@ -43,7 +43,8 @@ exports.add = function(req, res) {
   _.forEach(memories, function(memory) {
     _.assign(memory, { user: userID });
     // Comprobamos que contiene los campos exigidos
-    if (!memory.card || !memory.recallProbability ||
+    if (!_.isString(memory.card) ||
+        !_.isFinite(memory.recallProbability) ||
         !_.isArray(memory.recalls)) {
       return (validData = false);
     } else {
