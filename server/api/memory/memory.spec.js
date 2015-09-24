@@ -121,8 +121,8 @@ describe('GET /api/memory', function() {
   it('debe devolver el array, con sus _id y date\'s', function(done) {
     var changes = [{
       card: '55f2f2a144cdb68ec2438a3d',
-      recallProbability: 0.5,
-      recalls: [ { recall: 1 } ]
+      recallProbability: 0,
+      recalls: [ { recall: 0 } ]
     }];
     var now = new Date();
 
