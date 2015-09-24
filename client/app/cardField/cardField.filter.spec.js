@@ -21,6 +21,7 @@ describe('Filter: cardField', function () {
   it('debe devolver el valor del campo solicitado', function () {
     $httpBackend.expectGET('/api/cards').respond(getCards());
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $httpBackend.flush();
     expect(cardField(reviewCard, 'pregunta')).toBe('22');
     expect(cardField(reviewCard, 'respuesta')).toBe('enano');
@@ -31,6 +32,7 @@ describe('Filter: cardField', function () {
 
   it('debe devolver "–" si no encuentra la tarjeta o el campo', function () {
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $httpBackend.flush();
     expect(cardField(reviewCard, 'NO_EXISTO')).toBe('–');
     expect(cardField({ cardId: 'NO_EXISTO' }, 'pregunta')).toBe('–');

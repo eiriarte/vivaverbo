@@ -8,12 +8,6 @@ describe('Service: reviewService', function () {
   // load the service's module
   beforeEach(module('vivaverboApp'));
 
-  beforeEach(function() {
-    // Simula el "bootstrapping" de los datos de usuarios al cargar index.html
-    // getUser() definida en dev-app.js
-    window.user = getUser();
-  });
-
   // instantiate service
   let reviewService, repaso;
   let $httpBackend, $rootScope;
@@ -31,9 +25,9 @@ describe('Service: reviewService', function () {
   afterAll(windowAfterTestSuite);
 
   it('debe cargar y contabilizar el número deseado de tarjetas', function () {
-    $httpBackend.expectGET('/api/cards').respond(getCards());
-    $httpBackend.expectGET(/\/api\/memory/).respond([]);
-    $httpBackend.expectPOST('/api/users/me').respond(200);
+    $httpBackend.whenGET('/api/cards').respond(getCards());
+    $httpBackend.whenGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
     const lengthTarjetas = repaso.tarjetas.length;

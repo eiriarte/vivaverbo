@@ -20,10 +20,6 @@ describe('Service: dateTime', function () {
     dateTime = _dateTime_;
   }));
 
-  afterAll(function() {
-    delete window.dtDate;
-  });
-
   afterAll(windowAfterTestSuite);
 
   it('debe devolver una fecha', function() {

@@ -25,6 +25,7 @@ describe('Service: db', function () {
     $httpBackend.expectGET('/api/cards').respond(getCards());
     // getMemory() definida en dev-app.js
     $httpBackend.expectGET(/\/api\/memory/).respond(getMemory());
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
     const card = db.getCard('7ba38c1bee91f1a74a515c87');
@@ -37,6 +38,7 @@ describe('Service: db', function () {
 
   it('debe devolver las tarjetas de repaso solicitadas', function () {
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
     const promise = db.newReviewCards(12, 5);
@@ -103,6 +105,7 @@ describe('Service: db', function () {
   it('debe sincronizar los cambios de la prueba anterior', function () {
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
     $httpBackend.expectPOST('/api/memory').respond(getMemories);
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
     const mem = db.getMemory('289b728b0f394be52baa318a');
@@ -116,6 +119,7 @@ describe('Service: db', function () {
 
   it('debe incorporar cambios de otros dispositivos en la sincro', function() {
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
     const localMem = db.getMemory('289b728b0f394be52baa318a');
@@ -141,22 +145,23 @@ describe('Service: db', function () {
     const haceUnaHora = new Date(Date.now() - 3600 * 1000);
     const dentroDeUnaHora = new Date(Date.now() + 3600 * 1000);
 
-    let syncedUser = db.syncUser(getUser({ updated: haceUnaHora }));
-    expect(syncedUser.updated).toEqual(new Date(localDate));
+    let syncedUser = db.syncUser(getUser({ updated: haceUnaHora.toISOString() }));
+    expect(syncedUser.updated).toEqual(new Date(localDate), 'updated = localDate');
     $httpBackend.expectPOST('/api/users/me').respond(200);
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $httpBackend.flush();
 
-    syncedUser = db.syncUser(getUser({ updated: dentroDeUnaHora }));
-    expect(syncedUser.updated).toEqual(dentroDeUnaHora);
+    syncedUser = db.syncUser(getUser({ updated: dentroDeUnaHora.toISOString() }));
+    expect(syncedUser.updated).toEqual(dentroDeUnaHora, 'updated = dentroDeUnaHora');
     const newLocal = new Date(
       angular.fromJson(window.localStorage.getItem('usr')).updated);
-    expect(newLocal).toEqual(dentroDeUnaHora);
+    expect(newLocal).toEqual(dentroDeUnaHora, 'newLocal = dentroDeUnaHora');
 
     window.localStorage.removeItem('usr');
-    syncedUser = db.syncUser(getUser({ updated: haceUnaHora }));
-    expect(syncedUser.updated).toEqual(haceUnaHora);
-    window.localStorage.setItem('usr', 
+    syncedUser = db.syncUser(getUser({ updated: haceUnaHora.toISOString() }));
+    expect(syncedUser.updated).toEqual(haceUnaHora.toISOString(), 'update = haceUnaHora');
+    window.localStorage.setItem('usr',
         angular.toJson(getUser({ updated: localDate })));
   });
 
@@ -169,6 +174,7 @@ describe('Service: db', function () {
     expect(persistedUser).toEqual(angular.toJson(dalaiLama));
     $httpBackend.expectPOST('/api/users/me').respond(200);
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $httpBackend.flush();
   });
 });

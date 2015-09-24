@@ -29,13 +29,15 @@ describe('Service: memoryService', function () {
       expect(review.tarjetas.length).toBe(tarjetasPorRepaso);
       expect(review.totalTarjetas).toBe(tarjetasPorRepaso);
     });
-    $httpBackend.expectGET('/api/cards').respond(getCards());
-    $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenGET('/api/cards').respond(getCards());
+    $httpBackend.whenGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $httpBackend.flush();
     $rootScope.$digest();
   });
 
   it('debe marcar el grado de recuerdo', function () {
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
     $httpBackend.flush();
     $rootScope.$digest();

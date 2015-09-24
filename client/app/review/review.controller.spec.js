@@ -9,12 +9,6 @@ describe('Controller: ReviewController', function () {
 
   beforeAll(windowBeforeTestSuite);
 
-  beforeEach(function() {
-    // Simula el "bootstrapping" de los datos de usuarios al cargar index.html
-    // getUser() definida en dev-app.js
-    window.user = getUser({ maxFallos: 6 });
-  });
-
   beforeEach(inject(function (_$httpBackend_) {
     $httpBackend = _$httpBackend_;
   }));
@@ -33,9 +27,9 @@ describe('Controller: ReviewController', function () {
 
   it('debe cargar y contabilizar tarjetas', function() {
     // GET /api/cards
-    $httpBackend.expectGET('/api/cards').respond(getCards());
-    $httpBackend.expectGET(/\/api\/memory/).respond([]);
-    $httpBackend.expectPOST('/api/users/me').respond(200);
+    $httpBackend.whenGET('/api/cards').respond(getCards());
+    $httpBackend.whenGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
     let lengthTarjetas = scope.repaso.tarjetas.length;
