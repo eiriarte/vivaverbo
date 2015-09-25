@@ -21,8 +21,8 @@ describe('Filter: cardField', function () {
   afterAll(windowAfterTestSuite);
 
   it('debe devolver el valor del campo solicitado', function () {
-    $httpBackend.expectGET('/api/cards').respond(getCards());
-    $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenGET('/api/cards').respond(getCards());
+    $httpBackend.whenGET(/\/api\/memory/).respond([]);
     $httpBackend.whenPOST('/api/users/me').respond(200);
     $httpBackend.flush();
     expect(cardField(reviewCard, 'pregunta')).toBe('22');
