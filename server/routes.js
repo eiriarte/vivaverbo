@@ -36,7 +36,7 @@ module.exports = function(app, config) {
       } else {
         winston.debug('Usuario anónimo. Sirviendo landing.html');
         view = 'landing';
-        locals = { csrfToken: req.csrfToken() };
+        locals = { csrfToken: req.csrfToken ? req.csrfToken() : '' };
       }
 
       locals.analytics = config.analytics;
