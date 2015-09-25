@@ -39,11 +39,12 @@ describe('Service: memoryService', function () {
   });
 
   it('debe marcar el grado de recuerdo', function () {
+    $httpBackend.whenGET('/api/cards').respond(getCards());
     $httpBackend.whenPOST('/api/users/me').respond(200);
-    $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenGET(/\/api\/memory/).respond([]);
     $httpBackend.flush();
     $rootScope.$digest();
-    $httpBackend.expectPOST('/api/memory').respond(getMemories);
+    $httpBackend.whenPOST('/api/memory').respond(getMemories);
     const promise = memoryService.newReview();
     promise.then(function(review) {
       const id = review.tarjetas[review.tarjetaActual].cardId;
