@@ -229,6 +229,9 @@ angular.module('vivaverboApp')
         // Datos de recuerdo locales que no se sincronizaron la sesión anterior
         const changes = memoryCollection.find({ 'synced': { $ne: true } });
 
+        // Los cambios de la sincronización no son cambios a sincronizar!!!
+        memoryCollection.setChangesApi(false);
+
         // Actualizamos los datos locales con los obtenidos del servidor
         updateMemoryFromServer(mems);
 
