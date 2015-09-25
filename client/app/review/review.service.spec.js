@@ -1,3 +1,5 @@
+/* global beforeAll, windowBeforeTestSuite, afterAll, windowAfterTestSuite, getCards */
+
 'use strict';
 
 describe('Service: reviewService', function () {
@@ -41,7 +43,7 @@ describe('Service: reviewService', function () {
   it('debe tener la propiedad "repaso"  de sólo lectura', function () {
     var f = function() {
       reviewService.repaso = repaso;
-    }
+    };
     expect(f).toThrowError(TypeError);
   });
 
@@ -50,7 +52,6 @@ describe('Service: reviewService', function () {
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
     $rootScope.$digest();
     $httpBackend.flush();
-    const total = repaso.totalTarjetas;
 
     expect(repaso.finalizado).toBe(false, 'porque acabamos de empezar');
     expect(repaso.tarjetaActual).toBe(0);

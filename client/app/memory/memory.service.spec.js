@@ -1,3 +1,5 @@
+/* global beforeAll, windowBeforeTestSuite, afterAll, windowAfterTestSuite, getCards, getMemories, getUser */
+
 'use strict';
 
 describe('Service: memoryService', function () {

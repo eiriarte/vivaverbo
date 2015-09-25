@@ -1,3 +1,5 @@
+/* global beforeAll, windowBeforeTestSuite, afterAll, windowAfterTestSuite, getCards */
+
 'use strict';
 
 describe('Controller: ReviewController', function () {

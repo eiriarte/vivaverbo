@@ -1,3 +1,5 @@
+/* global beforeAll, windowBeforeTestSuite, afterAll, windowAfterTestSuite */
+
 'use strict';
 
 describe('Service: lodash', function () {

@@ -1,3 +1,5 @@
+/* global beforeAll, windowBeforeTestSuite, afterAll, windowAfterTestSuite, getCards, getMemory, getMemories, getUser */
+
 'use strict';
 
 describe('Service: db', function () {

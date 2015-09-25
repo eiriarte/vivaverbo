@@ -1,3 +1,5 @@
+/* global beforeAll, windowBeforeTestSuite, afterAll, windowAfterTestSuite */
+
 'use strict';
 
 describe('Service: MemoryClass', function () {
@@ -20,7 +22,7 @@ describe('Service: MemoryClass', function () {
     var f = () => {
       const memory = new MemoryClass(cardID);
       memory.synced = 0;
-    }
+    };
     expect(f).toThrowError(TypeError,
       '[MemoryClass].synced sólo acepta valores booleanos');
   });
