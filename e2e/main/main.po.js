@@ -6,9 +6,17 @@
 'use strict';
 
 var MainPage = function() {
-  this.heroEl = element(by.css('.hero-unit'));
-  this.h1El = this.heroEl.element(by.css('h1'));
-  this.imgEl = this.heroEl.element(by.css('img'));
+  this.toolbar = element(by.css('.md-toolbar-tools'));
+  this.titulo = this.toolbar.element(by.css('h1'));
+  this.btnLogout = this.toolbar.element(by.css('button'));
+  this.contador = element(by.css('.num-tarjeta'));
+  this.tarjetas = element.all(by.repeater('tarjeta in repaso.tarjetas'));
+  this.botonera = element(by.css('.repaso > div:last-of-type'));
+  this.btnOlvido = element(by.css('.repaso button:nth-child(1)'));
+  this.btnDuda = element(by.css('.repaso button:nth-child(2)'));
+  this.btnRecuerdo = element(by.css('.repaso button:nth-child(3)'));
+  this.finRepaso = element(by.css('.repaso > div:nth-child(2)'));
+  this.nuevoRepaso = this.finRepaso.element(by.tagName('button'));
 };
 
 module.exports = new MainPage();

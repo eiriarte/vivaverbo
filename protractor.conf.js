@@ -34,12 +34,19 @@ exports.config = {
     'browserName': 'chrome'
   },
 
+  onPrepare: function() {
+    var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NWYwMDBjZTQ0NzMxY2RlMGZjY2U4ZmYiLCJyb2xlIjoidXNlciIsImlhdCI6MTQ0MjQ5NTgzN30.quIF_kIMsST99z2jO4Jj7G163Jro247aTvQSboAwjuE';
+    browser.ignoreSynchronization = true;
+    browser.get('http://localhost:9000');
+    browser.manage().addCookie('token', token);
+  },
+
   // ----- The test framework -----
   //
   // Jasmine and Cucumber are fully supported as a test and assertion framework.
   // Mocha has limited beta support. You will need to include your own
   // assertion framework if working with mocha.
-  framework: 'jasmine',
+  framework: 'jasmine2',
 
   // ----- Options to be passed to minijasminenode -----
   //
