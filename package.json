@@ -15,6 +15,7 @@
     "express-content-length-validator": "^1.0.0",
     "express-enforces-ssl": "^1.1.0",
     "express-jwt": "^3.0.0",
+    "grunt-contrib-clean": "^0.6.0",
     "helmet": "^0.10.0",
     "helmet-crossdomain": "^0.1.0",
     "hpp": "^0.2.0",
