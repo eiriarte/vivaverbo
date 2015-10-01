@@ -12,17 +12,22 @@ var mongoose = require('mongoose');
 var winston = require('winston');
 var config = require('./config/environment');
 
+var app = express();
+
 // Connect to database
 mongoose.set('debug', config.mongo.debug);
 mongoose.connect(config.mongo.uri, config.mongo.options);
 mongoose.connection.on('error', function(err) {
-	winston.error('MongoDB connection error: ' + err);
-	process.exit(-1);
-	}
-);
+  winston.error('Error de conexión a MongoDB: ' + err);
+  app.set('down', true);
+});
+
+mongoose.connection.on('disconnected', function() {
+  winston.error('MongoDB desconectado.');
+  app.set('down', true);
+});
 
 // Setup server
-var app = express();
 var server = require('http').createServer(app);
 require('./config/express')(app);
 

@@ -12,6 +12,16 @@ var auth = require('./auth/auth.service');
 
 module.exports = function(app, config) {
 
+  app.all('*', function(req, res, next) {
+    if (app.get('down')) {
+      winston.debug('El servidor está caído. Devolviendo 503…');
+      res.status(503).send('Oops! Parece que el servidor está caído… :-(');
+    } else {
+      winston.debug('El servidor NO está caído. Seguimos…');
+      next();
+    }
+  });
+
   // Insert routes below
   app.use('/api/memory', require('./api/memory'));
   app.use('/api/cards', require('./api/card'));
