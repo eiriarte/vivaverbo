@@ -12,6 +12,16 @@ var auth = require('./auth/auth.service');
 
 module.exports = function(app, config) {
 
+  app.get('*', function(req, res, next) {
+    if (_.includes(req.subdomains, 'www')) {
+      winston.debug('En subdominio www. Redirigiendo (301)…');
+      res.redirect(301, process.env.DOMAIN);
+    } else {
+      winston.debug('Sin subdominio www.');
+      next();
+    }
+  });
+
   app.all('*', function(req, res, next) {
     if (app.get('down')) {
       winston.debug('El servidor está caído. Devolviendo 503…');
