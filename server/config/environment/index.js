@@ -31,7 +31,7 @@ var all = {
   },
 
   tokenDuration: {
-    session: 60 * 24 * 30
+    session: "30 days"
   },
 
   // List of user roles
