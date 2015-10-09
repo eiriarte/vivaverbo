@@ -17,6 +17,7 @@ var config = require('./environment');
 var passport = require('passport');
 var winston = require('winston');
 var i18next = require('i18next');
+var _ = require('lodash');
 var errors = require('../components/errors');
 
 module.exports = function(app) {
@@ -49,7 +50,16 @@ module.exports = function(app) {
     app.use(favicon(path.join(config.root, 'client', 'favicon.ico')));
     app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader }));
     app.set('appPath', path.join(config.root, 'client'));
-    app.use(morgan('dev'));
+
+    morgan.token('vv-user', function(req, res) {
+      var user = '<anon>';
+      if (req.user && _.isString(req.user.email)) {
+        user = req.user.email.split('@')[0] || '<sin email>';
+      }
+      return user;
+    });
+    app.use(morgan(':remote-addr ":vv-user" [:date[iso]] ":method :url" :status :response-time :res[content-length] ":referrer" ":user-agent"'));
+
     require('../routes')(app, config);
     app.use(errors[500]);
   }
