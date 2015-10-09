@@ -30,6 +30,7 @@
     "passport-google-oauth": "latest",
     "passport-local": "^1.0.0",
     "serve-favicon": "^2.3.0",
+    "ua-parser-js": "^0.7.9",
     "winston": "^1.0.1"
   },
   "devDependencies": {
