@@ -6,7 +6,6 @@
 
 var express = require('express');
 var favicon = require('serve-favicon');
-var morgan = require('morgan');
 var compression = require('compression');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
@@ -17,11 +16,13 @@ var config = require('./environment');
 var passport = require('passport');
 var winston = require('winston');
 var i18next = require('i18next');
-var _ = require('lodash');
 var errors = require('../components/errors');
 
 module.exports = function(app) {
   var env = app.get('env');
+
+  // Configuración para generar los log vía morgan
+  require('./logging')(app, env);
 
   app.set('views', config.root + '/server/views');
   app.engine('html', require('ejs').renderFile);
@@ -51,15 +52,6 @@ module.exports = function(app) {
     app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader }));
     app.set('appPath', path.join(config.root, 'client'));
 
-    morgan.token('vv-user', function(req, res) {
-      var user = '<anon>';
-      if (req.user && _.isString(req.user.email)) {
-        user = req.user.email.split('@')[0] || '<sin email>';
-      }
-      return user;
-    });
-    app.use(morgan(':remote-addr ":vv-user" [:date[iso]] ":method :url" :status :response-time :res[content-length] ":referrer" ":user-agent"'));
-
     require('../routes')(app, config);
     app.use(errors[500]);
   }
@@ -72,7 +64,7 @@ module.exports = function(app) {
     app.use(express.static(path.join(config.root, '.tmp'), { setHeaders: ieHeader, index: false }));
     app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader, index: false }));
     app.set('appPath', path.join(config.root, 'client'));
-    app.use(morgan('dev'));
+
     require('../routes')(app, config);
     if ('development' === env) {
       app.use(errorHandler());
