@@ -5,17 +5,21 @@
 'use strict';
 
 var parser = require('ua-parser-js');
+var winston = require('winston');
 var morgan = require('morgan');
 var _ = require('lodash');
 
-var logFormat = ':remote-addr ":vv-user" [:date[iso]] ":method :url" :status :response-time ms :res[content-length] B ":referrer" ":vv-ua"';
+var logFormat = '{ "ip": ":remote-addr", "user": :vv-user, "date": ":date[iso]", "method": ":method", "url": ":url", "status": ":status", "responseTime": ":response-time", "size": ":res[content-length]", "referrer": ":referrer", "browser": :vv-ua }';
 
 module.exports = function(app, env) {
+  winston.default.transports.console.json = true;
+
   if ('production' === env) {
     morgan.token('vv-user', getUser);
-    morgan.token('vv-ua', getUserAgent);
+    morgan.token('vv-ua', getBrowser);
     app.use(morgan(logFormat));
   } else {
+    winston.default.transports.console.level = 'debug';
     app.use(morgan('dev'));
   }
 }
@@ -26,15 +30,21 @@ function getUser(req, res) {
   if (req.user && _.isString(req.user.email)) {
     user = req.user.email.split('@')[0] || '<sin email>';
   }
-  return user;
+  return JSON.stringify(user);
 }
 
 // Devuelve el navegador y sistema operativo del usuario
-function getUserAgent(req, res) {
+function getBrowser(req, res) {
+  var browser, browserVersion, osName, osVersion;
   var ua = parser(req.get('user-agent'));
-  var browserName = ua.browser.name || '-';
-  var browserVersion = ua.browser.major ? '/' + ua.browser.major : '';
-  var osName = ua.os.name || '-';
-  var osVersion = ua.os.version ? '/' + ua.os.version : '';
-  return browserName + browserVersion + '(' + osName + osVersion + ')';
+  var browserName = ua.browser.name;
+  if (browserName) {
+    browserVersion = ua.browser.major ? '/' + ua.browser.major : '';
+    osName = ua.os.name || '-';
+    osVersion = ua.os.version ? '/' + ua.os.version : '';
+    browser =  browserName + browserVersion + '(' + osName + osVersion + ')';
+  } else {
+    browser =  'USER-AGENT: ' + req.get('user-agent');
+  }
+  return JSON.stringify(browser);
 }

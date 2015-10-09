@@ -57,9 +57,6 @@ module.exports = function(app) {
   }
 
   if ('development' === env || 'test' === env) {
-    // Nivel de log: debug
-    winston.default.transports.console.level = 'debug';
-
     app.use(require('connect-livereload')());
     app.use(express.static(path.join(config.root, '.tmp'), { setHeaders: ieHeader, index: false }));
     app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader, index: false }));
