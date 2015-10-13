@@ -4,6 +4,7 @@
 
 'use strict';
 
+var cookieParser = require('cookie-parser');
 var contentLength = require('express-content-length-validator');
 var hpp = require('hpp');
 var csrf = require('csurf');
@@ -19,6 +20,8 @@ module.exports = function(app) {
 
   // Protección contra ataques de polución de parámetros
   app.use(hpp());
+
+  app.use(cookieParser());
 
   // Protección contra ataques XSRF
   var fnCSRF = csrf({ cookie: true });

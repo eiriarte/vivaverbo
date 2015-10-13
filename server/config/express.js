@@ -9,7 +9,6 @@ var favicon = require('serve-favicon');
 var compression = require('compression');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var cookieParser = require('cookie-parser');
 var errorHandler = require('errorhandler');
 var path = require('path');
 var config = require('./environment');
@@ -21,6 +20,9 @@ var errors = require('../components/errors');
 module.exports = function(app) {
   var env = app.get('env');
 
+  // Medidas de seguridad
+  require('./security')(app);
+
   // Configuración para generar los log vía morgan
   require('./logging')(app, env);
 
@@ -31,8 +33,8 @@ module.exports = function(app) {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
   app.use(methodOverride());
-  app.use(cookieParser());
   app.use(passport.initialize());
+
 
   // Idioma
   i18next.init({
@@ -43,9 +45,6 @@ module.exports = function(app) {
   });
   app.use(i18next.handle);
   i18next.registerAppHelper(app);
-
-  // Medidas de seguridad
-  require('./security')(app);
 
   if ('production' === env) {
     app.use(favicon(path.join(config.root, 'client', 'favicon.ico')));
