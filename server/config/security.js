@@ -12,8 +12,25 @@ var helmet = require('helmet');
 var crossdomain = require('helmet-crossdomain');
 var express_enforces_ssl = require('express-enforces-ssl');
 
+// Lista negra de clientes a bloquear
+var badIPs = [/(^38\.99\.82\.)/];
+var badRefs = ['http://best-seo-report.com'];
+
 module.exports = function(app) {
   var env = app.get('env');
+
+  // Rechazar spammers conocidos, bots maleducados, etc.
+  app.use(function(req, res, next) {
+    if (blacklisted(req)) {
+      console.log('{ "level": "info", "message": "Blocked: %s - %s (%s %s)" }',
+        req.ip,
+        req.get('referer'),
+        req.method,
+        req.originalUrl || req.url);
+      return res.status(403).end();
+    }
+    next();
+  });
 
   // Protección contra ataques DoS por inundación (large payloads)
   app.use(contentLength.validateMax({ max: 9999 }));
@@ -94,3 +111,20 @@ module.exports = function(app) {
     app.use(express_enforces_ssl());
   }
 };
+
+// Devuelve true si el cliente está en la lista negra
+function blacklisted(req) {
+  var ip, referrer;
+
+  referrer = req.get('referer');
+  for (var i = 0, len = badRefs.length; i < len; i++) {
+    if (badRefs[i] === referrer) { return true; }
+  }
+
+  ip = req.ip || (req.connection && req.connection.remoteAddress) || '';
+  for (var i = 0, len = badIPs.length; i < len; i++) {
+    if (badIPs[i].test(ip)) { return true; }
+  }
+
+  return false;
+}
