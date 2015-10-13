@@ -5,7 +5,6 @@
 'use strict';
 
 var cookieParser = require('cookie-parser');
-var contentLength = require('express-content-length-validator');
 var hpp = require('hpp');
 var csrf = require('csurf');
 var helmet = require('helmet');
@@ -31,9 +30,6 @@ module.exports = function(app) {
     }
     next();
   });
-
-  // Protección contra ataques DoS por inundación (large payloads)
-  app.use(contentLength.validateMax({ max: 9999 }));
 
   // Protección contra ataques de polución de parámetros
   app.use(hpp());
