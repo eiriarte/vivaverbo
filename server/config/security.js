@@ -118,7 +118,7 @@ function blacklisted(req) {
   }
 
   ip = req.ip || (req.connection && req.connection.remoteAddress) || '';
-  for (var i = 0, len = badIPs.length; i < len; i++) {
+  for (i = 0, len = badIPs.length; i < len; i++) {
     if (badIPs[i].test(ip)) { return true; }
   }
 
