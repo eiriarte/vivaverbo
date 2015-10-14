@@ -62,7 +62,8 @@ module.exports = function(app) {
       'https://linkhelp.clients.google.com',
       'https://ajax.googleapis.com',
       'https://www.google-analytics.com',
-      'https://js-agent.newrelic.com'
+      'https://js-agent.newrelic.com',
+      'https://bam.nr-data.net'
     ],
     styleSrc: [
       "'self'",
@@ -73,7 +74,7 @@ module.exports = function(app) {
       'https://fonts.gstatic.com'
     ],
     connectSrc: [ "'self'" ],
-    imgSrc: [ "'self'", 'data:' ]
+    imgSrc: [ "'self'", 'https://bam.nr-data.net', 'data:' ]
   }
   if ('development' === env) {
     // Livereload
