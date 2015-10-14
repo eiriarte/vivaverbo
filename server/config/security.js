@@ -61,7 +61,8 @@ module.exports = function(app) {
       "'unsafe-eval'",
       'https://linkhelp.clients.google.com',
       'https://ajax.googleapis.com',
-      'https://www.google-analytics.com'
+      'https://www.google-analytics.com',
+      'https://js-agent.newrelic.com'
     ],
     styleSrc: [
       "'self'",
