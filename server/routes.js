@@ -9,6 +9,11 @@ var winston = require('winston');
 var _ = require('lodash');
 var errors = require('./components/errors');
 var auth = require('./auth/auth.service');
+var newrelic;
+
+if ('production' === process.env.NODE_ENV) {
+  newrelic = require('newrelic');
+}
 
 module.exports = function(app, config) {
 
@@ -61,6 +66,8 @@ module.exports = function(app, config) {
 
       locals.analytics = config.analytics;
       locals.debugON = config.debug;
+      locals.newrelic = newrelic ||
+        { getBrowserTimingHeader: function() { return ''; } };
       res.header('X-UA-Compatible', 'IE=Edge');
       winston.debug('user = %j', req.user, {});
 

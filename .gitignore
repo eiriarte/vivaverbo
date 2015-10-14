@@ -11,3 +11,4 @@ _db
 *.swp
 *.mo
 _misc
+newrelic.js
