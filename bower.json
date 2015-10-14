@@ -1,6 +1,6 @@
 {
   "name": "vivaverbo",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "dependencies": {
     "angular": "1.4.x",
     "json3": "~3.3.1",
