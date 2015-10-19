@@ -1,6 +1,6 @@
 {
   "name": "vivaverbo",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "server/app.js",
   "dependencies": {
     "async": "^1.4.2",
