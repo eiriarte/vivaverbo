@@ -10,11 +10,12 @@ angular.module('vivaverboApp', [
   'lokijs'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider,
-        $httpProvider, $logProvider) {
+        $httpProvider, $logProvider, $animateProvider) {
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
     $logProvider.debugEnabled(window.vivaverboConfig.debug);
+    $animateProvider.classNameFilter(/vv-anim/);
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookies, $window) {
