@@ -5,6 +5,7 @@
 'use strict';
 
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var hpp = require('hpp');
 var csrf = require('csurf');
 var helmet = require('helmet');
@@ -35,6 +36,8 @@ module.exports = function(app) {
   app.use(hpp());
 
   app.use(cookieParser());
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json());
 
   // Protección contra ataques XSRF
   var fnCSRF = csrf({ cookie: true });
