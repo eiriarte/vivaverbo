@@ -1,11 +1,11 @@
 'use strict';
 
-describe('Directive: vvToolbar', function () {
+describe('Directive: vvSidenav', function () {
 
   beforeAll(windowBeforeTestSuite);
   // load the directive's module and view
   beforeEach(module('vivaverboApp'));
-  beforeEach(module('components/vvToolbar/vvToolbar.html'));
+  beforeEach(module('components/vvSidenav/vvSidenav.html'));
 
   let $httpBackend;
 
@@ -23,7 +23,7 @@ describe('Directive: vvToolbar', function () {
 
   it('should make hidden element visible', inject(function ($compile) {
     $httpBackend.whenGET('/api/cards').respond(getCards());
-    element = angular.element('<vv-toolbar></vv-toolbar>');
+    element = angular.element('<vv-sidenav></vv-sidenav>');
     element = $compile(element)(scope);
     scope.$apply();
     expect(element.text().length).toBeGreaterThan(0);

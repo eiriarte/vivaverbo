@@ -1,7 +1,10 @@
-<md-toolbar>
+<md-toolbar class="main-toolbar">
   <div class="md-toolbar-tools">
-    <h1><a href="/">{{ toolbar.title }}</a></h1>
+    <md-button class="md-icon-button" ng-click="toolbar.showMenu()" hide-gt-md aria-label="Menú">
+      <md-icon md-font-library="material-icons">&#xE5D2;</md-icon>
+    </md-button>
+    <h1>{{ toolbar.title }}</h1>
     <span flex></span>
-    <md-button ng-click="toolbar.logout()"><translate>Logout</translate></md-button>
+    <md-button class="logout-btn" ng-click="toolbar.logout()"><translate>Logout</translate></md-button>
   </div>
 </md-toolbar>

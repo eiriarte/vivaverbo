@@ -15,7 +15,7 @@ angular.module('vivaverboApp', [
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
     $logProvider.debugEnabled(window.vivaverboConfig.debug);
-    $animateProvider.classNameFilter(/vv-anim/);
+    $animateProvider.classNameFilter(/(vv-anim|md-sidenav-backdrop)/);
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookies, $window) {

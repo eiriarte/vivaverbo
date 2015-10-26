@@ -1,0 +1,26 @@
+<div layout="row" layout-fill flex>
+  <md-sidenav md-is-locked-open="$mdMedia('gt-md')" md-swipe-left="menu.hide()" class="md-sidenav-left md-whiteframe-z2 sidenav vv-anim" md-component-id="left">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h1>vivaverbo</h1>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <md-list>
+        <md-list-item ng-click="menu.select();">
+          <md-icon md-font-library="material-icons">&#xE2C7;</md-icon>
+          <p>Sistema mayor</p>
+        </md-list-item>
+        <md-list-item ng-click="menu.select();">
+          <md-icon md-font-library="material-icons">&#xE2C7;</md-icon>
+          <p>Cumpleaños</p>
+        </md-list-item>
+        <md-list-item ng-click="menu.select();">
+          <md-icon md-font-library="material-icons">&#xE2C7;</md-icon>
+          <p>Globoflexia</p>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </md-sidenav>
+  <div layout="column" flex ng-transclude></div>
+</div>

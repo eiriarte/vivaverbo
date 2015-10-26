@@ -11,8 +11,11 @@ angular.module('vivaverboApp')
       bindToController: {
         'title': '@vvTitle'
       },
-      controller: function (Auth) {
+      controller: function ($mdSidenav, Auth) {
         this.logout = () => Auth.logout();
+        this.showMenu = () => {
+          $mdSidenav('left').open();
+        }
       },
       controllerAs: 'toolbar'
     };
