@@ -21,11 +21,11 @@ describe('Directive: vvToolbar', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
+  it('debe contener el título suministrado', inject(function ($compile) {
     $httpBackend.whenGET('/api/cards').respond(getCards());
-    element = angular.element('<vv-toolbar></vv-toolbar>');
+    element = angular.element('<vv-toolbar vv-title="test-toolbar"></vv-toolbar>');
     element = $compile(element)(scope);
     scope.$apply();
-    expect(element.text().length).toBeGreaterThan(0);
+    expect(element.find('h1').text()).toBe('test-toolbar');
   }));
 });

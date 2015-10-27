@@ -46,6 +46,23 @@ describe('Main View', function() {
     });
   });
 
+  it('debe desplegarse el menú', function() {
+    // Sidenav cerrada
+    expect(page.sidenav.isDisplayed()).toBe(false, 'Sidebar pre-click');
+
+    // Abrir sidenav
+    page.btnMenu.click();
+    browser.sleep(3000);
+    browser.ignoreSynchronization = true;
+    expect(page.sidenav.isDisplayed()).toBe(true, 'Sidebar abierta');
+
+    // Cerrar sidenav
+    var backdrop = browser.driver.findElement(by.css('.md-sidenav-backdrop'));
+    backdrop.click();
+    browser.sleep(3000);
+    expect(page.sidenav.isDisplayed()).toBe(false, 'Sidebar cerrada');
+  });
+
   it('debe girar la tarjeta', function() {
     page.tarjetas.get(0).click();
     page.tarjetas.each(function(tarjeta, index) {

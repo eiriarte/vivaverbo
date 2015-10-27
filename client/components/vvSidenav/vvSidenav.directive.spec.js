@@ -5,6 +5,7 @@ describe('Directive: vvSidenav', function () {
   beforeAll(windowBeforeTestSuite);
   // load the directive's module and view
   beforeEach(module('vivaverboApp'));
+  beforeEach(module('components/vvToolbar/vvToolbar.html'));
   beforeEach(module('components/vvSidenav/vvSidenav.html'));
 
   let $httpBackend;
@@ -21,11 +22,12 @@ describe('Directive: vvSidenav', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
+  it('debe transcluir su contenido y añadir una lista', inject(function ($compile) {
     $httpBackend.whenGET('/api/cards').respond(getCards());
-    element = angular.element('<vv-sidenav></vv-sidenav>');
+    element = angular.element('<div><vv-sidenav><vv-toolbar></vv-toolbar></vv-sidenav></div>');
     element = $compile(element)(scope);
     scope.$apply();
-    expect(element.text().length).toBeGreaterThan(0);
+    expect(element.find('vv-sidenav md-list').length).toEqual(1);
+    expect(element.find('vv-toolbar .logout-btn').length).toEqual(1);
   }));
 });
