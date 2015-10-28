@@ -166,15 +166,7 @@ angular.module('vivaverboApp')
       getCategories(tarjetasPorRepaso, nuevasPorRepaso) {
         const deferred = $q.defer();
         dbReady.then(() => {
-          deferred.resolve([{
-            titulo: 'Sistema mayor'
-          },
-          {
-            titulo: 'Cumpleaños'
-          },
-          {
-            titulo: 'Globoflexia'
-          }]);
+          deferred.resolve(categoriesCollection.find());
         }).catch(() => {
           deferred.reject();
         });
@@ -233,7 +225,7 @@ angular.module('vivaverboApp')
           $log.debug('Obteniendo colecciones del servidor');
           loaded = $q.all([
             initCollection(cardsCollection, 'cards', cardsAPI),
-            //initCollection(categoriesCollection, 'categories', categoriesAPI)
+            initCollection(categoriesCollection, 'categories', categoriesAPI)
           ]);
           loaded.then(() => {
             lokiDB.saveDatabase();
