@@ -7,10 +7,11 @@ angular.module('vivaverboApp')
     // Service logic
     const lokiDB = new Loki('vivaverbo.db');
     const cardsAPI = $resource('/api/cards');
+    const categoriesAPI = $resource('/api/categories');
     const memoryAPI = $resource('/api/memory', null, {
       sync: { method: 'POST', isArray: true }
     });
-    let cardsCollection, memoryCollection;
+    let cardsCollection, memoryCollection, categoriesCollection;
     /* jshint ignore:start */
     let isSynchronizingMemory = false;
     /* jshint ignore:end */
@@ -40,7 +41,7 @@ angular.module('vivaverboApp')
        * Devuelve la tarjeta con identificador "id"
        * **********************************************************************/
       getCard(id) {
-        return cardsCollection.findOne({ _id: id });
+        return cardsCollection && cardsCollection.findOne({ _id: id });
       },
       /* **********************************************************************
        * Devuelve el documento de memoryCollection para la tarjeta "id"
@@ -158,6 +159,26 @@ angular.module('vivaverboApp')
         }).catch(() => {
           $log.error('Actualización de cambios en User en el servidor falló.');
         });
+      },
+      /* *********************************************************************
+       * Devuelve (promete) un array con la colección de categorías
+       * *********************************************************************/
+      getCategories(tarjetasPorRepaso, nuevasPorRepaso) {
+        const deferred = $q.defer();
+        dbReady.then(() => {
+          deferred.resolve([{
+            titulo: 'Sistema mayor'
+          },
+          {
+            titulo: 'Cumpleaños'
+          },
+          {
+            titulo: 'Globoflexia'
+          }]);
+        }).catch(() => {
+          deferred.reject();
+        });
+        return deferred.promise;
       }
     };
 
@@ -193,30 +214,52 @@ angular.module('vivaverboApp')
           proto: MemoryClass
         }
       }, () => {
+        let loaded;
+
         cardsCollection = lokiDB.getCollection('cards');
         memoryCollection = lokiDB.getCollection('memory');
-        if (!cardsCollection || 0 === cardsCollection.count()) {
-          // No tenemos BD local: la creamos
-          cardsCollection = cardsCollection || lokiDB.addCollection('cards');
-          memoryCollection = memoryCollection || lokiDB.addCollection('memory', {
-            disableChangesApi: false
-          });
+        categoriesCollection = lokiDB.getCollection('categories');
 
-          $log.debug('Obteniendo tarjetas del servidor…');
-          // Cargamos las tarjetas del servidor
-          cardsAPI.query().$promise.then((cards) => {
-            $log.debug('Insertando tarjetas en DB Loki…');
-            cardsCollection.insert(cards);
-            deferred.resolve();
-            lokiDB.saveDatabase();
-          }).catch(() => {
-            $log.error('Error cargando las tarjetas del servidor.');
-            deferred.reject();
-          });
-
+        if (cardsCollection && cardsCollection.count() > 0) {
+          deferred.resolve('Ya existe la BD local');
         } else {
-          deferred.resolve();
+          cardsCollection = cardsCollection ||
+            lokiDB.addCollection('cards');
+          categoriesCollection = categoriesCollection ||
+            lokiDB.addCollection('categories');
+          memoryCollection = memoryCollection ||
+            lokiDB.addCollection('memory', { disableChangesApi: false });
+
+          $log.debug('Obteniendo colecciones del servidor');
+          loaded = $q.all([
+            initCollection(cardsCollection, 'cards', cardsAPI),
+            //initCollection(categoriesCollection, 'categories', categoriesAPI)
+          ]);
+          loaded.then(() => {
+            lokiDB.saveDatabase();
+            $log.debug('Colecciones del servidor insertadas en DB Loki');
+          });
+          deferred.resolve(loaded);
         }
+      });
+      return deferred.promise;
+    }
+
+    // Auxiliar de loadDB
+    // Obtiene los datos iniciales de la colección desde el servidor
+    // collection - Objeto colección LokiDB
+    // name - Nombre de la colección en LokiDB
+    // api - $resource de la API para esta colección
+    // Devuelve una promesa que refleja el éxito o no del acceso al servidor
+    function initCollection (collection, name, api) {
+      const deferred = $q.defer();
+      // Cargamos las categorías del servidor
+      api.query().$promise.then((docs) => {
+        collection.insert(docs);
+        deferred.resolve();
+      }).catch(() => {
+        $log.error('Error cargando %s del servidor.', name);
+        deferred.reject(name);
       });
       return deferred.promise;
     }

@@ -9,8 +9,12 @@ angular.module('vivaverboApp')
       transclude: true,
       link: function (scope, element, attrs) {
       },
-      controller: function($mdSidenav) {
-        this.select = () => {
+      controller: function($mdSidenav, db) {
+        db.getCategories().then((categorias) => {
+          this.categorias = categorias;
+        });
+        this.select = (categoria) => {
+          console.log(categoria);
           $mdSidenav('left').close();
         };
         this.hide = () => {

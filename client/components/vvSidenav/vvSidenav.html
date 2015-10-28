@@ -7,17 +7,9 @@
     </md-toolbar>
     <md-content>
       <md-list>
-        <md-list-item ng-click="menu.select();">
+        <md-list-item ng-click="menu.select(categoria);" ng-repeat="categoria in menu.categorias">
           <md-icon md-font-library="material-icons">&#xE2C7;</md-icon>
-          <p>Sistema mayor</p>
-        </md-list-item>
-        <md-list-item ng-click="menu.select();">
-          <md-icon md-font-library="material-icons">&#xE2C7;</md-icon>
-          <p>Cumpleaños</p>
-        </md-list-item>
-        <md-list-item ng-click="menu.select();">
-          <md-icon md-font-library="material-icons">&#xE2C7;</md-icon>
-          <p>Globoflexia</p>
+          <p>{{ categoria.titulo }}</p>
         </md-list-item>
       </md-list>
     </md-content>
