@@ -24,6 +24,7 @@ describe('Directive: vvSidenav', function () {
 
   it('debe transcluir su contenido y añadir una lista', inject(function ($compile) {
     $httpBackend.whenGET('/api/cards').respond(getCards());
+    $httpBackend.whenGET('/api/categories').respond(getCategories());
     element = angular.element('<div><vv-sidenav><vv-toolbar></vv-toolbar></vv-sidenav></div>');
     element = $compile(element)(scope);
     scope.$apply();

@@ -31,6 +31,7 @@ describe('Service: memoryService', function () {
       expect(review.tarjetas.length).toBe(tarjetasPorRepaso);
       expect(review.totalTarjetas).toBe(tarjetasPorRepaso);
     });
+    $httpBackend.whenGET('/api/categories').respond(getCategories());
     $httpBackend.whenGET('/api/cards').respond(getCards());
     $httpBackend.whenGET(/\/api\/memory/).respond([]);
     $httpBackend.whenPOST('/api/users/me').respond(200);

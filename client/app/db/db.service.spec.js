@@ -24,6 +24,7 @@ describe('Service: db', function () {
   afterAll(windowAfterTestSuite);
 
   it('debe devolver la tarjeta con el id indicado', function () {
+    $httpBackend.whenGET('/api/categories').respond(getCategories());
     $httpBackend.expectGET('/api/cards').respond(getCards());
     // getMemory() definida en dev-app.js
     $httpBackend.expectGET(/\/api\/memory/).respond(getMemory());
@@ -36,6 +37,27 @@ describe('Service: db', function () {
     expect(card.fraseRespuesta).toBe('Thor de Marvel: girando el martillo, golpeando el suelo…');
     expect(card.freq).toBe(86);
     expect(card._id).toBe('7ba38c1bee91f1a74a515c87');
+  });
+
+  it('debe devolver la lista de categorías', function () {
+    $httpBackend.expectGET(/\/api\/memory/).respond(getMemory());
+    $rootScope.$digest();
+    $httpBackend.flush();
+    const promise = db.getCategories();
+    expect(typeof promise).toBe('object', 'objecto promesa');
+    promise.then(function(categories) {
+      expect(typeof categories).toBe('object', 'array de categorías');
+      expect(typeof categories.length).toBe('number');
+      categories.forEach(function(cat) {
+        expect(typeof cat).toBe('object', 'objeto categoría');
+        expect(typeof cat.titulo).toBe('string');
+      });
+      expect(categories[0].titulo).toBe('Sistema mayor');
+      expect(categories[1].titulo).toBe('Papiroflexia');
+      expect(categories[2].titulo).toBe('Globoflexia');
+      expect(categories[3].titulo).toBe('Cumpleaños');
+    });
+    $rootScope.$digest();
   });
 
   it('debe devolver las tarjetas de repaso solicitadas', function () {

@@ -29,18 +29,18 @@ mock.config(function ($provide) {
 
 mock.run(function ($httpBackend) {
   $httpBackend.whenGET(/\.html$/).passThrough();
-  $httpBackend.whenGET('/api/cards').passThrough();
-  $httpBackend.whenGET(/\/api\/memory/).passThrough();
-  $httpBackend.whenPOST('/api/memory').passThrough();
-  $httpBackend.whenPOST('/api/users/me').passThrough();
+  //$httpBackend.whenGET('/api/cards').passThrough();
+  //$httpBackend.whenGET(/\/api\/memory/).passThrough();
+  //$httpBackend.whenPOST('/api/memory').passThrough();
+  //$httpBackend.whenPOST('/api/users/me').passThrough();
 
   $httpBackend.whenGET('/api/categories').respond(getCategories());
 
-  //$httpBackend.whenGET('/api/cards').respond(getCards());
-  //$httpBackend.whenGET(/\/api\/memory/).respond(getServerMemories());
+  $httpBackend.whenGET('/api/cards').respond(getCards());
+  $httpBackend.whenGET(/\/api\/memory/).respond(getServerMemories());
 
-  //$httpBackend.whenPOST('/api/memory').respond(getMemories);
-  //$httpBackend.whenPOST('/api/users/me').respond(200);
+  $httpBackend.whenPOST('/api/memory').respond(getMemories);
+  $httpBackend.whenPOST('/api/users/me').respond(200);
 });
 
 // GET /api/categories

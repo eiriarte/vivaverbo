@@ -27,6 +27,7 @@ describe('Service: reviewService', function () {
   afterAll(windowAfterTestSuite);
 
   it('debe cargar y contabilizar el número deseado de tarjetas', function () {
+    $httpBackend.whenGET('/api/categories').respond(getCategories());
     $httpBackend.whenGET('/api/cards').respond(getCards());
     $httpBackend.whenGET(/\/api\/memory/).respond([]);
     $httpBackend.whenPOST('/api/users/me').respond(200);

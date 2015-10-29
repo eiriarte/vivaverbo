@@ -22,6 +22,7 @@ describe('Directive: vvToolbar', function () {
   }));
 
   it('debe contener el título suministrado', inject(function ($compile) {
+    $httpBackend.whenGET('/api/categories').respond(getCategories());
     $httpBackend.whenGET('/api/cards').respond(getCards());
     element = angular.element('<vv-toolbar vv-title="test-toolbar"></vv-toolbar>');
     element = $compile(element)(scope);

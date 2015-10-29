@@ -30,6 +30,7 @@ describe('Controller: ReviewController', function () {
   it('debe cargar y contabilizar tarjetas', function() {
     // GET /api/cards
     $httpBackend.whenGET('/api/cards').respond(getCards());
+    $httpBackend.whenGET('/api/categories').respond(getCategories());
     $httpBackend.whenGET(/\/api\/memory/).respond([]);
     $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
