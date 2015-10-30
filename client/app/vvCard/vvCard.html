@@ -1,0 +1,12 @@
+<md-whiteframe class="tarjeta md-whiteframe-z3" ng-click="tarjeta.girar()">
+  <div class="contenido" layout="column" layout-fill="" layout-align="center center">
+    <h1 class="palabra" ng-class="{ reverso: tarjeta.girada }">{{ tarjeta.card.pregunta }}</h1>
+    <h1 class="palabra" ng-show="tarjeta.girada">{{ tarjeta.card.respuesta }}</h1>
+    <div class="separacion"></div>
+    <p class="frase" ng-class="{ reverso: tarjeta.girada }"><em>{{ tarjeta.card.frasePregunta }}</em></p>
+    <p class="frase" ng-show="tarjeta.girada"><em>{{ tarjeta.card.fraseRespuesta }}</em></p>
+  </div>
+  <md-button class="btn-cerrar md-icon-button" aria-label="{{ 'Remove card' | translate }}" ng-show="tarjeta.girada" ng-click="tarjeta.eliminar($event)">
+    <md-icon md-font-library="material-icons">&#xE5CD;</md-icon>
+  </md-button>
+</md-whiteframe>

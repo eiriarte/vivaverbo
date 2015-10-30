@@ -31,12 +31,12 @@ describe('Service: db', function () {
     $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
-    const card = db.getCard('7ba38c1bee91f1a74a515c87');
+    const card = db.getCard('55f2f2a044cdb68ec24389e8');
     expect(card.pregunta).toBe('14');
     expect(card.respuesta).toBe('Thor');
     expect(card.fraseRespuesta).toBe('Thor de Marvel: girando el martillo, golpeando el suelo…');
     expect(card.freq).toBe(86);
-    expect(card._id).toBe('7ba38c1bee91f1a74a515c87');
+    expect(card._id).toBe('55f2f2a044cdb68ec24389e8');
   });
 
   it('debe devolver la lista de categorías', function () {
@@ -96,12 +96,12 @@ describe('Service: db', function () {
   });
 
   it('debe devolver los repasos de la tarjeta indicada', function () {
-    let mem = db.getMemory('289b728b0f394be52baa318a');
+    let mem = db.getMemory('55f2f29f44cdb68ec24389da');
     delete mem.meta;
     delete mem.$loki;
     mem = _.toPlainObject(mem);
     expect(mem).toEqual({
-      'card': '289b728b0f394be52baa318a',
+      'card': '55f2f29f44cdb68ec24389da',
       'recalls': [
         { 'recall': 0, '_id': 'e2080a719229312b41cd6087', 'date': '2015-09-04T09:27:26.795Z' },
         { 'recall': 1, '_id': 'f4892742a380a6c48446bc89', 'date': '2015-09-04T09:28:05.510Z' },
@@ -114,7 +114,7 @@ describe('Service: db', function () {
   });
 
   it('debe guardar el repasos y marcarlo como no sincronizado', function () {
-    let mem = db.getMemory('289b728b0f394be52baa318a');
+    let mem = db.getMemory('55f2f29f44cdb68ec24389da');
     mem.addRecalls([{ recall: 1 }]);
     db.updateMemory(mem);
     db.save();
@@ -132,7 +132,7 @@ describe('Service: db', function () {
     $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
-    const mem = db.getMemory('289b728b0f394be52baa318a');
+    const mem = db.getMemory('55f2f29f44cdb68ec24389da');
     expect(mem.recalls.length).toBe(4);
     expect(mem.recalls[3].recall).toBe(1);
     expect(mem.recalls[3]._id).not.toBeUndefined();
@@ -146,7 +146,7 @@ describe('Service: db', function () {
     $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
-    const localMem = db.getMemory('289b728b0f394be52baa318a');
+    const localMem = db.getMemory('55f2f29f44cdb68ec24389da');
     //let serverMem = db.getMemory('2779848a34c8469468cc7d78');
     //expect(serverMem.recalls.length).toBe(0);
     localMem.addRecalls([{ recall: 0 }]);
@@ -158,7 +158,7 @@ describe('Service: db', function () {
     $rootScope.$digest();
     $httpBackend.flush();
     db.save();
-    const serverMem = db.getMemory('2779848a34c8469468cc7d78');
+    const serverMem = db.getMemory('55f2f2a144cdb68ec2438a29');
     expect(serverMem.recalls.length).toBe(2);
     expect(serverMem.recallProbability).toBe(0.5);
   });

@@ -100,8 +100,22 @@ angular.module('vivaverboApp')
           nuevas = reviewFromCards(nuevas);
 
           deferred.resolve(repaso.concat(nuevas));
-        }).catch(() => {
-          deferred.reject();
+        }).catch((reason) => {
+          deferred.reject(reason);
+        });
+        return deferred.promise;
+      },
+      /* *********************************************************************
+       * Devuelve (promete) una array con las tarjetas correspondientes
+       * reviewCards: array 'tarjetas' de un objeto 'review'
+       * *********************************************************************/
+      getCards(reviewCards) {
+        const deferred = $q.defer();
+        dbReady.then(() => {
+          const cards = reviewCards.map((rCard) => this.getCard(rCard.cardId));
+          deferred.resolve(cards);
+        }).catch((reason) => {
+          deferred.reject(reason);
         });
         return deferred.promise;
       },
@@ -249,9 +263,9 @@ angular.module('vivaverboApp')
       api.query().$promise.then((docs) => {
         collection.insert(docs);
         deferred.resolve();
-      }).catch(() => {
+      }).catch((reason) => {
         $log.error('Error cargando %s del servidor.', name);
-        deferred.reject(name);
+        deferred.reject(name + ': ' + reason);
       });
       return deferred.promise;
     }

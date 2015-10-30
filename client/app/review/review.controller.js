@@ -3,22 +3,22 @@
 angular.module('vivaverboApp')
   .controller('ReviewController', function ($scope, reviewService) {
     $scope.repaso = reviewService.repaso;
-    $scope.tarjetaGirada = false;
+    $scope.tarjetas = reviewService.tarjetasRepaso;
+    $scope.estado = { girada: false };
 
     // "Gira" la tarjeta para ver la respuesta
-    $scope.girar = () => $scope.tarjetaGirada = true;
+    $scope.girar = () => $scope.estado.girada = true;
 
     // Marca el grado de recuerdo de la respuesta: 0, 0.5, 1
     $scope.marcar = (recuerdo) => {
       reviewService.marcar(recuerdo);
-      $scope.tarjetaGirada = false;
+      $scope.estado.girada = false;
     };
 
     // Elimina la tarjeta (demasiado fácil) de posteriores repasos
-    $scope.borrar = ($event) => {
-      $event.stopPropagation();
+    $scope.borrar = () => {
       reviewService.marcar(1, true);
-      $scope.tarjetaGirada = false;
+      $scope.estado.girada = false;
     };
 
     // Genera un nuevo repaso

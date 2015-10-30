@@ -1,15 +1,21 @@
 'use strict';
 
 angular.module('vivaverboApp')
-  .factory('reviewService', function ($q, $rootScope, $log, $mdToast,
-        gettextCatalog, Auth, db, memoryService, dateTime) {
+  .factory('reviewService', function ($log, $mdToast, gettextCatalog, Auth, db,
+        memoryService, dateTime) {
     const user = Auth.getCurrentUser();
+    const tarjetasRepaso = [];
     initReview();
 
     // Public API
     return {
       get repaso() {
         return user.review;
+      },
+      // Devuelve un array con las tarjetas correspondientes al repaso actual,
+      // en el mismo orden
+      get tarjetasRepaso() {
+        return tarjetasRepaso;
       },
       // Marca el grado actual de recuerdo de la tarjeta
       // Si borrar es true, la tarjeta no se volverá a mostrar en el futuro
@@ -81,8 +87,12 @@ angular.module('vivaverboApp')
         const promise = memoryService.newReview();
         promise.then((review) => {
           angular.merge(user.review, review);
+          db.getCards(user.review.tarjetas).then((cards) => {
+            tarjetasRepaso.length = 0;
+            angular.merge(tarjetasRepaso, cards);
+            done();
+          });
           db.updateUser(user);
-          done();
         }).catch(() => {
           const msg = gettextCatalog.getString('Could not generate a review. Try reloading the app.');
           $log.error('Error en initReview: no se pudo generar el repaso');
@@ -90,6 +100,11 @@ angular.module('vivaverboApp')
         });
       } else {
         $log.debug('Manteniendo el repaso existente');
+        db.getCards(user.review.tarjetas).then((cards) => {
+          tarjetasRepaso.length = 0;
+          angular.merge(tarjetasRepaso, cards);
+          done();
+        });
       }
     }
   });

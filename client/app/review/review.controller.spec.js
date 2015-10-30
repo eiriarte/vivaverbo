@@ -44,7 +44,7 @@ describe('Controller: ReviewController', function () {
 
   it('debe girar tarjetas', function() {
     scope.girar();
-    expect(scope.tarjetaGirada).toBe(true);
+    expect(scope.estado.girada).toBe(true);
   });
 
   it('debe llegar al final', function() {
@@ -55,13 +55,13 @@ describe('Controller: ReviewController', function () {
     let total = scope.repaso.totalTarjetas;
 
     expect(scope.repaso.finalizado).toBe(false, 'porque acabamos de empezar');
-    expect(scope.tarjetaGirada).toBe(false,
+    expect(scope.estado.girada).toBe(false,
       'porque aún no hemos girado la primera tarjeta');
     expect(scope.repaso.tarjetaActual).toBe(0);
 
     for (let i = 0; i < total; i++) {
       scope.girar();
-      expect(scope.tarjetaGirada).toBe(true);
+      expect(scope.estado.girada).toBe(true);
       // Marcamos las pares, borramos las impares
       if (0 === i % 2) {
         scope.marcar(1);
@@ -71,7 +71,7 @@ describe('Controller: ReviewController', function () {
       if (i < total - 1) {
         expect(scope.repaso.finalizado).toBe(false, 'porque no hemos llegado a la última tarjeta');
         expect(scope.repaso.tarjetaActual).toBe(i + 1);
-        expect(scope.tarjetaGirada).toBe(false, 'porque no hemos girado aún la siguiente tarjeta');
+        expect(scope.estado.girada).toBe(false, 'porque no hemos girado aún la siguiente tarjeta');
       }
     }
 
