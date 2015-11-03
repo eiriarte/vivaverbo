@@ -177,10 +177,23 @@ angular.module('vivaverboApp')
       /* *********************************************************************
        * Devuelve (promete) un array con la colección de categorías
        * *********************************************************************/
-      getCategories(tarjetasPorRepaso, nuevasPorRepaso) {
+      getCategories() {
         const deferred = $q.defer();
         dbReady.then(() => {
           deferred.resolve(categoriesCollection.find());
+        }).catch(() => {
+          deferred.reject();
+        });
+        return deferred.promise;
+      },
+      /* *********************************************************************
+       * Devuelve (promete) el objeto categoría solicitado
+       * slug: slug de la categoría (p. ej: sistema-mayor)
+       * *********************************************************************/
+      getCategory(slug) {
+        const deferred = $q.defer();
+        dbReady.then(() => {
+          deferred.resolve(categoriesCollection.findOne({ slug: slug }));
         }).catch(() => {
           deferred.reject();
         });

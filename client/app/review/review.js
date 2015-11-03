@@ -5,7 +5,6 @@ angular.module('vivaverboApp')
     $stateProvider
       .state('review', {
         url: '/',
-        templateUrl: 'app/review/review.html',
-        controller: 'ReviewController'
+        template: '<vv-review vv-category="sistema-mayor" layout-fill></vv-review>'
       });
   });

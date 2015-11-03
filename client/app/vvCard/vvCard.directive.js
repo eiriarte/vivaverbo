@@ -6,8 +6,6 @@ angular.module('vivaverboApp')
       templateUrl: 'app/vvCard/vvCard.html',
       restrict: 'E',
       scope: {},
-      link: function (scope, element, attrs) {
-      },
       bindToController: {
         'girada': '=vvGirada',
         'card': '=vvTarjeta',

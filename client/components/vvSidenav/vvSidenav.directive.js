@@ -7,8 +7,6 @@ angular.module('vivaverboApp')
       restrict: 'E',
       scope: {},
       transclude: true,
-      link: function (scope, element, attrs) {
-      },
       controller: function($mdSidenav, db) {
         db.getCategories().then((categorias) => {
           this.categorias = categorias;

@@ -6,8 +6,6 @@ angular.module('vivaverboApp')
       templateUrl: 'components/vvToolbar/vvToolbar.html',
       restrict: 'E',
       scope: {},
-      link: function (scope, element, attrs) {
-      },
       bindToController: {
         'title': '@vvTitle'
       },
@@ -15,7 +13,7 @@ angular.module('vivaverboApp')
         this.logout = () => Auth.logout();
         this.showMenu = () => {
           $mdSidenav('left').open();
-        }
+        };
       },
       controllerAs: 'toolbar'
     };

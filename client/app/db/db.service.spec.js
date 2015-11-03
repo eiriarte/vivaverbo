@@ -60,6 +60,20 @@ describe('Service: db', function () {
     $rootScope.$digest();
   });
 
+  it('debe devolver el objeto categoría solicitado', function () {
+    $httpBackend.expectGET(/\/api\/memory/).respond(getMemory());
+    $rootScope.$digest();
+    $httpBackend.flush();
+    const promise = db.getCategory('sistema-mayor');
+    expect(typeof promise).toBe('object', 'objecto promesa');
+    promise.then(function(category) {
+      expect(typeof category).toBe('object', 'objeto categoría');
+      expect(category.titulo).toBe('Sistema mayor');
+      expect(category.slug).toBe('sistema-mayor');
+    });
+    $rootScope.$digest();
+  });
+
   it('debe devolver las tarjetas de repaso solicitadas', function () {
     $httpBackend.expectGET(/\/api\/memory/).respond([]);
     $httpBackend.whenPOST('/api/users/me').respond(200);
