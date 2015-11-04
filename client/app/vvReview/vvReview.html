@@ -1,7 +1,7 @@
 <vv-sidenav layout-fill>
   <vv-toolbar vv-title="{{ repaso.tituloCategoria }}"></vv-toolbar>
   <md-content class="repaso" flex>
-    <div layout layout-align="center" class="num-tarjeta md-subhead" ng-show="repaso.tarjetas.length === 0" translate>Loading…</div>
+    <div layout layout-align="center" class="loading md-subhead" ng-show="repaso.tarjetas.length === 0" translate>Loading…</div>
     <div layout layout-align="center" class="num-tarjeta md-subhead" ng-hide="repaso.tarjetas.length === 0 || repaso.finalizado">{{ repaso.totalAprendidas }}/{{ repaso.totalTarjetas }}</div>
     <div layout="column" layout-align="center" ng-show="repaso.finalizado">
       <p layout layout-align="center"class="md-headline" translate>Awesome! You're done!</p>

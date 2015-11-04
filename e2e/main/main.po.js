@@ -18,7 +18,7 @@ var MainPage = function() {
   this.btnOlvido = element(by.css('.repaso button:nth-child(1)'));
   this.btnDuda = element(by.css('.repaso button:nth-child(2)'));
   this.btnRecuerdo = element(by.css('.repaso button:nth-child(3)'));
-  this.finRepaso = element(by.css('.repaso > div:nth-child(2)'));
+  this.finRepaso = element(by.css('.repaso > div:nth-child(3)'));
   this.nuevoRepaso = this.finRepaso.element(by.tagName('button'));
 };
 
