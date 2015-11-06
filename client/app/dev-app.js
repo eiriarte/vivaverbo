@@ -10,13 +10,14 @@ const mock = angular.module('vivaverboMock', [
 // Simular latencia
 mock.config(function ($provide) {
   const latencia = 0;
+  const latenciaAPI = 4000;
   $provide.decorator('$httpBackend', function ($delegate) {
     const proxy = function(method, url, data, callback, headers) {
       const interceptor = function() {
         const _arguments = arguments;
         window.setTimeout(() => {
           callback.apply(this, _arguments);
-        }, latencia);
+        }, url.slice(0, 5) === '/api/' ? latenciaAPI : latencia);
       };
       return $delegate.call(this, method, url, data, interceptor, headers);
     };
