@@ -69,8 +69,7 @@ angular.module('vivaverboApp')
        * nuevasPorRepaso: nº de tarjetas a incluir, no repasadas previamente
        * *********************************************************************/
       newReviewCards(tarjetasPorRepaso, nuevasPorRepaso) {
-        const deferred = $q.defer();
-        dbReady.then(() => {
+        return onDbReady(() => {
           let numNuevas, numRepaso;
           let repaso, nuevas;
 
@@ -99,25 +98,17 @@ angular.module('vivaverboApp')
           repaso = reviewFromCards(repaso.slice(0, numRepaso));
           nuevas = reviewFromCards(nuevas);
 
-          deferred.resolve(repaso.concat(nuevas));
-        }).catch((reason) => {
-          deferred.reject(reason);
+          return repaso.concat(nuevas);
         });
-        return deferred.promise;
       },
       /* *********************************************************************
        * Devuelve (promete) una array con las tarjetas correspondientes
        * reviewCards: array 'tarjetas' de un objeto 'review'
        * *********************************************************************/
       getCards(reviewCards) {
-        const deferred = $q.defer();
-        dbReady.then(() => {
-          const cards = reviewCards.map((rCard) => this.getCard(rCard.cardId));
-          deferred.resolve(cards);
-        }).catch((reason) => {
-          deferred.reject(reason);
+        return onDbReady(() => {
+          return reviewCards.map((rCard) => this.getCard(rCard.cardId));
         });
-        return deferred.promise;
       },
       /* *******************************************************************
        * Sincroniza el objeto User local con el del servidor.
@@ -178,26 +169,20 @@ angular.module('vivaverboApp')
        * Devuelve (promete) un array con la colección de categorías
        * *********************************************************************/
       getCategories() {
-        const deferred = $q.defer();
-        dbReady.then(() => {
-          deferred.resolve(categoriesCollection.find());
-        }).catch(() => {
-          deferred.reject();
-        });
-        return deferred.promise;
+        return onDbReady(() => categoriesCollection.find());
       },
       /* *********************************************************************
        * Devuelve (promete) el objeto categoría solicitado
        * slug: slug de la categoría (p. ej: sistema-mayor)
        * *********************************************************************/
       getCategory(slug) {
-        const deferred = $q.defer();
-        dbReady.then(() => {
-          deferred.resolve(categoriesCollection.findOne({ slug: slug }));
-        }).catch(() => {
-          deferred.reject();
-        });
-        return deferred.promise;
+        return onDbReady(() => categoriesCollection.findOne({ slug: slug }));
+      },
+      /* *********************************************************************
+       * Devuelve (promete) el objeto categoría por defecto (prioridad = 0)
+       * *********************************************************************/
+      getDefaultCategory() {
+        return onDbReady('/re/sistema-mayor');
       }
     };
 
@@ -207,6 +192,25 @@ angular.module('vivaverboApp')
      *  Funciones privadas
      *
      * **********************************************************************/
+
+    // Devuelve una promesa a resolver cuando esté cargada la BD (dbReady)
+    // value: valor con el que se resolverá la promesa, si todo ha ido bien
+    //   si es una función, se resuelve con lo que devuelve la función
+    function onDbReady(value) {
+      const deferred = $q.defer();
+
+      dbReady.then(() => {
+        try {
+          const result = angular.isFunction(value) ? value() : value;
+          deferred.resolve(result);
+        } catch (e) {
+          deferred.reject(e);
+        }
+      }).catch((reason) => {
+        deferred.reject(reason);
+      });
+      return deferred.promise;
+    }
 
     // Devuelve la fecha de la última sincronización de memory con el servidor
     // Si no hay última sincronización, se devuelve 1970-01-01
