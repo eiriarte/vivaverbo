@@ -2,7 +2,7 @@
 
 angular.module('vivaverboApp')
   .factory('reviewService', function ($log, $mdToast, gettextCatalog, Auth, db,
-        memoryService, dateTime) {
+        cards, memoryService, dateTime) {
     const user = Auth.getCurrentUser();
     const tarjetasRepaso = [];
     initReview();
@@ -55,9 +55,8 @@ angular.module('vivaverboApp')
         db.updateUser(user);
       },
       // Fuerza un nuevo repaso ("repasar de nuevo!")
-      // done: callback a llamar cuando esté listo el repaso (opcional)
-      newReview(done) {
-        initReview(true, done);
+      newReview() {
+        initReview(true);
       }
     };
 
@@ -78,8 +77,7 @@ angular.module('vivaverboApp')
 
     // Crea el repaso para hoy, si no existe ya
     // force: crea el nuevo repaso incondicionalmente
-    // done: callback a llamar cuando esté listo el repaso
-    function initReview(force = false, done = angular.noop) {
+    function initReview(force = false) {
       const hoy = dateTime.today();
 
       if (force || user.review.fecha === undefined || user.review.fecha < hoy) {
@@ -87,11 +85,7 @@ angular.module('vivaverboApp')
         const promise = memoryService.newReview();
         promise.then((review) => {
           angular.merge(user.review, review);
-          db.getCards(user.review.tarjetas).then((cards) => {
-            tarjetasRepaso.length = 0;
-            angular.merge(tarjetasRepaso, cards);
-            done();
-          });
+          cards.getFromReview(user.review.tarjetas, tarjetasRepaso);
           db.updateUser(user);
         }).catch(() => {
           const msg = gettextCatalog.getString('Could not generate a review. Try reloading the app.');
@@ -100,11 +94,7 @@ angular.module('vivaverboApp')
         });
       } else {
         $log.debug('Manteniendo el repaso existente');
-        db.getCards(user.review.tarjetas).then((cards) => {
-          tarjetasRepaso.length = 0;
-          angular.merge(tarjetasRepaso, cards);
-          done();
-        });
+        cards.getFromReview(user.review.tarjetas, tarjetasRepaso);
       }
     }
   });

@@ -13,8 +13,8 @@ angular.module('vivaverboApp')
       controllerAs: 'repaso'
     };
   })
-  .controller('ReviewController', function(reviewService, db) {
-    db.getCategory(this.categoria).then((categoria) => {
+  .controller('ReviewController', function(reviewService, categories) {
+    categories.findOne({ slug: this.categoria }).then((categoria) => {
       this.tituloCategoria = categoria && categoria.titulo;
     });
     this.tarjetas = reviewService.tarjetasRepaso;

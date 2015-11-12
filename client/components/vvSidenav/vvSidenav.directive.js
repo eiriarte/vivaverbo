@@ -7,14 +7,15 @@ angular.module('vivaverboApp')
       restrict: 'E',
       scope: {},
       transclude: true,
-      controller: function($mdSidenav, $state, db) {
-        db.getCategories().then((categorias) => {
-          this.categorias = categorias;
-        });
+      controller: function($mdSidenav, $state, categories) {
+        this.categorias = [];
+        categories.find({}, this.categorias);
+
         this.select = (categoria) => {
           $mdSidenav('left').close();
           $state.go('review', { categoria: categoria.slug });
         };
+
         this.hide = () => {
           $mdSidenav('left').close();
         };

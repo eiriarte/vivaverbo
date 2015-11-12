@@ -2,24 +2,17 @@
 
 angular.module('vivaverboApp')
   .factory('db',
-      function ($resource, $q, $timeout, $log, $window, $mdToast,
-        gettextCatalog, Loki, lodash, User, MemoryClass, dateTime) {
-    // Service logic
-    const lokiDB = new Loki('vivaverbo.db');
-    const cardsAPI = $resource('/api/cards');
-    const categoriesAPI = $resource('/api/categories');
+      function ($resource, $timeout, $log, $window, $mdToast, cards,
+        gettextCatalog, lodash, User, MemoryClass, dateTime, localDB) {
     const memoryAPI = $resource('/api/memory', null, {
       sync: { method: 'POST', isArray: true }
     });
-    let cardsCollection, memoryCollection, categoriesCollection;
+    let memoryCollection;
     /* jshint ignore:start */
     let isSynchronizingMemory = false;
     /* jshint ignore:end */
 
-    const dbReady = loadDB();
-    dbReady.then(() => {
-      loadMemory(getLastMemorySyncDate());
-    });
+    loadDB();
 
     // Public API
     return {
@@ -27,7 +20,7 @@ angular.module('vivaverboApp')
        * Guarda "persiste" la base de datos
        * **********************************************************************/
       save() {
-        lokiDB.saveDatabase();
+        localDB.save();
       },
       /* **********************************************************************
        * Se asegura de tener los datos sincronizados con el servidor
@@ -36,12 +29,6 @@ angular.module('vivaverboApp')
         /* jshint ignore:start */
         privateSyncMemory();
         /* jshint ignore:end */
-      },
-      /* **********************************************************************
-       * Devuelve la tarjeta con identificador "id"
-       * **********************************************************************/
-      getCard(id) {
-        return cardsCollection && cardsCollection.findOne({ _id: id });
       },
       /* **********************************************************************
        * Devuelve el documento de memoryCollection para la tarjeta "id"
@@ -60,8 +47,6 @@ angular.module('vivaverboApp')
         } else {
           memoryCollection.insert(mem);
         }
-        const changes = memoryCollection.getChanges();
-        $log.debug('Cambios: ', changes);
       },
       /* *********************************************************************
        * Devuelve (promete) una array con las próximas tarjetas a repasar
@@ -69,7 +54,7 @@ angular.module('vivaverboApp')
        * nuevasPorRepaso: nº de tarjetas a incluir, no repasadas previamente
        * *********************************************************************/
       newReviewCards(tarjetasPorRepaso, nuevasPorRepaso) {
-        return onDbReady(() => {
+        return cards.onDataReady(() => {
           let numNuevas, numRepaso;
           let repaso, nuevas;
 
@@ -86,7 +71,7 @@ angular.module('vivaverboApp')
           }
 
           // tarjetas nuevas (no existentes en memoryCollection) más frecuentes
-          nuevas = cardsCollection.chain().
+          nuevas = cards.lokiCollection.chain().
             where((card) => !memoryCollection.findOne({ card: card._id })).
             simplesort('freq', true).
             limit(numNuevas).
@@ -99,15 +84,6 @@ angular.module('vivaverboApp')
           nuevas = reviewFromCards(nuevas);
 
           return repaso.concat(nuevas);
-        });
-      },
-      /* *********************************************************************
-       * Devuelve (promete) una array con las tarjetas correspondientes
-       * reviewCards: array 'tarjetas' de un objeto 'review'
-       * *********************************************************************/
-      getCards(reviewCards) {
-        return onDbReady(() => {
-          return reviewCards.map((rCard) => this.getCard(rCard.cardId));
         });
       },
       /* *******************************************************************
@@ -164,25 +140,6 @@ angular.module('vivaverboApp')
         }).catch(() => {
           $log.error('Actualización de cambios en User en el servidor falló.');
         });
-      },
-      /* *********************************************************************
-       * Devuelve (promete) un array con la colección de categorías
-       * *********************************************************************/
-      getCategories() {
-        return onDbReady(() => categoriesCollection.find());
-      },
-      /* *********************************************************************
-       * Devuelve (promete) el objeto categoría solicitado
-       * slug: slug de la categoría (p. ej: sistema-mayor)
-       * *********************************************************************/
-      getCategory(slug) {
-        return onDbReady(() => categoriesCollection.findOne({ slug: slug }));
-      },
-      /* *********************************************************************
-       * Devuelve (promete) el objeto categoría por defecto (prioridad = 0)
-       * *********************************************************************/
-      getDefaultCategory() {
-        return onDbReady('/re/sistema-mayor');
       }
     };
 
@@ -192,25 +149,6 @@ angular.module('vivaverboApp')
      *  Funciones privadas
      *
      * **********************************************************************/
-
-    // Devuelve una promesa a resolver cuando esté cargada la BD (dbReady)
-    // value: valor con el que se resolverá la promesa, si todo ha ido bien
-    //   si es una función, se resuelve con lo que devuelve la función
-    function onDbReady(value) {
-      const deferred = $q.defer();
-
-      dbReady.then(() => {
-        try {
-          const result = angular.isFunction(value) ? value() : value;
-          deferred.resolve(result);
-        } catch (e) {
-          deferred.reject(e);
-        }
-      }).catch((reason) => {
-        deferred.reject(reason);
-      });
-      return deferred.promise;
-    }
 
     // Devuelve la fecha de la última sincronización de memory con el servidor
     // Si no hay última sincronización, se devuelve 1970-01-01
@@ -231,60 +169,14 @@ angular.module('vivaverboApp')
 
     // Carga, o crea e inicializa, la base de datos local
     function loadDB() {
-      const deferred = $q.defer();
-      lokiDB.loadDatabase({
-        memory: {
-          proto: MemoryClass
+      localDB.whenReady.then(() => {
+        memoryCollection = localDB.getCollection('memory');
+        if (!memoryCollection) {
+          memoryCollection =
+            localDB.addCollection('memory', { disableChangesApi: false });
         }
-      }, () => {
-        let loaded;
-
-        cardsCollection = lokiDB.getCollection('cards');
-        memoryCollection = lokiDB.getCollection('memory');
-        categoriesCollection = lokiDB.getCollection('categories');
-
-        if (cardsCollection && cardsCollection.count() > 0) {
-          deferred.resolve('Ya existe la BD local');
-        } else {
-          cardsCollection = cardsCollection ||
-            lokiDB.addCollection('cards');
-          categoriesCollection = categoriesCollection ||
-            lokiDB.addCollection('categories');
-          memoryCollection = memoryCollection ||
-            lokiDB.addCollection('memory', { disableChangesApi: false });
-
-          $log.debug('Obteniendo colecciones del servidor');
-          loaded = $q.all([
-            initCollection(cardsCollection, 'cards', cardsAPI),
-            initCollection(categoriesCollection, 'categories', categoriesAPI)
-          ]);
-          loaded.then(() => {
-            lokiDB.saveDatabase();
-            $log.debug('Colecciones del servidor insertadas en DB Loki');
-          });
-          deferred.resolve(loaded);
-        }
+        loadMemory(getLastMemorySyncDate());
       });
-      return deferred.promise;
-    }
-
-    // Auxiliar de loadDB
-    // Obtiene los datos iniciales de la colección desde el servidor
-    // collection - Objeto colección LokiDB
-    // name - Nombre de la colección en LokiDB
-    // api - $resource de la API para esta colección
-    // Devuelve una promesa que refleja el éxito o no del acceso al servidor
-    function initCollection (collection, name, api) {
-      const deferred = $q.defer();
-      // Cargamos las categorías del servidor
-      api.query().$promise.then((docs) => {
-        collection.insert(docs);
-        deferred.resolve();
-      }).catch((reason) => {
-        $log.error('Error cargando %s del servidor.', name);
-        deferred.reject(name + ': ' + reason);
-      });
-      return deferred.promise;
     }
 
     // Carga/sincronización inicial de los datos de recuerdo de las tarjetas
@@ -341,7 +233,7 @@ angular.module('vivaverboApp')
       });
       if (mems.length) {
         $log.debug(`${mems.length} repasos del servidor incorporados.`);
-        lokiDB.saveDatabase();
+        localDB.save();
         $window.localStorage.setItem('memSyncDate', dateTime.timestamp());
       }
     }
@@ -426,7 +318,7 @@ angular.module('vivaverboApp')
         } else {
           $log.debug('No hay más cambios. Descartando historial…');
           memoryCollection.flushChanges();
-          lokiDB.saveDatabase();
+          localDB.save();
           isSynchronizingMemory = false;
           $log.debug('Sincronización finalizada correctamente.');
           done();
