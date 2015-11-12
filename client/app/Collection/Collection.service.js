@@ -15,8 +15,6 @@
 
 angular.module('vivaverboApp')
   .factory('Collection', function ($resource, $q, $log, localDB) {
-    let _name, lokiCollection, api;
-    let dataReady;
 
     class Collection {
       /**
@@ -26,28 +24,28 @@ angular.module('vivaverboApp')
        */
       constructor(name, query) {
         const deferred = $q.defer();
-        dataReady = deferred.promise;
+        this.dataReady = deferred.promise;
+        this._name = name;
+        this.api = $resource('/api/' + this._name);
         localDB.whenReady.then(() => {
-          _name = name;
-          api = $resource('/api/' + _name);
-          lokiCollection = localDB.getCollection(_name);
-          if (null !== lokiCollection) {
+          this._lokiCollection = localDB.getCollection(this._name);
+          if (null !== this._lokiCollection) {
             deferred.resolve();
           } else {
-            lokiCollection = localDB.addCollection(_name);
-            api.query(query).$promise.then((docs) => {
+            this._lokiCollection = localDB.addCollection(this._name);
+            this.api.query(query).$promise.then((docs) => {
               try {
-                lokiCollection.insert(docs);
+                this._lokiCollection.insert(docs);
                 localDB.save();
-                $log.debug('Cargados datos del servidor en %s.', _name);
+                $log.debug('Cargados datos del servidor en %s.', this._name);
                 deferred.resolve();
               } catch (e) {
-                $log.error('Error cargando %s del servidor.', _name);
+                $log.error('Error cargando %s del servidor.', this._name);
                 deferred.reject(e);
               }
             }).catch((reason) => {
-              $log.error('Error cargando %s del servidor.', _name);
-              deferred.reject(_name + ': ' + reason);
+              $log.error('Error cargando %s del servidor.', this._name);
+              deferred.reject(this._name + ': ' + reason);
             });
           }
         });
@@ -56,13 +54,13 @@ angular.module('vivaverboApp')
        * @returns {string} Nombre de la colección, p.ej: 'users'
        */
       get name() {
-        return _name;
+        return this._name;
       }
       /**
        * @returns {object} Objeto Collection nativo de LokiDB
        */
       get lokiCollection() {
-        return lokiCollection;
+        return this._lokiCollection;
       }
       /**
        * Devuelve una promesa a resolver cuando esté cargada la colección
@@ -71,7 +69,7 @@ angular.module('vivaverboApp')
       onDataReady(value) {
         const deferred = $q.defer();
 
-        dataReady.then(() => {
+        this.dataReady.then(() => {
           try {
             const result = angular.isFunction(value) ? value() : value;
             deferred.resolve(result);
@@ -92,7 +90,7 @@ angular.module('vivaverboApp')
        */
       find(query, ref, one = false) {
         return this.onDataReady(() => {
-          const result = one ? lokiCollection.findOne(query) : lokiCollection.find(query);
+          const result = one ? this._lokiCollection.findOne(query) : this._lokiCollection.find(query);
           if (undefined !== ref && result !== ref) {
             angular.copy(result, ref);
           }
