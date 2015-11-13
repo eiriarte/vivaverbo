@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('vivaverboApp')
-  .factory('reviewService', function ($log, $mdToast, gettextCatalog, Auth, db,
-        cards, memoryService, dateTime) {
+  .factory('reviewService', function ($q, $log, $mdToast, gettextCatalog, Auth,
+        db, cards, memory, dateTime) {
     const user = Auth.getCurrentUser();
     const tarjetasRepaso = [];
     initReview();
@@ -22,7 +22,8 @@ angular.module('vivaverboApp')
       marcar(recuerdo, borrar = false) {
         const review = user.review;
         const firstTry = review.tarjetas[review.tarjetaActual].firstTry;
-        const prob = memoryService.addRecall(review, recuerdo, borrar);
+        const id = review.tarjetas[review.tarjetaActual].cardId;
+        const prob = memory.addRecall(id, recuerdo, borrar);
         $log.debug(`Probabilidad calculada: ${prob}`);
 
         // si no la recordó
@@ -82,19 +83,95 @@ angular.module('vivaverboApp')
 
       if (force || user.review.fecha === undefined || user.review.fecha < hoy) {
         $log.debug('Generando un nuevo repaso');
-        const promise = memoryService.newReview();
+        const promise = generateReview();
         promise.then((review) => {
           angular.merge(user.review, review);
           cards.getFromReview(user.review.tarjetas, tarjetasRepaso);
           db.updateUser(user);
-        }).catch(() => {
+        }).catch((e) => {
           const msg = gettextCatalog.getString('Could not generate a review. Try reloading the app.');
-          $log.error('Error en initReview: no se pudo generar el repaso');
+          $log.error('Error en initReview', e);
           $mdToast.showSimple(msg);
         });
       } else {
         $log.debug('Manteniendo el repaso existente');
         cards.getFromReview(user.review.tarjetas, tarjetasRepaso);
       }
+    }
+
+    // Auxiliar de initReview()
+    // Devuelve (promete) un nuevo repaso a asignar al usuario
+    function generateReview() {
+      const deferred = $q.defer();
+      const promise = newReviewCards(user.prefs.tarjetasPorRepaso,
+                                        user.prefs.nuevasPorRepaso);
+      promise.then((reviewCards) => {
+        const review = {
+          fecha: dateTime.now(),
+          finalizado: false,
+          totalTarjetas: reviewCards.length,
+          totalAprendidas: 0,
+          tarjetaActual: 0,
+          numFallos: 0,
+          tarjetas: reviewCards
+        };
+        deferred.resolve(review);
+      }).catch((e) => {
+        deferred.reject(e);
+      });
+      return deferred.promise;
+    }
+
+    // Devuelve (promete) una array con las próximas tarjetas a repasar
+    // tarjetasPorRepaso: nº total de tarjetas a repasar
+    // nuevasPorRepaso: nº de tarjetas a incluir, no repasadas previamente
+    function newReviewCards(tarjetasPorRepaso, nuevasPorRepaso) {
+      return cards.onDataReady(() => {
+        return memory.onDataReady(() => {
+          const memoryCollection = memory.lokiCollection;
+          const cardsCollection = cards.lokiCollection;
+          let numNuevas, numRepaso;
+          let repaso, nuevas;
+
+          // siguientes repasos
+          repaso = memoryCollection.chain().
+            find({ 'removed': { $ne: true } }).
+            simplesort('recallProbability').
+            limit(tarjetasPorRepaso).
+            data();
+
+          numNuevas = tarjetasPorRepaso - repaso.length;
+          if (numNuevas < nuevasPorRepaso) {
+            numNuevas = nuevasPorRepaso;
+          }
+
+          // tarjetas nuevas (no existentes en memoryCollection) más frecuentes
+          nuevas = cardsCollection.chain().
+            where((card) => !memoryCollection.findOne({ card: card._id })).
+            simplesort('freq', true).
+            limit(numNuevas).
+            data();
+
+          // Concatenamos las de repaso y las nuevas,
+          // hasta un total de tarjetasPorRepaso
+          numRepaso = tarjetasPorRepaso - nuevas.length;
+          repaso = reviewFromCards(repaso.slice(0, numRepaso));
+          nuevas = reviewFromCards(nuevas);
+
+          return repaso.concat(nuevas);
+        });
+      });
+    }
+
+    // Devuelve un array con elementos nuevos de user.review.tarjetas a partir
+    // de las tarjetas/memorias en cards
+    function reviewFromCards(cards) {
+      const review = [];
+      angular.forEach(cards, (card) => review.push({
+        cardId: card.card || card._id,
+        firstTry: true,
+        learned: false
+      }));
+      return review;
     }
   });

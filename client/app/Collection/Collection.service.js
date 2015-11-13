@@ -6,7 +6,7 @@
 //         - get(conditions: Object, persist: boolean) : promise ???
 //         x find(conditions: Object, ref: Array) : promise(Array)
 //         x findOne(conditions: Object, ref: Object) : promise(Object)
-//         - loki: promise(loki.Collection)
+//         x loki: promise(loki.Collection)
 //         - sync() ???
 //     private
 //         x lokiCollection: loki.Collection
@@ -20,20 +20,26 @@ angular.module('vivaverboApp')
       /**
        * @constructor
        * @param {string} name - El nombre de la colleción, p.ej: 'users'
-       * @param {object} query - (Opcional) Parámetros a enviar al endpoint de la API
+       * @param {object} opt - (Opcional) opciones:
+       *  - query {object} - Parámetros a enviar al endpoint de la api
+       *  - collection {object} - Opciones a pasar a addCollection()
        */
-      constructor(name, query) {
+      constructor(name, opt) {
         const deferred = $q.defer();
+        const options = opt || {};
         this.dataReady = deferred.promise;
         this._name = name;
-        this.api = $resource('/api/' + this._name);
+        this.api = $resource('/api/' + this._name, null, {
+          sync: { method: 'POST', isArray: true }
+        });
         localDB.whenReady.then(() => {
           this._lokiCollection = localDB.getCollection(this._name);
           if (null !== this._lokiCollection) {
             deferred.resolve();
           } else {
-            this._lokiCollection = localDB.addCollection(this._name);
-            this.api.query(query).$promise.then((docs) => {
+            this._lokiCollection =
+              localDB.addCollection(this._name, options.collection);
+            this.api.query(options.query).$promise.then((docs) => {
               try {
                 this._lokiCollection.insert(docs);
                 localDB.save();
