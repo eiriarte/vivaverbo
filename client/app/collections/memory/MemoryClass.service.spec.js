@@ -19,43 +19,11 @@ describe('Service: MemoryClass', function () {
   afterAll(windowAfterTestSuite);
 
   it('debe crear un objeto MemoryClass', function () {
-    var f = () => {
-      const memory = new MemoryClass(cardID);
-      memory.synced = 0;
-    };
-    expect(f).toThrowError(TypeError,
-      '[MemoryClass].synced sólo acepta valores booleanos');
-  });
-
-  it('debe crear un objeto MemoryClass', function () {
     const memory = new MemoryClass(cardID);
     expect(typeof memory).toBe('object');
     expect(memory.card).toBe(cardID);
     expect(memory.recalls).toEqual([]);
     expect(memory.recallProbability).toBe(0);
-  });
-
-  it('debe marcarse correctamente como sincronizado', function () {
-    const memory = new MemoryClass(cardID);
-    expect(typeof memory).toBe('object');
-    expect(memory.synced).toBe(true);
-    memory.synced = false;
-    expect(memory.synced).toBe(false);
-  });
-
-  it('debe sincronizarse correctamente con objetos del servidor', function () {
-    const memory = new MemoryClass(cardID);
-    memory.sync({
-      _id: '3D4F5A2B',
-      recalls: [1, 2, 3],
-      recallProbability: 0.5,
-      removed: true
-    });
-    expect(memory.card).toBe(cardID);
-    expect(memory._id).toBe('3D4F5A2B');
-    expect(memory.recalls).toEqual([1, 2, 3]);
-    expect(memory.recallProbability).toBe(0.5);
-    expect(memory.synced).toBe(true);
   });
 
   it('debe añadir recalls y recalcular la prob. de recuerdo', function () {

@@ -6,16 +6,21 @@ angular.module('vivaverboApp', [
   'ngMessages',
   'ngMaterial',
   'ui.router',
+  'ngStorage',
   'gettext',
   'lokijs'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider,
-        $httpProvider, $logProvider, $animateProvider) {
+        $httpProvider, $logProvider, $animateProvider, $localStorageProvider) {
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
     $logProvider.debugEnabled(window.vivaverboConfig.debug);
     $animateProvider.classNameFilter(/(vv-anim|md-sidenav-backdrop)/);
+    $localStorageProvider.setKeyPrefix('vv');
+    if (!$localStorageProvider.get('syncDates')) {
+      $localStorageProvider.set('syncDates', { 'memory': 0 });
+    }
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookies, $window) {

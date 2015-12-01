@@ -9,8 +9,8 @@ describe('Service: memory', function () {
 
   // instantiate service
   var memory;
-  beforeEach(inject(function (_memory2_) {
-    memory = _memory2_;
+  beforeEach(inject(function (_memory_) {
+    memory = _memory_;
   }));
 
   afterAll(windowAfterTestSuite);

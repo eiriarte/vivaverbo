@@ -25,6 +25,7 @@ module.exports = function(config) {
       'client/bower_components/lodash/lodash.js',
       'client/bower_components/lokijs/src/lokijs.js',
       'client/bower_components/lokijs/src/loki-angular.js',
+      'client/bower_components/ngstorage/ngStorage.js',
       'client/components/vendor/js.cookie.js',
       'client/app/app.js',
       'client/app/dev-app.js',

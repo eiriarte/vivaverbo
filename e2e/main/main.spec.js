@@ -37,7 +37,7 @@ describe('Main View', function() {
   }
 
   it('debe mostrar la toolbar, el contador y una tarjeta', function() {
-    expect(page.titulo.getText()).toBe('Sistema mayor');
+    expect(page.titulo.getText()).toBe('Cumpleaños');
     //expect(page.btnLogout.getText()).toBe('LOGOUT');
     expect(page.contador.getText()).toBe('0/' + NUM_TARJETAS);
     expect(page.tarjetas.count()).toBe(NUM_TARJETAS);

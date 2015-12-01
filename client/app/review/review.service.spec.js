@@ -50,7 +50,7 @@ describe('Service: reviewService', function () {
 
   it('debe marcar correctamente el grado de recuerdo', function() {
     $httpBackend.expectPOST('/api/users/me').respond(200);
-    $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenGET(/\/api\/memory/).respond([]);
     $rootScope.$digest();
     $httpBackend.flush();
 

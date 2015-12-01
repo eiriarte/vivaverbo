@@ -1,11 +1,14 @@
 'use strict';
 
 var _ = require('lodash');
-var async = require('async');
 var winston = require('winston');
+var mongoose = require('mongoose');
 var Memory = require('./memory.model');
 
-// Get list of memories
+/**
+ * Middleware que responde con la lista de memories con fecha de modificación
+ * posterior a la indicada.
+ */
 exports.index = function(req, res) {
   var userID = req.user && req.user._id && req.user._id.toString();
   var fromDate = new Date(req.query.fromDate);
@@ -21,146 +24,125 @@ exports.index = function(req, res) {
     return res.status(200).json(memories);
   }).then(null, function(err) {
     winston.error('memory.controller::index() Error en Memory.find()');
-    return handleError(res, err);
+    return res.status(500).send({ message: 'Error finding memories' });
   });
 };
 
-// Crea/actualiza memories en la BD. Envía al cliente los datos modificados en
-// la base de datos, junto con datos de la base de datos no sincronizados con
-// el cliente (si los hay).
-exports.add = function(req, res) {
+/**
+ * Middleware que crea/actualiza memories en la BD. Responde con los datos
+ * modificados, junto con el resto de datos no sincronizados con el cliente (si
+ * los hay)
+ */
+exports.sync = function(req, res) {
   var userID = req.user && req.user._id && req.user._id.toString();
-  var fromDate = new Date(req.body.fromDate); // Última sincronización
-  var memories = req.body.changes, validData = true, promise;
+  var fromDate = new Date(req.body.date); // Última sincronización
+  var memories = req.body.docs;
+  var updates;
 
   if (isNaN(fromDate.getTime())) {
-    return res.status(400).json({ message: 'Invalid fromDate' });
+    return res.status(400).json({ message: 'Invalid timestamp' });
   } else if (!_.isArray(memories)) {
     return res.status(400).json({ message: 'Expected array of memories' });
   }
 
-  // Añadimos (o machacamos) el campo 'user' con el _id del usuario actual
-  _.forEach(memories, function(memory) {
-    _.assign(memory, { user: userID });
-    // Comprobamos que contiene los campos exigidos
-    if (!_.isString(memory.card) ||
-        !_.isFinite(memory.recallProbability) ||
-        !_.isArray(memory.recalls)) {
-      return (validData = false);
-    } else {
-      validData = _.every(memory.recalls, function(rec) {
-        return _.isFinite(rec.recall) && rec.recall >= 0 && rec.recall <=1;
-      });
-      return validData;
-    }
-  });
-
-  if (!validData) {
-    winston.error('memory.controller::add() no validData: %j', memories, {});
-    res.status(400).json({ message: 'Expected array of valid memories' });
+  // Array de operaciones a enviar a MongoDB
+  updates = getBulkUpdates(memories, userID);
+  if (0 === updates.length) {
+    winston.error('memory.controller::sync() no validData: %j', memories, {});
+    return res.status(400).json({ message: 'Expected array of valid memories' });
   }
 
-  // Buscamos memorias no sincronizadas
-  promise = Memory.find({ user: userID, date: { $gt: fromDate } }).exec();
-  promise.then(function(unsynced) {
-    updateMemories(memories, userID, unsynced, res);
-  }).then(null, function(err) {
-    winston.error('memory.controller::add() Error en Memory.find()');
-    res.status(500).json({ message: 'Could not syncronize memories' });
-  });
-};
-
-// Auxiliar de add()
-// Inserta/actualiza memorias, mezclando con memorias del servidor
-// no sincronizadas, si procede
-function updateMemories(memories, userID, unsynced, res) {
-  var result = [];
-
-  async.eachSeries(memories, function(mem, done) {
-    updateMemory(mem, userID, result, unsynced, done);
-  // callback final de async.eachSeries()
-  }, function(err) {
-    if (err) { // <=== Alguna de las actualizaciones falló
-      return res.status(500).json({
-        message: 'An error ocurred updating the memories'
-      });
+  Memory.collection.bulkWrite(updates, { ordered: false }, function(err, r) {
+    if (err) {
+      winston.error('memory.controller::sync() - bulkWrite: %s', err.message);
+      return res.status(500).json({ message: 'Error updating the database' });
     }
-    result = unsynced.concat(result);
-    res.status(201).json(result);
-  });
-}
 
-// Auxiliar de updateMemories()
-// Inserta/actualiza una memoria individual
-function updateMemory(mem, userID, result, unsynced, done) {
-  var options = { new: true, upsert: true }, update = {}, conditions, promise;
-
-  update.$set = {
-    card: mem.card,
-    recallProbability: mem.recallProbability,
-    date: new Date()
-  };
-  update.$push = {
-    recalls: { $each: _.map(_.reject(mem.recalls, '_id'), function(rec) {
-      return _.assign(rec, { date: new Date() });
-    }) }
-  };
-  if (true === mem.removed) {
-    update.removed = true;
-  }
-  conditions = mem._id ? { _id: mem._id } : { card: mem.card };
-  conditions.user = userID;
-
-  promise = Memory.findOneAndUpdate(conditions, update, options).exec();
-  promise.then(function(mem) {
-    var i = _.findIndex(unsynced, 'id', mem.id);
-    if (i !== -1) {
-      unsynced[i] = mem;
-    } else {
-      result.push(mem);
-    }
-    done();
-  }).then(null, function(err) {
-    done(err); // ===> Alguna de las actualizaciones falló
-  });
-}
-
-// Get a single memory
-exports.show = function(req, res) {
-  Memory.findById(req.params.id, function (err, memory) {
-    if(err) { return handleError(res, err); }
-    if(!memory) { return res.sendStatus(404); }
-    return res.json(memory);
-  });
-};
-
-// Updates an existing memory in the DB.
-exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
-  Memory.findById(req.params.id, function (err, memory) {
-    if (err) { return handleError(res, err); }
-    if(!memory) { return res.sendStatus(404); }
-    var updated = _.merge(memory, req.body);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.status(200).json(memory);
+    var promise = Memory.find({ user: userID, date: { $gt: fromDate } }).exec();
+    promise.then(function(unsynced) {
+      var lastMemory = _.last(_.sortBy(unsynced, 'date'));
+      var date = lastMemory ? new Date(lastMemory.date) : fromDate;
+      var result = { docs: unsynced, date: date };
+      res.status(201).json(result);
+    }).then(null, function(err) {
+      winston.error('memory.controller::sync() - find: %s', err.message);
+      res.status(500).json({ message: 'Error finding unsynced memories' });
     });
   });
 };
 
-// Deletes a memory from the DB.
-exports.destroy = function(req, res) {
-  Memory.findById(req.params.id, function (err, memory) {
-    if(err) { return handleError(res, err); }
-    if(!memory) { return res.sendStatus(404); }
-    memory.remove(function(err) {
-      if(err) { return handleError(res, err); }
-      return res.sendStatus(204);
-    });
-  });
-};
+/**
+ * Genera un array de operaciones write de "memories" para MongoDB (bulkWrite())
+ * @param {array} memories - Array de objetos memory a actualizar/insertar
+ * @param {ObjectId} userID - Id del usuario actual
+ * @returns {array} Array de operaciones upsert correspondiente a memories
+ */
+function getBulkUpdates(memories, userID) {
+  if (!_.all(memories, validateMemory)) {
+    return [];
+  }
 
-function handleError(res, err) {
-  winston.error('memory.controller: Error inesperado: %j', err, {});
-  return res.status(500).send(err);
+  userID = mongoose.Types.ObjectId(userID);
+
+  return memories.map(function(memory) {
+    var filter, upd;
+    var cardId = mongoose.Types.ObjectId(memory.card);
+
+    if (memory._id) {
+      filter = { _id: memory._id, user: userID };
+      upd = { card: cardId };
+    } else {
+      filter = { user: userID, card: cardId };
+      upd = {};
+    }
+
+    upd.date = new Date();
+    upd.recallProbability = memory.recallProbability;
+    upd.card = cardId;
+    upd.recalls = [];
+
+    if (true === memory.remove) {
+      upd.remove = true;
+    }
+
+    memory.recalls.forEach(function(rec) {
+      upd.recalls.push({
+        recall: rec.recall,
+        date: rec.date ? new Date(rec.date) : new Date()
+      });
+    });
+
+    return { updateOne: {
+      filter: filter,
+      update: { $set: upd },
+      upsert: true
+    }};
+  });
+}
+
+/**
+ * Auxiliar de getBulkUpdates()
+ * Comprueba que el memory es un objeto y contiene los campos exigidos
+ * @param {object} memory - Objeto memory a validar
+ * @returns {boolean} true si el objeto proporcionado es válido, false en cc.
+ */
+function validateMemory(memory) {
+  if ('object' !== typeof memory ||
+      !_.isString(memory.card) ||
+      !_.isFinite(memory.recallProbability) ||
+      !_.isArray(memory.recalls)) {
+    return false;
+  } else if ('undefined' !== typeof memory._id && !_.isString(memory._id)) {
+    return false;
+  } else {
+    return _.every(memory.recalls, function(rec) {
+      var okRec, okDate, okRecall;
+      okRec = 'object' === typeof rec;
+      if (okRec) {
+        okDate = _.isUndefined(rec.date) || !isNaN((new Date(rec.date)).getTime());
+        okRecall = _.isFinite(rec.recall) && rec.recall >= 0 && rec.recall <=1;
+      }
+      return okRec && okDate && okRecall;
+    });
+  }
 }

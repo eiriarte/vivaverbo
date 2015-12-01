@@ -76,12 +76,12 @@ describe('GET /api/memory', function() {
       .post('/api/memory')
       .set('Accept', 'application/json')
       .set('Authorization', authToken)
-      .send({ changes: [], fromDate: '2015-99-17T12:14:04.963Z' })
+      .send({ docs: [], date: '2015-99-17T12:14:04.963Z' })
       .expect(400)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
         if (err) return done(err);
-        res.body.message.should.be.exactly('Invalid fromDate');
+        res.body.message.should.be.exactly('Invalid timestamp');
         done();
       });
   });
@@ -91,7 +91,7 @@ describe('GET /api/memory', function() {
       .post('/api/memory')
       .set('Accept', 'application/json')
       .set('Authorization', authToken)
-      .send({ changes: {}, fromDate: '2015-09-17T12:14:04.963Z' })
+      .send({ docs: {}, date: '2015-09-17T12:14:04.963Z' })
       .expect(400)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
@@ -106,7 +106,7 @@ describe('GET /api/memory', function() {
       .post('/api/memory')
       .set('Accept', 'application/json')
       .set('Authorization', authToken)
-      .send({ changes: [{ bad: true }], fromDate: '2015-09-17T12:14:04.963Z' })
+      .send({ docs: [{ bad: true }], date: '2015-09-17T12:14:04.963Z' })
       .expect(400)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
@@ -119,7 +119,7 @@ describe('GET /api/memory', function() {
   var then, length;
 
   it('debe devolver el array, con sus _id y date\'s', function(done) {
-    var changes = [{
+    var docs = [{
       card: '55f2f2a144cdb68ec2438a3d',
       recallProbability: 0,
       recalls: [ { recall: 0 } ]
@@ -130,32 +130,28 @@ describe('GET /api/memory', function() {
       .post('/api/memory')
       .set('Accept', 'application/json')
       .set('Authorization', authToken)
-      .send({ changes: changes, fromDate: now.toISOString() })
+      .send({ docs: docs, date: now.toISOString() })
       .expect(201)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
         if (err) return done(err);
-        res.body.should.be.instanceof(Array);
-        res.body.length.should.be.exactly(1);
-        res.body[0].should.have.properties([
+        res.body.docs.should.be.instanceof(Array);
+        res.body.docs.length.should.be.exactly(1);
+        res.body.docs[0].should.have.properties([
           '_id', 'card', 'user', 'recallProbability', 'recalls', 'date'
         ]);
-        res.body[0].recalls.should.matchEach(function(rec) {
-          rec.should.have.properties([ '_id', 'recall', 'date' ]);
+        res.body.docs[0].recalls.should.matchEach(function(rec) {
+          rec.should.have.properties([ 'recall', 'date' ]);
         });
-        then = new Date(res.body[0].date);
-        length = res.body[0].recalls.length;
+        then = new Date(res.body.docs[0].date);
+        length = res.body.docs[0].recalls.length;
         done();
       });
   });
 
-  it('debe devolver las memory no sincronizadas, actualizadas', function(done) {
-    var changes = [{
+  it('debe devolver las memory no sincronizadas', function(done) {
+    var docs = [{
       card: '55f2f2a144cdb68ec2438a3c',
-      recallProbability: 0.5,
-      recalls: [ { recall: 1 } ]
-    },{
-      card: '55f2f2a144cdb68ec2438a3d',
       recallProbability: 0.5,
       recalls: [ { recall: 1 } ]
     }];
@@ -166,16 +162,13 @@ describe('GET /api/memory', function() {
       .post('/api/memory')
       .set('Accept', 'application/json')
       .set('Authorization', authToken)
-      .send({ changes: changes, fromDate: beforeThen.toISOString() })
+      .send({ docs: docs, date: beforeThen.toISOString() })
       .expect(201)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
         if (err) return done(err);
-        res.body.should.be.instanceof(Array);
-        res.body.length.should.be.exactly(2);
-        res.body[0].card.should.be.exactly('55f2f2a144cdb68ec2438a3d');
-        res.body[0].recalls.length.should.be.exactly(length + 1);
-        res.body[1].card.should.be.exactly('55f2f2a144cdb68ec2438a3c');
+        res.body.docs.should.be.instanceof(Array);
+        res.body.docs.length.should.be.exactly(2);
         done();
       });
   });
