@@ -5,9 +5,9 @@ angular.module('vivaverboApp')
     $stateProvider
       .state('home', {
         url: '/',
-        onEnter: ($location, $state) => {
+        onEnter: ($state, defaultCategory) => {
           // TODO: determinar la categoría por defecto, basado en ¿repasos? ¿prioridades???
-          $state.go('review', { categoria: 'cumpleannos' });
+          $state.go('review', { categoria: defaultCategory });
         }
       })
       .state('review', {
