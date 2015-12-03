@@ -89,7 +89,7 @@ function getBulkUpdates(memories, userID) {
     var cardId = mongoose.Types.ObjectId(memory.card);
 
     if (memory._id) {
-      filter = { _id: memory._id, user: userID };
+      filter = { _id: mongoose.Types.ObjectId(memory._id), user: userID };
       upd = { card: cardId };
     } else {
       filter = { user: userID, card: cardId };
