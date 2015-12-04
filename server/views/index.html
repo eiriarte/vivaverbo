@@ -19,7 +19,7 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="vivaverboApp" layout>
+  <body ng-app="vivaverboMock" layout>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -55,25 +55,36 @@
       <script src="bower_components/lodash/lodash.js"></script>
       <script src="bower_components/lokijs/src/lokijs.js"></script>
       <script src="bower_components/lokijs/src/loki-angular.js"></script>
+      <script src="bower_components/ngstorage/ngStorage.js"></script>
     <!-- endbuild -->
+    <!-- Desarrollo: Backend mock -->
+      <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+      <script src="app/dev-app.js"></script>
+    <!-- Fin Desarrollo -->
 
         <!-- build:js(.tmp) app/app.js -->
 
         <script src="app/app.js"></script>
           <!-- injector:js -->
-          <script src="app/cardField/cardField.filter.js"></script>
+          <script src="app/collections/cards/cards.service.js"></script>
+          <script src="app/collections/categories/categories.service.js"></script>
+          <script src="app/collections/memory/MemoryClass.service.js"></script>
+          <script src="app/collections/memory/memory.service.js"></script>
+          <script src="app/db/Collection.service.js"></script>
           <script src="app/db/db.service.js"></script>
-          <script src="app/memory/MemoryClass.service.js"></script>
-          <script src="app/memory/memory.service.js"></script>
-          <script src="app/review/review.controller.js"></script>
+          <script src="app/db/localDB.service.js"></script>
+          <script src="app/defaultCategory/defaultCategory.service.js"></script>
           <script src="app/review/review.js"></script>
           <script src="app/review/review.service.js"></script>
           <script src="app/translations.js"></script>
+          <script src="app/vvCard/vvCard.directive.js"></script>
+          <script src="app/vvReview/vvReview.directive.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/dateTime/dateTime.service.js"></script>
-          <script src="components/navbar/navbar.controller.js"></script>
           <script src="components/vendor/lodash.service.js"></script>
+          <script src="components/vvSidenav/vvSidenav.directive.js"></script>
+          <script src="components/vvToolbar/vvToolbar.directive.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
       <script>

@@ -32,7 +32,7 @@ describe('GET /api/cards', function() {
         if (err) return done(err);
         res.body.should.be.instanceof(Array);
         res.body.should.matchEach(function (card) {
-          card.should.have.keys('pregunta', 'respuesta', 'frasePregunta', 'fraseRespuesta', 'freq', '_id');
+          card.should.have.keys('pregunta', 'respuesta', 'frasePregunta', 'fraseRespuesta', 'freq', '_id', 'categorias');
         });
         done();
       });

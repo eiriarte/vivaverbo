@@ -38,6 +38,7 @@ module.exports = function(app, config) {
   });
 
   // Insert routes below
+  app.use('/api/categories', require('./api/category'));
   app.use('/api/memory', require('./api/memory'));
   app.use('/api/cards', require('./api/card'));
   app.use('/api/users', require('./api/user'));
@@ -51,7 +52,7 @@ module.exports = function(app, config) {
   // All other routes should redirect to the index.html
   app.route('/*')
     .get(auth.getUser(), function(req, res) {
-      var props = ['prefs', 'review', 'updated', 'email', 'name', 'provider'];
+      var props = ['prefs', 'reviews', 'updated', 'email', 'name', 'provider'];
       var view, locals;
 
       if (req.user) {

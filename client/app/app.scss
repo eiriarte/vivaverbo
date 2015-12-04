@@ -36,6 +36,8 @@ md-divider.social {
 
 // Component styles are injected through grunt
 // injector
-@import 'review/review.scss';
-@import 'navbar/navbar.scss';
+@import 'vvCard/vvCard.scss';
+@import 'vvReview/vvReview.scss';
+@import 'vvSidenav/vvSidenav.scss';
+@import 'vvToolbar/vvToolbar.scss';
 // endinjector

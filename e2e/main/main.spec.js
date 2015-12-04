@@ -37,13 +37,23 @@ describe('Main View', function() {
   }
 
   it('debe mostrar la toolbar, el contador y una tarjeta', function() {
-    expect(page.titulo.getText()).toBe('vivaverbo');
-    //expect(page.btnLogout.getText()).toBe('LOGOUT');
+    expect(page.titulo.getText()).toBe('Menos de 20');
     expect(page.contador.getText()).toBe('0/' + NUM_TARJETAS);
     expect(page.tarjetas.count()).toBe(NUM_TARJETAS);
     page.tarjetas.each(function(tarjeta, index) {
       tarjetaGirada(0, false, tarjeta, index);
     });
+  });
+
+  it('debe desplegarse el menú', function() {
+    // Sidenav cerrada
+    expect(page.sidenav.isDisplayed()).toBe(false, 'Sidebar pre-click');
+
+    // Abrir sidenav
+    page.btnMenu.click();
+    browser.sleep(3000);
+    browser.ignoreSynchronization = true;
+    expect(page.sidenav.isDisplayed()).toBe(true, 'Sidebar abierta');
   });
 
   it('debe girar la tarjeta', function() {
