@@ -11,7 +11,7 @@ describe('Service: reviewService', function () {
   beforeEach(module('vivaverboApp'));
 
   // instantiate service
-  let reviewService, repaso;
+  let reviewService;
   let $httpBackend, $rootScope;
 
   beforeEach(inject(function (_$httpBackend_) {
@@ -21,7 +21,7 @@ describe('Service: reviewService', function () {
   beforeEach(inject(function (_reviewService_, _$rootScope_) {
     $rootScope = _$rootScope_;
     reviewService = _reviewService_;
-    repaso = reviewService.repaso;
+    reviewService.newReview('menosde20');
   }));
 
   afterAll(windowAfterTestSuite);
@@ -33,6 +33,7 @@ describe('Service: reviewService', function () {
     $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
+    const repaso = reviewService.repaso;
     const lengthTarjetas = repaso.tarjetas.length;
     const total = repaso.totalTarjetas;
 
@@ -42,6 +43,7 @@ describe('Service: reviewService', function () {
   });
 
   it('debe tener la propiedad "repaso"  de sólo lectura', function () {
+    const repaso = reviewService.repaso;
     var f = function() {
       reviewService.repaso = repaso;
     };
@@ -54,6 +56,7 @@ describe('Service: reviewService', function () {
     $rootScope.$digest();
     $httpBackend.flush();
 
+    const repaso = reviewService.repaso;
     expect(repaso.finalizado).toBe(false, 'porque acabamos de empezar');
     expect(repaso.tarjetaActual).toBe(0);
     expect(repaso.totalAprendidas).toBe(0);

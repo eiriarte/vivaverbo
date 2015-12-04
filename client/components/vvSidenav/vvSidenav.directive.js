@@ -13,7 +13,7 @@ angular.module('vivaverboApp')
 
         this.select = (categoria) => {
           $mdSidenav('left').close();
-          $state.go('review', { categoria: categoria.slug });
+          $state.go('review', { categoria: categoria._id });
         };
 
         this.hide = () => {

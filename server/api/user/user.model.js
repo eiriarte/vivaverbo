@@ -13,7 +13,8 @@ var UserSchema = new Schema({
     nuevasPorRepaso: Number,
     maxFallosPorRound: Number
   },
-  review: {
+  reviews: [{
+    category: String,
     fecha: Date,
     finalizado: Boolean,
     totalTarjetas: Number,
@@ -25,7 +26,7 @@ var UserSchema = new Schema({
       firstTry: Boolean,
       learned: Boolean
     }]
-  },
+  }],
   role: { type: String, default: 'user' },
   hashedPassword: String,
   salt: String,

@@ -2,15 +2,19 @@
 
 angular.module('vivaverboApp')
   .factory('reviewService', function ($q, $log, $mdToast, gettextCatalog, Auth,
-        db, cards, memory, dateTime) {
+        db, cards, memory, dateTime, lodash) {
     const user = Auth.getCurrentUser();
     const tarjetasRepaso = [];
-    initReview();
+    let currentCategory;
+    let estadoCarga;
 
     // Public API
     return {
       get repaso() {
-        return user.review;
+        return getReview(currentCategory);
+      },
+      get estadoCarga() {
+        return estadoCarga;
       },
       // Devuelve un array con las tarjetas correspondientes al repaso actual,
       // en el mismo orden
@@ -20,7 +24,7 @@ angular.module('vivaverboApp')
       // Marca el grado actual de recuerdo de la tarjeta
       // Si borrar es true, la tarjeta no se volverá a mostrar en el futuro
       marcar(recuerdo, borrar = false) {
-        const review = user.review;
+        const review = getReview(currentCategory);
         const firstTry = review.tarjetas[review.tarjetaActual].firstTry;
         const id = review.tarjetas[review.tarjetaActual].cardId;
         const prob = memory.addRecall(id, recuerdo, borrar);
@@ -55,20 +59,64 @@ angular.module('vivaverboApp')
         // Persistimos los cambios en el repaso
         db.updateUser(user);
       },
-      // Fuerza un nuevo repaso ("repasar de nuevo!")
-      newReview() {
-        initReview(true);
+      /**
+       * Obtiene un nuevo repaso para hoy en la categoría indicada
+       * @param {string} category - Categoría de tarjetas a repasar
+       * @param {boolean} force - (Opcional) No retomar el repaso existente
+       */
+      newReview(category, force = false) {
+        const review = getReview(category);
+        const hoy = dateTime.today();
+        currentCategory = category;
+        estadoCarga = 'cargando';
+
+        if (force || review.fecha === undefined || review.fecha < hoy) {
+          $log.debug('Generando un nuevo repaso en la categoría %s', category);
+          const promise = generateReview(category);
+          promise.then((rev) => {
+            angular.copy(rev, review);
+            cards.getFromReview(review.tarjetas, tarjetasRepaso).then(() => {
+              estadoCarga = 0 === review.tarjetas.length ? 'agotado' : 'cargado';
+            });
+            db.updateUser(user);
+          }).catch((e) => {
+            const msg = gettextCatalog.getString('Could not generate a review. Try reloading the app.');
+            $log.error('Error en newReview', e);
+            $mdToast.showSimple(msg);
+          });
+        } else {
+          $log.debug('Manteniendo repaso existente en la categoría %s', category);
+          cards.getFromReview(review.tarjetas, tarjetasRepaso).then(() => {
+            estadoCarga = 0 === review.tarjetas.length ? 'agotado' : 'cargado';
+          });
+        }
       }
     };
 
     // Funciones privadas:
 
+    /**
+     * Devuelve el repaso actual del usuario para la categoría indicada,
+     * o lo crea vacío, si no existe
+     * @param {string} category - Slug de la categoría
+     * @returns {object} Repaso encontrado o creado
+     */
+    function getReview(category) {
+      let review = lodash.find(user.reviews, { category: category });
+      if (!review) {
+        review = { category: category };
+        user.reviews.push(review);
+      }
+      return review;
+    }
+
     // Devuelve el índice de la siguiente tarjeta aún no "aprendida",
     // o undefined, si no hay más posteriores sin aprender
     function siguienteTarjeta() {
-      let siguiente = user.review.tarjetaActual + 1;
-      while (siguiente < user.review.totalTarjetas) {
-        if (!user.review.tarjetas[siguiente].learned) {
+      const review = getReview(currentCategory);
+      let siguiente = review.tarjetaActual + 1;
+      while (siguiente < review.totalTarjetas) {
+        if (!review.tarjetas[siguiente].learned) {
           return siguiente;
         }
         siguiente++;
@@ -76,37 +124,19 @@ angular.module('vivaverboApp')
       return undefined;
     }
 
-    // Crea el repaso para hoy, si no existe ya
-    // force: crea el nuevo repaso incondicionalmente
-    function initReview(force = false) {
-      const hoy = dateTime.today();
-
-      if (force || user.review.fecha === undefined || user.review.fecha < hoy) {
-        $log.debug('Generando un nuevo repaso');
-        const promise = generateReview();
-        promise.then((review) => {
-          angular.merge(user.review, review);
-          cards.getFromReview(user.review.tarjetas, tarjetasRepaso);
-          db.updateUser(user);
-        }).catch((e) => {
-          const msg = gettextCatalog.getString('Could not generate a review. Try reloading the app.');
-          $log.error('Error en initReview', e);
-          $mdToast.showSimple(msg);
-        });
-      } else {
-        $log.debug('Manteniendo el repaso existente');
-        cards.getFromReview(user.review.tarjetas, tarjetasRepaso);
-      }
-    }
-
-    // Auxiliar de initReview()
-    // Devuelve (promete) un nuevo repaso a asignar al usuario
-    function generateReview() {
+    /*
+     * Auxiliar de newReview()
+     * Devuelve (promete) un nuevo repaso a asignar al usuario
+     * @param {string} category - Categoría de tarjetas a repasar
+     * @returns {Promise} Promesa a resolver con el nuevo repaso
+     */
+    function generateReview(category) {
       const deferred = $q.defer();
-      const promise = newReviewCards(user.prefs.tarjetasPorRepaso,
+      const promise = newReviewCards(category, user.prefs.tarjetasPorRepaso,
                                         user.prefs.nuevasPorRepaso);
       promise.then((reviewCards) => {
         const review = {
+          category: category,
           fecha: dateTime.now(),
           finalizado: false,
           totalTarjetas: reviewCards.length,
@@ -122,10 +152,14 @@ angular.module('vivaverboApp')
       return deferred.promise;
     }
 
-    // Devuelve (promete) una array con las próximas tarjetas a repasar
-    // tarjetasPorRepaso: nº total de tarjetas a repasar
-    // nuevasPorRepaso: nº de tarjetas a incluir, no repasadas previamente
-    function newReviewCards(tarjetasPorRepaso, nuevasPorRepaso) {
+    /**
+     * Devuelve (promete) una array con las próximas tarjetas a repasar
+     * @param {string} category - Categoría de tarjetas a repasar
+     * @param {number} tarjetasPorRepaso -  nº total de tarjetas a repasar
+     * @param {number} nuevasPorRepaso -  nº de tarjetas nuevas a incluir
+     * @returns {Promise} Promesa a resolver con el array de tarjetas
+     */
+    function newReviewCards(category, tarjetasPorRepaso, nuevasPorRepaso) {
       return cards.onDataReady(() => {
         return memory.onDataReady(() => {
           const memoryCollection = memory.lokiCollection;
@@ -135,6 +169,10 @@ angular.module('vivaverboApp')
 
           // siguientes repasos
           repaso = memoryCollection.chain().
+            where((memory) => {
+              const cats = cards.findById(memory.card).categorias;
+              return cats.indexOf(category) !== -1;
+            }).
             find({ 'removed': { $ne: true } }).
             simplesort('recallProbability').
             limit(tarjetasPorRepaso).
@@ -147,6 +185,7 @@ angular.module('vivaverboApp')
 
           // tarjetas nuevas (no existentes en memoryCollection) más frecuentes
           nuevas = cardsCollection.chain().
+            find({ 'categorias': { $contains: category } }).
             where((card) => !memoryCollection.findOne({ card: card._id })).
             simplesort('freq', true).
             limit(numNuevas).
@@ -158,13 +197,19 @@ angular.module('vivaverboApp')
           repaso = reviewFromCards(repaso.slice(0, numRepaso));
           nuevas = reviewFromCards(nuevas);
 
+          // 'repaso' y 'nuevas' son arrays vacíos!!!!??????
+          // ¿por qué? ¿de dónde salen??? ¿de localStorage????
           return repaso.concat(nuevas);
         });
       });
     }
 
-    // Devuelve un array con elementos nuevos de user.review.tarjetas a partir
-    // de las tarjetas/memorias en cards
+    /**
+     * Devuelve un array con elementos nuevos de user.review.tarjetas a partir
+     * de las tarjetas/memorias en cards
+     * @param {array} cards - Array de tarjetas/memorias a transformar en repaso
+     * @returns {array} Elementos de repaso correspondiente a 'cards'
+     */
     function reviewFromCards(cards) {
       const review = [];
       angular.forEach(cards, (card) => review.push({

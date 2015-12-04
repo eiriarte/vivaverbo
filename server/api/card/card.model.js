@@ -8,7 +8,8 @@ var CardSchema = new Schema({
   frasePregunta: String,
   respuesta: String,
   fraseRespuesta: String,
-  freq: Number
+  freq: Number,
+  categorias: [ String ]
 });
 
 module.exports = mongoose.model('Card', CardSchema);

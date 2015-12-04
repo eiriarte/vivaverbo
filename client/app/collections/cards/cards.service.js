@@ -9,9 +9,10 @@ angular.module('vivaverboApp')
      * Devuelve (promete) un array con las tarjetas correspondientes al repaso
      * @param {array} review - array 'tarjetas' de un objeto 'review'
      * @param {array} ref - (Opcional) Referencia al array donde volcar el resultado
+     * @returns {Promise} Promesa a resolver con el array de tarjetas
      */
     cards.getFromReview = function (review, ref) {
-      this.onDataReady(() => {
+      return this.onDataReady(() => {
         const lokiCollection = this.lokiCollection;
         const reviewCards = review.map((rCard) =>
           lokiCollection.findOne({ _id: rCard.cardId }));

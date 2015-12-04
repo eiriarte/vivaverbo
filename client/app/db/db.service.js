@@ -20,12 +20,8 @@ angular.module('vivaverboApp')
         } else {
           serverUser.updated = new Date(serverUser.updated);
           localUser.updated = new Date(localUser.updated);
-          if (serverUser.review.fecha) {
-            serverUser.review.fecha = new Date(serverUser.review.fecha);
-          }
-          if (localUser.review.fecha) {
-            localUser.review.fecha = new Date(localUser.review.fecha);
-          }
+          setDates(serverUser.reviews);
+          setDates(localUser.reviews);
           if (localUser.updated < serverUser.updated) {
             // El objeto en el cliente está desactualizado
             $log.debug('Actualizando copia de User en localStorage');
@@ -61,4 +57,17 @@ angular.module('vivaverboApp')
         });
       }
     };
+
+    /**
+     * Se asegura de que las propiedades .fecha del array de repasos son
+     * objetos Date
+     * @param {array} reviews - Array de objetos (repasos)
+     */
+    function setDates(reviews) {
+      reviews.forEach((review) => {
+        if (review.fecha) {
+          review.fecha = new Date(review.fecha);
+        }
+      });
+    }
   });

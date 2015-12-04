@@ -15,10 +15,9 @@ var validationError = function(res, err) {
  */
 exports.update = function (req, res) {
   winston.debug('user.controller::update() iniciando actualización…');
-  var userID = req.user && req.user._id && req.user._id.toString();
 
   req.user.prefs = req.body.prefs;
-  req.user.review = req.body.review;
+  req.user.reviews = req.body.reviews;
   req.user.updated = new Date(req.body.updated);
   req.user.save().then(function(user, numAffected) {
     winston.debug('user.controller::update() req.user.save completado');

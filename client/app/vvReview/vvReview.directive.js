@@ -14,17 +14,19 @@ angular.module('vivaverboApp')
     };
   })
   .controller('ReviewController', function(reviewService, categories) {
-    categories.findOne({ slug: this.categoria }).then((categoria) => {
+    categories.findOne({ _id: this.categoria }).then((categoria) => {
       this.tituloCategoria = categoria && categoria.titulo;
     });
     this.tarjetas = reviewService.tarjetasRepaso;
     this.estado = { girada: false };
+    reviewService.newReview(this.categoria);
 
     Object.defineProperties(this, {
       'tarjetaActual':   { get: () => reviewService.repaso.tarjetaActual },
       'totalAprendidas': { get: () => reviewService.repaso.totalAprendidas },
       'totalTarjetas':   { get: () => reviewService.repaso.totalTarjetas },
-      'finalizado':      { get: () => reviewService.repaso.finalizado }
+      'finalizado':      { get: () => reviewService.repaso.finalizado },
+      'carga':           { get: () => reviewService.estadoCarga }
     });
 
     // "Gira" la tarjeta para ver la respuesta
@@ -44,6 +46,6 @@ angular.module('vivaverboApp')
 
     // Genera un nuevo repaso
     this.newReview = () => {
-      reviewService.newReview();
+      reviewService.newReview(this.categoria, true);
     };
   });

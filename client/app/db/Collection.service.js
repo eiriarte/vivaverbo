@@ -2,7 +2,7 @@
 
 angular.module('vivaverboApp')
   .factory('Collection', function ($resource, $q, $timeout, $log, $localStorage,
-        localDB) {
+        localDB, lodash) {
 
     class Collection {
       /**
@@ -38,6 +38,10 @@ angular.module('vivaverboApp')
                 docs.forEach((doc) => {
                   this._lokiCollection.insert(this._inflate(doc));
                 });
+                const lastDoc = lodash.last(lodash.sortBy(docs, 'date'));
+                if (lastDoc) {
+                  this.lastSyncDate = lastDoc.date;
+                }
                 localDB.save();
                 $log.debug('Cargados datos del servidor en %s.', this._name);
                 deferred.resolve();

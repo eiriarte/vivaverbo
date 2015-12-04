@@ -22,7 +22,7 @@ describe('Controller: ReviewController', function () {
     ReviewController = $controller('ReviewController', {
       $scope: scope,
       reviewService: reviewService
-    }, { categoria: 'sistema-mayor' });
+    }, { categoria: 'menosde20' });
   }));
 
   afterAll(windowAfterTestSuite);

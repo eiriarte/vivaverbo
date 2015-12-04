@@ -30,13 +30,13 @@ describe('Directive: vvReview', function () {
     $httpBackend.whenGET('/api/categories').respond(getCategories());
     $httpBackend.whenGET(/\/api\/memory/).respond([]);
     $httpBackend.whenPOST('/api/users/me').respond(200);
-    element = angular.element('<vv-review vv-category="sistema-mayor"></vv-review>');
+    element = angular.element('<vv-review vv-category="menosde20"></vv-review>');
     element = $compile(element)(scope);
     scope.$apply();
     $httpBackend.flush();
     $rootScope.$digest();
     expect(angular.element(element[0].querySelectorAll('.md-toolbar-tools > h1')[0]).text()).toBe('vivaverbo');
-    expect(angular.element(element[0].querySelectorAll('.md-toolbar-tools > h1')[1]).text()).toBe('Sistema mayor');
+    expect(angular.element(element[0].querySelectorAll('.md-toolbar-tools > h1')[1]).text()).toBe('Menos de 20');
     expect(element.find('vv-card').length).toBe(10);
   }));
 });

@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('vivaverboApp').value('defaultCategory', 'cumpleannos');
+angular.module('vivaverboApp').value('defaultCategory', 'menosde20');

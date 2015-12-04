@@ -37,8 +37,7 @@ describe('Main View', function() {
   }
 
   it('debe mostrar la toolbar, el contador y una tarjeta', function() {
-    expect(page.titulo.getText()).toBe('Cumpleaños');
-    //expect(page.btnLogout.getText()).toBe('LOGOUT');
+    expect(page.titulo.getText()).toBe('Menos de 20');
     expect(page.contador.getText()).toBe('0/' + NUM_TARJETAS);
     expect(page.tarjetas.count()).toBe(NUM_TARJETAS);
     page.tarjetas.each(function(tarjeta, index) {
@@ -55,12 +54,6 @@ describe('Main View', function() {
     browser.sleep(3000);
     browser.ignoreSynchronization = true;
     expect(page.sidenav.isDisplayed()).toBe(true, 'Sidebar abierta');
-
-    // Cerrar sidenav
-    var backdrop = browser.driver.findElement(by.css('.md-sidenav-backdrop'));
-    backdrop.click();
-    browser.sleep(3000);
-    expect(page.sidenav.isDisplayed()).toBe(false, 'Sidebar cerrada');
   });
 
   it('debe girar la tarjeta', function() {
