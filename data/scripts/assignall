@@ -1,0 +1,15 @@
+#!/bin/bash
+
+node assigncateg.js ../piv.txt ./data/cards.js piv
+node assigncateg.js ../hess.txt ./data/cards.js hess
+node assigncateg.js ../kontakto.txt ./data/cards.js kontakto
+node assigncateg.js ../afijos.txt ./data/cards.js afijos
+node assigncateg.js ../bro1.txt ./data/cards.js bro1 bro
+node assigncateg.js ../bro2.txt ./data/cards.js bro2 bro
+node assigncateg.js ../bro3.txt ./data/cards.js bro3 bro
+node assigncateg.js ../bro4.txt ./data/cards.js bro4 bro
+node assigncateg.js ../bro5.txt ./data/cards.js bro5 bro
+node assigncateg.js ../bro6.txt ./data/cards.js bro6 bro
+node assigncateg.js ../bro7.txt ./data/cards.js bro7 bro
+node assigncateg.js ../bro8.txt ./data/cards.js bro8 bro
+node assigncateg.js ../bro9.txt ./data/cards.js bro9 bro
