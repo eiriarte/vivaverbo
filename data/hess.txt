@@ -334,7 +334,7 @@ juvelo
 ĵeti
 ĵurnalo
 ĵus
-ĵusnakita
+ĵusnaskita
 kafo
 kaj
 kajero
@@ -512,7 +512,7 @@ monumento
 morgaŭ
 mortigi
 moŝto
-motociklo
+motorciklo
 movi
 multaj
 muro
@@ -542,7 +542,7 @@ nilono
 noto
 nova
 novembro
-nu!
+nu
 nulo
 nun
 nun
@@ -637,7 +637,7 @@ preni
 preskaŭ
 pretigi sin
 prezidi
-primtempo
+printempo
 profiti
 proksima
 promeni
@@ -774,7 +774,7 @@ suspekti
 ŝtuparo
 ŝtupo
 ŝuo
-t.e. (tio estas)
+t.e.
 tablo
 tago
 tamen

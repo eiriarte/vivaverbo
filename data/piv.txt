@@ -191,7 +191,7 @@ acipensero
 acipenseroformaj
 Aciso
 Acoroj
--aĉ
+-aĉ-
 aĉa
 aĉaĵo
 aĉaĵaro
@@ -210,7 +210,7 @@ foraĉeti
 retroaĉeto
 subaĉeti
 aĉeŭleo
--ad
+-adi
 adasismo
 adaĝo
 adaĝe
@@ -669,7 +669,7 @@ ajnuo
 ajugo
 Ajuno
 ajuto
--aĵ
+-aĵo
 aĵo
 aĵeto
 aĵuro
@@ -1156,7 +1156,7 @@ Alĝero
 Alĝerio
 Alĝeriano
 Alhambro
-alĥemio
+alĥemio, alkemio
 alia
 alia... alia...
 tiu aŭ alia
@@ -1239,7 +1239,6 @@ alkarazo
 alkazabo
 alkazaro
 alkekengo
-alkemio
 alkemiisto
 alkemilo
 Alkmeno
@@ -1660,7 +1659,7 @@ amuza
 amuziĝo
 amuzilo
 amuzisto
--an
+-ano
 ano
 anaro
 aniĝi
@@ -2325,7 +2324,7 @@ apretaĵo
 apreturo
 aprezi
 aprezo
-Aprilo
+aprilo
 apriora
 apriore
 aprobi
@@ -2346,7 +2345,7 @@ apudesti
 Apulio
 apunto
 apuso
--ar
+-aro
 aro
 ĉioma aro
 nenioma aro
@@ -3211,7 +3210,7 @@ aŭguri
 aŭgurado
 aŭguristo
 kartaŭguri
-Aŭgusto
+aŭgusto
 Aŭgusteno
 aŭgustenano
 aŭgustenismo
@@ -3278,7 +3277,7 @@ afrika aŭstralopiteko
 fortika aŭstralopiteko
 Aŭstronezia
 Aŭŝvico
-aŭto
+aŭto, aŭtomobilo
 aŭti
 aŭtadi
 aŭtejo
@@ -3322,7 +3321,6 @@ aŭtomateco
 aŭtomatigi
 aŭtomatiko
 diskaŭtomato
-aŭtomobilo
 aŭtomobila
 aŭtomobilismo
 aŭtomobilisto
@@ -3483,7 +3481,7 @@ azteko
 azukio
 azuleĥo
 b
-bo
+bo-
 ba!
 Baalo
 Baal-Zebul
@@ -4040,7 +4038,7 @@ klasbatalo
 kokbatalo
 ludbatalo
 miksbatalo
-taŭrbatalo
+taŭrobatalo
 vetbatali
 vetbatalo
 bataliono
@@ -5462,7 +5460,7 @@ Budapeŝto
 Buddo
 budeno
 blanka budeno
-budĝeto
+buĝeto, budĝeto
 budho
 Budho
 budhano
@@ -5487,7 +5485,6 @@ bugenvilo
 buglo
 bugri
 muŝbugrado
-buĝeto
 buĝio
 buĥto
 bujabeso
@@ -6543,7 +6540,7 @@ malĉastistino
 Ĉeo
 ĉeĉeno
 Ĉeĉenio
-ĉef
+ĉef-
 ĉefo
 ĉefa
 ĉefi
@@ -6782,7 +6779,7 @@ bekĉizilo
 gravurĉizilo
 ĉizojo
 ĉizoji
--ĉj
+-ĉj-
 Ĉjiĉjiharo
 Ĉju
 ĉokolado
@@ -7006,8 +7003,8 @@ deco
 maldeca
 maldecaĵo
 nedeca
-Decembro
-Decembristo
+decembro
+decembristo
 decemviro
 decidi
 decido
@@ -7507,7 +7504,7 @@ deva
 devigi
 devigo
 deviga
-devontigi 
+devontigi
 devontigi sin
 devlibera
 devoligi
@@ -8009,7 +8006,7 @@ direktrico
 dirigento
 dirko
 dirlididi!
-dis
+dis-
 disa
 diseco
 disigi
@@ -8780,7 +8777,7 @@ akvoebeno
 altebenaĵo
 klinebeno
 batebenigi
--ebl
+-ebla
 ebla
 eble
 eble estas
@@ -8817,7 +8814,7 @@ ebulioskopo
 eburo
 vegetaĵa eburo
 ebura
--ec
+-eco
 -eca
 eca
 eco
@@ -8968,7 +8965,7 @@ efodo
 Efraimo
 Efrato
 efrito
--eg
+-eg-
 ega
 egeco
 egala
@@ -9024,7 +9021,7 @@ eĥino
 eĥinodermoj
 eĥinokoko
 eĥolalio
--ej
+-ejo
 eja
 ej!
 ejakuli
@@ -9039,7 +9036,7 @@ ejnŝtejnio
 Ejro
 ejŝhornio
 ŝvelpetiola ejŝhornio
-ek
+ek-
 ek!
 eki
 eke de
@@ -9108,7 +9105,7 @@ ekranego
 ekranumi
 eksterekrana
 surekranigi
-eks
+eks-
 eks!
 eksa
 eksigi
@@ -9577,7 +9574,7 @@ maleluviado
 Elvira
 Elzaco
 elzeviro
--em
+-ema
 emajlo
 emajla
 emajli
@@ -9745,7 +9742,7 @@ encikliko
 enciklopedio
 enciklopedia
 enciklopediisto
--end
+-end-
 endemio
 endemia
 endemiulo
@@ -10008,7 +10005,7 @@ epopea
 eposo
 epsilono
 epuliso
--er
+-er-
 ero
 diserigi
 diseriĝi
@@ -10324,7 +10321,7 @@ estivacio
 estono
 Estonio
 Estonujo
--estr
+-estro
 estro
 estri
 estraro
@@ -10340,7 +10337,7 @@ estuaro
 eŝafodo
 eŝolzio
 Kalifornia eŝolzio
--et
+-et-
 eta
 etigi
 etulo
@@ -11209,7 +11206,7 @@ antifebra
 kontraŭfebra
 senfebriga
 fojnofebro
-Februaro
+februaro
 feĉo
 feĉa
 feĉi
@@ -13833,7 +13830,7 @@ radiogazeto
 gazono
 Gdansko
 GDR
-ge
+ge-
 gea
 geigi
 geiĝi
@@ -16735,7 +16732,7 @@ huzo
 ĥelicero
 ĥeliceruloj
 ĥelonio
-ĥemio
+ĥemio, kemio
 ĥeto
 Ĥetidoj
 ĥetognatoj
@@ -16808,7 +16805,7 @@ sakra ibiso
 Ibliso
 ico
 -icid
--id
+-ido
 idaro
 idarano
 Ido
@@ -16879,7 +16876,7 @@ iele-trapele
 ies
 Ifigenio
 ifrito
--ig
+-igi
 igi
 iglo
 Ignaco
@@ -16891,7 +16888,7 @@ neignorebla
 igvano
 igvanedoj
 igvanodonto
--iĝ
+-iĝi
 iĝi
 iĥtiofagio
 iĥtiologo
@@ -16928,7 +16925,7 @@ iktiopterigoj
 iktiosaŭro
 iktiosaŭruloj
 iktiozo
--il
+-ilo
 ilaĵo
 ilaro
 ilujo
@@ -17113,7 +17110,7 @@ hiperimuna
 hiperimuneco
 hiperimunigi
 hiperimuniĝi
--in
+-ino
 ino
 ina
 Inaĥo
@@ -17150,7 +17147,7 @@ incizaĵo
 incizivo
 incizuro
 Inĉono
--ind
+-inda
 inda
 inde
 indi
@@ -17395,7 +17392,7 @@ infuzi
 infuzaĵo
 infuziĝi
 infuzorioj
--ing
+-ing-
 ingo
 ingi
 ingiĝi
@@ -17987,7 +17984,7 @@ Islamismo
 Islamabado
 Islando
 Islandano
--ism
+-ismo
 ismo
 Ismailo
 ismailano
@@ -17997,7 +17994,7 @@ Israelano
 Israfilo
 Iso
 Isso
--ist
+-isto
 Istanbulo
 istmo
 Istrio
@@ -18177,7 +18174,7 @@ jankio
 Janseno
 jansenismo
 jansenisto
-Januaro
+januaro
 japano
 japana
 Japanio
@@ -18428,8 +18425,8 @@ julo
 juladi
 Julo
 julepo
-Julio
-Julia
+julio
+julia
 Juliino
 Juliano
 Julieta
@@ -18465,7 +18462,7 @@ enjungi
 eljungi
 kunjungi
 maljungi
-Junio
+junio
 junipero
 ordinara junipero
 junko
@@ -20340,7 +20337,6 @@ antaŭkelta
 Kelvino
 kelvino
 Kembriĝo
-kemio
 kemiaĵo
 kemiisto
 biokemio
@@ -26247,7 +26243,7 @@ maĥinacio
 maizo
 krevmaizo
 pufmaizo
-Majo
+majo
 Maja
 majao
 Majenco
@@ -26353,7 +26349,7 @@ makumbo
 makzelo
 makzeloj
 senmakzeluloj
-mal
+mal-
 malo
 mala
 male
@@ -26798,7 +26794,7 @@ enmarŝi
 pretermarŝi
 marŝalo
 Marŝalaj Insuloj
-Marto
+marto
 Marta
 martagono
 martelo
@@ -27121,8 +27117,8 @@ megomo
 megommetro
 meharo
 meharisto
-meĥaniko
-meĥanismo
+meĥaniko, mekaniko
+meĥanismo, mekanismo
 meĥanisto
 meĥanizi
 meĥanografo
@@ -27138,7 +27134,6 @@ marmejlo
 mejozo
 mejoza
 meki
-mekaniko
 aplikata mekaniko
 mekanika
 mekanikismo
@@ -27146,7 +27141,6 @@ mekanikisto
 ĉielmekaniko
 kvantummekaniko
 telemekaniko
-mekanismo
 Mekko
 Meklenburgio
 Meklenburgio-Antaŭpomerio
@@ -27980,7 +27974,7 @@ kariofilmirto
 Mirto
 mirtelo
 mirtelbero
-mis
+mis-
 misa
 mise
 miso
@@ -28749,7 +28743,7 @@ kampomuso
 musako
 muscikapo
 musendo
-muskoj
+musko
 muska
 hepatmuskoj
 muskardeno
@@ -29509,7 +29503,7 @@ bobelnivelilo
 traknivela
 Nivozo
 nizo
--nj
+-nj-
 Njemeno
 noo
 Noa
@@ -29760,7 +29754,7 @@ novalo
 novali
 Nova-Zemlo
 novelo
-Novembro
+novembro
 Nov-Hampŝiro
 novico
 novicejo
@@ -29945,7 +29939,7 @@ objektiva
 objektiveco
 mergobjektivo
 obĵeti
--obl
+-obla
 oblo
 obligi
 obleco
@@ -30221,7 +30215,7 @@ oktavo
 duonoktavo
 Oktavo
 Oktavio
-Oktobro
+oktobro
 oktopodo
 okulo
 okula
@@ -30380,7 +30374,7 @@ omikra
 omleto
 omnibuso
 OMS
--on
+-ona
 ono
 oneco
 onigi
@@ -30459,7 +30453,7 @@ oomikotoj
 Oomoto
 oosfero
 oosporo
--op
+-op-
 opa
 ope
 opo
@@ -34095,7 +34089,7 @@ pozitivismo
 pozitivisto
 pozitrono
 pozolano
-pra
+pra-
 praa
 praulo
 Prago
@@ -34693,12 +34687,11 @@ prolanemio
 prolapso
 prolegomeno
 prolepso
-proleto
+proleto, proletario
 proleta
 proletaro
 proletarigi
 proletariĝi
-proletario
 proliferi
 proliferado
 proliferema
@@ -35875,7 +35868,7 @@ razisto
 razeno
 razio
 razii
-re
+re-
 ree
 reen
 Rea
@@ -38526,7 +38519,7 @@ septo
 septi
 septiĝo
 ikonosepto
-Septembro
+septembro
 septimo
 Septuaginto
 sepulti
@@ -42848,7 +42841,7 @@ teko
 ovoteko
 tekilo
 teknecio
-tekniko
+tekniko, teĥniko
 teknika
 teknikeco
 teknikisto
@@ -44933,7 +44926,7 @@ ugra
 finno-ugra
 ugviso
 uhu!
--uj
+-ujo
 ujo
 ujguro
 ukazo
@@ -44942,7 +44935,7 @@ ukraino
 Ukrainujo
 Ukrainio
 ukulelo
--ul
+-ulo
 ulo
 ulambano
 ulano
@@ -44967,7 +44960,7 @@ ululado
 ulvo
 laktuka ulvo
 ulvoficoj
--um
+-um-
 umo
 umi
 Umaro

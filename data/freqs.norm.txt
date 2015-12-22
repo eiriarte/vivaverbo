@@ -318,7 +318,7 @@ libro	8
 tiel	8
 esperanton	8
 rigardis	8
-nu	8
+nu!	8
 grupo	8
 fino	8
 facile	8
@@ -346,7 +346,7 @@ mil	8
 vojo	8
 jarojn	8
 nomon	8
-ktp	8
+k.t.p.	8
 kredas	8
 vivon	8
 tiaj	8
@@ -384,7 +384,7 @@ propra	8
 per	8
 edzino	8
 decidis	8
-ho	8
+ho!	8
 pensas	8
 kvin	8
 decembro	8
@@ -572,7 +572,7 @@ manoj	9
 proksime	9
 propran	9
 vojon	9
-ekz	9
+ekz.	9
 anstataŭ	9
 maro	9
 tion	9
@@ -1325,7 +1325,7 @@ rilato	10
 ruĝa	10
 veni	10
 trafis	10
-ho	10
+ho!	10
 raporto	10
 rifuzis	10
 chu	10
@@ -1438,7 +1438,7 @@ subtenas	10
 faritaj	10
 situacion	10
 esperanto-asocio	10
-ka	10
+k.a.	10
 legas	10
 ĉambron	10
 nacioj	10
@@ -2324,7 +2324,7 @@ patron	11
 siavice	11
 trian	11
 reprezentanto	11
-tekniko	11
+tekniko, teĥniko	11
 bush	11
 unufoje	11
 lipoj	11
@@ -2765,7 +2765,7 @@ turismo	11
 forumo	11
 kandidato	11
 piv	11
-nu	11
+nu!	11
 solvon	11
 izrael	11
 konstruas	11
@@ -4035,7 +4035,7 @@ materialon	12
 osmo	12
 profesiaj	12
 knabinon	12
-ve	12
+ve!	12
 levas	12
 ciferoj	12
 farante	12
@@ -5099,11 +5099,11 @@ projektojn	12
 disĉiploj	12
 abunde	12
 ekonomio	12
-he	12
+he!	12
 konita	12
 pecojn	12
 turoj	12
-ekz	12
+ekz.	12
 komunumo	12
 mondan	12
 rezolucio	12
@@ -5548,7 +5548,7 @@ belegan	12
 konkurson	12
 paĝon	12
 programero	12
-teknikoj	12
+teknikoj, teĥnikoj	12
 yu	12
 elprenis	12
 grundon	12
@@ -6192,7 +6192,7 @@ aŭtonoma	12
 senĉesa	12
 fraŭlino	12
 analizi	12
-buĝeto	12
+buĝeto, budĝeto	12
 ciklo	12
 fonto	12
 han	12
@@ -6895,7 +6895,7 @@ korespondado	13
 legomoj	13
 malpermesi	13
 metos	13
-teknikon	13
+teknikon, teĥnikon	13
 laŭdire	13
 dimanĉon	13
 certajn	13
@@ -7664,7 +7664,7 @@ ming	13
 nazioj	13
 notas	13
 shajnis	13
-ve	13
+ve!	13
 ĉefredaktoro	13
 konsilisto	13
 parlamentaj	13
@@ -8416,7 +8416,7 @@ albanoj	13
 atribuis	13
 clayton	13
 doktoriĝis	13
-mekanismo	13
+meĥanismo, mekanismo	13
 melodion	13
 nilo	13
 ordigis	13
@@ -9874,7 +9874,7 @@ genocido	13
 hm	13
 interkonsentoj	13
 intertraktadoj	13
-kemio	13
+ĥemio, kemio	13
 koncerton	13
 magazeno	13
 monaĥejoj	13
@@ -10259,7 +10259,7 @@ festivaloj	13
 hago	13
 inkludis	13
 japanujo	13
-ka	13
+k.a.	13
 plibonigis	13
 pordegoj	13
 produkta	13
@@ -10537,7 +10537,7 @@ reciprokan	13
 sekureca	13
 statas	13
 tajloro	13
-teknikojn	13
+teknikojn, teĥnikojn	13
 terminojn	13
 tradiciojn	13
 unusolan	13
@@ -13478,7 +13478,7 @@ malmultaj	14
 marmora	14
 mb	14
 medikamentojn	14
-mekanismoj	14
+meĥanismoj, mekanismoj	14
 ojstro	14
 plenkreskaj	14
 plifortigas	14
@@ -14310,7 +14310,7 @@ béla	14
 belaspekta	14
 belon	14
 brandeis	14
-buĝeton	14
+buĝeton, budĝeton	14
 ceteran	14
 dekjara	14
 ekskluziva	14
@@ -14805,7 +14805,7 @@ individue	14
 konkursojn	14
 kurioze	14
 loĝantoj	14
-mekaniko	14
+meĥaniko, mekaniko	14
 memvole	14
 nokto	14
 olimpikaj	14
@@ -18624,7 +18624,7 @@ flustre	14
 fraulino	14
 gepatraj	14
 havante	14
-he	14
+he!	14
 infaneca	14
 inverse	14
 jei	14
@@ -19395,7 +19395,7 @@ manpleno	14
 materiala	14
 matricoj	14
 matureco	14
-mekanismon	14
+meĥanismon, mekanismon	14
 memo	14
 mizerikordo	14
 nacieca	14
@@ -19740,7 +19740,7 @@ sekvon	14
 selten	14
 senkoste	14
 sonora	14
-teĥniko	14
+tekniko, teĥniko	14
 tribuno	14
 tritikon	14
 trovata	14
@@ -20400,7 +20400,7 @@ legioj	15
 litroj	15
 livero	15
 magian	15
-meĥanismo	15
+meĥanismo, mekanismo	15
 mirinde	15
 najbarajn	15
 nekapablaj	15
@@ -22871,7 +22871,7 @@ malestas	15
 malsanis	15
 malsekan	15
 manĝebla	15
-mekanikaj	15
+meĥanikaj, mekanikaj	15
 mesagho	15
 mesaĝo	15
 migradon	15
@@ -26909,7 +26909,7 @@ princinon	15
 prizonuloj	15
 procesioj	15
 profana	15
-proletoj	15
+proletoj, proletarioj	15
 promesplena	15
 provizora	15
 psalmo	15
@@ -26946,7 +26946,7 @@ subaro	15
 suspektata	15
 tankojn	15
 teatrejo	15
-tekniko	15
+tekniko, teĥniko	15
 tempeto	15
 tendare	15
 tenejo	15
@@ -27603,7 +27603,7 @@ bridon	15
 bruloferon	15
 brusela	15
 budhistoj	15
-buĝeta	15
+buĝeta, budĝeta	15
 butikojn	15
 centa	15
 cheestis	15
@@ -28314,7 +28314,7 @@ manĝeblaj	15
 manghajhojn	15
 manĝaĵoj	15
 marks	15
-meĥaniko	15
+meĥaniko, mekaniko	15
 mendado	15
 mko	15
 mobilizo	15
@@ -29224,7 +29224,7 @@ martín	15
 maskojn	15
 materie	15
 maŭricio	15
-meĥanismoj	15
+meĥanismoj, mekanismoj	15
 meznombro	15
 mi.	15
 mokoj	15
@@ -29386,7 +29386,7 @@ habsburga	15
 hagen	15
 harvey	15
 hejmlandon	15
-ĥemio	15
+ĥemio, kemio	15
 hurlis	15
 idon	15
 impeto	15
@@ -31091,7 +31091,7 @@ manksa	15
 manplenon	15
 marja	15
 maŝsinoj	15
-mekanismojn	15
+meĥanismojn, mekanismojn	15
 memmortigis	15
 mesaghon	15
 metabolo	15
@@ -31448,7 +31448,7 @@ superhoma	15
 surpapere	15
 taleroj	15
 tars	15
-teĥnikoj	15
+teknikoj, teĥnikoj	15
 telefonan	15
 teritorioj	15
 thatcher	15
@@ -35335,7 +35335,7 @@ bonvolaj	16
 brendel	16
 brullignon	16
 brutalaj	16
-budĝeto	16
+budĝeto, budĝeto	16
 buller	16
 campo	16
 ĉeĥajn	16
@@ -36018,7 +36018,7 @@ binditaj	16
 bizanco	16
 bremeno	16
 briladis	16
-buĝetoj	16
+buĝetoj, budĝetoj	16
 burĝo	16
 carr	16
 ĉeftrejnisto	16
@@ -36732,7 +36732,7 @@ adoru	16
 akordiono	16
 akvumado	16
 al.	16
-alkemio	16
+alĥemio, alkemio	16
 alkondukos	16
 alkonstruita	16
 alligi	16
@@ -41054,7 +41054,7 @@ svagaj	16
 ŝatata	16
 taivalkoski	16
 tarso	16
-teĥnikojn	16
+teknikojn, teĥnikojn	16
 tensiojn	16
 tiucela	16
 tiumaniere	16
@@ -42034,7 +42034,7 @@ prilingva	16
 primaso	16
 priskribos	16
 privatigon	16
-proleto	16
+proleto, proletario	16
 proôek	16
 propagando	16
 proponantoj	16
@@ -42659,7 +42659,7 @@ biskvitojn	16
 blankas	16
 bombonon	16
 brovo	16
-buĝetaj	16
+buĝetaj, budĝetaj	16
 bull	16
 burian	16
 canuto	16
@@ -45357,7 +45357,7 @@ karito	16
 karoto	16
 katekizo	16
 kazaĥa	16
-kemio	16
+ĥemio, kemio	16
 keynes	16
 kiele	16
 kilogramon	16
@@ -45510,7 +45510,7 @@ palato	16
 palestinaj	16
 palpebrumo	16
 pana	16
-paneroj	16
+panero	16
 paper-poŝte	16
 parabolon	16
 parazita	16
@@ -45706,7 +45706,7 @@ bova	16
 braceletojn	16
 budapesto	16
 budhoj	16
-buĝetojn	16
+buĝetojn, budĝetojn	16
 burgos	16
 buteoj	16
 cape	16
@@ -45896,7 +45896,7 @@ kasparov	16
 katolikismon	16
 kavernaro	16
 kecskemét	16
-kemion	16
+ĥemion, kemion	16
 kermeso	16
 kiomfoje	16
 klasitaj	16
@@ -47746,7 +47746,7 @@ broditan	16
 bronzaĵoj	16
 brul	16
 brutbredado	16
-buĝetan	16
+buĝetan, budĝetan	16
 bulkoj	16
 bulojn	16
 burokratismo	16
@@ -48360,7 +48360,7 @@ mbonga	16
 medical	16
 medioprotektado	16
 meditu	16
-meĥanike	16
+meĥanike, mekanike	16
 membiografio	16
 memkritiko	16
 metaforon	16
@@ -52764,7 +52764,7 @@ benataj	16
 berga	16
 bestio	16
 bibopo	16
-biokemio	16
+bioĥemio, biokemio	16
 biologia	16
 blankglobo	16
 blinda	16
@@ -53180,7 +53180,7 @@ marr	16
 martinica	16
 masakro	16
 matricon	16
-meĥanismon	16
+meĥanismon, mekanismon	16
 mekongo	16
 membrigho	16
 memorus	16
@@ -54748,7 +54748,7 @@ mastra	16
 matsuura	16
 maturiĝinta	16
 mayo	16
-meĥanismojn	16
+meĥanismojn, mekanismojn	16
 membrokotizoj	16
 memfison	16
 mendinto	16
@@ -62685,7 +62685,7 @@ mats	17
 maya	17
 mediadores	17
 megavatoj	17
-mekanikon	17
+meĥanikon, mekanikon	17
 melodiajn	17
 mencio	17
 mendelawitz	17
@@ -65723,7 +65723,7 @@ medicinoj	17
 medrano	17
 medreseo	17
 mehdi	17
-mekanismo	17
+meĥanismo, mekanismo	17
 melee	17
 melo	17
 membrokotizon	17
@@ -66442,7 +66442,7 @@ akuzu	17
 akvorezervejoj	17
 alestantoj	17
 algluitaj	17
-alĥemio	17
+alĥemio, alkemio	17
 alibion	17
 alice'n	17
 alitalia	17
@@ -73186,7 +73186,7 @@ te-trinkejoj	17
 teĉjo	17
 tegitan	17
 tegmentaj	17
-teĥnikon	17
+teknikon, teĥnikon	17
 teĥnologiaj	17
 tej	17
 tel-aviv	17
@@ -74503,7 +74503,7 @@ brüning	17
 bruton	17
 buchanan	17
 budaismon	17
-buĝetajn	17
+buĝetajn, budĝetajn	17
 building	17
 bukedojn	17
 buljonon	17
@@ -79994,7 +79994,7 @@ noto	17
 novela	17
 novepoka	17
 novigon	17
-nu	17
+nu!	17
 numeras	17
 nunmomente	17
 nuova	17
@@ -80233,7 +80233,7 @@ projekciata	17
 projekta	17
 projektistoj	17
 proksimiĝantaj	17
-proletoj	17
+proletoj, proletarioj	17
 promena	17
 promenados	17
 promenejoj	17
@@ -84086,7 +84086,7 @@ budhisma	17
 buena	17
 buffy	17
 bufono	17
-buĝeto	17
+buĝeto, budĝeto	17
 bulvarda	17
 burbona	17
 busch	17
@@ -93913,7 +93913,7 @@ teatroj	18
 tediĝas	18
 teĥnikisto	18
 teka	18
-teknikoj	18
+teknikoj, teĥnikoj	18
 teksteto	18
 teksti	18
 tekston	18
@@ -96833,7 +96833,7 @@ historiismo	18
 historilibroj	18
 hitachi	18
 hizbullah	18
-ho	18
+ho!	18
 hobie	18
 hochschule	18
 hódmezővásárhely	18
@@ -100883,7 +100883,7 @@ brutus	18
 brzezinski	18
 bse	18
 buĉis	18
-budĝeton	18
+budĝeton, budĝeton	18
 budhan	18
 budho-statuoj	18
 bueno	18
@@ -102891,7 +102891,7 @@ megavatojn	18
 meĥanikan	18
 meine	18
 meissen	18
-mekaniko	18
+meĥaniko, mekaniko	18
 mel	18
 melanerpo	18
 melanie	18
@@ -110986,7 +110986,7 @@ te-tasoj	18
 teamestro	18
 teatrejo	18
 tegaĵoj	18
-teĥniko	18
+tekniko, teĥniko	18
 teiam	18
 tejo-anoj	18
 tekla	18
@@ -124062,7 +124062,7 @@ medi-protekto	18
 mediato	18
 meditemo	18
 medlineplus	18
-meĥanikon	18
+meĥanikon, mekanikon	18
 mehdorn	18
 mekka'on	18
 meklenburgo-antaŭpomerio	18
@@ -140474,7 +140474,7 @@ bint	18
 biodiverseco-varmpunkto	18
 biogeografio	18
 biografiistoj	18
-biokemio	18
+bioĥemio, biokemio	18
 biologiistoj	18
 biologino	18
 biology	18
@@ -146922,7 +146922,7 @@ havs	19
 haynau	19
 ĥazaroj	19
 hca	19
-he	19
+he!	19
 he-he	19
 hebree	19
 hebreino	19
@@ -151306,7 +151306,7 @@ meĥleno	19
 meho	19
 mejla	19
 mekanikiston	19
-mekanikoj	19
+meĥanikoj, mekanikoj	19
 meksikanojn	19
 melanezia	19
 melankolie	19
@@ -152924,7 +152924,7 @@ algezares	19
 algluo	19
 algonkina	19
 algoritma	19
-alĥemion	19
+alĥemion, alkemion	19
 aliancaj	19
 aliancajn	19
 aliay	19
@@ -177422,7 +177422,7 @@ helrozkoloraj	19
 helruĝaj	19
 helsingfors	19
 hemikranio	19
-ĥemio	19
+ĥemio, kemio	19
 hemiplegio	19
 hemmo	19
 henako	19
@@ -181831,7 +181831,7 @@ juøis	19
 ĵetitaj	19
 ĵurio	19
 ĵurnalistojn	19
-ka	19
+k.a.	19
 ka-undrio	19
 kaatingo	19
 kabal	19
@@ -186618,7 +186618,7 @@ proksimiĝanta	19
 proksimune	19
 prokuron	19
 prokuroroj	19
-proletarioj	19
+proletoj, proletarioj	19
 promemoran	19
 promenas	19
 promenbaso	19
@@ -193145,7 +193145,7 @@ biocenozo	19
 biofuelo	19
 biogal	19
 biografistoj	19
-bioĥemio	19
+bioĥemio, biokemio	19
 biokampo	19
 biokarburaĵoj	19
 biolib	19
@@ -194802,7 +194802,7 @@ vazelino	19
 vazirion	19
 vazul	19
 vcsps	19
-ve	19
+ve!	19
 ve-kriadon	19
 ve-ni	19
 veado	19
@@ -202458,7 +202458,7 @@ megahercoj	19
 megalomania	19
 megaluredoj	19
 megaro	19
-meĥanismo	19
+meĥanismo, mekanismo	19
 meinong	19
 meirelles	19
 meissner	19
@@ -204380,8 +204380,8 @@ proksimiĝo	19
 proksimtempe	19
 prokure	19
 proletariado	19
-proletariojn	19
-proleto	19
+proletojn, proletariojn	19
+proleto, proletario	19
 promenadan	19
 promenadejo	19
 promenaj	19
@@ -206901,8 +206901,8 @@ aljuĝitan	19
 alkalkulante	19
 alkalkulis	19
 alkemiistoj	19
-alkemio	19
-alkemion	19
+alĥemio, alkemio	19
+alĥemion, alkemion	19
 alklakante	19
 alkmaar	19
 alkoholajha	19
@@ -211943,7 +211943,7 @@ hemera	19
 ĥemia	19
 ĥemiistoj	19
 heminguej	19
-ĥemion	19
+ĥemion, kemion	19
 hemishofen	19
 hemistikoj	19
 hemon	19
@@ -215933,7 +215933,7 @@ kshs	19
 ksilemo	19
 kss	19
 ktm-5	19
-ktp	19
+k.t.p.	19
 kuala	19
 kub-usonaj	19
 kubaninoj	19
@@ -227945,7 +227945,7 @@ huzimoto	19
 hvo	19
 ĥavila	19
 ĥebron	19
-ĥemio	19
+ĥemio, kemio	19
 ĥofni	19
 hyderabad	19
 hydro	19
@@ -229856,7 +229856,7 @@ kemi-industria	19
 kemiajhojn	19
 kemiaĵoj	19
 kemiiston	19
-kemioj	19
+ĥemioj, kemioj	19
 kemotaksiso	19
 kempf	19
 kempff	19
@@ -244952,8 +244952,8 @@ prokuro	19
 prokuroran	19
 proletaraj	19
 proletaroj	19
-proletojn	19
-proleton	19
+proletojn, proletariojn	19
+proleton, proletarion	19
 promenadas	19
 promenade	19
 promenantajn	19
@@ -249439,7 +249439,7 @@ budemera	20
 buderus	20
 budetoj	20
 budĝeta	20
-budĝeto	20
+budĝeto, budĝeto	20
 budhaano	20
 budhanaro	20
 budhanon	20
@@ -249462,7 +249462,7 @@ bugeaud	20
 buĝet-altigo	20
 buĝetdeficiton	20
 buglo	20
-buĝeto	20
+buĝeto, budĝeto	20
 buĥara	20
 buĥenvaldo	20
 buji-aj	20

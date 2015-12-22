@@ -86,7 +86,7 @@ nenie
 nenio
 neniu
 ni
-nu!
+nu
 nun
 nur
 ok
@@ -1184,7 +1184,7 @@ valizo
 vana
 vato
 vazo
-ve
+ve!
 ventro
 vermo
 verso
@@ -1340,14 +1340,14 @@ golfo
 grajno
 gratuli
 hajlo
-he
+he!
 heredi
 heroo
 hoko
 hospitalo
 hufo
 humida
-kemio, ĥemio
+ĥemio, kemio
 idealo
 identa
 ilustri

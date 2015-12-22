@@ -565,7 +565,7 @@ normala
 noti
 nova
 novembro
-nu!
+nu
 nubo
 nulo
 numero

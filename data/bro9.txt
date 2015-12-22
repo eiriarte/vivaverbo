@@ -81,7 +81,7 @@ bindi
 blasfemi
 bleki
 bloko
-bon/voli
+bonvoli
 borso
 bovlo
 braceleto
@@ -119,9 +119,9 @@ cirkulero
 cirkvito
 civila
 civito
-ĉar/umo
+ĉarumo
 ĉaro
-ĉe/esti
+ĉeesti
 ĉelo
 ĉerko
 ĉial
@@ -139,7 +139,7 @@ denunci
 deponi
 deputi
 determini
-dev/ont/igi
+devontigi
 dialogo
 dianto
 dieto
@@ -166,7 +166,7 @@ ekspozicio
 ekvatoro
 ekzakta
 ekzekuti
-el/doni
+eldoni
 elasta
 elektroniko
 elemento
@@ -175,7 +175,7 @@ emerito
 enketi
 epidemio
 eskapi
-est/igi
+estigi
 establi
 etapo
 etato
@@ -207,7 +207,7 @@ fliki
 fluido
 flustri
 fontano
-for/esti
+foresti
 formiko
 formulo
 fotelo
@@ -257,7 +257,7 @@ halo
 hangaro
 haringo
 harmonio
-hav/igi
+havigi
 hazardo
 heĝo
 hektaro
@@ -271,7 +271,7 @@ horizonto
 horizontalo
 humana
 ĥoro
-ia/foj/e
+iafoje
 ignori
 impeti
 impliki
@@ -333,7 +333,7 @@ kaverno
 kazo
 kejlo
 kerno
-kiom/a
+kioma
 kirurgo
 kirurgio
 klasika
@@ -450,7 +450,7 @@ mineralo
 minimumo
 ministerio
 ministro
-mir/inda
+mirinda
 mirtelo
 mistifiki
 modifi
@@ -480,7 +480,7 @@ opero
 oponi
 opozicii
 oratoro
-orient/i
+orienti
 orkestro
 ortografio
 ovalo
@@ -520,14 +520,14 @@ piloto
 pioniro
 pipro
 plago
-pland/umo
+plandumo
 plando
 planedo
 plasto
 plastiko
 platano
 plenaĝa
-pli/igi
+pliigi
 plonĝi
 pluralo
 po
@@ -567,7 +567,7 @@ rafano
 rano
 raŭka
 raŭpo
-re/formi
+reformi
 resumo
 reakcio
 reala
@@ -576,7 +576,7 @@ redakti
 redukti
 reflekti
 regimento
-rekt/angulo
+rektangulo
 reĝimo
 relativa
 reno
@@ -610,9 +610,9 @@ sekci
 sekcio
 sekura
 senato
-sin/dona
-sin/garda
-sin/teno
+sindona
+singarda
+sinteno
 sino
 sindikato
 singularo
@@ -669,7 +669,7 @@ talio
 tapeto
 tarifo
 tegolo
-teĥniko, tekniko
+tekniko, teĥniko
 teksto
 televidi
 tendenco
