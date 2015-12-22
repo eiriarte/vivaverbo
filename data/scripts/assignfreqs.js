@@ -1,3 +1,9 @@
+/*
+  Asigna las frecuencias de fq.js a las tarjetas de cards.js y vuelca el
+  resultado a stdout.
+
+  Uso: node assignfreqs.js
+*/
 cards = require('./data/cards');
 freqs = require('./data/fq');
 
@@ -7,6 +13,9 @@ cards.forEach(function(card) {
       card.freq = i;
       break;
     }
+  }
+  if (typeof card.freq === 'undefined') {
+    card.freq = 21;
   }
 });
 
