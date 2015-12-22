@@ -1,9 +1,3 @@
-Descripción: Lista de palabras compilada por la [Akademio de Esperanto](http://akademio-de-esperanto.org/), clasificada en nueve grupos, de menor a mayor frecuencia.
-
-No se incluyen aquí afijos ni terminaciones gramaticales que contiene la lista original (-aĵ, mal-, -as, etc.).
-
-N. palabras: 2403
-
 ajn
 al
 almenaŭ

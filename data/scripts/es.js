@@ -1,7 +1,7 @@
 var fs = require('fs');
 var readline = require('readline');
 var rl = readline.createInterface({
-  input: fs.createReadStream('trads.txt'),
+  input: fs.createReadStream('../trads.txt'),
   output: process.stdout,
   terminal: false
 });

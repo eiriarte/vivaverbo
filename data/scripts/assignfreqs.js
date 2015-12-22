@@ -1,5 +1,5 @@
-cards = require('./cards');
-freqs = require('./fq');
+cards = require('./data/cards');
+freqs = require('./data/fq');
 
 cards.forEach(function(card) {
   for (var i = 0; i <= 20; i++) {

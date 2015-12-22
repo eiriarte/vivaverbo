@@ -1,5 +1,5 @@
-var cards = require('./ftcards');
-var freqs = require('./fq');
+var cards = require('./data/ftcards');
+var freqs = require('./data/fq');
 
 var hash = getHash(cards);
 

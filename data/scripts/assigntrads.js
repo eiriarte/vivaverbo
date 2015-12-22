@@ -1,5 +1,5 @@
-cards = require('./fcards');
-trads = require('./trads');
+cards = require('./data/fcards');
+trads = require('./data/trads');
 
 cards.forEach(function(card) {
   var trad = trads[card.respuesta];

@@ -1,9 +1,3 @@
-Descripción: Lista de palabras creada por [Anna Löwenstein](https://twitter.com/annalowenstein) para los colaboradores de la revista [Kontakto](http://kontakto.tejo.org), que escriben en esperanto para principiantes. La revista [Facila Vento](http://facila.org) también usa esta lista para sus artículos.
-
-No se incluyen aquí afijos ni terminaciones gramaticales que contiene la lista original (-aĵ, mal-, -as, etc.).
-
-N. palabras: 951
-
 aboni
 aĉeti
 adreso

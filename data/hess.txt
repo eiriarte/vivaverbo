@@ -1,7 +1,3 @@
-Descripción: Vocabulario del curso para hispanohablantes "¿Sabe usted Esperanto?" de Jorge Hess. Existe una versión de libre descarga de este curso en la web de la [Eldonejo Krajono](https://sites.google.com/site/verdakrajono/).
-
-N. palabras: 867
-
 acida
 aĉeti
 adiaŭ

@@ -1,0 +1,33 @@
+HESS:
+
+  Descripción: Vocabulario del curso para hispanohablantes "¿Sabe usted Esperanto?" de Jorge Hess. Existe una versión de libre descarga de este curso en la web de la [Eldonejo Krajono](https://sites.google.com/site/verdakrajono/).
+
+  N. palabras: 867
+
+PIV:
+
+  Descripción: PIV
+
+  N. palabras: 47143
+
+BRO:
+
+  Descripción: Lista de palabras compilada por la [Akademio de Esperanto](http://akademio-de-esperanto.org/), clasificada en nueve grupos, de menor a mayor frecuencia.
+
+  No se incluyen aquí afijos ni terminaciones gramaticales que contiene la lista original (-aĵ, mal-, -as, etc.).
+
+  N. palabras: 2403
+
+AFIJOS:
+
+  Descripción: Lista tradicional de sufijos y prefijos oficiales del esperanto.
+
+  N. palabras: 41
+
+KONTAKTO:
+
+  Descripción: Lista de palabras creada por [Anna Löwenstein](https://twitter.com/annalowenstein) para los colaboradores de la revista [Kontakto](http://kontakto.tejo.org), que escriben en esperanto para principiantes. La revista [Facila Vento](http://facila.org) también usa esta lista para sus artículos.
+
+  No se incluyen aquí afijos ni terminaciones gramaticales que contiene la lista original (-aĵ, mal-, -as, etc.).
+
+  N. palabras: 951

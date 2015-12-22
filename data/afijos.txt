@@ -1,7 +1,3 @@
-Descripción: Lista tradicional de sufijos y prefijos oficiales del esperanto.
-
-N. palabras: 41
-
 bo-
 ĉef-
 dis-
