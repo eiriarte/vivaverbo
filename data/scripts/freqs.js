@@ -1,7 +1,14 @@
+/*
+ Vuelca a stdout un array de 20 arrays que agrupa las palabras de la lista de
+ frecuencias freqs.norm.txt en los 20 grupos de frecuencias del EPO
+
+ Uso: node freqs.js
+ */
+
 var fs = require('fs');
 var readline = require('readline');
 var rl = readline.createInterface({
-  input: fs.createReadStream('../freqs.txt'),
+  input: fs.createReadStream('../freqs.norm.txt'),
   output: process.stdout,
   terminal: false
 });
@@ -26,8 +33,8 @@ rl.on('line', function(line) {
 
 function processLine(line) {
   var data = line.split('\t');
-  var word = data[1];
-  var freq = parseInt(data[2]);
+  var word = data[0];
+  var freq = parseInt(data[1]);
 
   word = word.toLowerCase();
   word = word.replace(iksoj, function(ikso) {
