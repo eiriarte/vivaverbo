@@ -1,4 +1,10 @@
-var cards = require('./data/ftcards');
+/*
+  Vuelca a stdout las palabras de la lista de frecuencias fq.js que no están
+  en la lista de tarjetas cards.js.
+
+  Uso: node missing.js
+*/
+var cards = require('./data/cards');
 var freqs = require('./data/fq');
 
 var hash = getHash(cards);
