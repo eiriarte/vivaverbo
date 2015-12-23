@@ -318,7 +318,7 @@ libro	8
 tiel	8
 esperanton	8
 rigardis	8
-nu!	8
+nu	8
 grupo	8
 fino	8
 facile	8
@@ -2765,7 +2765,7 @@ turismo	11
 forumo	11
 kandidato	11
 piv	11
-nu!	11
+nu	11
 solvon	11
 izrael	11
 konstruas	11
@@ -79994,7 +79994,7 @@ noto	17
 novela	17
 novepoka	17
 novigon	17
-nu!	17
+nu	17
 numeras	17
 nunmomente	17
 nuova	17
