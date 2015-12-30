@@ -8,10 +8,10 @@ cards = require('./data/cards');
 trads = require('./data/trads');
 
 cards.forEach(function(card) {
-  var trad = trads[card.respuesta];
+  var trad = trads[card.respuesta.toLowerCase()];
   if (typeof trad === 'string') {
     card.pregunta = trad;
   }
 });
 
-console.log(JSON.stringify(cards, null, '\t'));
+console.log('module.exports = ' + JSON.stringify(cards, null, '\t'));
