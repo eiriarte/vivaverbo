@@ -1,6 +1,9 @@
 #!/bin/bash
+echo "module.exports = []" > ./data/cards.js
 
+echo Agregando listas de palabras…
 node assigncateg.js ../piv.txt ./data/cards.js piv
+node assigncateg.js ../revo.txt ./data/cards.js revo
 node assigncateg.js ../hess.txt ./data/cards.js hess
 node assigncateg.js ../kontakto.txt ./data/cards.js kontakto
 node assigncateg.js ../afijos.txt ./data/cards.js afijos
@@ -13,3 +16,13 @@ node assigncateg.js ../bro6.txt ./data/cards.js bro6 bro
 node assigncateg.js ../bro7.txt ./data/cards.js bro7 bro
 node assigncateg.js ../bro8.txt ./data/cards.js bro8 bro
 node assigncateg.js ../bro9.txt ./data/cards.js bro9 bro
+
+echo Asignando frecuencias…
+node assignfreqs.js > ./data/temp
+rm ./data/cards.js
+mv ./data/temp ./data/cards.js
+
+echo Asignando traducciones…
+node assigntrads.js > ./data/temp
+rm ./data/cards.js
+mv ./data/temp ./data/cards.js

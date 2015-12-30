@@ -1,6 +1,6 @@
 -a
 a
-a volvita
+a volvita, volvita a
 abaĵuro
 abako
 abandoni
@@ -712,6 +712,7 @@ alfabetumo
 alfenido
 Alfonso
 Alfredo
+algo
 algoj
 blualgo, blua algo
 brunalgoj, brunaj algoj
@@ -1990,7 +1991,7 @@ Okcidenta Aŭstralio
 Suda Aŭstralio
 aŭstralopiteko
 Aŭstrio
-aŭto
+aŭto, aŭtomobilo
 aŭta
 aŭti
 aŭtejo
@@ -2031,7 +2032,6 @@ aŭtomato
 aŭtomata
 aŭtomate
 bankaŭtomato, monaŭtomato
-aŭtomobilo
 aŭtomobilisto
 aŭtomorfio
 interna aŭtomorfio
@@ -3237,7 +3237,6 @@ budao
 budaismo
 budaisto, budaano
 Budapeŝto
-budĝeto
 budho
 budhismo
 budhisto, budhano
@@ -3251,7 +3250,7 @@ bufoni
 bufonaĵo
 bufro
 bugenvilo
-buĝeto
+buĝeto, budĝeto
 buĝeti
 Buĥaro
 Buĥoro
@@ -7267,7 +7266,8 @@ foje
 foje... foje...
 fojfoje
 ĉiufoje, ĉiun fojon
-iafoje, disfoje
+iafoje
+disfoje
 kelkafoje, kelkfoje
 multfoje
 refoje
@@ -8906,8 +8906,8 @@ pliĝuste
 reĝustigi
 h
 ho
-ha
-ha ha
+ha!
+ha ha!
 ha lo
 Hadeso
 hadiso
@@ -9084,7 +9084,7 @@ hazardo
 hazarda
 hazardi
 hazardigi
-he
+he!
 hebeta
 hebreo
 hebrea lingvo
@@ -9449,7 +9449,7 @@ histriko
 histriono
 histrikedoj
 hm
-ho
+ho!
 hobio
 hobia
 hobojo
@@ -9732,7 +9732,6 @@ huzo
 Ĥazarujo
 ĥedivo
 ĥelonio
-ĥemio
 ĥemia
 ĥemiaĵo
 ĥemiisto
@@ -11749,7 +11748,7 @@ kelta
 kelta lingvo
 Kelvino
 kelvino
-kemio
+ĥemio, kemio
 elektrokemio
 keno
 kenao
@@ -15727,17 +15726,16 @@ megatuno
 megavato
 megero
 megomo
-meĥaniko
 meĥanika
 meĥanikaĵo
 meĥanikisto
-meĥanismo
+meĥanismo, mekanismo
 Meĥleno
 mejlo
 mejtnerio
 mek
 meki
-mekaniko
+meĥaniko, mekaniko
 Meklenburgo-Antaŭpomerio
 Meksiko
 Meksikurbo
@@ -20060,9 +20058,8 @@ tuŝproksima
 prokuro
 prokuristo
 prokuroro
-proleto
+proleto, proletario
 proletaro
-proletario
 proliferi
 prolifero, proliferado
 prologo
@@ -21000,7 +20997,7 @@ revizii
 revizio
 revizoro
 revolucio
-revoluciigi
+revolucii, revoluciigi
 revoluciulo
 antaŭrevolucia
 industria revolucio
@@ -22533,6 +22530,7 @@ skorio
 skorpenedoj
 skorpeno
 skorpenoformaj
+skorpio
 skorpioj
 Skorpio
 skorzonero
@@ -24362,7 +24360,6 @@ tegolo
 tegoli
 tegolisto
 Teherano
-teĥniko
 teĥnika
 teĥnikisto
 genteĥniko
@@ -24381,7 +24378,7 @@ teisto
 teko
 tekilo
 teknecio
-tekniko
+tekniko, teĥniko
 teknika
 teknikisto
 gentekniko
@@ -25831,7 +25828,7 @@ fandvazo
 noktovazo
 vazlavilo, vazlavmaŝino
 vazelino
-ve
+ve!
 veo
 vei
 hejmveo

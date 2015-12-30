@@ -1,5 +1,5 @@
 a
-volvita a
+a volvita, volvita a
 aboco
 -a
 a-vorto
@@ -2079,7 +2079,7 @@ antero
 anteridio
 anterozoido
 anthelio
-anti
+anti-
 antiaro
 antibiotiko
 anticipi
@@ -3135,7 +3135,7 @@ atmosfera
 atmosferaĵoj
 atmosferografio
 atmosferologio
-ato
+ato-
 atolo
 atomo
 atoma
@@ -4500,7 +4500,7 @@ duonbindaĵo
 nebindita
 binoklo
 binomo
-bio
+bio-
 biocenozo
 biocido
 biografo
@@ -5852,7 +5852,7 @@ centaŭreo
 centaŭrio
 centavo
 centezimala
-centi
+centi-
 centifolio
 centigrada
 centimo
@@ -7006,6 +7006,7 @@ nedeca
 decembro
 decembristo
 decemviro
+deci-
 decidi
 decido
 decida
@@ -7107,6 +7108,7 @@ naŭdek
 jardeko
 tagdeko
 biciklo[4.4.0]dekano
+deka-
 dekado
 dekadenco
 dekadenci
@@ -8404,8 +8406,7 @@ interaldoni
 redoni
 redono
 reeldono
-sindona
-sindonema
+sindona, sindonema
 sindonemo
 transdoni
 almozdoni
@@ -8647,6 +8648,7 @@ duoblaĵo
 duobligi
 duobliĝi
 duono
+duon-
 duona
 duone
 duonigi
@@ -9112,6 +9114,7 @@ eksigi
 eksiĝi
 foreksigi
 neeksigebla
+eksa-
 Ekscelenco
 ekscentra
 ekscentriko
@@ -10341,7 +10344,7 @@ Kalifornia eŝolzio
 eta
 etigi
 etulo
-et
+et-
 etano
 etanalo
 etanolo
@@ -11281,7 +11284,7 @@ femino
 femina
 feminismo
 feministo
-femto
+femto-
 femuro
 femura
 femuraĵo
@@ -11511,6 +11514,7 @@ feŭdrajto
 enfeŭdigi
 fezo
 fi!
+fi-
 fia
 fiaĵo
 fieco
@@ -14067,7 +14071,7 @@ Gibraltaro
 giĉeto
 Gideono
 gigo
-giga
+giga-
 giganto
 giganta
 gigantismo
@@ -15262,7 +15266,7 @@ reĝustiĝi
 h
 ho
 ha!
-ha ha !
+ha ha!
 ha ha ha!
 Habelo
 habitato
@@ -15650,7 +15654,7 @@ heksagono
 heksagona
 heksametro
 hektaro
-hekto
+hekto-
 hektika
 hektografo
 hektografi
@@ -16132,7 +16136,7 @@ hiosciamino
 hipo
 hipalago
 hipeastro
-hiper
+hiper-
 hiperbato
 hiperbolo
 hiperbola
@@ -16161,6 +16165,7 @@ hipnotismo
 hipnotigi
 hipnotizi
 hipnozo
+hipo-
 hipocentro
 hipocikloido
 hipodermo
@@ -17384,7 +17389,7 @@ informisto
 priinformi
 veterinformoj
 informacio
-infra
+infra-
 infrastrukturo
 infruktesko
 infundiblo
@@ -18326,7 +18331,7 @@ johimbino
 jokano
 Jokasto
 Jokohamo
-jokto
+jokto-
 jolo
 jono
 jonigi
@@ -18353,6 +18358,7 @@ Joŝija
 joto
 jota
 jotismo
+jota-
 Jovo
 joviala
 Jozefo
@@ -20468,6 +20474,7 @@ postkilo
 bilĝa kilo
 kiliasmo
 Kilimanĝaro
+kilo-
 kilopodoj
 kilsono
 kilto
@@ -27103,7 +27110,7 @@ vitroMeduzo
 Mefisto
 Mefistofelo
 mefito
-mega
+mega-
 megafono
 megalito
 megalita
@@ -27211,6 +27218,7 @@ Meloso
 Melpomeno
 Meluzino
 mem
+mem-
 memo
 membro
 membraro
@@ -27454,7 +27462,7 @@ meteno
 metilo
 metileno
 metoksio
-meta
+meta-
 metabolo
 baza metabolo
 metabolaĵo
@@ -27721,7 +27729,7 @@ mikorizo
 -mikoten
 mikozo
 aktinomikozo
-mikro
+mikro-
 mikroskopo
 mikroskopa
 mikroskopio
@@ -27812,7 +27820,7 @@ birdmileo
 milenarismo
 milenio
 mileniismo
-mili
+mili-
 milio
 sterna milio
 miliara
@@ -27887,6 +27895,7 @@ mineralogio
 Minervo
 Minesoto
 minestrono
+mini-
 minio
 miniaturo
 miniatura
@@ -28929,6 +28938,7 @@ nanduo
 nankeno
 Nankino
 Nanlingo
+nano-
 naoso
 napo
 brasiknapo
@@ -32537,7 +32547,7 @@ helppeti
 pardonpeti
 plorpeti
 trudpeti
-peta
+peta-
 petalo
 petalaro
 petaleca
@@ -32744,6 +32754,7 @@ piknidio
 pikniko
 pikniki
 piknometro
+piko-
 pikolino
 pikro
 pikrata acido
@@ -34874,6 +34885,7 @@ Protestanta
 Protestantismo
 protezo
 protido
+proto-
 protokolo
 protokoli
 protokolanto
@@ -35013,7 +35025,7 @@ psalmaro
 psalmisto
 psalterio
 psamito
-pseŭdo
+pseŭdo-
 pseŭdonimo
 pseŭdonima
 pseŭdomorfa
@@ -36448,7 +36460,7 @@ retorta
 retrati
 retrato
 retreto
-retro
+retro-
 retrospektivo
 retrospektiva
 retuŝi
@@ -36495,7 +36507,7 @@ revizoro
 kontrevizoro
 revolucio
 revolucia
-revolucii
+revolucii, revoluciigi
 revoluciismo
 revoluciisto
 revoluciulo
@@ -37930,6 +37942,7 @@ malsatmorti
 malsatstriko
 nesatigebla
 supersatigi
+sat-
 SAT
 SATano
 Satano
@@ -38362,6 +38375,7 @@ seneco
 seni
 senigi
 seniĝi
+sen-
 seno
 senao
 Italia senao
@@ -40624,7 +40638,7 @@ Stentoro
 stepo
 stero
 steradiano
-stereo
+stereo-
 stereoskopo
 stereoskopio
 stereofonio
@@ -41040,6 +41054,7 @@ subiĝo
 subulo
 ĉi-sube
 desuba
+sub-
 subalterna
 subalternulo
 subdukcio
@@ -41334,6 +41349,7 @@ superulo
 malsupera
 malsupereco
 nesuperebla
+super-
 superba
 superlativo
 supermarkto
@@ -42899,7 +42915,7 @@ tektonika
 plattektonismo
 telo
 Tel-Avivo
-tele
+tele-
 teleskopo
 teleskopa
 radioteleskopo
@@ -43211,6 +43227,7 @@ transtera
 humtero
 sektero
 vizaĝaltere
+tera-
 terafozo
 terafozedoj
 terakoto
@@ -44952,7 +44969,7 @@ ulmario
 ulno
 ulna
 ultimato
-ultra
+ultra-
 ultramaro
 ululi
 ululo
@@ -46231,6 +46248,7 @@ unuavice
 anservice
 atendovico
 taskvica
+vic-
 vicio
 kultiva vicio
 vidi
@@ -47019,8 +47037,9 @@ Zenono
 zeolito
 Zepelino
 zepelino
-zepto
+zepto-
 zeta
+zeta-
 zeŭgmo
 Zeŭksiso
 Zeŭso

@@ -2243,7 +2243,7 @@ reno
 rendevuo
 rento
 revizii
-revolucii
+revolucii, revoluciigi
 rezoni
 ribo
 rigida
@@ -2270,7 +2270,7 @@ sekci
 sekcio
 sekura
 senato
-sindona
+sindona, sindonema
 singarda
 sinteno
 sino
