@@ -7,12 +7,20 @@
 
 var fs = require('fs');
 var readline = require('readline');
+var _ = require('lodash');
+var cards = require('./data/cards');
+
 var rl = readline.createInterface({
   input: fs.createReadStream('../freqs.norm.txt'),
   output: process.stdout,
   terminal: false
 });
-var out = [ [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [] ];
+
+var cardHash = _.groupBy(cards, function(card) {
+  return card.respuesta.toLowerCase();
+});
+var rank = 0;
+var out = {};
 
 var iksoj = /(cx|gx|hx|jx|sx|ux)/g
 var chapeloj = {
@@ -25,21 +33,47 @@ var chapeloj = {
 }
 
 rl.on('line', function(line) {
-  processLine(line);
+  rank++;
+  processLine(line, rank);
 }).on('close', function() {
-  console.log(JSON.stringify(out, null, '\t'));
+  console.log('module.exports = ' + JSON.stringify(out, null, '\t'));
   process.exit(0);
 });
 
-function processLine(line) {
-  var data = line.split('\t');
-  var word = data[0];
-  var freq = parseInt(data[1]);
+function processLine(line, rank) {
+  var verb = /^(...*)(as|is|os|ado|anto|into|onto|itan?)$/;
+  var plurAccus = /^(...*[ao])(j|n|jn)$/;
+  var match, word = line.split('\t')[0];
 
   word = word.toLowerCase();
   word = word.replace(iksoj, function(ikso) {
     return chapeloj[ikso];
   });
 
-  out[freq].push(word);
+  match = verb.exec(word);
+  if (match && !exists(word)) {
+    // Pasamos el verbo a infinitivo
+    word = match[1] + 'i';
+  } else {
+    match = plurAccus.exec(word);
+    if (match && !exists(word)) {
+      // Quita la terminación -j, -n ó -jn
+      word = match[1];
+      // Con 4 caracteres tendríamos p.ej. "geno" = ge'no ("no" = "letra ene")
+      if (word.length > 4 && word.slice(0, 2) === 'ge') {
+        if (!exists(word) && exists(word.slice(2))) {
+          // Quita el prefijo "ge"
+          word = word.slice(2);
+        }
+      }
+    }
+  }
+
+  if (!out.hasOwnProperty(word)) {
+    out[word] = rank;
+  }
+}
+
+function exists(word) {
+  return cardHash.hasOwnProperty(word);
 }

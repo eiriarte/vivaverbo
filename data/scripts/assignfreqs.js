@@ -4,19 +4,19 @@
 
   Uso: node assignfreqs.js
 */
-cards = require('./data/cards');
-freqs = require('./data/fq');
+var cards = require('./data/cards');
+var freqs = require('./data/fq');
+var total = cards.length;
+var maxFreq = 300000;
 
-cards.forEach(function(card) {
-  for (var i = 0; i <= 20; i++) {
-    if (freqs[i].indexOf(card.respuesta) !== -1) {
-      card.freq = i;
-      break;
-    }
+cards.forEach(function(card, index) {
+  var freq = freqs[card.respuesta.toLowerCase()];
+  if (typeof freq !== 'undefined') {
+    card.freq = freq;
+  } else {
+    card.freq = ++maxFreq;
   }
-  if (typeof card.freq === 'undefined') {
-    card.freq = 21;
-  }
+  process.stderr.write('Entrada ' + index + '/' + total + '…\r');
 });
 
-console.log(JSON.stringify(cards, null, '\t'));
+console.log('module.exports = ' + JSON.stringify(cards, null, '\t'));
