@@ -4087,7 +4087,7 @@ baziĝi
 elbaza
 malbazo
 senbaza
-surbaze de
+surbaze de, baze de
 dubaza
 datenbazo
 filmobazo
@@ -5844,7 +5844,7 @@ procentego
 okcent
 sepcent
 tricent
-jarcento
+jarcento, jc.
 jarcenta
 centaŭro
 Centaŭro
@@ -6757,7 +6757,7 @@ Hindoĉinio
 ĉiro
 ĉireto
 ĉirimeno
-ĉirkaŭ
+ĉirkaŭ, ĉ.
 ĉirkaŭa
 ĉirkaŭe
 ĉirkaŭi
@@ -8285,7 +8285,7 @@ dokisto
 endokigi
 doksologio
 dokta
-doktoro
+doktoro, d-ro
 doktora
 doktoreco
 doktorigi
@@ -9147,7 +9147,7 @@ ekshibiciulo
 eksklamacio
 ekskludi
 ekskluziva
-ekskluzive
+ekskluzive, ekskl.
 ekskluzivi
 ekskluziveco
 ekskluzivema
@@ -9356,7 +9356,7 @@ ekzekvaturo
 ekzemo
 ekzemplo
 ekzempla
-ekzemple
+ekzemple, ekz., ekz-e
 ekzempli
 ekzemplodona
 senekzempla
@@ -10207,13 +10207,13 @@ malespera
 malesperigi
 senespera
 senespereco
-Esperanto
+Esperanto, Eo, E-o
 Esperanta
 esperantaĵo
 esperantano
 esperantigi
 esperantismo
-esperantisto
+esperantisto, e-isto
 esperantistaro
 esperantisteco
 esperantologo
@@ -16825,7 +16825,7 @@ ideisto
 ideologo
 ideologio
 ideologia
-samideano
+samideano, s-ano
 samideanaro
 fiksideulo
 idealo
@@ -17233,7 +17233,7 @@ vojindikatoro
 uzindikoj
 indikativo
 indiumo
-individuo
+individuo, unuopulo
 individua
 individueco
 individuismo
@@ -17471,7 +17471,7 @@ korinklino
 inklinacio
 inkludi
 inkluziva
-inkluzive
+inkluzive, inkl.
 inkluzivi
 inkluzivo
 inkluzivaĵo
@@ -18185,7 +18185,7 @@ japana
 Japanio
 Japanujo
 japanigi
-jaro
+jaro, j.
 sabata jaro
 jara
 jararo
@@ -18734,7 +18734,7 @@ kadmio
 kadro
 kadroj
 kadri
-kadre de
+kadre de, enkadre de
 kadrado
 kadraĵo
 kadrulo
@@ -18801,7 +18801,7 @@ Kairo
 kairno
 kairino
 Kaistro
-kaj
+kaj, k.
 kajo
 surkaje
 ĝetkajo
@@ -21803,7 +21803,7 @@ koncepti
 konceptado
 koncerni
 koncerna
-koncerne
+koncerne …-n, koncerne al
 koncernato
 koncerto
 koncerta
@@ -21972,7 +21972,7 @@ konflikti
 ekkonflikti
 laborkonflikto
 konforma
-konforme al
+konforme al, konforme kun
 konformi
 konformeco
 konformigi
@@ -23578,8 +23578,7 @@ ksilografio
 ksilosteo
 kŝatrio
 ktenoforoj
-k.t.p.
-ktp
+kaj tiel plu, ktp, k.t.p.
 kuo
 Kuala-Lumpuro
 kubo
@@ -27578,7 +27577,7 @@ ridmevo
 mezo
 meza
 meze
-meze de
+meze de, meze en, meze inter, en la mezo de
 mezulo
 mezumo
 mezumi
@@ -29864,7 +29863,7 @@ Numeo
 numeno
 numena
 numenio
-numero
+numero, n-ro
 numera
 numeri
 numerebla
@@ -30088,7 +30087,7 @@ senofica
 dungoficejo
 poŝtoficejo
 vetoficejo
-oficiala
+oficiala, of.
 oficiale
 oficialeco
 oficialigi
@@ -31089,7 +31088,7 @@ pagelo
 pagodo
 paguro
 paguredoj
-paĝo
+paĝo, p.
 paĝigi
 enpaĝigi
 paĝio
@@ -34388,7 +34387,7 @@ filmoprezentado
 prezervi
 prezidi
 prezidado
-prezidanto
+prezidanto, prez.
 prezidantaro
 prezidanteco
 aĝoprezidanto
@@ -34553,7 +34552,7 @@ profesia
 profesii
 profesiisto
 profesiulo
-profesoro
+profesoro, prof.
 profesora
 profesoreco
 profeto
@@ -36372,7 +36371,7 @@ memrespekto
 nerespekto
 trorespekta
 respektiva
-respektive
+respektive, resp.
 respondi
 respondo
 responda
@@ -36751,7 +36750,7 @@ simetria rilato
 malsimetria rilato
 transitiva rilato
 rilata
-rilate
+rilate al, rilate …-n
 rilatigi
 rilatumo
 ekrilati
@@ -38294,8 +38293,8 @@ sekvigi
 sekvosigno
 intersekvi sin
 sensekva
-sinsekvo
-sinsekva
+sinsekvo, intersekvo
+sinsekva, intersekva
 ĉassekvi
 Sekvano
 sekvenco
@@ -39144,12 +39143,12 @@ sinhalo
 sinistro
 sinistra
 sinistrozo
-sinjoro
+sinjoro, s-ro
 Sinjoro
 sinjora
 sinjoreto
 sinjorido
-sinjorino
+sinjorino, s-ino
 Sinjorino
 gesinjoroj
 grandsinjoro
@@ -39531,7 +39530,7 @@ memskribaĵo
 misskribo
 nepriskribebla
 neskribuzita
-postskribo
+postskribo, PS, P.S.
 priskribi
 priskribo
 reskribi
@@ -40105,7 +40104,7 @@ specimeno
 borspecimeno
 spegulo
 spegula
-speguli
+speguli, respeguli
 speguliĝi
 spegulumo
 retrospegulo
@@ -46765,15 +46764,13 @@ malgraŭvola
 pretervola
 laŭvola
 malvoli
-memvola
 nevola
 plivoli
 senvola
 bonvoli
 bonvola
-libervola
+libervola, memvola, propravola
 malbonvola
-propravola
 scivolo
 scivola
 scivole

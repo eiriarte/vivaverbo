@@ -110,7 +110,7 @@ cirklo
 ĉie
 ĉielo
 ĉio
-ĉirkaŭ
+ĉirkaŭ, ĉ.
 ĉiu
 ĉu
 da
@@ -143,7 +143,7 @@ diskuti
 diversa
 dividi
 do
-doktoro
+doktoro, d-ro
 dolĉa
 dolori
 domo
@@ -311,7 +311,7 @@ iri
 ja
 jam
 januaro
-jaro
+jaro, j.
 ĵaŭdo
 je
 jen
@@ -326,7 +326,7 @@ justa
 ĵus
 kadro
 kafo
-kaj
+kaj, k.
 kajero
 kalendaro
 kalkuli
@@ -568,7 +568,7 @@ novembro
 nu
 nubo
 nulo
-numero
+numero, n-ro
 nun
 nur
 obei
@@ -599,7 +599,7 @@ osto
 ovo
 paco
 pagi
-paĝo
+paĝo, p.
 pako
 palpi
 pano
@@ -787,7 +787,7 @@ signifi
 silenti
 simila
 simpla
-sinjoro
+sinjoro, s-ro
 sistemo
 situacio
 skatolo

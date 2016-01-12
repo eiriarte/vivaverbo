@@ -28,7 +28,7 @@ helpi
 homo
 infano
 iri
-jaro
+jaro, j.
 juna
 kampo
 kapo
@@ -82,7 +82,7 @@ scii
 sekvi
 sendi
 sidi
-sinjoro
+sinjoro, s-ro
 skribi
 stari
 ŝajni

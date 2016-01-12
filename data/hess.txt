@@ -318,8 +318,8 @@ ja
 jako
 jam
 januaro
-jarcento
-jaro
+jarcento, jc.
+jaro, j.
 jen
 jena
 ju
@@ -336,7 +336,7 @@ juvelo
 ĵus
 ĵusnaskita
 kafo
-kaj
+kaj, k.
 kajero
 kalkuli
 kamarado
@@ -407,7 +407,7 @@ krom
 kruĉo
 kruela
 kruro
-k.t.p.
+kaj tiel plu, ktp, k.t.p.
 kuiri
 kuko
 kulero
@@ -721,7 +721,7 @@ simila
 simpatia
 simpla
 simpla
-sinjoro
+sinjoro, s-ro
 skandalo
 skatolo
 skeleto

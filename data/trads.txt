@@ -1,3 +1,52 @@
+kompare kun, en komparo kun: en comparación con
+malbone: mal
+ĉiujare: anualmente
+firme: con firmeza
+zorge: con cuidado
+egale: igual(mente)
+tiutempe: en aquella época
+uzanto, uzulo: usuario, ria
+definitive: definitivamente
+aldone: además
+bonege!: ¡estupendo!
+Alicio: Alicia
+perforte: por la fuerza
+amase: en masa; masivamente
+urbocentro: centro (urbano)
+surloke: in situ
+diligente: diligentemente
+lignohakisto: leñador, ra
+interurba: interurbano, na
+pasintjare: el año pasado
+venontjare: el año que viene
+kondiĉe ke: a condición de que
+dekomence, de la komenco: desde el principio
+setlejo: asentamiento
+ankoraŭfoje: una vez más
+malkaŝe: abiertamente
+subpremo: represión
+altlernejo: escuela superior
+miksĉifona: de retales
+elkore: de todo corazón
+seninterrompe: ininterrumpidamente
+libervole, memvole, propravole: voluntariamente
+stelŝipo: nave estelar
+dulanda: binacional
+subfrazo: oración subordinada
+tutmonda loktrova sistemo: GPS
+plejeble: lo más posible
+subtropika: subtropical
+leĝdona, leĝodona: legislativo
+tutsimple: sencillamente
+geedza: matrimonial
+terano: terrícola
+pokapa: per cápita
+Nobel-premio: Premio Nobel
+neoficiala: extraoficial
+necerteco: incertidumbre
+oficperiodo, mandatperiodo: mandato (periodo)
+trafikvojo: arteria (calle)
+kunsendi: adjuntar
 a: terminación de los adjetivos
 abako: ábaco
 abasido: abasí; abasida
@@ -585,7 +634,7 @@ ano: partidario
 anodo: ánodo
 anomalio: anomalía
 anoncado: anuncio
-anonci: anunciar; publicar
+anonci: anunciar
 anonco: anuncio
 anonima: anónimo
 anormala: anormal; irregular
@@ -749,7 +798,7 @@ arbitra: arbitrario
 arbitracio: arbitraje (decisión)
 arbitro: arbitrariedad
 arbo: árbol
-arbohakisto: leñador
+arbohakisto: leñador, ra
 arboŝelo: corteza
 arbotrunko: tronco
 arbusto: arbusto
@@ -840,7 +889,6 @@ arseno: arsénico
 artefarita intelekto: inteligencia artificial
 artefarita satelito: satélite de la tierra
 artefarita: artificial
-arterio: arteria (orgánica; de tránsito)
 artifiko: artificio
 artiki: articular
 artikigi: articular
@@ -996,7 +1044,7 @@ aŭtentika: auténtico
 aŭtentikeco: autenticidad
 aŭtentikigi: autentificar
 aŭtisto: automobilista
-aŭto: auto; automóvil; coche
+aŭto, aŭtomobilo: auto; automóvil; coche
 aŭtobiografio: autobiografía
 aŭtobushaltejo: parada del autobús
 aŭtobuso: autobús; camión
@@ -1417,13 +1465,13 @@ boneta: bonito
 bonete: así así
 bongusta: rico
 bonhava: acomodado
-bonŝance: por fortuna
+bonŝance: por suerte
 bonvena: bienvenido
 bonvenigi: dar la bienbevida; dar la bienvenida
 bonveno: bienvenida
 bonvenon: bienvenida
 bonvoli: tener la bondad de
-bonvolu: haz favor; haz el favor; por favor; tenga la bondad de
+bonvolu, bv.: haz favor; haz el favor; por favor; tenga la bondad de
 bordelo: burdel; mancebía
 borderi: orlar; ribetear
 bordo: costa; orilla; borde
@@ -1808,7 +1856,7 @@ cinismo: cinismo
 cipreso: ciprés
 ciprino: carpa
 ĉipso: papas fritas
-ĉirkaŭ: alrededor de; en torno de
+ĉirkaŭ, ĉ.: alrededor de; en torno de
 ĉirkaŭaĵo: alrededores; los alrededores (úsase siempre en plural)
 ĉirkaŭbraki: abrazar
 ĉirkaŭiri: circundar; rodear
@@ -1860,7 +1908,7 @@ citsignoj: conullas
 ĉiusemajne: semanalmente
 ĉiuspeca: toda clase de
 ĉiutaga: de todos los días; diario
-ĉiutage: diariamente
+ĉiutage: a diario
 civila: civil (ts)
 civilizacio: civilización
 civilizi: civilizar
@@ -1908,7 +1956,6 @@ danke al: gracias a
 dankema: agradecido
 dankemo: gratitud
 dankemeco: gratitud
-dankemo: gratitud
 danki: agradecer; dar gracias a
 danko: agradecimiento
 dankado: agradecimiento
@@ -2055,7 +2102,7 @@ demonstri: demostrar
 demonstro: demostración
 denaska: innato
 denominatoro: denominador
-denove: de nuevo; otra vez
+denove: de nuevo
 densa: denso
 denseco: densidad
 denta: dentado; dental
@@ -2325,7 +2372,7 @@ dogmo: dogma
 dogo: buldog (perro)
 doĝo: dŭ
 doko: dársena; dique
-doktoro: doctor
+doktoro, d-ro: doctor
 doktrino: doctrina
 dokumenta filmo: documental
 dokumentado: documentación
@@ -2455,7 +2502,7 @@ ebl: -able (sufijo verbal que indica 'que se puede V-ar')
 ebla: posible
 eble: posiblemente; quizás; tal vez
 ebleco: posibilidad (calidad de posible)
-ebli: ser posible; poder ser
+ebli: ser posible
 ebligi: hacer posible
 eblo: posibilidad
 ebono: ébano
@@ -2503,7 +2550,7 @@ egalanimeco: ecuanimidad
 egaleco: igualdad
 egali: es igual a
 egaligi: igualar
-ege: muchísimo
+ege: enormemente
 egido: egida; égida
 egipta: egipcíaco; egipcio
 egiptino: egipcia; egipcíaca
@@ -2649,7 +2696,7 @@ ekzegezo: exégesis
 ekzekuti: ejecutar (un condenado a pena de muerte)
 ekzekuto: ejecución
 ekzemo: eczema
-ekzemple: por ejemplo
+ekzemple, ekz., ekz-e: por ejemplo
 ekzemplero: ejemplar
 ekzemplo: ejemplo
 ekzerci: ejercitar
@@ -2964,7 +3011,7 @@ erudito: erudito
 erupcii: erupcionar; hacer erupción
 erupcio: erupción
 eŝafodo: catafalco; patíbulo
-escepte: excepto; menos
+escepte de: excepto; menos
 escepti: exceptuar
 escepto: excepción
 esenca: escencial
@@ -2979,9 +3026,8 @@ eskimo: esquimal
 eskludi: excluir
 eskorti: escoltar
 eskorto: escolta
-esperantisto: esperantista
-Esperanto: Esperanto
-esperanto: esperanto
+esperantisto, e-isto: esperantista
+Esperanto, Eo, E-o: Esperanto
 Esperantujo: Esperantuyo (país mítico en el que se supone que habitan los esperantistas)
 esperi: esperar (tener esperanza)
 espero: esperanza
@@ -4208,7 +4254,7 @@ heĝtondilo: cizalla para setos; tijera para setos
 hejme: en casa
 hejmeca: cómodo
 hejmo: hogar (casa)
-hejmsopiro: nostalgia
+hejmsopiro: morriña
 hejmvesto: camarera
 hejtado: calefacción
 hejti: calentar; encender
@@ -4704,7 +4750,7 @@ inklina: aficionado; inclinado a; proclive; propenso
 inklino: tentación
 inkludi: incluir
 inkluziva: incluido; inclusivo
-inkluzive: incluído
+inkluzive, inkl.: incluído
 inkluzivi: incluir
 inko: tinta
 inkognito: incógnito
@@ -4748,7 +4794,7 @@ instiga okazaĵo: lugar; motivo
 instigi: animar; espolear; incitar; inpulsar; instigar
 instinkto: instinto
 institucio: instutución
-instituto: institut (escuela superior; corporación científica o artística) instituto
+instituto: instituto
 instruado: enseñanza
 instruaĵo: enseñanza
 instruejo: escuela
@@ -4827,7 +4873,6 @@ interŝanĝi: cambiar; intercambiar; permutar; trocar
 interspaco: intersticio
 intertempe: entretanto; mientras tanto
 intertempo: intervalo
-interurba: interlocal
 interveni: intervenir
 interveto: quiniela
 intervidiĝo: entrevista
@@ -4951,13 +4996,13 @@ Japanio: Japón
 Japanlando: Japón
 japano: japonés
 Japanujo: Japón
-jarcento: siglo
+jarcento, jc.: siglo
 jardo: verga; yarda
 jarfina vespero: Noche Vieja
 ĵargono: argot; jerga
 jarlibro: anuario
 jarmilo: milenio
-jaro: año
+jaro, j.: año
 jasmeno: jazmín
 jaspo: jaspe
 ĵaŭdo: jueves
@@ -5094,7 +5139,7 @@ kafujo: cafetera
 kaĝo: jaula
 kahelo: azulejo; baldosa
 kaj ankaŭ: así como; y también
-kaj: y (conjunción copulativa)
+kaj, k.: y (conjunción copulativa)
 kajero: cuaderno; fascículo; libreta
 kajo: andén; muelle
 kajto: cometa; papalote
@@ -5648,7 +5693,7 @@ koncentrejo: campo de concentración
 koncentri: concentrar (ts)
 koncepto: concepto; idea; noción
 koncerna: dicho; en cuestón
-koncerne: en cuanto a; por lo tocante a; respecto de
+koncerne …-n, koncerne al: en cuanto a; por lo tocante a; respecto de
 koncerni: concernir
 koncerto: concierto
 koncesio: concesión (de un estado para explotar un territorio; etc)
@@ -5995,7 +6040,7 @@ ks: y de manera parecida (abrev de kaj simile)
 ksenofobio: xenofobia
 ksilofono: xilófono
 ksilografio: xilografía
-ktp: etcétera (abrev de kaj tiel plu)
+kaj tiel plu, ktp, k.t.p.: etcétera
 kuba: cubano
 kube: a la cubana
 Kubo: Cuba
@@ -7443,7 +7488,7 @@ nuligita: suspendido
 nulo: cero; nulidad
 numeralo: numeral
 numeri: numerar
-numero: número (ts)
+numero, n-ro: número (ts)
 numerplato: matrícula
 nun: actualmente; ahora
 nuna: actual; de ahora; contemporáneo
@@ -7485,7 +7530,7 @@ oferti: ofrecer (un producto en el mercado)
 oferto: oferta; ofrecimiento
 ofica: oficial
 oficejo: oficina
-oficiala: oficial
+oficiala, of.: oficial
 oficialigi: oficializar
 oficiro: oficial militar
 oficisto: empleado; funcionario
@@ -7639,7 +7684,7 @@ pagi la kostojn de: costear
 pagi parte: pagar a plazos
 pagi: pagar; saldar
 paĝio: paje
-paĝo: página
+paĝo, p.: página
 pago: pago
 pajaco: payaso
 pajlo: paja
@@ -7832,7 +7877,7 @@ perdi: perder
 perdita: perdido
 perdo: perdida
 perdriko: perdiz
-pere: mediante (pere de por medio de)
+pere de: mediante (pere de por medio de)
 perei: perecer (morir; destruirse; condenarse)
 perfekta: perfecto (ts)
 perfidi: traicionar
@@ -8163,7 +8208,7 @@ postresti: quedarse atrás; tardar
 postsendi: hacer seguir
 postsignaro: rastro
 postsigno: huella
-postskribo: posdata
+postskribo, ps, p.s.: posdata
 posttagmezo: la tarde (no la mañana) tarde
 postulema: demandante
 postuli: demandar; exigir
@@ -8291,7 +8336,7 @@ produkto: producto
 profesia sekreto: secreto profesional
 profesia: profesional
 profesio: profesión (ocupación laboral)
-profesoro: profesor
+profesoro, prof.: profesor
 profeta: profético
 profeto: profeta
 profite al: en provencho de
@@ -8318,7 +8363,7 @@ prokrasto: retraso
 proksima: cercano; próximo; entrante
 proksime: cerca
 proksimuma: aproximado
-proksimume: a eso de; apróximadamente; cerca de
+proksimume, proks.: a eso de; apróximadamente; cerca de
 proletario: proletario
 proleto: proletario
 promeni: pasearse
@@ -8526,7 +8571,7 @@ redukti la lumon: reducir las luces
 redukti: reducir (ts)
 reduktita lumo: luz de cruce
 redukto: rebaja
-ree: de nuevo; otra vez
+ree: de nuevo
 reen: atrás
 refleksiva: reflexivo
 refleksivo: reflexivo
@@ -8684,7 +8729,7 @@ rigli: barrar (cerrar con barra; barrar el paso) pasar la balda
 rikolti: cosechar; recoger; obtener resultados
 rikolto: cosecha
 rilata pronomo: pronombre relativo
-rilate: en cuanto a; por lo tocante a; respecto de
+rilate al, rilate …-n: en cuanto a; por lo tocante a; respecto de
 rilati: relacionarse (tener relación con)
 rilato: conexión; relación
 rimarki: darse cuenta; notar; remarcar
@@ -8858,7 +8903,7 @@ salvio: salvia
 sama: igual; mismo
 ŝamanismo: chamanismo
 same: idem
-samideano: esperantista (partidario de la misma idea)
+samideano, s-ano: esperantista (partidario de la misma idea)
 samkiel: igual que; de la misma manera que; como
 samlandano: compatriota
 samopinii: concordar
@@ -8867,7 +8912,7 @@ samprofesiano: colega; compañero
 ŝampuo: champú
 samreligiano: coreligionario
 samteamano: coequipero
-samtempe: al mismo tiempo; juntamente
+samtempe: al mismo tiempo
 samtempulo: contemporaneo
 samvalora: equivalente
 sana: sano; cuerdo
@@ -8950,7 +8995,7 @@ sceno: escena (ts)
 sciencisto: hombre de ciencia
 scienco: ciencia
 scii: saber
-sciigi: informar; divulgar; publicar
+sciigi: informar; divulgar
 sciigo: noticia; noticias; publicación
 scipovi: dominar (una ciencia; un arte o una lengua) (=povoscii)
 sciuro: ardilla
@@ -9005,7 +9050,7 @@ senbrila: desteñido
 sencela: ocioso; vano
 senceremonia: familiar
 senĉesa: continuo; incesante
-senĉese: continuamente
+senĉese: sin parar
 senco: sentido (significado; dirección; signo)
 sendanĝera pinglo: imperdible
 sendanĝera: sano y salvo
@@ -9164,16 +9209,16 @@ singarda: circunspecto; precavido; prudente; prevenido (contra peligros; males)
 singardema: circunspecto; precavido
 singularo: singular (gram)
 singulti: hipo; tener hipo
-sinjorino: dama; señora; señorita
+sinjorino, s-ino: dama; señora; señorita
 sinjorlando: señorío
 sinjoro: caballero; señor
 ŝinko: jamón
 sino: pecho; seno (cavidad)
 s-ino: señora (abrev de sinjorino)
 sinrega: dueño de sí mismo
-sinsekva: consecutivo; sucesivo
+sinsekva, intersekva: consecutivo; sucesivo
 sinsekve: sucesivamente
-sinsekvo: encadenación; encadenamiento; orden
+sinsekvo, intersekvo: encadenación; encadenamiento; orden
 sinteno: actitud; postura
 sinua: sinuoso
 sinuo: ondulación; seno
@@ -9343,7 +9388,7 @@ spiri: respirar
 spirito: espíritu (conciencia; alma; ideario; voluntad)
 spiro: aliento; respiración
 spirtubo: tuba de nadar
-spite: a pesar de; contrariando a
+spite al, spite …-n: a pesar de; contrariando a
 spiti: desafiar; plantar cara
 splito: astilla
 spoko: radio
@@ -9571,7 +9616,7 @@ sunfrapo: insolación
 sunleviĝo: salida del sol
 suno: rayos solares; sol
 sunombrelo: sombrilla
-sunsubiro: puesta del sol
+sunsubiro: puesta de sol
 sunvitroj: gafas oscuras
 ŝuo: zapato
 supeo: cena
@@ -9854,7 +9899,7 @@ tinti: tintinear
 tintilo: campanilla; timbre
 tinuso: atún
 tio ĉi: esta
-tio estas: a saber; es decir
+tio estas, t.e.: a saber; es decir
 tio: aquello; eso
 tiom: tan; tanto
 tion: aquello (acc)
@@ -9962,7 +10007,7 @@ travadejo: vado
 travadi: vadear
 travestii: parodiar
 tre: mucho; muy
-treege: extremadamente; muchísimo
+treege: muchísimo
 trejni: ejercitar (adquirir o desarrollar una habilidad) entrenar
 tremi: temblar (ts) tremblar
 trempi: inmergir; mojar (pan)
@@ -10393,7 +10438,7 @@ vigla: animado; despierto; espabilado; listo; vigoroso; vivo; vivaz
 viktimo: víctima
 vikunja lamo: vicuña
 vilaĝestro: alcalde
-vilaĝeto: pueblecito
+vilaĝeto: aldea
 vilaĝo: aldea; pueblo; villa
 vin: te; os; a ti; a vosotros
 vinagro: vinagre
@@ -10487,7 +10532,7 @@ voli diri: querer decir
 voli: querer
 volitivo: volitivo
 volo: voluntad
-volonte: voluntariamente
+volonte: de buena gana
 volontege: con mucho gusto; de buena gana
 volto: volt; voltio
 volumenaĵo: volumen
@@ -10501,7 +10546,6 @@ vori: devorar
 vortaro: diccionario
 vortico: remolino; torbellino; vórtice
 vorto: palabra
-vortoprovizo: vocabulario
 vortotrezoro: vocabulario
 vosto: cola (de animal) rabo
 voti: hacer un voto o votos; prometer
@@ -10748,9 +10792,9 @@ afina: afín
 afiŝo: cartel
 afiŝo: póster
 afiŝo: pancarta
-afiŝo: mensaje (en un foro de internet)
+afiŝo: mensaje (en blog, foro…)
 afiŝi: pegar carteles
-afiŝi: adjuntar fichero, cartel (en un mensaje de ordenador)
+afiŝi: publicar (en blog, foro…)
 aflikti: afligir
 afonio: afonía
 aforismo: aforismo
@@ -10993,7 +11037,6 @@ alaĵo: apéndice
 alaĵo: complemento
 alaĵo: suplemento
 aligi: añadir
-aligi: adjuntar
 aligi: conectar
 aliĝi: inscribirse
 aliĝi: adherirse
@@ -11118,10 +11161,8 @@ amara: amargo
 amaranto: amaranto
 amaso: masa
 amaso: multitud
-amaso: muchedumbre
 amasa: masiva
 amasa: de masas
-amasa: en masa
 amasigi: amasar
 amasigi: acumular
 amasigi: aglutinar
@@ -11129,7 +11170,7 @@ amasiĝi: reunirse
 amasiĝi: congregarse
 amasiĝo: acumulación
 amasiĝo: hacinamiento
-homamaso: multitud
+homamaso: multitud | muchedumbre
 popolamaso: multitud
 amasinformilo: medios de comunicación de masas
 amazono: amazona
@@ -11738,8 +11779,8 @@ aŭrora: Aurora
 aŭrori: amanecer
 aŭskulti: escuchar
 Aŭstralio: Australia
-aŭto: auto
-aŭto: coche
+aŭto, aŭtomobilo: auto
+aŭto, aŭtomobilo: coche
 aŭtisto: automovilista
 aŭtarcio: autarquía
 aŭtarcia: autárquico
@@ -12497,7 +12538,7 @@ elcentaĵo: porcentaje
 elcento: tanto por ciento
 elcentaĵo: tanto por ciento
 centuma: centesimal
-jarcento: siglo
+jarcento, jc.: siglo
 centaŭro: centauro
 centaŭro: Centauro
 centavo: centavo
@@ -12789,7 +12830,6 @@ danke al: gracias a
 dank' al: gracias a
 danke ...-n: gracias a
 dankema: agradecido
-dankemo: gratitud
 dankemeco: gratitud
 sendanka: ingrato
 sendanka: desagradecido
@@ -13236,7 +13276,7 @@ doĝo: dux
 doko: dique
 dokisto: estibador
 dokisto: trabajor de puerto
-doktoro: doctor
+doktoro, d-ro: doctor
 doktrino: doctrina
 dokumento: documento
 dokumenti: documentar
@@ -13534,7 +13574,7 @@ eksciti: excitar
 ekscitiĝi: excitarse
 eksciteco: excitación
 ekskluziva: exclusivo
-ekskluzive: exclusivamente
+ekskluzive, ekskl.: exclusivamente
 ekskludi: excluir
 ekskrecio: excreción
 ekskrecii: excretar
@@ -13608,8 +13648,6 @@ ekzekuti: ejecutar
 ekzekuto: ejecución
 ekzemo: eccema
 ekzemplo: ejemplo
-ekzemple: por ejemplo
-ekzemplero: ejemplar
 ekzerci: ejercitar
 ekzerci: entrenar
 ekzerco: ejercicio
@@ -13829,7 +13867,6 @@ epistolo: epístola
 epitafo: epitafio
 epitelio: epitelio
 epiteto: epíteto
-epoko: época
 epokfara: que produce un antes y un después
 glaciepoko: era glacial
 glacia epoko: era glacial
@@ -13887,7 +13924,7 @@ esperi: esperar
 esperi: tener esperanza
 espero: esperanza
 espereble: esperable
-Esperanto: esperanto
+Esperanto, Eo, E-o: esperanto
 Esperanta: esperantista (adj.)
 Esperante: en esperanto
 Esperantido: esperantido
@@ -15377,7 +15414,7 @@ hakado: Acción de cortar
 hakilo: hacha
 hakilo: cuchilla
 hakilo: instrumento de corte
-arbohakisto: leñador
+arbohakisto: leñador, ra
 batalhakilo: hacha de guerra
 irkahaki: tallar
 irkahaki: desbastar (piedra, madera)
@@ -15959,7 +15996,7 @@ indiko: indicación
 indikilo: indicador
 indikativo: indicativo
 indikatoro: medidor
-individuo: individuo
+individuo, unuopulo: individuo
 individua: individual
 individueco: individualidad
 individuismo: individualismo
@@ -16299,7 +16336,7 @@ jambo: yambo
 ĥorjambo: coriambo
 Jansenismo: jansenismo
 januaro: enero
-jaro: año
+jaro, j.: año
 ĉiujara: anual
 ĉiudujara: bienal
 duonjaro: semestre
@@ -16458,8 +16495,7 @@ kadro: marco
 kadro: cuadro
 kadro: marco
 kadro: marco
-kadre de: en el marco de
-enkadre de: en el marco de
+kadre de, enkadre de: en el marco de
 kadri: enmarcar
 alkadrigi: justificar (tipogr.)
 brodkadro: bastidor
@@ -16478,7 +16514,7 @@ kaĝo: jaula
 kahelo: baldosa
 kahelo: losa
 kaheli: enlosar
-kaj: y
+kaj, k.: y
 kajo: muelle
 kajo: andén
 kajako: kayak
@@ -17368,7 +17404,7 @@ kondensatoro: condensador
 kondicionalo: condicional
 kondiĉo: condición
 kondiĉa: condicional
-kondiĉe: a condición que
+kondiĉe: condicionalmente
 ke: a condición que
 kondiĉi: condicionar
 kondiĉi: estipular
@@ -17419,12 +17455,9 @@ konforma: concordante
 konformi: estar o ser conforme
 konformi: ser correspondiente
 konformi: ser concordante
-konforme al: conforme a
-konforme kun: conforme a
+konforme al, konforme kun: conforme a
 konforme al: correspondiente a
 konforme kun: correspondiente a
-konforme al: concordante con
-konforme kun: concordante con
 konformeco: conformidad
 konformeco: correspondencia
 konformeco: concordancia
@@ -18953,9 +18986,7 @@ griza mevo: gaviota cana
 mezo: medio
 mezo: mitad
 meza: medio
-meze de: en medio de
-meze en: en medio de
-meze inter: en medio de
+meze de, meze en, meze inter, en la mezo de: en medio de
 en la mezo de: en medio de
 antaŭtagmezo: mañana
 noktomezo: medianoche
@@ -19568,8 +19599,8 @@ nukso: nuez
 nulo: cero
 nula: nulo
 nuligi: anular
-numero: número
-numero: cifra
+numero, n-ro: número
+numero, n-ro: cifra
 numero: ejemplar
 numeri: numerar
 numerebla: numerable
@@ -19650,7 +19681,6 @@ oficejo: oficina
 oficisto: contratar
 enoficigi: tomar posesión de un cargo
 senoficigi: privar de sus funciones
-oficiala: oficial
 oficialigi: oficializar
 ofte: frecuentemente
 ofte: a menudo
@@ -20773,7 +20803,7 @@ prezenco: presente
 prezenti: presentar
 prezenti: representar
 prezidi: presidir
-prezidanto: presidente
+prezidanto, prez.: presidente
 pri: sobre (respecto de)
 pri: relativo a
 primavero: primavera
@@ -21270,7 +21300,8 @@ reto: esparavel
 reto: buitrón
 reto: red
 retano: internauta
-retejo: sitio web
+retejo, paĝaro, TTT-ejo, retpaĝaro: sitio web
+retpaĝo, ttt-paĝo: página web
 retumi: navegar (por internet)
 retumilo: navegador web
 enretigi: entregar (por una red informática)
@@ -21675,9 +21706,8 @@ sekve: por consecuencia
 sekvaĵo: la siguiente parte
 sekvaĵo: complicaciones (médicas)
 intersekvo: secuencia
-sinsekvo: secuencia
-intersekvo: serie
-sinsekvo: serie
+sinsekvo, intersekvo: secuencia
+sinsekvo, intersekvo: serie
 postsekvanta: después de la siguiente
 sekvojo: sequoia
 selekti: seleccionar
@@ -21832,10 +21862,9 @@ sinedrio: sinedrio
 sinergio: sinergia
 singularo: singular
 singulti: hipo
-sinjoro: señor
-sinjoro: Sr.
-sinjorino: señora
-sinjorino: Sra.
+sinjoro, s-ro: señor
+sinjorino, s-ino: señora
+sinjorino, s-ino: Sra.
 sinonimo: sinónimo
 sintagmo: sintagma
 sintagma: sintagmático
@@ -21921,7 +21950,7 @@ irkaskribita: circunscrito
 enskribi: inscribir
 enskribita: inscrito
 priskribi: describir
-postskribo: posdata
+postskribo, PS, P.S.: posdata
 subskribi: firmar (por ej. un contrato)
 subskribi: subscribir
 subskribo: firma
@@ -22000,7 +22029,7 @@ specifi: aclarar
 specifa: específico
 specifa: concreto
 spegulo: espejo
-speguli: reflejar
+speguli, respeguli: reflejar
 spekti: asistir a un espectáculo
 spektaĵo: espectáculo
 spektanto: espectador
@@ -23018,8 +23047,6 @@ traŭmato: trauma
 travestii: parodiar
 tre: muy
 tre: mucho
-treege: extremadamente
-treege: muchísimo
 trefo: tréboles (palo de la baraja de naipes francesa)
 trejni: entrenar
 tremi: temblar
@@ -23601,7 +23628,7 @@ volframo: volframio
 volframo: wólfram
 Volgo: Volga
 volitivo: volitivo
-volonte: voluntariamente
+volonte: de buena gana
 volonteco: voluntariedad
 volontulo: voluntario
 Volto: volt
@@ -23624,8 +23651,7 @@ kapvorto: entrada (de diccionario...)
 o-vorto: sustantivo
 o-vorto: nombre
 pasvorto: contraseña
-vortoprovizo: vocabulario
-vortprovizo: vocabulario
+vortoprovizo, vortprovizo: vocabulario
 vortico: vórtice
 vortico: remolino
 vortico: torbellino

@@ -1,6 +1,6 @@
 la	0
 de	1
-kaj	1
+kaj, k.	1
 en	2
 estas	2
 al	3
@@ -63,8 +63,8 @@ du	6
 se	6
 nun	6
 tiuj	6
-jaroj	6
-esperanto	6
+jaro, j.	6
+esperanto, Eo, E-o	6
 aliaj	6
 sin	6
 mia	6
@@ -79,7 +79,7 @@ lin	6
 devas	6
 havis	6
 ĝi	6
-jaro	6
+jaro, j.	6
 tion	6
 homoj	6
 granda	6
@@ -178,13 +178,13 @@ komencis	7
 vidis	7
 nek	7
 ŝin	7
-jarcento	7
+jarcento, jc.	7
 kies	7
 tia	7
 mian	7
 laŭ	7
 kiel	7
-ĉirkaŭ	7
+ĉirkaŭ, ĉ.	7
 vere	8
 tiom	8
 tro	8
@@ -236,7 +236,7 @@ devis	8
 vortoj	8
 super	8
 tago	8
-ekzemple	8
+ekzemple, ekz., ekz-e	8
 ĉio	8
 jen	8
 kune	8
@@ -246,7 +246,7 @@ rapide	8
 ties	8
 al	8
 signifas	8
-sinjoro	8
+sinjoro, s-ro	8
 ĉina	8
 ĉiujn	8
 alian	8
@@ -261,7 +261,7 @@ tial	8
 precipe	8
 volis	8
 uzas	8
-esperantistoj	8
+esperantisto, e-isto	8
 longa	8
 iris	8
 vorto	8
@@ -282,7 +282,7 @@ restis	8
 domo	8
 infanoj	8
 tiujn	8
-prezidanto	8
+prezidanto, prez.	8
 historio	8
 alta	8
 regiono	8
@@ -344,9 +344,9 @@ viro	8
 aliajn	8
 mil	8
 vojo	8
-jarojn	8
+jaro, j.	8
 nomon	8
-k.t.p.	8
+kaj tiel plu, ktp, k.t.p.	8
 kredas	8
 vivon	8
 tiaj	8
@@ -405,7 +405,7 @@ baldaŭ	9
 ekde	9
 unue	9
 komprenas	9
-s-ro	9
+sinjoro, s-ro	9
 membroj	9
 vivas	9
 virino	9
@@ -446,7 +446,7 @@ historio	9
 germanio	9
 ĉefurbo	9
 usona	9
-fare	9
+fare de	9
 gravaj	9
 mia	9
 milionoj	9
@@ -513,13 +513,13 @@ uzata	9
 rajtas	9
 maniero	9
 lokon	9
-proksimume	9
+proksimume, proks.	9
 of	9
 eĉ	9
 daŭre	9
 eŭropa	9
 rekte	9
-sinjoro	9
+sinjoro, s-ro	9
 staras	9
 nomata	9
 multaj	9
@@ -548,7 +548,7 @@ armeo	9
 partoj	9
 amiko	9
 filmo	9
-rilate	9
+rilate al, rilate …-n	9
 uzis	9
 esperanta	9
 iras	9
@@ -572,7 +572,7 @@ manoj	9
 proksime	9
 propran	9
 vojon	9
-ekz.	9
+ekzemple, ekz., ekz-e	9
 anstataŭ	9
 maro	9
 tion	9
@@ -606,7 +606,7 @@ partio	9
 stato	9
 prezentis	9
 ŝatas	9
-ekzemple	9
+ekzemple, ekz., ekz-e	9
 plene	9
 revuo	9
 novajn	9
@@ -719,7 +719,7 @@ malbona	9
 liajn	9
 aŭgusto	9
 knabo	9
-pere	9
+pere de	9
 ĝi	9
 akiris	9
 maljuna	9
@@ -744,7 +744,7 @@ filino	9
 paco	9
 ĉielo	9
 ricevas	9
-oficiala	9
+oficiala, of.	9
 forlasis	9
 knabino	9
 duono	9
@@ -785,7 +785,7 @@ ghin	9
 specio	9
 scii	9
 mencio	9
-sinjorino	10
+sinjorino, s-ino	10
 parte	10
 a	10
 loĝis	10
@@ -873,7 +873,7 @@ vivi	10
 tagojn	10
 profunde	10
 rakontis	10
-inkluzive	10
+inkluzive, inkl.	10
 deklaris	10
 devenas	10
 mallonga	10
@@ -885,7 +885,7 @@ nomiĝas	10
 grandajn	10
 universitato	10
 lingvojn	10
-numero	10
+numero, n-ro	10
 hejmo	10
 malsamaj	10
 punkto	10
@@ -896,9 +896,9 @@ plej	10
 lingva	10
 februaro	10
 opinio	10
-esperanto	10
+esperanto, Eo, E-o	10
 interesa	10
-meze	10
+meze de, meze en, meze inter, en la mezo de	10
 bazo	10
 junuloj	10
 alie	10
@@ -933,7 +933,7 @@ manko	10
 kreskis	10
 stilo	10
 neniun	10
-jaron	10
+jaro, j.	10
 renkontis	10
 kanto	10
 cent	10
@@ -948,9 +948,9 @@ leĝo	10
 bildo	10
 foriris	10
 iel	10
-okaze	10
+okaze de	10
 malmultaj	10
-ekzistas	10
+tio estas, t.e.	10
 italio	10
 resti	10
 malfacila	10
@@ -1208,7 +1208,7 @@ estonteco	10
 facila	10
 infanojn	10
 sidas	10
-kompare	10
+kompare kun, en komparo kun	10
 publikigis	10
 ĉar	10
 studentoj	10
@@ -1314,7 +1314,7 @@ suferis	10
 partioj	10
 aspekto	10
 ŝia	10
-retejo	10
+retejo, paĝaro, TTT-ejo, retpaĝaro	10
 sufiĉas	10
 pensi	10
 centra	10
@@ -1347,7 +1347,7 @@ patro	10
 papo	10
 koncepto	10
 ĉe	10
-doktoro	10
+doktoro, d-ro	10
 samtempe	10
 vespere	10
 oficiale	10
@@ -1405,7 +1405,7 @@ formas	10
 nura	10
 frua	10
 iros	10
-paĝoj	10
+paĝo, p.	10
 antaŭen	10
 supra	10
 rolo	10
@@ -1552,7 +1552,7 @@ buŝo	10
 aspektis	10
 ĉiuj	10
 kuris	10
-paĝo	10
+paĝo, p.	10
 peti	10
 gravajn	10
 mezo	10
@@ -1570,7 +1570,7 @@ nenian	10
 delonge	10
 b	10
 informo	10
-escepte	10
+escepte de	10
 antaŭ	10
 londono	10
 esperanto-movado	10
@@ -1690,7 +1690,7 @@ tradukis	11
 publikaj	11
 agadon	11
 fenomeno	11
-surbaze	11
+surbaze de, baze de	11
 bedaŭrinde	11
 aŭdas	11
 ideojn	11
@@ -1770,7 +1770,7 @@ bele	11
 episkopo	11
 in	11
 lasi	11
-respektive	11
+respektive, resp.	11
 ĝojo	11
 disvolviĝo	11
 filon	11
@@ -1806,7 +1806,7 @@ vere	11
 okazoj	11
 ajna	11
 iu	11
-koncerne	11
+koncerne …-n, koncerne al	11
 multon	11
 laboroj	11
 similan	11
@@ -2054,10 +2054,10 @@ silente	11
 malforta	11
 parolado	11
 publike	11
-ĉirkaŭ	11
+ĉirkaŭ, ĉ.	11
 ghi	11
 rondo	11
-bonvolu	11
+bonvolu, bv.	11
 projekton	11
 pacon	11
 ĵurnalo	11
@@ -2167,7 +2167,7 @@ komputilo	11
 hieraŭ	11
 militoj	11
 vivo	11
-bonvolu	11
+bonvolu, bv.	11
 svedio	11
 baloto	11
 helpos	11
@@ -2304,7 +2304,7 @@ i	11
 linioj	11
 provo	11
 sinjorino	11
-kadre	11
+kadre de, enkadre de	11
 raportis	11
 rideto	11
 tiaj	11
@@ -2379,7 +2379,7 @@ radio	11
 ceremonio	11
 sukcesos	11
 oficejo	11
-prezidanto	11
+prezidanto, prez.	11
 elstara	11
 flago	11
 kompreno	11
@@ -2591,7 +2591,7 @@ meksiko	11
 kutime	11
 oreloj	11
 origino	11
-uzantoj	11
+uzanto, uzulo	11
 efikon	11
 transdonis	11
 disponas	11
@@ -2654,7 +2654,7 @@ plenumas	11
 momentoj	11
 organizita	11
 totala	11
-individuoj	11
+individuo, unuopulo	11
 miliardojn	11
 sciu	11
 brilis	11
@@ -2841,7 +2841,7 @@ kongresoj	11
 tuŝis	11
 bordoj	11
 enkondukis	11
-spite	11
+spite al, spite …-n	11
 vidante	11
 grandeco	11
 instigis	11
@@ -2947,7 +2947,7 @@ kantado	11
 kristanismo	11
 opiniojn	11
 tipa	11
-aŭto	11
+aŭto, aŭtomobilo	11
 kunsido	11
 plie	11
 kontrolo	11
@@ -3177,7 +3177,7 @@ tradukado	11
 absoluta	11
 tradukon	11
 dia	11
-fronte	11
+fronte al	11
 malgranda	11
 rezignis	11
 haŭto	11
@@ -3366,10 +3366,10 @@ akcidento	11
 kortego	11
 kulturan	11
 logiko	11
-samideanoj	11
+samideano, s-ano	11
 ami	11
 pendis	11
-rilate	11
+rilate al, rilate …-n	11
 teruro	11
 versoj	11
 esprimon	11
@@ -3448,7 +3448,7 @@ fondinto	12
 intence	12
 fora	12
 kunlaboron	12
-bonege	12
+bonege!	12
 nunan	12
 permesi	12
 propagando	12
@@ -3607,7 +3607,7 @@ komplika	12
 rimarkinda	12
 heredaĵo	12
 hispana	12
-jc	12
+jarcento, jc.	12
 infana	12
 karaj	12
 konstruiĝis	12
@@ -3774,7 +3774,7 @@ ekonomion	12
 forgesas	12
 strangaj	12
 glavo	12
-individuo	12
+individuo, unuopulo	12
 kontribui	12
 plumoj	12
 parolos	12
@@ -3813,7 +3813,7 @@ datreveno	12
 mizera	12
 nuda	12
 ĵurnaloj	12
-numeroj	12
+numero, n-ro	12
 redaktis	12
 traktado	12
 eŭropanoj	12
@@ -4054,7 +4054,7 @@ sciante	12
 skribo	12
 subita	12
 edzon	12
-ekskluzive	12
+ekskluzive, ekskl.	12
 finas	12
 flugilojn	12
 formita	12
@@ -4082,7 +4082,7 @@ estaĵo	12
 nebulo	12
 tiamaniere	12
 festivalo	12
-jaro	12
+jaro, j.	12
 mezepoka	12
 reĝoj	12
 sekura	12
@@ -4160,7 +4160,7 @@ hejma	12
 japanoj	12
 karieron	12
 koroj	12
-meze	12
+meze de, meze en, meze inter, en la mezo de	12
 respondoj	12
 ĉi-foje	12
 estigis	12
@@ -4188,7 +4188,7 @@ mara	12
 skuis	12
 turni	12
 uzadon	12
-depende	12
+depende de	12
 patrujo	12
 rimarki	12
 scius	12
@@ -4265,7 +4265,7 @@ esenca	12
 liton	12
 memstara	12
 rigardu	12
-doktoro	12
+doktoro, d-ro	12
 fremduloj	12
 kritikis	12
 kulpo	12
@@ -4306,7 +4306,7 @@ tria	12
 alfred	12
 amase	12
 blogo	12
-koncerne	12
+koncerne …-n, koncerne al	12
 kvadratkilometroj	12
 necesan	12
 pordoj	12
@@ -4600,7 +4600,7 @@ konkreta	12
 malpermesas	12
 rekoni	12
 strikte	12
-numeron	12
+numero, n-ro	12
 paĝojn	12
 pasigi	12
 reiri	12
@@ -4752,7 +4752,7 @@ harmonio	12
 kunlaboras	12
 ora	12
 peno	12
-prof.	12
+profesoro, prof.	12
 sekvos	12
 benko	12
 dankis	12
@@ -5103,7 +5103,7 @@ he!	12
 konita	12
 pecojn	12
 turoj	12
-ekz.	12
+ekzemple, ekz., ekz-e	12
 komunumo	12
 mondan	12
 rezolucio	12
@@ -5179,7 +5179,7 @@ lernadon	12
 ekzistado	12
 istván	12
 kongruas	12
-uzanto	12
+uzanto, uzulo	12
 diskuton	12
 konsilas	12
 leciono	12
@@ -5359,7 +5359,7 @@ falsa	12
 kreinto	12
 lingvistiko	12
 reprezentis	12
-sinsekvaj	12
+sinsekva, intersekva	12
 aĝas	12
 akuzis	12
 alveni	12
@@ -5605,7 +5605,7 @@ gardas	12
 krepusko	12
 respekti	12
 seriozan	12
-spite	12
+spite al, spite …-n	12
 vekiĝis	12
 vizitoj	12
 faciligi	12
@@ -5623,7 +5623,7 @@ filipo	12
 himno	12
 kesto	12
 pekoj	12
-proksimume	12
+proksimume, proks.	12
 falos	12
 kampojn	12
 urso	12
@@ -5646,7 +5646,7 @@ publikigo	12
 urĝe	12
 vizaĝoj	12
 aŭton	12
-aŭtomobilo	12
+aŭto, aŭtomobilo	12
 alten	12
 belegaj	12
 familian	12
@@ -5855,7 +5855,7 @@ pasis	12
 plenigi	12
 preĝas	12
 statoj	12
-kondiĉe	12
+kondiĉe ke	12
 ĉiutagaj	12
 devigi	12
 direktas	12
@@ -5913,7 +5913,7 @@ subtera	12
 ambaŭflanke	12
 bastono	12
 funkciojn	12
-paĝaro	12
+retejo, paĝaro, TTT-ejo, retpaĝaro	12
 saĝo	12
 sidanta	12
 specojn	12
@@ -5957,7 +5957,7 @@ izraelidoj	12
 kadavro	12
 politika	12
 ŝultro	12
-dekomence	12
+dekomence, de la komenco	12
 distancon	12
 kanaloj	12
 ligi	12
@@ -6004,7 +6004,7 @@ volumoj	12
 alberto	12
 arkitekto	12
 ekzemplojn	12
-konforme	12
+konforme al, konforme kun	12
 malkovrita	12
 sakon	12
 teatra	12
@@ -6511,7 +6511,7 @@ transloĝiĝis	12
 union	12
 bonegan	12
 detruitaj	12
-doktoro	12
+doktoro, d-ro	12
 eduka	12
 forpeli	12
 kolonia	12
@@ -6680,7 +6680,7 @@ konkludi	13
 kontinenta	13
 responde	13
 ŝanĝita	13
-spegulas	13
+speguli, respeguli	13
 vestis	13
 marŝas	13
 avantaĝojn	13
@@ -6932,11 +6932,11 @@ pentrado	13
 prezentadon	13
 ripari	13
 serba	13
-sinsekvo	13
+sinsekvo, intersekvo	13
 trafi	13
 voki	13
 chinaj	13
-ĉirkaŭ	13
+ĉirkaŭ, ĉ.	13
 interparoli	13
 kemia	13
 pacientoj	13
@@ -7145,7 +7145,7 @@ islamo	13
 nepo	13
 populareco	13
 saĝe	13
-samideano	13
+samideano, s-ano	13
 tutajn	13
 unuo	13
 veturado	13
@@ -7160,7 +7160,7 @@ lingve	13
 muzikan	13
 patrina	13
 science	13
-uzulo	13
+uzanto, uzulo	13
 venkita	13
 centralo	13
 ceremonion	13
@@ -7172,7 +7172,7 @@ kunsidoj	13
 lagon	13
 listoj	13
 praktikaj	13
-retpaĝo	13
+retpaĝo, ttt-paĝo	13
 fermo	13
 kerna	13
 ligojn	13
@@ -7553,7 +7553,7 @@ markita	13
 matematika	13
 mejloj	13
 moralan	13
-nevole	13
+vole nevole	13
 purigi	13
 saluti	13
 sia	13
@@ -8195,7 +8195,7 @@ meza	13
 nekomprenebla	13
 pmeg	13
 priskriboj	13
-longdaŭra	13
+longdaŭra, longedaŭra	13
 efikan	13
 esta	13
 fizike	13
@@ -8758,7 +8758,7 @@ scienco	13
 seninterrompe	13
 trezoron	13
 vizaĝo	13
-kaŭze	13
+kaŭze de	13
 akompano	13
 amara	13
 aperu	13
@@ -8768,7 +8768,7 @@ elefanto	13
 floras	13
 humidaj	13
 instruoj	13
-kadre	13
+kadre de, enkadre de	13
 kriante	13
 kuiri	13
 kulturojn	13
@@ -8894,7 +8894,7 @@ lulilo	13
 motivon	13
 orbito	13
 pafi	13
-surbaze	13
+surbaze de, baze de	13
 trompo	13
 venditaj	13
 vikipedio	13
@@ -9446,7 +9446,7 @@ interŝanĝoj	13
 konvenan	13
 kuraĝigis	13
 membro	13
-numero	13
+numero, n-ro	13
 pronomoj	13
 slovena	13
 speciale	13
@@ -9643,7 +9643,7 @@ literon	13
 lumigis	13
 medicinaj	13
 privilegiojn	13
-prof.	13
+profesoro, prof.	13
 proklamas	13
 protektata	13
 saĝeco	13
@@ -9726,7 +9726,7 @@ klimaton	13
 kruron	13
 kursanoj	13
 legeblas	13
-libervole	13
+libervole, memvole, propravole	13
 meditado	13
 originan	13
 paralelaj	13
@@ -10504,7 +10504,7 @@ konsolis	13
 necesejo	13
 plantis	13
 profundeco	13
-ps	13
+postskribo, ps, p.s.	13
 reformita	13
 sekcio	13
 socialista	13
@@ -10563,7 +10563,7 @@ kreitajn	13
 lukton	13
 meson	13
 protestantaj	13
-respegulas	13
+speguli, respeguli	13
 ŝarĝon	13
 sendito	13
 travidebla	13
@@ -10911,7 +10911,7 @@ belulino	13
 difektita	13
 dudeko	13
 fortigis	13
-fronte	13
+fronte al	13
 inklino	13
 institutoj	13
 intencojn	13
@@ -11643,7 +11643,7 @@ algoritmo	13
 altlernejo	13
 dekmiloj	13
 distribuado	13
-escepte	13
+escepte de	13
 instruiston	13
 intimaj	13
 jános	13
@@ -12097,7 +12097,7 @@ vintroj	14
 ĉ	14
 kaŭzos	14
 semajna	14
-vortprovizo	14
+vortprovizo, vortoprovizo	14
 iljiĉ	14
 okazaĵojn	14
 ĉirkaŭprenis	14
@@ -12211,7 +12211,7 @@ komitaton	14
 krado	14
 latin-ameriko	14
 ledo	14
-leĝdona	14
+leĝdona, leĝodona	14
 liajn	14
 ludu	14
 malkontenta	14
@@ -12685,7 +12685,7 @@ poŝtelefono	14
 protestojn	14
 radioaktiveco	14
 resumas	14
-retpaĝaro	14
+retejo, paĝaro, ttt-ejo, retpaĝaro	14
 sennombrajn	14
 shanghi	14
 tekstas	14
@@ -13537,7 +13537,7 @@ rekordo	14
 reprezentita	14
 sincereco	14
 starigos	14
-talibanoj	14
+talibo	14
 teroro	14
 tertremoj	14
 venkoj	14
@@ -13691,7 +13691,7 @@ efektivigas	14
 ekkono	14
 eksplodas	14
 elektata	14
-enkadre	14
+kadre de, enkadre de	14
 fojfoje	14
 kliniko	14
 krutaj	14
@@ -14347,7 +14347,7 @@ sun	14
 teherano	14
 tenata	14
 testi	14
-unuopulo	14
+individuo, unuopulo	14
 vangon	14
 varioj	14
 vekiĝas	14
@@ -14641,7 +14641,7 @@ princa	14
 proksima	14
 purigas	14
 rabisto	14
-samideanojn	14
+samideano, s-ano	14
 simbole	14
 skandalon	14
 stanislav	14
@@ -14806,7 +14806,7 @@ konkursojn	14
 kurioze	14
 loĝantoj	14
 meĥaniko, mekaniko	14
-memvole	14
+libervole, memvole, propravole	14
 nokto	14
 olimpikaj	14
 ozman	14
@@ -15019,7 +15019,7 @@ peni	14
 philip	14
 plezuroj	14
 prepozicion	14
-propravole	14
+libervole, memvole, propravole	14
 protektadon	14
 provu	14
 prunti	14
@@ -15071,7 +15071,7 @@ lirika	14
 lojala	14
 meyer	14
 mort	14
-oficperiodo	14
+oficperiodo, mandatperiodo	14
 oratoro	14
 pasintjara	14
 philippe	14
@@ -15972,7 +15972,7 @@ laboruloj	14
 latino	14
 malsame	14
 malvarmeta	14
-militservo	14
+militservo, milita servado	14
 milo	14
 muzikajn	14
 nedifinita	14
@@ -15982,7 +15982,7 @@ persa	14
 po	14
 prezidas	14
 projektis	14
-proks	14
+proksimume, proks.	14
 reĝo	14
 scrooge	14
 senbrida	14
@@ -16648,7 +16648,7 @@ rivelis	14
 sagon	14
 ŝarĝita	14
 satiro	14
-ttt-ejo	14
+retejo, paĝaro, ttt-ejo, retpaĝaro	14
 ugu	14
 unuvorte	14
 uranio	14
@@ -17276,7 +17276,7 @@ kandelojn	14
 kioma	14
 kniivilä	14
 komunisma	14
-konforme	14
+konforme al, konforme kun	14
 kongrua	14
 konrad	14
 konservatorio	14
@@ -17645,7 +17645,7 @@ ritma	14
 strieca	14
 sugesti	14
 ununava	14
-vid-al-vide	14
+vidalvide	14
 viditaj	14
 teksaĵoj	14
 voĉdonon	14
@@ -18182,7 +18182,7 @@ troviĝantaj	14
 ungojn	14
 velura	14
 videble	14
-vole-nevole	14
+vole nevole	14
 vut	14
 vidaĵoj	14
 ĉeso	14
@@ -18361,7 +18361,7 @@ animas	14
 belorusa	14
 dandin	14
 denaskan	14
-depende	14
+depende de	14
 derby	14
 disdivido	14
 drk	14
@@ -18423,7 +18423,7 @@ supersignoj	14
 verecon	14
 volontulojn	14
 artaĵojn	14
-longedaŭra	14
+longdaŭra, longedaŭra	14
 marĉa	14
 ĉirkaŭantaj	14
 senĉesaj	14
@@ -19137,7 +19137,7 @@ korespondadon	14
 kremo	14
 kuracas	14
 lech	14
-libervola	14
+libervola, memvola, propravola	14
 lidkoto	14
 los-anĝeleso	14
 luterana	14
@@ -20778,7 +20778,7 @@ powell	15
 pp	15
 predikado	15
 prefiksoj	15
-prez	15
+prezidanto, prez.	15
 profesiulo	15
 protestantismo	15
 purigo	15
@@ -21963,7 +21963,7 @@ hunan	15
 infekta	15
 instruante	15
 izola	15
-jarcento	15
+jarcento, jc.	15
 jeanne	15
 jorko	15
 kapablajn	15
@@ -22264,7 +22264,7 @@ sendado	15
 silentan	15
 silente	15
 sinodo	15
-sinsekva	15
+sinsekva, intersekva	15
 sintenojn	15
 sorbas	15
 spontana	15
@@ -23078,7 +23078,7 @@ kupoloj	15
 lagopo	15
 lancojn	15
 league	15
-leĝdona	15
+leĝdona, leĝodona	15
 leksikono	15
 loĝlokon	15
 lumanta	15
@@ -24319,7 +24319,7 @@ malplaĉas	15
 naŭcent	15
 ĉiame	15
 ŝaton	15
-kaŭze	15
+kaŭze de	15
 plaĉaj	15
 ŝian	15
 anstataŭos	15
@@ -30459,7 +30459,7 @@ skribinto	15
 slango	15
 solena	15
 sombra	15
-speguli	15
+speguli, respeguli	15
 splitoj	15
 srin	15
 stadio	15
@@ -30733,7 +30733,7 @@ elirantaj	15
 eliro	15
 ellington	15
 engaĝis	15
-enkadre	15
+kadre de, enkadre de	15
 esperanto-usa	15
 estiĝinta	15
 etas	15
@@ -32356,7 +32356,7 @@ trafinta	15
 treme	15
 triangulon	15
 trovitajn	15
-ttt-ejo	15
+retejo, paĝaro, ttt-ejo, retpaĝaro	15
 turbano	15
 turistoj	15
 utiligataj	15
@@ -33664,7 +33664,7 @@ armee	16
 astronaŭtoj	16
 atendas	16
 atentemaj	16
-aŭto	16
+aŭto, aŭtomobilo	16
 avaroj	16
 aventuroj	16
 avinjon	16
@@ -35570,7 +35570,7 @@ religiemo	16
 religiulo	16
 renkontinte	16
 resaltis	16
-retejo	16
+retejo, paĝaro, TTT-ejo, retpaĝaro	16
 revivigas	16
 rezidis	16
 rezultiĝis	16
@@ -36255,7 +36255,7 @@ rompus	16
 rumonge	16
 saĝo	16
 saletti	16
-samideano	16
+samideano, s-ano	16
 samlandanojn	16
 samnoman	16
 samtempan	16
@@ -43170,7 +43170,7 @@ ruza	16
 saboya	16
 sacerdoteco	16
 saĝeco	16
-samideanoj	16
+samideano, s-ano	16
 ŝanceliĝanta	16
 ŝapiro	16
 sataj	16
@@ -44957,7 +44957,7 @@ rutinaj	16
 ruzan	16
 saltetante	16
 salutata	16
-samideanon	16
+samideano, s-ano	16
 ŝanĝiĝinta	16
 saturitaj	16
 sciuroj	16
@@ -47321,7 +47321,7 @@ latvaj	16
 laŭra	16
 laŭstatute	16
 laŭta	16
-leĝodona	16
+leĝdona, leĝodona	16
 leif	16
 lernema	16
 leviĝas	16
@@ -48402,7 +48402,7 @@ nenjon	16
 nepojn	16
 nerezisteble	16
 nevidate	16
-nevole	16
+vole nevole	16
 niceo	16
 nitoj	16
 nl	16
@@ -58620,7 +58620,7 @@ maltima	17
 maltoleremon	17
 maltrankvilojn	17
 mamuto	17
-mandatperiodo	17
+oficperiodo, mandatperiodo	17
 manekeno	17
 manĝilaro	17
 manĝinte	17
@@ -67380,7 +67380,7 @@ prerio	17
 preterpasu	17
 preterrajdis	17
 pretigata	17
-prez	17
+prezidanto, prez.	17
 prezentada	17
 prezentante	17
 prezidant-elektoj	17
@@ -67987,7 +67987,7 @@ atmosferoj	17
 atomarmilo	17
 aŭskulteblas	17
 aŭspiciis	17
-aŭto	17
+aŭto, aŭtomobilo	17
 autoritatuloj	17
 aŭtorrajta	17
 aŭdu	17
@@ -74255,7 +74255,7 @@ haŭtkoloron	17
 kondiĉitaj	17
 kontraŭaĵon	17
 lanĉu	17
-longdaŭra	17
+longdaŭra, longedaŭra	17
 maltaŭgajn	17
 niŝ	17
 plantaĵo	17
@@ -75949,7 +75949,7 @@ retano	17
 retenante	17
 retenus	17
 retiriĝis	17
-retpaĝo	17
+retpaĝo, ttt-paĝo	17
 reuter	17
 reuzis	17
 revenoj	17
@@ -77816,9 +77816,9 @@ vogt	17
 vojaĝinta	17
 vokiĝon	17
 voko	17
-vole-nevole	17
+vole nevole	17
 vorôa	17
-vortoprovizo	17
+vortprovizo, vortoprovizo	17
 waldon	17
 walsh	17
 wechsler	17
@@ -85456,7 +85456,7 @@ paĝa	17
 pagadon	17
 paganini	17
 paganto	17
-paĝaro	17
+retejo, paĝaro, ttt-ejo, retpaĝaro	17
 palmoj	17
 palruĝaj	17
 paltojn	17
@@ -91269,7 +91269,7 @@ reproduktantoj	18
 republikigas	18
 requiem	18
 rerakonti	18
-respektive	18
+respektive, resp.	18
 restarigo	18
 restriktis	18
 restrukturita	18
@@ -91509,7 +91509,7 @@ sinedrio	18
 sinistran	18
 sinjoraro	18
 sinkrone	18
-sinsekvo	18
+sinsekvo, intersekvo	18
 sinsugestio	18
 ŝintoismo	18
 ŝipajn	18
@@ -102012,7 +102012,7 @@ indigne	18
 indignita	18
 indikitajn	18
 indio	18
-individuo	18
+individuo, unuopulo	18
 induktoj	18
 indulgencoj	18
 industriistojn	18
@@ -104637,7 +104637,7 @@ ankoraŭa	18
 apokrifaĵoj	18
 aŭtografo	18
 aŭtokratio	18
-aŭtomobilo	18
+aŭto, aŭtomobilo	18
 aŭtonoman	18
 ĉarpentiston	18
 ĉirkaŭvolvi	18
@@ -113429,7 +113429,7 @@ vortformo	18
 vortkombinoj	18
 vortordo	18
 vortordoj	18
-vortprovizo	18
+vortprovizo, vortoprovizo	18
 vorwärts	18
 vosteton	18
 voz	18
@@ -113857,7 +113857,7 @@ jass	18
 jatgejr	18
 ĵazfestivalo	18
 ĵazstilo	18
-jc	18
+jarcento, jc.	18
 jebusidoj	18
 jehoŝua	18
 jellinge	18
@@ -114520,8 +114520,7 @@ lokan	18
 lokomobilon	18
 londonan	18
 longbarba	18
-longdaŭra	18
-longedaŭra	18
+longdaŭra, longedaŭra	18
 longkrura	18
 longobardoj	18
 longos	18
@@ -139586,7 +139585,7 @@ pafmortigon	18
 pagadi	18
 pagaj	18
 pagantajn	18
-paĝaro	18
+retejo, paĝaro, ttt-ejo, retpaĝaro	18
 pagas	18
 pagendas	18
 pagigos	18
@@ -153591,7 +153590,7 @@ retirigho	19
 retkamerao	19
 retmesaĝon	19
 retpaghojn	19
-retpaĝo	19
+retpaĝo, ttt-paĝo	19
 retpoŝtoj	19
 retroaktive	19
 retroira	19
@@ -168364,7 +168363,7 @@ kauai	19
 kaŭranta	19
 kauri	19
 kaŭstika	19
-kaŭze	19
+kaŭze de	19
 kaŭzos	19
 kaŭzus	19
 kauzitajn	19
@@ -170440,7 +170439,7 @@ aŭdigis	19
 aŭdiĝis	19
 aŭskultantaro	19
 aŭstralia	19
-aŭtomobilo	19
+aŭto, aŭtomobilo	19
 avancadon	19
 avancinta	19
 avantagha	19
@@ -172749,7 +172748,7 @@ postpriskribon	19
 postrestantajn	19
 postsekvaj	19
 poŝtsignoj	19
-postskribo	19
+postskribo, ps, p.s.	19
 postskribon	19
 postsomero	19
 posttertreman	19
@@ -185186,7 +185185,7 @@ oficialidad	19
 oficialigu	19
 oficina	19
 oficistinon	19
-oficperiodo	19
+oficperiodo, mandatperiodo	19
 oficu	19
 oficvojaĝis	19
 ofseto	19
@@ -186322,7 +186321,7 @@ postsekvan	19
 postsekvas	19
 postsignoj	19
 postsisma	19
-postskribo	19
+postskribo, ps, p.s.	19
 posttempa	19
 postulaj	19
 postvendan	19
@@ -190351,7 +190350,7 @@ sinopec	19
 sinoptikaj	19
 sinproponojn	19
 sinreganta	19
-sinsekva	19
+sinsekva, intersekva	19
 sinsekvado	19
 sintetikaj	19
 ŝintoo	19

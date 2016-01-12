@@ -18,7 +18,7 @@ cent
 ĉiam
 ĉie
 ĉio
-ĉirkaŭ
+ĉirkaŭ, ĉ.
 ĉiu
 ĉu
 da
@@ -52,7 +52,7 @@ je
 jen
 jes
 ĵus
-kaj
+kaj, k.
 ke
 kia
 kial

@@ -280,7 +280,7 @@ imuna
 inciti
 indigni
 indiki
-individuo
+individuo, unuopulo
 indulgi
 infekti
 infero
@@ -540,7 +540,7 @@ preskribi
 princo
 principo
 procento
-profesoro
+profesoro, prof.
 profeto
 programo
 projekto

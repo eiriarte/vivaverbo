@@ -3430,7 +3430,7 @@ pocento
 centestro
 centono
 centuma
-jarcento
+jarcento, jc.
 centaŭro
 Cro
 centaŭreo
@@ -3913,7 +3913,7 @@ malgranda ĉimpanzo
 ĉioma
 ĉipso
 ĉiro
-ĉirkaŭ
+ĉirkaŭ, ĉ.
 al ĉirkaŭ, ĉirkaŭ ...-n
 de ĉirkaŭ
 ĉirkaŭa
@@ -4882,7 +4882,7 @@ dojeno
 doko
 dokisto
 dokta
-doktoro
+doktoro, d-ro
 doktoro de la Eklezio
 doktrino
 doktrini
@@ -5440,7 +5440,7 @@ eksciteco
 ekscitatoro
 eksklamacio
 ekskluziva
-ekskluzive
+ekskluzive, ekskl.
 ekskluzivi
 ekskludi
 ekskomuniki
@@ -5587,7 +5587,7 @@ ekzekucii
 ekzekuciisto
 ekzemo
 ekzemplo
-ekzemple
+ekzemple, ekz., ekz-e
 ekzempligi
 kontraŭekzemplo
 senekzempla
@@ -6117,13 +6117,13 @@ malespero
 malespera
 malesperigi, senesperigi
 senespera
-Esperanto
+Esperanto, Eo, E-o
 Esperanta
 Esperante
 esperantido
 esperantigo
 esperantismo
-esperantisto
+esperantisto, e-isto
 esperantisteco
 Esperantujo
 Esperantio
@@ -6160,7 +6160,7 @@ kunesti
 malesti
 marestaĵo
 neesto
-tio estas
+tio estas, t.e.
 establi
 establo
 establaĵo
@@ -9806,7 +9806,7 @@ idea
 idearo
 ideismo
 ideisto
-samideano
+samideano, s-ano
 fiksa ideo
 ideala
 idealo
@@ -10232,7 +10232,7 @@ malinklina
 korinklino, kora inklino
 inkludi
 inkluziva
-inkluzive
+inkluzive, inkl.
 inkluzivi
 inkluzivigi
 malinkluzivi
@@ -10674,7 +10674,7 @@ japana
 Japanujo
 japanesko
 Japanio
-jaro
+jaro, j.
 centjaro
 ĉiujara
 ĉiudujara
@@ -10985,7 +10985,7 @@ kahela
 kaheli
 kahelaro
 kaido
-kaj
+kaj, k.
 kajo
 malkajo
 kaj-signo
@@ -12640,7 +12640,7 @@ konceptebla
 mondkoncepto
 koncerni
 koncerna
-koncerne... -n, koncerne al
+koncerne …-n, koncerne al
 koncerno
 koncernaĵo
 koncerniĝo
@@ -17339,7 +17339,7 @@ nuligi
 nuliganto
 nuliĝi
 numenio
-numero
+numero, n-ro
 numeri
 numerebla
 provnumero
@@ -17493,7 +17493,7 @@ oficisto
 enoficigi
 senoficigi
 ŝtatoficisto
-oficiala
+oficiala, of.
 oficialigi
 oficialulo
 oficiro
@@ -18068,7 +18068,7 @@ pagro
 pagumo
 paguro
 paguredoj
-paĝo
+paĝo, p.
 flavaj paĝoj
 hejmpaĝo
 titolpaĝo
@@ -18674,7 +18674,7 @@ pendingo
 pendumi
 pendumilo
 dependa
-depende je, depende de
+depende de
 dependi
 elpendaĵo
 nedependa
@@ -19866,7 +19866,7 @@ reprezenti
 grafika prezento
 n-uma prezento
 prezidi
-prezidanto
+prezidanto, prez.
 prezidento
 pri
 prikli
@@ -19967,7 +19967,7 @@ profesio
 profesii
 profesiisto, profesiulo
 libera profesio
-profesoro
+profesoro, prof.
 profeto
 profeti
 profetaĵo
@@ -20050,7 +20050,7 @@ proksime de, proksime al
 proksimiĝi
 proksimulo
 proksimuma
-proksimume
+proksimume, proks.
 malproksima
 malproksimigi
 malproksime de
@@ -21143,7 +21143,7 @@ rilo
 rilati
 rilato
 rilata
-rilate ...-n, rilate al
+rilate al, rilate …-n
 ekvivalento-rilato, ekvivalentrilato, rilato de ekvivalento
 iarilate
 idento-rilato
@@ -21935,8 +21935,8 @@ sekve de, sekve al
 sekvaĵo
 sekvigi
 sekvulo
-intersekvo, sinsekvo
-intersekva, sinsekva
+sinsekvo, intersekvo
+sinsekva, intersekva
 postsekvi
 postsekvanta
 postsekvo
@@ -22337,9 +22337,9 @@ Singapuro
 singularo
 singulti
 plorsingulti
-sinjoro
+sinjoro, s-ro
 sinjorido
-sinjorino
+sinjorino, s-ino
 grandsinjoro
 sinjorumi
 sinki
@@ -22565,7 +22565,7 @@ belskribisto
 enskribi
 enskribita
 priskribi
-postskribo
+postskribo, PS, P.S.
 subskribi
 subskribo
 surskribo
@@ -22904,7 +22904,7 @@ specifa
 specimeno
 specimenaro
 spegulo
-speguli
+speguli, respeguli
 spekti
 spektaĵo
 spektanto
@@ -22993,7 +22993,7 @@ spiritualisto
 spiroĥeto
 spiroketo
 spiti
-spite al, spit' al, spite ... -n
+spite al, spite …-n
 spite de
 spitema
 spite ke, spite al tio ke
@@ -25279,7 +25279,7 @@ truto
 ts, tss
 tsetseo
 TTT
-TTT-ejo
+retejo, paĝaro, TTT-ejo, retpaĝaro
 TTT-paĝo
 TTT-paĝaro
 tualeto
@@ -26544,7 +26544,7 @@ vortefiko
 vortfarado
 vortformo
 vortkunmeto
-vortoprovizo, vortprovizo
+vortprovizo, vortoprovizo
 vortico
 vosto
 harvosto
