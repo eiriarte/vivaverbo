@@ -14,6 +14,8 @@ var deriv = /(as|is|os|us|u|j|n)$/;
 var partic = /[aio]n?t[oea]$/;
 var ho = /(hh|sh|gh|ch|jh)/;
 var ekster = /[^a-zĥŝĝĉĵŭ,.\s\-]/;
+var eksterLat = /([wqy]|th)/;
+var lastCons = /[^aeio]$/;
 var hash = _.groupBy(cards, function(card) {
   return card.respuesta.toLowerCase();
 });
@@ -37,6 +39,8 @@ function isValid(word) {
   if (partic.test(word)) return false;
   if (ho.test(word)) return false;
   if (ekster.test(word)) return false;
+  if (eksterLat.test(word)) return false;
+  if (lastCons.test(word)) return false;
   return true;
 }
 
