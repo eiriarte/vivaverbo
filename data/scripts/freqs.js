@@ -1,6 +1,6 @@
 /*
- Vuelca a stdout un array de 20 arrays que agrupa las palabras de la lista de
- frecuencias freqs.norm.txt en los 20 grupos de frecuencias del EPO
+ Vuelca a stdout un hash de las palabras de la lista de frecuencias
+ freqs.norm.txt como claves, y su orden de frecuencia como valores
 
  Uso: node freqs.js
  */

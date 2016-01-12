@@ -17,6 +17,8 @@ if (undefined === catFile || undefined === cardFile || 0 === categories.length) 
   process.exit(1);
 }
 
+console.log('Asignando categorías: %s.', categories.join(', '));
+
 var cards = require(cardFile);
 var hash = getHash(cards);
 
