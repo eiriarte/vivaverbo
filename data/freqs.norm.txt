@@ -45,7 +45,7 @@ unu	5
 sed	5
 pro	5
 ol	5
-kaj	5
+kaj, k.	5
 sia	5
 kiam	5
 tre	6
@@ -316,7 +316,7 @@ miaj	8
 popolo	8
 libro	8
 tiel	8
-esperanton	8
+esperanto, Eo, E-o	8
 rigardis	8
 nu	8
 grupo	8
@@ -1314,7 +1314,7 @@ suferis	10
 partioj	10
 aspekto	10
 ŝia	10
-retejo, paĝaro, TTT-ejo, retpaĝaro	10
+retejo, paĝaro, ttt-ejo, retpaĝaro	10
 sufiĉas	10
 pensi	10
 centra	10
@@ -3005,7 +3005,7 @@ invitas	11
 maljunuloj	11
 sablo	11
 trafiko	11
-esperanton	11
+esperanto, Eo, E-o	11
 kalkuli	11
 kreitaj	11
 peco	11
@@ -5913,7 +5913,7 @@ subtera	12
 ambaŭflanke	12
 bastono	12
 funkciojn	12
-retejo, paĝaro, TTT-ejo, retpaĝaro	12
+retejo, paĝaro, ttt-ejo, retpaĝaro	12
 saĝo	12
 sidanta	12
 specojn	12
@@ -6428,7 +6428,7 @@ evoluigis	12
 home	12
 matura	12
 prezidis	12
-retejon	12
+retejo, paĝaro, ttt-ejo, retpaĝaro	12
 tiele	12
 konstruaĵon	12
 cifero	12
@@ -6519,7 +6519,7 @@ zonon	12
 ankoraŭfoje	12
 bulteno	12
 ial	12
-retejoj	12
+retejo, paĝaro, ttt-ejo, retpaĝaro	12
 supozo	12
 suvereneco	12
 bati	12
@@ -12158,7 +12158,7 @@ morna	14
 pentritaj	14
 praktikon	14
 renoma	14
-retpaĝoj	14
+retpaĝo, ttt-paĝo	14
 revenigi	14
 reziston	14
 senkulpaj	14
@@ -16763,7 +16763,7 @@ racion	14
 restinta	14
 reta	14
 retiri	14
-retpaĝon	14
+retpaĝo, ttt-paĝo	14
 rey	14
 rigidiĝis	14
 ripetadis	14
@@ -18782,7 +18782,7 @@ hirundoj	14
 hori	14
 houston	14
 jado	14
-kaj	14
+kaj, k.	14
 kaprica	14
 katolikajn	14
 kombinis	14
@@ -20825,7 +20825,7 @@ civilizoj	15
 doma	15
 ensemblo	15
 enspiris	15
-esperanto	15
+esperanto, Eo, E-o	15
 esperanto-asocioj	15
 familiano	15
 fantoma	15
@@ -23532,7 +23532,7 @@ rehavi	15
 resonis	15
 respondeci	15
 respublika	15
-retejojn	15
+retejo, paĝaro, ttt-ejo, retpaĝaro	15
 reveno	15
 revivigo	15
 ruĝecbrunaj	15
@@ -26253,7 +26253,7 @@ rememoron	15
 renomita	15
 resaniĝi	15
 retiriĝon	15
-retpaĝojn	15
+retpaĝo, ttt-paĝo	15
 rilatanta	15
 rilatumo	15
 ripeta	15
@@ -35570,7 +35570,7 @@ religiemo	16
 religiulo	16
 renkontinte	16
 resaltis	16
-retejo, paĝaro, TTT-ejo, retpaĝaro	16
+retejo, paĝaro, ttt-ejo, retpaĝaro	16
 revivigas	16
 rezidis	16
 rezultiĝis	16
@@ -109176,7 +109176,7 @@ retenon	18
 retiriĝante	18
 retkafejo	18
 retlistojn	18
-retpaĝojn	18
+retpaĝo, ttt-paĝo	18
 retrenpaŝis	18
 retreton	18
 retroirigi	18
@@ -135536,7 +135536,7 @@ retfoliumilo	18
 retiriĝi	18
 retkurso	18
 retpaĝarojn	18
-retpaĝon	18
+retpaĝo, ttt-paĝo	18
 retraduki	18
 retrofleksaj	18
 retservo	18
@@ -146640,7 +146640,7 @@ retenebla	18
 retinon	18
 retkatalogo	18
 retour	18
-retpaĝoj	18
+retpaĝo, ttt-paĝo	18
 retprojektoj	18
 retrorigarde	18
 retrorigardu	18
@@ -168150,7 +168150,7 @@ kafon	19
 kafopaŭzo	19
 kahlo	19
 kaiserstuhl	19
-kaj	19
+kaj, k.	19
 kajtopluredro	19
 kakatuo	19
 kalabria	19
@@ -226281,7 +226281,7 @@ retorikaĵoj	19
 retorikoj	19
 retpaĝa	19
 retpaghon	19
-retpaĝoj	19
+retpaĝo, ttt-paĝo	19
 retperanto	19
 retpoŝtiloj	19
 retpoŝtis	19

@@ -16,6 +16,7 @@ node assigncateg.js ../bro6.txt ./data/cards.js bro6 bro
 node assigncateg.js ../bro7.txt ./data/cards.js bro7 bro
 node assigncateg.js ../bro8.txt ./data/cards.js bro8 bro
 node assigncateg.js ../bro9.txt ./data/cards.js bro9 bro
+node assigncateg.js ../leipzig.txt ./data/cards.js otras
 
 echo Asignando frecuencias…
 node assignfreqs.js > ./data/temp

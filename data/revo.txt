@@ -10083,7 +10083,7 @@ uzindiko
 indikativo
 indikativa frazo
 indikatoro
-individuo
+individuo, unuopulo
 individua
 individueco
 individuismo
@@ -20940,7 +20940,6 @@ restoracio
 resurso
 reto
 retano
-retejo
 retumi
 retumilo
 enretigi
@@ -25280,7 +25279,7 @@ ts, tss
 tsetseo
 TTT
 retejo, paĝaro, TTT-ejo, retpaĝaro
-TTT-paĝo
+retpaĝo, TTT-paĝo
 TTT-paĝaro
 tualeto
 tualeti
