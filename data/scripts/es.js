@@ -1,3 +1,9 @@
+/*
+ Vuelca a stdout un hash con las traducciones de trads.txt
+
+ Uso: node es.js
+ */
+
 var fs = require('fs');
 var readline = require('readline');
 var rl = readline.createInterface({
@@ -11,7 +17,7 @@ var out = {};
 rl.on('line', function(line) {
   processLine(line);
 }).on('close', function() {
-  console.log(JSON.stringify(out, null, '\t'));
+  console.log('module.exports = ' + JSON.stringify(out, null, '\t'));
   process.exit(0);
 });
 
@@ -21,5 +27,5 @@ function processLine(line) {
   var es = data[1];
 
   eo = eo.toLowerCase();
-  out[eo] = out[eo] ? out[eo] + '|' + es : es;
+  out[eo] = out[eo] ? out[eo] + ' | ' + es : es;
 }
