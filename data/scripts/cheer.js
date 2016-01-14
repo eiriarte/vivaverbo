@@ -37,13 +37,23 @@ function getDerivs(filename) {
 
       // El atributo 'lit' cambia la letra inicial (minúscula por mayúscula, etc.)
       if (lit) {
+        var resto;
+
         // (la primera letra podría ocupar más de un carácter)
-        $tld.prepend(lit + radiko.slice((radiko.indexOf(';') + 1) || 1));
+        if ('&' === radiko[0]) {
+          resto = radiko.slice((radiko.indexOf(';') + 1));
+        } else {
+          resto = radiko.slice(1);
+        }
+        $tld.prepend(lit + resto);
       } else {
         $tld.prepend(radiko);
       }
 
-      derivs.push(separateVariants(cleanKap($kap)));
+      if (lit && radiko[0] !== '&' && radiko.indexOf(';') !== -1) {
+        console.warn('Entrada %s corregida, kap: %s', filename, radiko);
+      }
+      derivs.push(separateVariants(cleanKap($kap)).trim());
     }
   });
 
