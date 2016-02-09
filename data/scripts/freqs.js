@@ -22,7 +22,7 @@ var cardHash = _.groupBy(cards, function(card) {
 var rank = 0;
 var out = {};
 
-var iksoj = /(cx|gx|hx|jx|sx|ux)/g
+var iksoj = /(cx|gx|hx|jx|sx|ux)/g;
 var chapeloj = {
   cx: 'ĉ',
   gx: 'ĝ',
@@ -30,7 +30,7 @@ var chapeloj = {
   jx: 'ĵ',
   sx: 'ŝ',
   ux: 'ŭ'
-}
+};
 
 rl.on('line', function(line) {
   rank++;
@@ -45,7 +45,6 @@ function processLine(line, rank) {
   var plurAccus = /^(...*[ao])(j|n|jn)$/;
   var match, word = line.split('\t')[0];
 
-  word = word.toLowerCase();
   word = word.replace(iksoj, function(ikso) {
     return chapeloj[ikso];
   });

@@ -410,7 +410,7 @@ membroj	9
 vivas	9
 virino	9
 staris	9
-francio	9
+Francio	9
 celo	9
 unuan	9
 sankta	9
@@ -433,7 +433,7 @@ antaŭ	9
 iun	9
 vera	9
 krome	9
-zamenhof	9
+Zamenhofo, Zamenhof	9
 prenis	9
 nuna	9
 kapon	9
@@ -443,7 +443,7 @@ lastaj	9
 tien	9
 demandis	9
 historio	9
-germanio	9
+Germanio	9
 ĉefurbo	9
 usona	9
 fare de	9
@@ -1259,7 +1259,7 @@ elekti	10
 latina	10
 asertas	10
 instruis	10
-petro	10
+Petro	10
 konstruaĵo	10
 chu	10
 meza	10
@@ -1400,7 +1400,7 @@ unua	10
 besto	10
 financa	10
 esperantistoj	10
-tero	10
+Tero	10
 formas	10
 nura	10
 frua	10
@@ -2235,7 +2235,7 @@ planko	11
 plezuro	11
 proponon	11
 utilas	11
-interreto	11
+Interreto	11
 reĝa	11
 landa	11
 fermita	11
@@ -2717,7 +2717,7 @@ universitatoj	11
 pala	11
 populacio	11
 interesas	11
-vaŝingtono	11
+Vaŝingtono, Vaŝington	11
 esplorado	11
 fervojo	11
 milda	11
@@ -3043,7 +3043,7 @@ interesiĝas	11
 ŝtata	11
 poemojn	11
 artisto	11
-blanka	11
+Blanka	11
 poetoj	11
 ŝanĝas	11
 necesis	11
@@ -3183,7 +3183,7 @@ rezignis	11
 haŭto	11
 premio	11
 fakoj	11
-nigra	11
+Nigra	11
 kerno	11
 municipa	11
 trinkis	11
@@ -3497,7 +3497,7 @@ siatempe	12
 solena	12
 eksteren	12
 indikoj	12
-interreto	12
+Interreto	12
 oftaj	12
 renato	12
 eksterordinara	12
@@ -4476,7 +4476,7 @@ operacio	12
 plimulton	12
 sanktan	12
 bato	12
-julio	12
+Julio	12
 kunlaborantoj	12
 marko	12
 ŝanĝojn	12
@@ -5871,7 +5871,7 @@ liberala	12
 metalo	12
 ĉeeston	12
 belga	12
-io	12
+Io	12
 piedon	12
 turismaj	12
 uloj	12
@@ -7510,7 +7510,7 @@ pladoj	13
 revolucion	13
 rigardoj	13
 skribe	13
-tempo	13
+Tempo	13
 utilo	13
 aĉeto	13
 farado	13
@@ -8810,7 +8810,7 @@ daŭrigos	13
 akordo	13
 buton-brilo	13
 faritajn	13
-francion	13
+Francio	13
 jarmiloj	13
 katolikismo	13
 milionon	13
@@ -11101,7 +11101,7 @@ komisio	13
 koncentrejo	13
 konforma	13
 konkludojn	13
-kredo	13
+Kredo	13
 kreskantan	13
 legendo	13
 liberigas	13
@@ -11399,7 +11399,7 @@ negroj	13
 paperojn	13
 pedagogia	13
 pensadon	13
-ponto	13
+Ponto	13
 premoj	13
 prudenton	13
 satano	13
@@ -13504,7 +13504,7 @@ dosierujo	14
 dubinda	14
 formata	14
 fornon	14
-germanion	14
+Germanio	14
 grupeto	14
 gustav	14
 gustumis	14
@@ -16085,7 +16085,7 @@ gardos	14
 imitado	14
 impete	14
 insekto	14
-interreton	14
+Interreton	14
 kahelaro	14
 kamaradojn	14
 kooperativo	14
@@ -16666,7 +16666,7 @@ eldonojn	14
 elektrono	14
 english	14
 enkonduka	14
-eŭkaristio	14
+eŭkaristio, eŭĥaristio	14
 faciligis	14
 fosas	14
 futra	14
@@ -19347,7 +19347,7 @@ adicias	14
 adolfo	14
 alfluo	14
 allogan	14
-amoro	14
+amoro, sekskuniĝo	14
 argentina	14
 aspektos	14
 barroso	14
@@ -19464,7 +19464,7 @@ aleksej	14
 aligitaj	14
 aliloken	14
 alvenis	14
-antikvo	14
+antikvo, antikveco	14
 arkitekturon	14
 armilaro	14
 atombombo	14
@@ -20955,7 +20955,7 @@ graz	15
 guangdong	15
 heredita	15
 ĥoroj	15
-ino	15
+Ino	15
 instituton	15
 insulanoj	15
 jukka	15
@@ -21043,7 +21043,7 @@ agante	15
 agresemaj	15
 alfabeta	15
 amaran	15
-arkaika	15
+arkaika, arĥaika	15
 arkeologio	15
 batala	15
 bernick	15
@@ -22237,7 +22237,7 @@ vojkruciĝo	15
 vorta	15
 vulpo	15
 wien	15
-zamenhof	15
+Zamenhofo, Zamenhof	15
 zumado	15
 kontribuaĵo	15
 cirkaŭ	15
@@ -22441,7 +22441,7 @@ manki	15
 manovro	15
 marde	15
 marksisma	15
-medio	15
+Medio	15
 metalan	15
 miaflanke	15
 misiloj	15
@@ -25169,7 +25169,7 @@ kvalifikitaj	15
 kvare	15
 laboristinoj	15
 laciĝas	15
-levi	15
+Levi	15
 m-ojn	15
 majestaj	15
 malavantaĝoj	15
@@ -25827,7 +25827,7 @@ idiomoj	15
 impresaj	15
 instrukcion	15
 interagado	15
-interreton	15
+interreto	15
 kampaj	15
 kapablecon	15
 kapeton	15
@@ -26401,7 +26401,7 @@ pajla	15
 parodio	15
 pej	15
 pendi	15
-pentekosto	15
+Pentekosto	15
 penti	15
 pepado	15
 platon	15
@@ -26909,7 +26909,7 @@ princinon	15
 prizonuloj	15
 procesioj	15
 profana	15
-proletoj, proletarioj	15
+proleto, proletario	15
 promesplena	15
 provizora	15
 psalmo	15
@@ -33155,8 +33155,8 @@ vito	15
 vizoj	15
 winnetou	15
 wood	15
-zamenhofo	15
-zamenhofon	15
+Zamenhofo, Zamenhof	15
+Zamenhofo, Zamenhof	15
 zdislava	15
 laŭgrada	15
 maŭzoleo	15
@@ -33210,7 +33210,7 @@ aramea	15
 arĉinstrumentoj	15
 arigi	15
 aritmetika	15
-arkaikaj	15
+arkaika, arĥaika	15
 atakante	15
 atlaso	15
 aǔdis	15
@@ -33483,7 +33483,7 @@ laboris	15
 langlet	15
 lezo	15
 librejo	15
-limo	15
+Limo	15
 limregiono	15
 linnaeus	15
 lisa	15
@@ -34196,7 +34196,7 @@ senbrua	16
 senforte	16
 senindulga	16
 senmovan	16
-si	16
+SI	16
 sindeteno	16
 sklave	16
 skribadis	16
@@ -35304,7 +35304,7 @@ albault	16
 alilokaj	16
 alprenita	16
 ambicias	16
-amori	16
+amori, seksumi, sekskuniĝi	16
 analizu	16
 angelo	16
 ankaü	16
@@ -36485,7 +36485,7 @@ gardon	16
 geedzecon	16
 generatoro	16
 gentojn	16
-germanio	16
+germaniumo, germanio	16
 gildo	16
 god	16
 grafon	16
@@ -37176,7 +37176,8 @@ duonaj	16
 e-isto	16
 ebla	16
 ebur-bordo	16
-edeno	16
+edeno 16
+edeno, eden	16
 egalrajtecon	16
 ekesto	16
 ekleziojn	16
@@ -37874,7 +37875,7 @@ sablo	16
 sacro	16
 saga	16
 saŭd-arabio	16
-seksumi	16
+amori, seksumi, sekskuniĝi	16
 sekvantojn	16
 semajnon	16
 sendadis	16
@@ -38124,7 +38125,7 @@ alpistoj	16
 alsaltis	16
 alvenigi	16
 amikemaj	16
-amoro	16
+amoro, sekskuniĝo	16
 ampleksi	16
 anarĥiistoj	16
 anatolo	16
@@ -38601,7 +38602,7 @@ masonistoj	16
 mastraro	16
 melonoj	16
 membroŝtato	16
-metodio	16
+Metodio, Metodo	16
 mildigo	16
 miskomprenu	16
 mitsuki	16
@@ -39665,7 +39666,7 @@ valentina	16
 validajn	16
 vangofrapon	16
 vasiljeviĉ	16
-vaŝingtonon	16
+Vaŝingtono, Vaŝington	16
 venantajn	16
 verlag	16
 veterinaro	16
@@ -42440,7 +42441,7 @@ provoke	16
 purpuro	16
 que	16
 rabistojn	16
-raciismo	16
+racionalismo, raciismo	16
 rajdisto	16
 ramírez	16
 ranieri	16
@@ -46743,7 +46744,7 @@ meksikon	16
 membra	16
 memorigos	16
 méndez	16
-menstruo	16
+menstruo, monataĵo	16
 merlo	16
 mesa	16
 metala	16
@@ -47181,7 +47182,7 @@ forstreki	16
 forvendis	16
 foster	16
 fotografia	16
-francio	16
+franciumo, francio	16
 fratuloj	16
 fraulino	16
 fremdeco	16
@@ -54571,7 +54572,7 @@ maŭzoleon	16
 puĉistoj	16
 ŝirjaev	16
 velŝipoj	16
-eŭkaristio	16
+eŭkaristio, eŭĥaristio	16
 maŝinaron	16
 serĉatan	16
 ĉirkaŭante	16
@@ -57696,7 +57697,7 @@ banĉambron	17
 ĉefepiskopon	17
 rubaĵon	17
 ŝatu	17
-eŭkaristion	17
+eŭkaristio, eŭĥaristio	17
 kosmetikaĵoj	17
 malkaŝitaj	17
 neregulaĵoj	17
@@ -64830,7 +64831,7 @@ patentita	17
 patricio	17
 peak	17
 penda	17
-pentekosto	17
+Pentekosto	17
 peranton	17
 pereigo	17
 perfortemaj	17
@@ -65308,7 +65309,7 @@ kontraŭstarantaj	17
 paperaĵoj	17
 preparaĵoj	17
 ŝatanta	17
-vaŝington	17
+Vaŝingtono, Vaŝington	17
 voĉis	17
 fraŭlineto	17
 ĉifonon	17
@@ -65958,7 +65959,7 @@ puzlo	17
 qaeda	17
 querétaro	17
 rabindranath	17
-racionalismo	17
+racionalismo, raciismo	17
 radikis	17
 radioaparaton	17
 raider	17
@@ -68694,7 +68695,7 @@ are	17
 arĝentaj	17
 argentinon	17
 arkado	17
-arkaikan	17
+arkaika, arĥaika	17
 armenaj	17
 arnhem	17
 arope	17
@@ -73199,7 +73200,7 @@ teniĝis	17
 tennessee	17
 tenta	17
 terkerno	17
-termino	17
+Termino	17
 thorbjørnsen	17
 timbuktuo	17
 timeo	17
@@ -73519,7 +73520,7 @@ amemon	17
 amik	17
 amina	17
 aminde	17
-amoron	17
+amoro, sekskuniĝo	17
 amoz	17
 ampolon	17
 amundsen	17
@@ -74378,9 +74379,9 @@ arestigis	17
 arestordono	17
 arĝentkolora	17
 argonaŭtoj	17
-arĥaika	17
+arkaika, arĥaika	17
 arias	17
-arkaika	17
+arkaika, arĥaika	17
 arkitekturisto	17
 arnošt	17
 aromojn	17
@@ -74686,7 +74687,7 @@ e-kongreson	17
 e-renkontiĝo	17
 early	17
 ebbe	17
-edeno	17
+edeno, eden	17
 edukita	17
 edziĝofesto	17
 edziniĝo	17
@@ -86736,7 +86737,7 @@ segunda-feira	17
 sejdiu	17
 sekretariato	17
 sekretos	17
-sekskuniĝo	17
+amoro, sekskuniĝo	17
 sekvenda	17
 semaforo	17
 semajnajn	17
@@ -87531,7 +87532,7 @@ ardigas	17
 argilo	17
 argumente	17
 aristotelon	17
-arkaikajn	17
+arkaika, arĥaika	17
 arlington	17
 armeno	17
 armilaj	17
@@ -92037,7 +92038,7 @@ aŭskultita	18
 ĉirkaŭkuras	18
 dolĉega	18
 draŝado	18
-eŭkaristion	18
+eŭkaristio, eŭĥaristio	18
 gaŭloj	18
 kadavraĵon	18
 malkaŝon	18
@@ -113683,7 +113684,7 @@ falsaĵon	18
 fiaĵon	18
 fiŝvendisto	18
 plenbuŝe	18
-monataĵo	18
+menstruo, monataĵo	18
 kapuĉojn	18
 ligaĵon	18
 pioĉoj	18
@@ -120329,7 +120330,7 @@ antaŭvidas	18
 antena	18
 antenne	18
 antikomunismo	18
-antikvo	18
+antikvo, antikveco	18
 antilopon	18
 antioksidanto	18
 antisemitajn	18
@@ -121998,7 +121999,7 @@ vaska	18
 vasnecov	18
 vastaĵon	18
 vastege	18
-vaŝingtono	18
+Vaŝingtono, Vaŝington	18
 vatikanajn	18
 vatinius	18
 vatojn	18
@@ -122727,7 +122728,7 @@ ebriaj	18
 eĉ	18
 eco	18
 edelhagen	18
-edenon	18
+edeno, eden	18
 edifita	18
 edomido	18
 educational	18
@@ -136602,7 +136603,7 @@ eu-parlamentanojn	18
 eŭbeo	18
 eŭfonio	18
 eŭgenia	18
-eŭĥaristio	18
+eŭkaristio, eŭĥaristio	18
 eum	18
 eŭrinomo	18
 eŭrolingvistiko	18
@@ -140104,7 +140105,7 @@ arestordono	18
 argovia	18
 argumenteblas	18
 argumentum	18
-arĥaikaj	18
+arkaika, arĥaika	18
 arhhimedo	18
 arĥivisto	18
 ariana	18
@@ -153301,7 +153302,7 @@ rabatos	19
 rabitan	19
 rabojn	19
 rabštejn	19
-raciismo	19
+racionalismo, raciismo	19
 racławice	19
 rad	19
 radaran	19
@@ -157417,7 +157418,7 @@ ecorregión	19
 ede-federacio	19
 ede-germanio	19
 edena	19
-edenon	19
+edeno, eden	19
 ediciones	19
 edinburga	19
 edith'on	19
@@ -182478,7 +182479,7 @@ monaĥejajn	19
 monahhejoj	19
 monasigno	19
 monasignon	19
-monataĵo	19
+menstruo, monataĵo	19
 monatfino	19
 monato-konvencioj	19
 monavidan	19
@@ -186821,7 +186822,7 @@ rachmaninoff	19
 raciema	19
 raciigis	19
 raciisman	19
-raciismon	19
+racionalismo, raciismo	19
 racionalismaj	19
 racionalisto	19
 radacsy	19
@@ -202580,7 +202581,7 @@ menorca	19
 menŝeviko	19
 mensinfluado	19
 menstruajn	19
-menstruon	19
+menstruo, monataĵo	19
 mentona	19
 mentoris	19
 mentuhotep	19
@@ -222409,7 +222410,7 @@ mensogetis	19
 mensogon	19
 mensogulojn	19
 menstruan	19
-menstruoj	19
+menstruo, monataĵo	19
 mentaj	19
 mentale	19
 mentmarko	19
@@ -239898,7 +239899,7 @@ arkada	19
 arkadi	19
 arkadiusz	19
 arkadjevna	19
-arkaikaj	19
+arkaika, arĥaika	19
 arkaikiĝas	19
 arkaikiĝinta	19
 arkarly	19
@@ -241489,7 +241490,7 @@ vartu	19
 vašek	19
 vašica	19
 vasija	19
-vaŝingtono	19
+Vaŝingtono, Vaŝington	19
 vaskonoj	19
 vaskula	19
 vaskulojn	19

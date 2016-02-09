@@ -10,7 +10,7 @@ var total = cards.length;
 var maxFreq = 300000;
 
 cards.forEach(function(card, index) {
-  var freq = freqs[card.respuesta.toLowerCase()];
+  var freq = freqs[card.respuesta] || freqs[card.respuesta.toLowerCase()];
   if (typeof freq !== 'undefined') {
     card.freq = freq;
   } else {

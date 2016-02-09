@@ -8,7 +8,7 @@ cards = require('./data/cards');
 trads = require('./data/trads');
 
 cards.forEach(function(card) {
-  var trad = trads[card.respuesta.toLowerCase()];
+  var trad = trads[card.respuesta] || trads[card.respuesta.toLowerCase()];
   if (typeof trad === 'string') {
     card.pregunta = trad;
   }

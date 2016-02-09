@@ -26,6 +26,5 @@ function processLine(line) {
   var eo = data[0];
   var es = data[1];
 
-  eo = eo.toLowerCase();
   out[eo] = out[eo] ? out[eo] + ' | ' + es : es;
 }
