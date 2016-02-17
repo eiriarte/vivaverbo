@@ -49,6 +49,10 @@ function processLine(line, rank) {
     return chapeloj[ikso];
   });
 
+  if (!out.hasOwnProperty(word)) {
+    out[word] = rank;
+  }
+
   match = verb.exec(word);
   if (match && !exists(word)) {
     // Pasamos el verbo a infinitivo
