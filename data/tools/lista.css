@@ -1,0 +1,40 @@
+body {
+  font-size: 18px; }
+
+.error {
+  color: red; }
+
+.pos {
+  float: right;
+  font-weight: bold;
+  opacity: 0.35; }
+
+.tarjetas {
+  width: 100%; }
+
+.tarjeta {
+  padding: 8px; }
+
+#consola {
+  width: auto;
+  margin-right: 256px; }
+
+#info {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 256px;
+  font-size: .8em; }
+  #info .difinoj {
+    padding-left: 1.5em; }
+  #info .ekzemploj {
+    padding-left: 1.5em;
+    font-style: italic; }
+    #info .ekzemploj .fnt {
+      opacity: 0.35; }
+  #info .f, #info h1 {
+    font-size: 1.2em;
+    font-weight: bold; }
+  #info mark {
+    background-color: inherit;
+    color: inherit; }
