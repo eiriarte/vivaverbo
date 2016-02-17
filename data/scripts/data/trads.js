@@ -15130,5 +15130,6 @@ module.exports = {
 	"plurgeedzeco": "poligamia",
 	"novgeedzoj, novedz(in)oj": "recién casados",
 	"fraŭlo": "hombre soltero",
-	"multenombra familio": "familia numerosa"
+	"multenombra familio": "familia numerosa",
+	"unuenaskito": "primogénito"
 }
