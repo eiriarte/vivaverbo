@@ -158,6 +158,7 @@ holdo
 hulo
 hupo
 imperialo
+interurba
 itinero
 jardo
 jaĥto
@@ -395,6 +396,7 @@ trafiko
 trafikregularo
 trafikrondeto
 trafikrondo
+trafikvojo
 trajnfina lanterno
 trajno
 trako
@@ -411,6 +413,7 @@ troleo
 trolo
 trolŝipo
 trotuaro
+tutmonda loktrova sistemo
 vagonaro
 vagono
 vaporŝipo

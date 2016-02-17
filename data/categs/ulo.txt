@@ -42,6 +42,7 @@ mirinfano
 najbaro
 nekonato, nekonatulo
 neplenaĝa
+novnaskito, novenaskito
 orfo
 parenco
 peranto
@@ -60,6 +61,7 @@ studanto
 studento
 superheroo
 suĉinfano
+terano
 transseksulo
 ulo
 urbestro

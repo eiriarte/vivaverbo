@@ -257,6 +257,7 @@ tokonomo
 tombejo
 tombomonumento
 toro
+trafikvojo
 transepto
 triglifo
 trumo
@@ -265,6 +266,7 @@ turniĝanta ponto
 turo
 urbego
 urbo
+urbocentro
 urbodomo
 vando
 verando
@@ -289,10 +291,10 @@ zigurato
 ĥorejo
 ĵaluzio
 ŝedo
-ŝovpordo 
+ŝovpordo
 ŝproso
 ŝranko
-ŝraŭba ŝtuparo 
+ŝraŭba ŝtuparo
 ŝtuparo
 ŝtuparŝakto
 ŝtupo

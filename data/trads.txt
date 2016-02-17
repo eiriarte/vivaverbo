@@ -20961,3 +20961,4 @@ novgeedzoj, novedz(in)oj: recién casados
 fraŭlo: hombre soltero
 fraŭlino: mujer soltera
 multenombra familio: familia numerosa
+unuenaskito: primogénito

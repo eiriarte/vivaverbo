@@ -1,4 +1,5 @@
 Iluminatoj
+Nobel-premio
 absoluta
 absolutismo
 administracio
@@ -95,6 +96,7 @@ diskutgrupo
 distrikto
 dominio
 dualismo
+dulanda
 edikto
 edilo
 egalismo
@@ -232,6 +234,7 @@ laborplano
 laborvizo
 landestro
 lando
+leĝdona, leĝodona
 leĝo
 liberalismo
 lobio
@@ -279,6 +282,7 @@ naskiĝatestilo
 naziismo
 nazio
 nenieslando
+neoficiala
 nepotismo
 neregistara organizaĵo
 neŭtraligo
@@ -296,6 +300,7 @@ obstrukco
 oficejo
 oficiala
 oficisto
+oficperiodo, mandatperiodo
 okupacii
 okupacio
 oligarkio
@@ -317,7 +322,6 @@ parolisto
 partio
 partnero
 paŝao
-pedofilio
 pensfabriko
 personkulto
 peticio
@@ -328,6 +332,7 @@ pleno
 plurkultureco
 plutokratio
 podestato
+pokapa
 pola
 polico
 polino
@@ -412,6 +417,7 @@ sennaciismo
 separatismo
 separatisto
 servuto
+setlejo
 sklavismo
 socia kontrakto
 sociala
@@ -431,6 +437,7 @@ studgrupo
 studvizo
 subkulturo
 submeti
+subpremo
 subsidiareco
 subvencio
 subŝtato

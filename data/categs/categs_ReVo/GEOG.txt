@@ -43,8 +43,7 @@ dolino
 duno
 duoninsulo
 duonsfero
-e
-ebenaĵo 
+ebenaĵo
 ekvatoro
 eldorado
 enfluejo
@@ -76,6 +75,7 @@ insuleto
 insulo
 interkrutejo
 intermonto
+interurba
 istmo
 izoterma
 kabo
@@ -162,6 +162,7 @@ senhomejo
 stepo
 strando
 subkontinento
+subtropika
 sudo
 sundo
 tablomonto
@@ -178,16 +179,20 @@ terzono
 toponimo
 torfejo
 toskano
+trafikvojo
 tundro
+tutmonda loktrova sistemo
 u
 ukraino
 ukrajno
 urala
 urbo
+urbocentro
 vadio
 valeto
 valo
 veprejo
+vilaĝeto
 vilaĝo
 vulkano
 zono

@@ -202,6 +202,7 @@ stelaro
 stelfiguro
 stelo
 stelobservejo
+stelŝipo
 suncentra
 suncentrismo
 suno
@@ -209,6 +210,7 @@ sunsistemo
 supernovao
 tagnoktegaleco
 teleskopo
+terano
 tercentra
 tercentrismo
 tero

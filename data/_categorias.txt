@@ -31,3 +31,113 @@ KONTAKTO:
   No se incluyen aquí afijos ni terminaciones gramaticales que contiene la lista original (-aĵ, mal-, -as, etc.).
 
   N. palabras: 951
+
+
+
+
+
+/*
+ * [X] export.js => buscar { freq: { $exists: false } }
+ * [X] aĝioti adjudiki <= confirmar que está correg.;  ameli asfalti <= corregir: -ita(n)
+ * [X] y otras anomalías
+      [X] kelkafoje, kelkfoje; fluidaĵo, fluido;… y, en general, _, _
+          SOLVO: En el interfaz para revisar/asignar traducciones…
+                 Al abrir una card: buscar automáticamente otras cards donde
+                 también aparezca esa palabra (o alguna de ellas sin son varias
+                 entre comas), sola o entre otras (entre comas).
+                 P.ej: "kelkafoje, kelkfoje" => "kelkfoje", "kelkafoje"
+                 Botón que permita unificar rápidamente las cards (o no unificarlas,
+                 si es mejor que se unifiquen por defecto). (CHECKBOXES??)
+      [X] db.vortoj.find({ $and: [{ categorias: { $ne: 'revo' } }, { categorias: 'bro' }] }).sort({ freq: 1 })
+ * [X]  y otras…
+ * [X] F + OA1…
+		  [X] quitar los '/'
+		  [X] GIT
+		  [X] quitar los afijos
+		  [X] buscar caracteres extraños: [^a-z…]
+		  [X] revisar palabras con mayúscula (Pasko, Evangelio, Epifanio, Amoro)
+		  [X] repaso visual a las de dos/tres caracteres (letras, fi, etc): ^..$ (consolidar???)
+		  [X] bertilow.com/…/kombinitaj_vortetoj >>> DE MOMENTO LO CONSIDERO GRAMÁTICA
+		  [X] palabras con frecuencia repetida (Alejandro - alejandro, etc.)
+		  [X] "respuesta": "proleto, proletario", (bro9, oa3-8)
+		  [X] "respuesta": "buĝeto, budĝeto", (bro9, oa3-8)
+ * [X] rehacer "missing" >>> innecesario
+ * [-] homónimos?? romano (ano de Romo; novela) >>> se deja para cuando las traducciones
+ * [-] SSV ?? alternativas >>> se deja para cuando las traducciones
+ * [ ] REVO-FAKOJ
+ *      [X] BRO1 / BRO2 => palabra por palabra => catalogar
+ *      [X] luego: lista definitiva para el PMV
+ *      [X] luego: copiar y pegar en bestoj.txt ktp
+ *      [-] luego: contrastar fiŝoj.txt con revo.txt, etc.
+ *      [X] luego: añadir a ./assignall y ejecutar
+ *
+ * [ ] Material 1.0 + upgrades + subir con vocabulario => HITO!!!
+ *
+ *
+ * */
+
+Supercategorías: Ciencia, Tecnología, Sociedad, Humanidades, Arte
+
+(Vivienda / Arquitectura) arkitekturo
+(Filosofía) filozofio
+( Psicología / Psiquiatría ) psikologio, psikiatrio
+( Política / Sociología ) politiko, sociologio, administrado
+(Comercio / Economía) ekonomiko, financo, komerco
+(Derecho) juro
+(Lengua / Idiomas) lingvistiko, filologio fonetiko gramatiko
+(Historia / Arqueología) arkeologio historio prahistorio mitologio
+(Pensamiento / Educación) pedagogio
+(Violencia / Guerra) militaferoj
+(Alimentación / Nutrición) kuirarto
+(Geografía) geografio
+(Deportes / Juegos) sporto, ludoj
+(Ropa / Textil) teksindustrio, vestoj
+(Animales) zoologio
+( Plantas / Frutos ) botaniko
+(Anatomía) homa anatomio, histologio
+(Medicina) medicino, farmacio kirurgio
+(Viajes / Transportes) trafiko aŭtomobiloj aviado fervojoj maraferoj
+(Familia) genealogio
+(Tiempo / Calendario) kalendaro, tempomezurado
+(Arte) belartoj kinoarto beletro teatro poetiko, poezio
+(Música) muziko
+(Religión) religioj biblio budhismo hinduismo islamo kristanismo katolikismo
+(Escritura / Impresión) presarto, libroj
+(Correo) poŝto
+(Agricultura / Ganadería) agrokulturo
+(Horticultura, Silvicultura) hortikulturo, arbokulturo, silvikulturo
+(Matemáticas) matematiko
+(Física) fiziko elektro
+(Química) kemio, biokemio
+(Biología) bakteriologio, virusologio biologio, biontologio ekologio fiziologio
+( Informática / Internet ) komputiko
+(Astronomía) astronomio
+(Meteorología / Climatología) meteologio
+(Geología) geologio mineralogio paleontologio
+(Construcción) konstrutekniko
+(Fotografía / Óptica) # ¿"audio/video"?  fotografio, optiko
+(Telecomunicaciones) telekomunikoj
+
+ago    - ( Acción / Trabajo )
+ajxo   - ( Objetos / Manipular / Materiales )
+eco    - ( Cualidades / Defectos )
+form   - ( Dimensiones / Formas / Posiciones )
+hav    - ( Posesión / Pertenencia )
+kolor  - ( Colores / Tonos )
+kompar - ( Comparaciones )
+komunik- ( Comunicación / Colaboración )
+kvant  - ( Cantidades / Conjuntos )
+loko   - ( Lugares )
+mov    - ( Movimiento )
+sent   - ( Sentimientos / Emociones )
+sentum - ( Percepción / Sentidos )
+ujo    - ( Recipientes / Contenedores )
+ulo    - ( Personas )
+ver    - ( Verdad / Posibilidad )
+vol    - ( Necesidades / Deseos )
+zorg   - ( Cuidados / Mantenimiento )
+
+
+( Landonomoj… )
+( Números )
+-- Tiendas / Comercios

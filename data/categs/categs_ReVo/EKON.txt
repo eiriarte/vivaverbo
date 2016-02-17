@@ -548,6 +548,7 @@ plivaloro
 plusvaloro
 plutokratio
 pogrande
+pokapa
 polipolo
 polipsonio
 poliso
@@ -608,7 +609,7 @@ sektoro
 sekundara
 semestro
 senimposta
-senkreditigi 
+senkreditigi
 senkurza
 senlabora
 senlaboreco
@@ -626,7 +627,7 @@ sojlolando
 soldo
 solventa
 sovĥozo
-spekula veziko 
+spekula veziko
 spekulacii
 spekulado
 spekulanto

@@ -1,40 +1,42 @@
 alia
 alie, alimaniere
 alispeca
-sama
-malsama
-diferenci
-sendiferenca
-egala
 analoga
-identa
+diferenci
+diferenco
+distingi
 diversa
 diverseco
+egala
+egale
+eksterordinara
+elstara
+identa
+kiel
+kiel eble plej
+kompare
+kompari
+konfuzi
 kontrasto
-varii
-distingi
-same
-simila
-samkiel
-precipe
-ĉefe
-ĉefa
-pli… ol
-malpli… ol
-pli bona ol
-pli malbona ol
+kvazaŭ
 la plej bona
 la plej malbona
 malplej
-kiel eble plej
-kiel
-tiel
-kompari
-kvazaŭ
-diferenco
-ŝajni
-elstara
+malpli… ol
+malsama
 ordinara
-eksterordinara
+pli bona ol
+pli malbona ol
+pli… ol
+precipe
+sama
+same
+samkiel
+sendiferenca
+simila
 stranga
-konfuzi
+tiel
+varii
+ĉefa
+ĉefe
+ŝajni

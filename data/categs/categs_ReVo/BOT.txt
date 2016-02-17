@@ -571,6 +571,7 @@ levkojo
 leŭkojo
 liano
 licio
+lignohakisto
 ligulo
 ligustro
 likeno
@@ -756,6 +757,7 @@ pizo
 placento
 plantagacoj
 plantago
+planti
 planto
 plantoj
 platano

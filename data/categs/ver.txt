@@ -57,6 +57,7 @@ mensogo
 mensogulo
 mistifiki
 ne
+necerteco
 neebla
 nei
 nekontestebla

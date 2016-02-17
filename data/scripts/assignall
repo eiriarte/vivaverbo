@@ -1,44 +1,51 @@
 #!/bin/bash
 echo "module.exports = []" > ./data/cards.js
 
+echo Almacenando frecuencias…
+node freqs.js > ./data/fq.js
+
+echo Almacenando traducciones…
+node es.js > ./data/trads.js
+
 echo Agregando listas de palabras…
 node assigncateg.js ../listoj/piv.txt ./data/cards.js piv
 node assigncateg.js ../listoj/revo.txt ./data/cards.js revo
 node assigncateg.js ../listoj/hess.txt ./data/cards.js hess
-node assigncateg.js ../listoj/kontakto.txt ./data/cards.js kontakto
-node assigncateg.js ../listoj/afijos.txt ./data/cards.js afijos
-node assigncateg.js ../listoj/BRO/bro1.txt ./data/cards.js bro1 bro
-node assigncateg.js ../listoj/BRO/bro2.txt ./data/cards.js bro2 bro
-node assigncateg.js ../listoj/BRO/bro3.txt ./data/cards.js bro3 bro
-node assigncateg.js ../listoj/BRO/bro4.txt ./data/cards.js bro4 bro
-node assigncateg.js ../listoj/BRO/bro5.txt ./data/cards.js bro5 bro
-node assigncateg.js ../listoj/BRO/bro6.txt ./data/cards.js bro6 bro
-node assigncateg.js ../listoj/BRO/bro7.txt ./data/cards.js bro7 bro
-node assigncateg.js ../listoj/BRO/bro8.txt ./data/cards.js bro8 bro
-node assigncateg.js ../listoj/BRO/bro9.txt ./data/cards.js bro9 bro
-node assigncateg.js ../listoj/UV/fund.txt ./data/cards.js fund of
-node assigncateg.js ../listoj/UV/1oa.txt ./data/cards.js 1oa of
-node assigncateg.js ../listoj/UV/2oa.txt ./data/cards.js 2oa of
-node assigncateg.js ../listoj/UV/3oa.txt ./data/cards.js 3oa of
-node assigncateg.js ../listoj/UV/4oa.txt ./data/cards.js 4oa of
-node assigncateg.js ../listoj/UV/5oa.txt ./data/cards.js 5oa of
-node assigncateg.js ../listoj/UV/6oa.txt ./data/cards.js 6oa of
-node assigncateg.js ../listoj/UV/7oa.txt ./data/cards.js 7oa of
-node assigncateg.js ../listoj/UV/8oa.txt ./data/cards.js 8oa of
-node assigncateg.js ../listoj/UV/9oa.txt ./data/cards.js 9oa of
+node assigncateg.js ../listoj/kontakto.txt ./data/cards.js kont
+node assigncateg.js ../listoj/rekta_metodo.txt ./data/cards.js reme
+node assigncateg.js ../listoj/afijos.txt ./data/cards.js afix
+node assigncateg.js ../listoj/BRO/bro1.txt ./data/cards.js bro1
+node assigncateg.js ../listoj/BRO/bro2.txt ./data/cards.js bro2
+node assigncateg.js ../listoj/BRO/bro3.txt ./data/cards.js bro3
+node assigncateg.js ../listoj/BRO/bro4.txt ./data/cards.js bro4
+node assigncateg.js ../listoj/BRO/bro5.txt ./data/cards.js bro5
+node assigncateg.js ../listoj/BRO/bro6.txt ./data/cards.js bro6
+node assigncateg.js ../listoj/BRO/bro7.txt ./data/cards.js bro7
+node assigncateg.js ../listoj/BRO/bro8.txt ./data/cards.js bro8
+node assigncateg.js ../listoj/BRO/bro9.txt ./data/cards.js bro9
+node assigncateg.js ../listoj/UV/fund.txt ./data/cards.js fund
+node assigncateg.js ../listoj/UV/1oa.txt ./data/cards.js 1oa
+node assigncateg.js ../listoj/UV/2oa.txt ./data/cards.js 2oa
+node assigncateg.js ../listoj/UV/3oa.txt ./data/cards.js 3oa
+node assigncateg.js ../listoj/UV/4oa.txt ./data/cards.js 4oa
+node assigncateg.js ../listoj/UV/5oa.txt ./data/cards.js 5oa
+node assigncateg.js ../listoj/UV/6oa.txt ./data/cards.js 6oa
+node assigncateg.js ../listoj/UV/7oa.txt ./data/cards.js 7oa
+node assigncateg.js ../listoj/UV/8oa.txt ./data/cards.js 8oa
+node assigncateg.js ../listoj/UV/9oa.txt ./data/cards.js 9oa
 node assigncateg.js ../categs/ago.txt     ./data/cards.js ago
 node assigncateg.js ../categs/ajxo.txt    ./data/cards.js ajxo
 node assigncateg.js ../categs/eco.txt     ./data/cards.js eco
 node assigncateg.js ../categs/form.txt    ./data/cards.js form
 node assigncateg.js ../categs/hav.txt     ./data/cards.js hav
-node assigncateg.js ../categs/kolor.txt   ./data/cards.js kolor
+node assigncateg.js ../categs/kolor.txt   ./data/cards.js kolr
 node assigncateg.js ../categs/kompar.txt  ./data/cards.js komp
 node assigncateg.js ../categs/komunik.txt ./data/cards.js komu
-node assigncateg.js ../categs/kvant.txt   ./data/cards.js kvant
+node assigncateg.js ../categs/kvant.txt   ./data/cards.js kvnt
 node assigncateg.js ../categs/loko.txt    ./data/cards.js loko
 node assigncateg.js ../categs/mov.txt     ./data/cards.js mov
 node assigncateg.js ../categs/sent.txt    ./data/cards.js sent
-node assigncateg.js ../categs/sentum.txt  ./data/cards.js sntum
+node assigncateg.js ../categs/sentum.txt  ./data/cards.js sntm
 node assigncateg.js ../categs/ujo.txt     ./data/cards.js ujo
 node assigncateg.js ../categs/ulo.txt     ./data/cards.js ulo
 node assigncateg.js ../categs/ver.txt     ./data/cards.js ver
@@ -83,7 +90,6 @@ node assigncateg.js ../categs/categs_ReVo/TEL.txt     ./data/cards.js TEL
 node assigncateg.js ../categs/categs_ReVo/TIP.txt     ./data/cards.js TIP
 node assigncateg.js ../categs/categs_ReVo/TRA.txt     ./data/cards.js TRA
 node assigncateg.js ../categs/categs_ReVo/ZOO.txt     ./data/cards.js ZOO
-node assigncateg.js ../listoj/leipzig.txt ./data/cards.js otras
 
 echo Asignando frecuencias…
 node assignfreqs.js > ./data/temp

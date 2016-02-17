@@ -1,6 +1,7 @@
 admoni
 akcepti
 akuzi
+aldone
 amindumi, flirti
 anonci
 aplaŭdi
@@ -9,6 +10,7 @@ asocio
 atendi
 babili
 balbuti
+bonvolu, bv.
 cedi
 danki
 deadmoni, malinstigi
@@ -40,6 +42,7 @@ kaj tiel plu, ktp, k.t.p.
 kanalo
 kompreni
 kondamni
+kondiĉe ke
 konfesi
 konfidi
 konsenti
@@ -51,11 +54,13 @@ kune
 kunlabori
 laŭdi
 legi
+malkaŝe
 malkonsenti
 mallaŭdi
 malpermesi
 malrespekta
 maltaŭga
+miskompreno
 moki
 montri
 muta
@@ -100,6 +105,7 @@ taŭga
 telefono
 televido
 temi
+tutsimple
 unuanima
 vidpunkto
 voki

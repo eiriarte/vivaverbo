@@ -9,8 +9,6 @@ KD-legilo, lumdiskingo
 Linukso
 Makintoŝo
 Mikrosofto
-Muzaiko
-Paskalo
 Skajpo
 TTT
 TTT-ejo
@@ -235,6 +233,7 @@ krozilo
 kunfandi
 kunrulo
 kunsendaĵo
+kunsendi
 kurso
 kursoro
 labormemoro, ĉefmemoro
@@ -281,7 +280,7 @@ megabitoko
 memorlikado
 memoro
 menuo
-mieneto 
+mieneto
 mikrofono
 minuskla
 minuskligi
@@ -431,6 +430,7 @@ unio
 unuloka
 usklo
 uzantnomo
+uzanto, uzulo
 valoriza
 valorizi
 valorizo

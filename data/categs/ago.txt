@@ -2,12 +2,16 @@ admoni
 agi
 apogi
 aprobi
+bonvolu, bv.
 cedi
 deadmoni, malinstigi
 defendi
+definitive
+dekomence, de la komenco
 devigi
 diletanto
 diligenta
+diligente
 dungi
 dungito
 efiki
@@ -26,6 +30,7 @@ interkonsento
 kaŭzo
 komenci
 kompromiso
+kondiĉe ke
 kongreso
 krei
 kunsido
@@ -33,6 +38,8 @@ kunveno
 labori
 laboro
 laca
+laŭgrade
+libervole, memvole, propravole
 majstro
 maldungi
 malpermesi
@@ -52,7 +59,9 @@ ordoni
 partopreni
 peni
 perfidi
+perforte
 permesi
+plejeble
 polemiko
 postuli
 preta
@@ -67,6 +76,8 @@ prostitui
 rajtigi
 rimedo
 salajrulo
+seninterrompe
+senĉese
 servi
 servo
 sistemo
@@ -75,10 +86,12 @@ sklavo
 striko
 sufiĉa
 sukcesi
+surloke
 tagordo
 trouzi
 unuanima
 utila
 uzi
+zorge
 ĉesi
 ŝanĝi

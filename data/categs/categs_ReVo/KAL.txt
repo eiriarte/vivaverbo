@@ -13,6 +13,7 @@ adulto
 akurata
 akvohorloĝo
 ankoraŭ
+ankoraŭfoje
 antaŭ
 antaŭe
 antaŭtagmezo
@@ -131,6 +132,7 @@ ofte
 oktobro
 palmofesto
 pasigi
+pasintjare
 periodo
 plenluno
 poste
@@ -151,6 +153,7 @@ senĉesa
 septembro
 sezono
 silvestra
+sinsekve
 somera musono
 somera tempo
 somero
@@ -172,6 +175,7 @@ tempolimo
 tempopasigilo
 tempopremo
 tiam
+tiutempe
 trimestro
 trimonato
 tuj
@@ -180,6 +184,7 @@ unue
 unufoje
 vekhorloĝo
 vendredo
+venontjare
 vespero
 vintra musono
 vintra tempo
@@ -187,5 +192,7 @@ vintro
 ĉesi
 ĉiam
 ĉiufoje
+ĉiujare
+ĉiutage
 ĵaŭdo
 ŝirfolia kalendaro
