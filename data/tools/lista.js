@@ -4,7 +4,7 @@ $(function() {
 
 var terminal;
 var saludo = '<i><b>Vivaverbo cards: ¡¡¡CUIDADO CON LOS GÉNEROS!!!</b></i>';
-var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, revo, piv, rae, es, eo, addcat, delcat';
+var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, revo, piv, rae, diego, es, eo, addcat, delcat, goto';
 var langs = ['es', 'en', 'it', 'fr', 'pt', 'ca', 'gl'];
 var db, idbAdapter, cards, selection, current, dupes = [];
 
@@ -63,6 +63,13 @@ function execCommand(command, args) {
           result = mostrarTarjeta();
         }
         return result;
+      case 'goto':
+        if (irA(args[0] - 1)) {
+          result = mostrarTarjeta();
+        } else {
+          result = htmlError('¡No existe la tarjeta nº ' + args[0] + '!');
+        }
+        return result;
       case 'merge':
         if (0 === dupes.length) {
           return htmlError('¡No hay duplicados que fusionar!');
@@ -91,6 +98,17 @@ function execCommand(command, args) {
         var word = args[0] || selection[current].respuesta.trim();
         var url = 'http://vortaro.net/#' + word;
         $("<a>").attr("href", url).attr("target", "_blank")[0].click();
+        return '';
+      case 'diego':
+        var word = args[0] || selection[current].respuesta.trim();
+        var url = 'http://www.esperanto.es:8080/diccionario/inicio.jsp?que=' + word;
+        $.get(url, function(data) {
+          var $html = $(data);
+          var titulo = '<h1>' + word + '</h1>';
+          $('#info').html(titulo + '<table>' + $html.find('table').html() + '</table>');
+        }).fail(function(jqxhr, textStatus, err) {
+          window.alert(jqxhr.status + ', ' + err);
+        });
         return '';
       case 'es':
         if (arg.trim() && setField(arg, 'pregunta', 'sinP')) {
@@ -265,10 +283,14 @@ function htmlTarjeta(card, pos) {
 }
 
 function irA(index) {
+  if ('undefined' === typeof selection[index]) {
+    return false;
+  }
   normalizeFields(selection[index]);
   findDuplicates(selection[index]);
 
   current = index;
+  return true;
 }
 
 function normalizeFields(card) {
