@@ -27,10 +27,10 @@ body {
   font-size: .8em; }
   #info .difinoj {
     padding-left: 1.5em; }
-  #info .ekzemploj {
+  #info .ekzemploj, #info .tekstaro {
     padding-left: 1.5em;
     font-style: italic; }
-    #info .ekzemploj .fnt {
+    #info .ekzemploj .fnt, #info .tekstaro .fnt {
       opacity: 0.35; }
   #info .f, #info h1 {
     font-size: 1.2em;

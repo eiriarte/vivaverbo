@@ -6,7 +6,8 @@ var terminal;
 var saludo = '<i><b>Vivaverbo cards: ¡¡¡CUIDADO CON LOS GÉNEROS!!!</b></i>';
 var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, revo, piv, rae, diego, es, eo, addcat, delcat, goto';
 var langs = ['es', 'en', 'it', 'fr', 'pt', 'ca', 'gl'];
-var db, idbAdapter, cards, selection, current, dupes = [];
+var db, dbTex, idbAdapter, cards, selection, current, dupes = [];
+var tekstaro, previousWord = { word: '', offset: 0 }, teksPageSize = 25;
 
 function init() {
   loadDB();
@@ -99,8 +100,13 @@ function execCommand(command, args) {
         var url = 'http://vortaro.net/#' + word;
         $("<a>").attr("href", url).attr("target", "_blank")[0].click();
         return '';
-      case 'diego':
+      case 'tex':
         var word = args[0] || selection[current].respuesta.trim();
+        var work = args[1] || 'any';
+        $('#info').html(htmlTekstaro(word, work));
+        return '';
+      case 'diego':
+        var word = args[0] || selection[current].pregunta.trim();
         var url = 'http://www.esperanto.es:8080/diccionario/inicio.jsp?que=' + word;
         $.get(url, function(data) {
           var $html = $(data);
@@ -163,6 +169,45 @@ function htmlError(msg) {
   return '<b class="error">' + msg + '</b>';
 }
 
+function htmlTekstaro(word, work) {
+  var theWord, search, query, results, html;
+
+  // Construimos la expresión regular para la palabra
+  if (_.endsWith(word, 'a') || _.endsWith(word, 'o')) {
+    theWord = word + 'j?n?';
+  } else if (_.endsWith(word, 'i')) {
+    theWord = word.slice(0, -1) + '(i|u|as|is|os)';
+  }
+  theWord = '\\b' + theWord + '\\b';
+  search = new RegExp(theWord);
+
+  // Construimos la query a la BD y la ejecutamos
+  if (word === previousWord.word) {
+    previousWord.offset += teksPageSize;
+  } else {
+    previousWord.word = word;
+    previousWord.offset = 0;
+  }
+  query = { sentence: { $regex: search } };
+  if ('any' !== work) {
+    query.work = work;
+  }
+  results = tekstaro.chain().find(query).simplesort('length').
+    offset(previousWord.offset).limit(teksPageSize).data();
+
+  // Construimos el HTML a partir de los resultados
+  html = '<h1>Tekstaro: ' + word + '</h1>';
+  html += '<ul class="tekstaro">';
+  results.forEach(function(res) {
+    html += '<li title="' + res.work + '">' + res.sentence;
+    html += ' <i class="fnt">(' + res.date + ')</i>';
+    html += '</li>';
+  });
+  html += '</ul>';
+
+  return html;
+}
+
 function htmlReVo(data) {
   var html = '<h1>ReVo: ' + data.vorto + '</h1>';
   var difinoj = data.difinoj.map(function(dif) {
@@ -207,6 +252,9 @@ function loadDB() {
       cards.insert(cardsArray); // cardsArray => definido en cards.js
       saveDB();
     }
+    dbTex = new loki();
+    tekstaro = dbTex.addCollection('tekstaro');
+    tekstaro.insert(sentences); // sentences => definido en tekstaro.js
   });
 }
 
