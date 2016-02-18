@@ -4,7 +4,7 @@ $(function() {
 
 var terminal;
 var saludo = '<i><b>Vivaverbo cards: ¡¡¡CUIDADO CON LOS GÉNEROS!!!</b></i>';
-var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, revo, piv, rae, diego, es, eo, addcat, delcat, goto';
+var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, revo, piv, rae, diego, tex, es, eo, addcat, delcat, goto';
 var langs = ['es', 'en', 'it', 'fr', 'pt', 'ca', 'gl'];
 var db, dbTex, idbAdapter, cards, selection, current, dupes = [];
 var tekstaro, previousWord = { word: '', offset: 0 }, teksPageSize = 25;
