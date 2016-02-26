@@ -55,7 +55,17 @@ function execCommand(command, args) {
         }
         return result;
       case 'show':
-        return mostrarTarjeta();
+        if (arg) {
+          var card = cards.find({ respuesta: arg })[0];
+          if (!card) {
+            result = htmlError('No se encuentra la tarjeta con respuesta "' + arg + '".');
+          } else {
+            result = mostrarTarjeta(card);
+          }
+        } else {
+          result = mostrarTarjeta();
+        }
+        return result;
       case 'next':
         if (selection.length - 1 === current) {
           result = htmlError('¡Ya estás en la última tarjeta!');
@@ -425,18 +435,20 @@ function duplicarTarjeta() {
   saveDB();
 }
 
-function mostrarTarjeta() {
+function mostrarTarjeta(card) {
   var result = '';
-  var pos = '(' + (current + 1) + '/' + selection.length + ')';
-  if (dupes.length > 0) {
+  var pos = !card ? '(' + (current + 1) + '/' + selection.length + ')' : '';
+  if (!card && dupes.length > 0) {
     result += htmlError('Encontradas ' + dupes.length + ' redundancias' +
                         ' (fusionar con <code>merge</code>):');
   }
   result += '<table class="tarjetas"><tr>';
-  result += '<td class="tarjeta">' + htmlTarjeta(selection[current], pos) + '</td>';
-  dupes.forEach(function(card) {
-    result += '<td>' + htmlTarjeta(card) + '</td>';
-  });
+  result += '<td class="tarjeta">' + htmlTarjeta(card || selection[current], pos) + '</td>';
+  if (!card) {
+    dupes.forEach(function(card) {
+      result += '<td>' + htmlTarjeta(card) + '</td>';
+    });
+  }
   result += '</tr></table>';
   return result;
 }
