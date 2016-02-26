@@ -78,64 +78,64 @@ KONTAKTO:
 
 Supercategorías: Ciencia, Tecnología, Sociedad, Humanidades, Arte
 
-(Vivienda / Arquitectura) arkitekturo
-(Filosofía) filozofio
-( Psicología / Psiquiatría ) psikologio, psikiatrio
-( Política / Sociología ) politiko, sociologio, administrado
-(Comercio / Economía) ekonomiko, financo, komerco
-(Derecho) juro
-(Lengua / Idiomas) lingvistiko, filologio fonetiko gramatiko
-(Historia / Arqueología) arkeologio historio prahistorio mitologio
-(Pensamiento / Educación) pedagogio
-(Violencia / Guerra) militaferoj
-(Alimentación / Nutrición) kuirarto
-(Geografía) geografio
-(Deportes / Juegos) sporto, ludoj
-(Ropa / Textil) teksindustrio, vestoj
-(Animales) zoologio
-( Plantas / Frutos ) botaniko
-(Anatomía) homa anatomio, histologio
-(Medicina) medicino, farmacio kirurgio
-(Viajes / Transportes) trafiko aŭtomobiloj aviado fervojoj maraferoj
-(Familia) genealogio
-(Tiempo / Calendario) kalendaro, tempomezurado
-(Arte) belartoj kinoarto beletro teatro poetiko, poezio
-(Música) muziko
-(Religión) religioj biblio budhismo hinduismo islamo kristanismo katolikismo
-(Escritura / Impresión) presarto, libroj
-(Correo) poŝto
-(Agricultura / Ganadería) agrokulturo
-(Horticultura, Silvicultura) hortikulturo, arbokulturo, silvikulturo
-(Matemáticas) matematiko
-(Física) fiziko elektro
-(Química) kemio, biokemio
-(Biología) bakteriologio, virusologio biologio, biontologio ekologio fiziologio
-( Informática / Internet ) komputiko
-(Astronomía) astronomio
-(Meteorología / Climatología) meteologio
-(Geología) geologio mineralogio paleontologio
-(Construcción) konstrutekniko
-(Fotografía / Óptica) # ¿"audio/video"?  fotografio, optiko
-(Telecomunicaciones) telekomunikoj
+AGR - (Agricultura / Ganadería) agrokulturo
+ANA - (Anatomía) homa anatomio, histologio
+ARKI- (Vivienda / Arquitectura) arkitekturo
+AST - (Astronomía) astronomio
+BELA- (Arte) belartoj kinoarto beletro teatro poetiko, poezio
+BIO - (Biología) bakteriologio, virusologio biologio, biontologio ekologio fiziologio
+BOT - ( Plantas / Frutos ) botaniko
+EKON- (Comercio / Economía) ekonomiko, financo, komerco
+FIL - (Filosofía) filozofio
+FIZ - (Física) fiziko elektro
+FOT - (Fotografía / Óptica) # ¿"audio/video"?  fotografio, optiko
+GEN - (Familia) genealogio
+GEOG- (Geografía) geografio
+GEOL- (Geología) geologio mineralogio paleontologio
+HIS - (Historia / Arqueología) arkeologio historio prahistorio mitologio
+HOR - (Horticultura, Silvicultura) hortikulturo, arbokulturo, silvikulturo
+JUR - (Derecho) juro
+KAL - (Tiempo / Calendario) kalendaro, tempomezurado
+KEM - (Química) kemio, biokemio
+KOMP- ( Informática / Internet ) komputiko
+KON - (Construcción) konstrutekniko
+KUI - (Alimentación / Nutrición) kuirarto
+LIN - (Lengua / Idiomas) lingvistiko, filologio fonetiko gramatiko
+MAT - (Matemáticas) matematiko
+MED - (Medicina) medicino, farmacio kirurgio
+MET - (Meteorología / Climatología) meteologio
+MIL - (Violencia / Guerra) militaferoj
+MUZ - (Música) muziko
+PED - (Pensamiento / Educación) pedagogio
+POL - ( Política / Sociología ) politiko, sociologio, administrado
+POSX- (Correo) poŝto
+PSI - ( Psicología / Psiquiatría ) psikologio, psikiatrio
+REL - (Religión) religioj biblio budhismo hinduismo islamo kristanismo katolikismo
+SPO - (Deportes / Juegos) sporto, ludoj
+TEKS- (Ropa / Textil) teksindustrio, vestoj
+TEL - (Telecomunicaciones) telekomunikoj
+TIP - (Escritura / Impresión) presarto, libroj
+TRA - (Viajes / Transportes) trafiko aŭtomobiloj aviado fervojoj maraferoj
+ZOO - (Animales) zoologio
 
-ago    - ( Acción / Trabajo )
-ajxo   - ( Objetos / Manipular / Materiales )
-eco    - ( Cualidades / Defectos )
-form   - ( Dimensiones / Formas / Posiciones )
-hav    - ( Posesión / Pertenencia )
-kolor  - ( Colores / Tonos )
-kompar - ( Comparaciones )
-komunik- ( Comunicación / Colaboración )
-kvant  - ( Cantidades / Conjuntos )
-loko   - ( Lugares )
-mov    - ( Movimiento )
-sent   - ( Sentimientos / Emociones )
-sentum - ( Percepción / Sentidos )
-ujo    - ( Recipientes / Contenedores )
-ulo    - ( Personas )
-ver    - ( Verdad / Posibilidad )
-vol    - ( Necesidades / Deseos )
-zorg   - ( Cuidados / Mantenimiento )
+ago  - ( Acción / Trabajo )
+ajxo - ( Objetos / Manipular / Materiales )
+eco  - ( Cualidades / Defectos )
+form - ( Dimensiones / Formas / Posiciones )
+hav  - ( Posesión / Pertenencia )
+kolr - ( Colores / Tonos )
+komp - ( Comparaciones )
+komu - ( Comunicación / Colaboración )
+kvnt - ( Cantidades / Conjuntos )
+loko - ( Lugares )
+mov  - ( Movimiento )
+sent - ( Sentimientos / Emociones )
+sntm - ( Percepción / Sentidos )
+ujo  - ( Recipientes / Contenedores )
+ulo  - ( Personas )
+ver  - ( Verdad / Posibilidad )
+vol  - ( Necesidades / Deseos )
+zorg - ( Cuidados / Mantenimiento )
 
 
 ( Landonomoj… )
