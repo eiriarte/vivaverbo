@@ -1,4 +1,5 @@
-$ancho-info: 256px;
+$ancho-info: 384px;
+$alto-toolbar: 48px;
 
 body {
   font-size: 18px;
@@ -17,17 +18,43 @@ body {
 .tarjeta {
   padding: 8px;
 }
+#toolbar {
+  position: fixed;
+  z-index: 999;
+  height: 16px;
+  width: 100%;
+  font-family: sans-serif;
+  line-height: 16px;
+  padding: 16px;
+  font-weight: lighter;
+  background-color: #C8C8C8;
+  box-shadow: rgba(0, 0, 0, 0.45) 0 4px 4px;
+  .state, .progress {
+    float: right;
+    margin-right: 32px;
+    &.warning {
+      background-color: #fc0;
+    }
+  }
+}
 #consola {
   width: auto;
+  min-height: auto;
+  top: $alto-toolbar;
   margin-right: $ancho-info;
 }
 #info {
   position: fixed;
-  top: 0;
+  max-height: 100%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  top: $alto-toolbar;
   right: 0;
-  width: 256px;
+  width: $ancho-info;
+  padding: 1em;
   font-size: .8em;
-  .difinoj {
+  background-color: #ddd;
+  .difinoj, .pludifinoj {
     padding-left: 1.5em;
   }
   .ekzemploj, .tekstaro {
@@ -44,5 +71,10 @@ body {
   mark {
     background-color: inherit;
     color: inherit;
+  }
+  .close {
+    cursor: pointer;
+    font-style: normal;
+    float: right;
   }
 }

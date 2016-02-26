@@ -4,12 +4,17 @@ $(function() {
 
 var terminal;
 var saludo = '<i><b>Vivaverbo cards: ¡¡¡CUIDADO CON LOS GÉNEROS!!!</b></i>';
-var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, revo, piv, rae, diego, tex, es, eo, addcat, delcat, goto';
+var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, split, revo, piv, rae, diego, tex, ssv, clearinfo, es, eo, addcat, delcat, freq, goto, deleteCard';
 var langs = ['es', 'en', 'it', 'fr', 'pt', 'ca', 'gl'];
-var db, dbTex, idbAdapter, cards, selection, current, dupes = [];
+var db, dbTex, idbAdapter, cards, ssv, selection, current, dupes = [];
 var tekstaro, previousWord = { word: '', offset: 0 }, teksPageSize = 25;
+var $info, $state, changed;
 
 function init() {
+  $state = $('#toolbar .state');
+  $info = $('#info');
+  $info.click(infoClick);
+  changed = new Set();
   loadDB();
   var options = {
     welcome: saludo,
@@ -28,6 +33,9 @@ function execCommand(command, args) {
       case 'clear':
         terminal.clear();
         return saludo;
+      case 'clearinfo':
+        $info.html('<h1>#info</h1>');
+        return '';
       case 'sel':
       case 'select':
         var q = {};
@@ -41,7 +49,7 @@ function execCommand(command, args) {
           result = htmlError('La consulta no ha devuelto resultados.');
         } else {
           selection = tmp;
-          irA(0);
+          irA(1);
           result = '<b>Num. de tarjetas:</b> ' + selection.length + '<br/>';
           result += mostrarTarjeta();
         }
@@ -52,7 +60,7 @@ function execCommand(command, args) {
         if (selection.length - 1 === current) {
           result = htmlError('¡Ya estás en la última tarjeta!');
         } else {
-          irA(current + 1);
+          irA(current + 1 + 1);
           result = mostrarTarjeta();
         }
         return result;
@@ -60,15 +68,15 @@ function execCommand(command, args) {
         if (0 === current) {
           result = htmlError('¡Ya estás en la primera tarjeta!');
         } else {
-          irA(current - 1);
+          irA(current + 1 - 1);
           result = mostrarTarjeta();
         }
         return result;
       case 'goto':
-        if (irA(args[0] - 1)) {
+        if (irA(arg)) {
           result = mostrarTarjeta();
         } else {
-          result = htmlError('¡No existe la tarjeta nº ' + args[0] + '!');
+          result = htmlError('¡No existe la tarjeta "' + arg + '""!');
         }
         return result;
       case 'merge':
@@ -77,22 +85,28 @@ function execCommand(command, args) {
         }
         fusionarTarjetas();
         return mostrarTarjeta();
+      case 'split':
+        duplicarTarjeta();
+        findDuplicates(selection[current]);
+        return mostrarTarjeta();
       case 'revo':
         var word = args[0] || selection[current].respuesta.trim();
         var url = 'http://www.simplavortaro.org/api/v1/vorto/' + word;
         $.getJSON(url, function(data) {
-          $('#info').html(htmlReVo(data));
+          addInfo(htmlReVo(data));
         }).fail(function(jqxhr, textStatus, err) {
-          window.alert(jqxhr.status + ', ' + err);
+          console.log(jqxhr.status + ', ' + err);
+          $info.effect('shake');
         });
         return '';
       case 'rae':
         var word = args[0] || selection[current].pregunta.trim();
         var url = 'http://dle.rae.es/srv/search?w=' + word + '&m=form';
         $.get(url, function(data) {
-          $('#info').html(data);
+          addInfo(htmlRAE(data));
         }).fail(function(jqxhr, textStatus, err) {
-          window.alert(jqxhr.status + ', ' + err);
+          console.log(jqxhr.status + ', ' + err);
+          $info.effect('shake');
         });
         return '';
       case 'piv':
@@ -103,15 +117,19 @@ function execCommand(command, args) {
       case 'tex':
         var word = args[0] || selection[current].respuesta.trim();
         var work = args[1] || 'any';
-        $('#info').html(htmlTekstaro(word, work));
+        addInfo(htmlTekstaro(word, work));
+        return '';
+      case 'ssv':
+        var word = args[0] || selection[current].respuesta.trim();
+        addInfo(htmlSSV(word));
         return '';
       case 'diego':
         var word = args[0] || selection[current].pregunta.trim();
         var url = 'http://www.esperanto.es:8080/diccionario/inicio.jsp?que=' + word;
         $.get(url, function(data) {
           var $html = $(data);
-          var titulo = '<h1>' + word + '</h1>';
-          $('#info').html(titulo + '<table>' + $html.find('table').html() + '</table>');
+          var titulo = '<h1>Diego: ' + word + '<i class="close">✕</i></h1>';
+          addInfo(titulo + '<table>' + $html.find('table').html() + '</table>');
         }).fail(function(jqxhr, textStatus, err) {
           window.alert(jqxhr.status + ', ' + err);
         });
@@ -123,6 +141,7 @@ function execCommand(command, args) {
         return htmlError('No se puede añadir esa pregunta.');
       case 'eo':
         if (arg.trim() && setField(arg, 'respuesta', 'sinR')) {
+          findDuplicates(selection[current]);
           return mostrarTarjeta();
         }
         return htmlError('No se puede añadir esa respuesta.');
@@ -134,12 +153,23 @@ function execCommand(command, args) {
         selection[current].fraseRespuesta = arg;
         saveDB();
         return mostrarTarjeta();
+      case 'freq':
+        selection[current].freq = arg;
+        saveDB();
+        return mostrarTarjeta();
       case 'addcat':
         selection[current].categorias.push(args[0]);
         saveDB();
         return mostrarTarjeta();
       case 'delcat':
-        _.pull(selection[current].categorias, args[0]);
+        arg.split(',').forEach(function(cat) {
+          _.pull(selection[current].categorias, cat.trim());
+        });
+        saveDB();
+        return mostrarTarjeta();
+      case 'deleteCard':
+        cards.remove(selection[current]);
+        selection.splice(current, 1);
         saveDB();
         return mostrarTarjeta();
       default:
@@ -147,6 +177,13 @@ function execCommand(command, args) {
     }
   } catch (e) {
     return htmlError('ERROR: ' + e.message);
+  }
+}
+
+function infoClick(event) {
+  $clicked = $(event.toElement);
+  if ($clicked.hasClass('close')) {
+    $clicked.closest('section').remove();
   }
 }
 
@@ -169,6 +206,24 @@ function htmlError(msg) {
   return '<b class="error">' + msg + '</b>';
 }
 
+function addInfo(html) {
+  if (html) {
+    $info.prepend('<section>' + html + '</section>');
+  }
+}
+
+function htmlSSV(word) {
+  var results = ssv.find({ word: { $regex: new RegExp(word, 'i') } });
+  html = '<h1>SSV: ' + word + '<i class="close">✕</i></h1>';
+  html += '<ul class="tekstaro">';
+  results.forEach(function(res) {
+    html += '<li class="ssv"><b>' + res.word + '</b> ' + res.alt + '</li>';
+  });
+  html += '</ul>';
+
+  return html;
+}
+
 function htmlTekstaro(word, work) {
   var theWord, search, query, results, html;
 
@@ -177,9 +232,11 @@ function htmlTekstaro(word, work) {
     theWord = word + 'j?n?';
   } else if (_.endsWith(word, 'i')) {
     theWord = word.slice(0, -1) + '(i|u|as|is|os)';
+  } else {
+    theWord = word;
   }
   theWord = '\\b' + theWord + '\\b';
-  search = new RegExp(theWord);
+  search = new RegExp(theWord, 'i');
 
   // Construimos la query a la BD y la ejecutamos
   if (word === previousWord.word) {
@@ -196,7 +253,7 @@ function htmlTekstaro(word, work) {
     offset(previousWord.offset).limit(teksPageSize).data();
 
   // Construimos el HTML a partir de los resultados
-  html = '<h1>Tekstaro: ' + word + '</h1>';
+  html = '<h1>Tekstaro: ' + word + '<i class="close">✕</i></h1>';
   html += '<ul class="tekstaro">';
   results.forEach(function(res) {
     html += '<li title="' + res.work + '">' + res.sentence;
@@ -208,9 +265,53 @@ function htmlTekstaro(word, work) {
   return html;
 }
 
+function htmlRAE(data) {
+  var $html = $(data);
+  var $art = $html.find('article');
+  if ($art.length > 0) {
+    // ¡Encontrado el artículo!
+    $art.find('header').append('<i class="close">✕</i>');
+    return $art.html();
+  } else {
+    // No encontrado: debe de ser una lista de enlaces de desambiguación
+    var $links = $html.find('a');
+    var url;
+    if (0 === $links.length) {
+      return data;
+    }
+    $links.each(function() {
+      var $link = $(this);
+      // Suponemos que la palabra buscada no es un verbo
+      if (!_.endsWith($link.text(), 'r.')) {
+        url = 'http://dle.rae.es/srv/' + $link.attr('href');
+        return false;
+      }
+    });
+    if (url) {
+      $.get(url, function(data) {
+        var $html = $(data);
+        var $art = $html.find('article');
+        $art.find('header').append('<i class="close">✕</i>');
+        addInfo('&gt;&gt;&gt;' + $art.html());
+      }).fail(function(jqxhr, textStatus, err) {
+        console.log(jqxhr.status + ', ' + err);
+        $info.effect('shake');
+      });
+    }
+    return false;
+  }
+
+}
+
 function htmlReVo(data) {
-  var html = '<h1>ReVo: ' + data.vorto + '</h1>';
-  var difinoj = data.difinoj.map(function(dif) {
+  var html = '<h1>ReVo: ' + data.vorto + '<i class="close">✕</i></h1>';
+  var difinoj = htmlReVoDifs(data.difinoj);
+  html += '<ul class="difinoj">' + difinoj.join('\n') + '</ul>';
+  return html;
+}
+
+function htmlReVoDifs(difinoj) {
+  return difinoj.map(function(dif) {
     var result = '<li>';
     result += dif.difino;
     if (dif.ekzemploj.length > 0) {
@@ -230,16 +331,19 @@ function htmlReVo(data) {
       });
       result += '</ul>'
     }
-    dif.tradukoj.forEach(function(trad) {
-      if (_.contains(langs, trad.kodo)) {
-        result += ' <b>' + trad.kodo + ':</b> ' + trad.traduko + ';';
-      }
-    });
+    if (dif.tradukoj) {
+      dif.tradukoj.forEach(function(trad) {
+        if (_.contains(langs, trad.kodo)) {
+          result += ' <b>' + trad.kodo + ':</b> ' + trad.traduko + ';';
+        }
+      });
+    }
+    if (dif.pludifinoj && dif.pludifinoj.length > 0) {
+      result += '<ul class="pludifinoj">' + htmlReVoDifs(dif.pludifinoj).join('\n') + '</ul>';
+    }
     result += '</li>';
     return result;
   });
-  html += '<ul class="difinoj">' + difinoj.join('\n') + '</ul>';
-  return html;
 }
 
 function loadDB() {
@@ -255,14 +359,30 @@ function loadDB() {
     dbTex = new loki();
     tekstaro = dbTex.addCollection('tekstaro');
     tekstaro.insert(sentences); // sentences => definido en tekstaro.js
+
+    var dbSSV = new loki();
+    ssv = dbTex.addCollection('ssv');
+    ssv.insert(dataSSV); // dataSSV => definido en ssv.js
+
+    $state.removeClass('warning');
+    $state.text('✓');
   });
 }
 
 function saveDB() {
   try {
-    db.saveDatabase();
+    $state.addClass('warning');
+    $state.text('Guardando…');
+    db.saveDatabase(function(err) {
+      if (err) {
+        window.alert('Ooops! No se puede guardar la BD ¿No hay espacio? – ' + err.message);
+      } else {
+        $state.removeClass('warning');
+        $state.text('✓');
+      }
+    });
   } catch(e) {
-    window.alert('Ooops! No se puede guardar la BD ¿No hay espacio?');
+    window.alert('Ooops! No se puede guardar la BD ¿No hay espacio? – ' + e.message);
   }
 }
 
@@ -294,6 +414,14 @@ function fusionarTarjetas() {
   dupes.slice(1).forEach(function(dupe) { cards.remove(dupe); });
   _.remove(selection, function(sCard) { return _.includes(dupes, sCard, 1); });
   dupes = [];
+  saveDB();
+}
+
+function duplicarTarjeta() {
+  var newCard = _.cloneDeep(selection[current]);
+  delete newCard.$loki;
+  delete newCard.meta;
+  selection.splice(current + 1, 0, cards.insert(newCard));
   saveDB();
 }
 
@@ -330,10 +458,19 @@ function htmlTarjeta(card, pos) {
   return result;
 }
 
-function irA(index) {
+function irA(pos) {
+  var index;
+
+  if (isFinite(pos)) {
+    index = pos - 1;
+  } else {
+    index = _.findIndex(selection, { 'respuesta': pos.trim() });
+  }
+
   if ('undefined' === typeof selection[index]) {
     return false;
   }
+
   normalizeFields(selection[index]);
   findDuplicates(selection[index]);
 
@@ -368,6 +505,8 @@ function normalizeFields(card) {
   sinonimos(respuestas, card.respuesta, 'sinR');
 
   card.norm = true;
+  changed.add(card);
+  $('#toolbar .progress').text(changed.size);
   saveDB();
 }
 
