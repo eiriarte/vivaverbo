@@ -4,9 +4,9 @@ $(function() {
 
 var terminal;
 var saludo = '<i><b>Vivaverbo cards: ¡¡¡CUIDADO CON LOS GÉNEROS!!!</b></i>';
-var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, split, revo, piv, rae, diego, tex, ssv, clearinfo, es, eo, addcat, delcat, freq, goto, deleteCard';
+var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, split, revo, piv, rae, diego, tex, ssv, clearinfo, es, eo, addcat, delcat, freq, goto, deleteCard, addCard';
 var langs = ['es', 'en', 'it', 'fr', 'pt', 'ca', 'gl'];
-var db, dbTex, idbAdapter, cards, ssv, selection, current, dupes = [];
+var db, dbTex, idbAdapter, cards, ssv, selection = [], selQuery = '-', current = 0, dupes = [];
 var tekstaro, previousWord = { word: '', offset: 0 }, teksPageSize = 25;
 var $info, $state, changed;
 
@@ -39,6 +39,7 @@ function execCommand(command, args) {
       case 'sel':
       case 'select':
         var q = {};
+        selQuery = arg;
         if (arg[0] !== '{') {
           q.categorias = { $contains: args[0] };
         } else {
@@ -52,13 +53,20 @@ function execCommand(command, args) {
           irA(1);
           result = '<b>Num. de tarjetas:</b> ' + selection.length + '<br/>';
           result += mostrarTarjeta();
+          updateInfoCategory();
+          if (selection.length < 10000) {
+            var lista = selection.map(function(card, index) {
+              return (index+1) + ' ' + card.respuesta;
+            });
+            console.log(lista.join('\n'));
+          }
         }
         return result;
       case 'show':
         if (arg) {
           var card = cards.find({ respuesta: arg })[0];
           if (!card) {
-            result = htmlError('No se encuentra la tarjeta con respuesta "' + arg + '".');
+            result = htmlError('No se encuentra la tarjeta "' + arg + '".');
           } else {
             result = mostrarTarjeta(card);
           }
@@ -86,7 +94,7 @@ function execCommand(command, args) {
         if (irA(arg)) {
           result = mostrarTarjeta();
         } else {
-          result = htmlError('¡No existe la tarjeta "' + arg + '""!');
+          result = htmlError('No existe la tarjeta "' + arg + '" en esta selección.');
         }
         return result;
       case 'merge':
@@ -94,9 +102,11 @@ function execCommand(command, args) {
           return htmlError('¡No hay duplicados que fusionar!');
         }
         fusionarTarjetas();
+        updateInfoCategory();
         return mostrarTarjeta();
       case 'split':
         duplicarTarjeta();
+        updateInfoCategory();
         findDuplicates(selection[current]);
         return mostrarTarjeta();
       case 'revo':
@@ -164,11 +174,13 @@ function execCommand(command, args) {
         saveDB();
         return mostrarTarjeta();
       case 'freq':
-        selection[current].freq = arg;
+        selection[current].freq = parseInt(arg);
         saveDB();
         return mostrarTarjeta();
       case 'addcat':
-        selection[current].categorias.push(args[0]);
+        arg.split(',').forEach(function(cat) {
+          selection[current].categorias.push(cat.trim());
+        });
         saveDB();
         return mostrarTarjeta();
       case 'delcat':
@@ -180,7 +192,20 @@ function execCommand(command, args) {
       case 'deleteCard':
         cards.remove(selection[current]);
         selection.splice(current, 1);
+        updateInfoCategory();
         saveDB();
+        return mostrarTarjeta();
+      case 'addCard':
+        var card = {
+          pregunta: 'nueva palabra',
+          respuesta: 'nova vorto',
+          freq: maxFreq() + 1,
+          categorias: [ arg ]
+        };
+        card = cards.insert(card);
+        selection.splice(current, 0, card);
+        saveDB();
+        updateInfoCategory();
         return mostrarTarjeta();
       default:
         return false;
@@ -212,6 +237,10 @@ function setField(value, field, fieldSin) {
   return true;
 }
 
+function maxFreq() {
+  return cards.chain().simplesort('freq', true).data()[0].freq;
+}
+
 function htmlError(msg) {
   return '<b class="error">' + msg + '</b>';
 }
@@ -220,6 +249,10 @@ function addInfo(html) {
   if (html) {
     $info.prepend('<section>' + html + '</section>');
   }
+}
+
+function updateInfoCategory() {
+  $('#toolbar .category').text(selQuery + ' (' + selection.length + ')');
 }
 
 function htmlSSV(word) {

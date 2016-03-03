@@ -26,10 +26,10 @@ body {
   font-weight: lighter;
   background-color: #C8C8C8;
   box-shadow: rgba(0, 0, 0, 0.45) 0 4px 4px; }
-  #toolbar .state, #toolbar .progress {
+  #toolbar .state, #toolbar .progress, #toolbar .category {
     float: right;
     margin-right: 32px; }
-    #toolbar .state.warning, #toolbar .progress.warning {
+    #toolbar .state.warning, #toolbar .progress.warning, #toolbar .category.warning {
       background-color: #fc0; }
 
 #consola {
