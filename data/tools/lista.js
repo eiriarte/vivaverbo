@@ -4,7 +4,7 @@ $(function() {
 
 var terminal;
 var saludo = '<i><b>Vivaverbo cards: ¡¡¡CUIDADO CON LOS GÉNEROS!!!</b></i>';
-var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, split, revo, piv, rae, diego, tex, ssv, clearinfo, es, eo, addcat, delcat, freq, goto, deleteCard, addCard, save';
+var ayuda = 'Comandos disponibles: help, clear, select (sel), next, prev, show, merge, split, revo, piv, rae, diego, tex, ssv, clearinfo, es, eo, addcat, delcat, freq, goto, deleteCard, addCard, save';
 var langs = ['es', 'en', 'it', 'fr', 'pt', 'ca', 'gl'];
 var db, dbTex, idbAdapter, cards, ssv, selection = [], selQuery = '-', current = 0, dupes = [];
 var tekstaro, previousWord = { word: '', offset: 0 }, teksPageSize = 25;
@@ -218,7 +218,7 @@ function execCommand(command, args) {
 }
 
 function saveDatabase() {
-  var fields = ['_id', 'pregunta', 'sinP', 'respuesta', 'sinR', 'frasePregunta', 'fraseRespuesta', 'freq', 'categorias'];
+  var fields = ['$oid', 'pregunta', 'sinP', 'respuesta', 'sinR', 'frasePregunta', 'fraseRespuesta', 'freq', 'categorias'];
   var cardsJSON = '';
   var cardsArray = cards.find();
   cardsArray.forEach(function(card) {
@@ -479,6 +479,7 @@ function fusionarTarjetas() {
 
 function duplicarTarjeta() {
   var newCard = _.cloneDeep(selection[current]);
+  delete newCard.$oid
   delete newCard.$loki;
   delete newCard.meta;
   selection.splice(current + 1, 0, cards.insert(newCard));
