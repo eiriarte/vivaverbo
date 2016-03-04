@@ -4,7 +4,7 @@ $(function() {
 
 var terminal;
 var saludo = '<i><b>Vivaverbo cards: ¡¡¡CUIDADO CON LOS GÉNEROS!!!</b></i>';
-var ayuda = 'Comandos disponibles: help, clear, select (sel), next, prev, show, merge, split, revo, piv, rae, diego, tex, ssv, clearinfo, es, eo, addcat, delcat, freq, goto, deleteCard, addCard, save';
+var ayuda = 'Comandos disponibles: help, clear, select (sel), next, prev, show, merge, split, revo, piv, rae, diego, tex, ssv, clearinfo, es, eo, addcat, delcat, freq, goto, deleteCard, addCard, save, load';
 var langs = ['es', 'en', 'it', 'fr', 'pt', 'ca', 'gl'];
 var db, dbTex, idbAdapter, cards, ssv, selection = [], selQuery = '-', current = 0, dupes = [];
 var tekstaro, previousWord = { word: '', offset: 0 }, teksPageSize = 25;
@@ -209,6 +209,13 @@ function execCommand(command, args) {
         return mostrarTarjeta();
       case 'save': 
         return saveDatabase();
+      case 'load':
+        if ('cards.js (yes, I am sure)' === arg) {
+          loadDBFromFile();
+          return 'OK.';
+        } else {
+          return 'Vas a llorar… ¿estás seguro?';
+        }
       default:
         return false;
     }
@@ -218,7 +225,7 @@ function execCommand(command, args) {
 }
 
 function saveDatabase() {
-  var fields = ['$oid', 'pregunta', 'sinP', 'respuesta', 'sinR', 'frasePregunta', 'fraseRespuesta', 'freq', 'categorias'];
+  var fields = ['_id', 'pregunta', 'sinP', 'respuesta', 'sinR', 'frasePregunta', 'fraseRespuesta', 'freq', 'categorias', 'norm'];
   var cardsJSON = '';
   var cardsArray = cards.find();
   cardsArray.forEach(function(card) {
@@ -434,11 +441,26 @@ function saveDB() {
     $state.addClass('warning');
     $state.text('Guardando…');
     db.saveDatabase(function(err) {
-      if (err) {
+      if (err.success !== true) {
         window.alert('Ooops! No se puede guardar la BD ¿No hay espacio? – ' + err.message);
       } else {
         $state.removeClass('warning');
         $state.text('✓');
+      }
+    });
+  } catch(e) {
+    window.alert('Ooops! No se puede guardar la BD ¿No hay espacio? – ' + e.message);
+  }
+}
+
+function loadDBFromFile() {
+  db.removeCollection('cards');
+  try {
+    db.saveDatabase(function(err) {
+      if (err.success !== true) {
+        window.alert('Ooops! No se puede guardar la BD ¿No hay espacio? – ' + err.message);
+      } else {
+        document.location.reload();
       }
     });
   } catch(e) {
@@ -479,7 +501,7 @@ function fusionarTarjetas() {
 
 function duplicarTarjeta() {
   var newCard = _.cloneDeep(selection[current]);
-  delete newCard.$oid
+  delete newCard._id
   delete newCard.$loki;
   delete newCard.meta;
   selection.splice(current + 1, 0, cards.insert(newCard));
