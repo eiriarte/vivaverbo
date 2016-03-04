@@ -4,7 +4,7 @@ $(function() {
 
 var terminal;
 var saludo = '<i><b>Vivaverbo cards: ¡¡¡CUIDADO CON LOS GÉNEROS!!!</b></i>';
-var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, split, revo, piv, rae, diego, tex, ssv, clearinfo, es, eo, addcat, delcat, freq, goto, deleteCard, addCard';
+var ayuda = 'Comandos disponibles: help, clear, select, next, prev, show, merge, split, revo, piv, rae, diego, tex, ssv, clearinfo, es, eo, addcat, delcat, freq, goto, deleteCard, addCard, save';
 var langs = ['es', 'en', 'it', 'fr', 'pt', 'ca', 'gl'];
 var db, dbTex, idbAdapter, cards, ssv, selection = [], selQuery = '-', current = 0, dupes = [];
 var tekstaro, previousWord = { word: '', offset: 0 }, teksPageSize = 25;
@@ -207,12 +207,29 @@ function execCommand(command, args) {
         saveDB();
         updateInfoCategory();
         return mostrarTarjeta();
+      case 'save': 
+        return saveDatabase();
       default:
         return false;
     }
   } catch (e) {
     return htmlError('ERROR: ' + e.message);
   }
+}
+
+function saveDatabase() {
+  var fields = ['_id', 'pregunta', 'sinP', 'respuesta', 'sinR', 'frasePregunta', 'fraseRespuesta', 'freq', 'categorias'];
+  var cardsJSON = '';
+  var cardsArray = cards.find();
+  cardsArray.forEach(function(card) {
+    cardsJSON += JSON.stringify(_.pick(card, fields)) + '\n';
+  });
+  var cardsURL = URL.createObjectURL(new Blob([cardsJSON], { type: 'text/plain' }));
+  var $cardsLink = $('<a download="cards.json">link</a>');
+  $cardsLink.attr('href', cardsURL);
+  $cardsLink[0].click();
+  URL.revokeObjectURL(cardsURL);
+  return cardsArray.length + ' tarjetas exportadas.';
 }
 
 function infoClick(event) {
