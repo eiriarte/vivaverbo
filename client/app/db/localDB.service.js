@@ -2,7 +2,8 @@
 
 angular.module('vivaverboApp')
   .factory('localDB', function ($q, Loki) {
-    const lokiDB = new Loki('vivaverbo.db');
+    const idbAdapter = new LokiIndexedAdapter('vivaverbo');
+    const lokiDB = new Loki('vivaverbo.db', { adapter: idbAdapter });
     let whenReady;
 
     /**
@@ -34,7 +35,7 @@ angular.module('vivaverboApp')
        * Persiste la base de datos en localStorage, etc.
        */
       save() {
-        // TODO: callback param null, if everything is ok
+        // TODO: { success: true/false?? } (ver docs./src de indexedDB)
         lokiDB.saveDatabase();
       }
     };
