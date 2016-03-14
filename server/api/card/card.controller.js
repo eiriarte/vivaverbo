@@ -6,7 +6,7 @@ var Card = require('./card.model');
 
 // Get list of cards
 exports.index = function(req, res) {
-  Card.find(function (err, cards) {
+  Card.find({ norm: true }, function (err, cards) {
     if(err) { return handleError(res, err); }
     return res.status(200).json(cards);
   });
