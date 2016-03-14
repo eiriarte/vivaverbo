@@ -1,25 +1,51 @@
-/* global Cookies */
+/* global Cookies, Zepto */
 
 'use strict';
 
-jQuery(document).ready(() => {
-
-  $('#login form').on('submit', function (e) {
-    let $form = $(this);
-    e.preventDefault();
-    $form.find('.unauthorized, .unexpected').hide();
-    $.post($form.attr('action'), $form.serialize()).done((data) => {
-      Cookies.set('token', data.token, { expires: 30 });
-      window.location.pathname = '/';
-    }).fail((jqXHR) => {
-      Cookies.remove('token');
-      if (401 === jqXHR.status) {
-        $form.find('.unauthorized').show();
-      } else {
-        $form.find('.unexpected').show();
+Zepto(function($){
+  const $form = $('.register form');
+  const $btnSubmit = $form.find('.btn-cta');
+  const $btnFacebook = $('.btn-facebook');
+  $btnFacebook.click(function() {
+    window.location.pathname = '/auth/facebook';
+  });
+  $form.on('submit', function (event) {
+    event.preventDefault();
+    $btnSubmit.text('Procesando…').attr('disabled', 'disabled');
+    $.ajax({
+      type: 'POST',
+      url: $form.attr('action'),
+      data: $form.serialize(),
+      success: (data) => {
+        $btnSubmit.attr('disabled', null);
+        Cookies.set('token', data.token, { expires: 30 });
+        window.location.pathname = '/';
+      },
+      error: (xhr) => {
+        var errors, message = [];
+        $btnSubmit.text('Regístrate gratis').attr('disabled', null);
+        try {
+          errors = JSON.parse(xhr.response).errors || {};
+        } catch (err) {
+          errors = {};
+        }
+        if (422 === xhr.status) {
+          ['name', 'email', 'hashedPassword'].forEach((field) => {
+            if (errors[field]) {
+              $form.find('.field-' + field).addClass('field-error');
+              message.push(errors[field].message);
+            } else {
+              $form.find('.field-' + field).removeClass('field-error');
+            }
+          });
+          message = message.join('<br />');
+          $form.find('.error-message').html(message).show();
+          $form.find('.unexpected').hide();
+        } else {
+          $form.find('.error-message').hide();
+          $form.find('.unexpected').show();
+        }
       }
     });
   });
-
-  $('#email').focus();
 });

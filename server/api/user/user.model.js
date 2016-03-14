@@ -74,13 +74,21 @@ UserSchema
  * Validations
  */
 
+// Validate empty name
+UserSchema
+  .path('name')
+  .validate(function(name) {
+    if (authTypes.indexOf(this.provider) !== -1) return true;
+    return name.length;
+  }, 'Hmm… ¿Cómo debo llamarte?');
+
 // Validate empty email
 UserSchema
   .path('email')
   .validate(function(email) {
     if (authTypes.indexOf(this.provider) !== -1) return true;
     return email.length;
-  }, 'Email cannot be blank');
+  }, 'Necesito un email válido.');
 
 // Validate empty password
 UserSchema
@@ -88,7 +96,7 @@ UserSchema
   .validate(function(hashedPassword) {
     if (authTypes.indexOf(this.provider) !== -1) return true;
     return hashedPassword.length;
-  }, 'Password cannot be blank');
+  }, 'Por favor, inventa una contraseña.');
 
 // Validate email is not taken
 UserSchema
@@ -103,7 +111,7 @@ UserSchema
       }
       respond(true);
     });
-}, 'The specified email address is already in use.');
+}, 'Ya existe una cuenta con ese email.');
 
 var validatePresenceOf = function(value) {
   return value && value.length;

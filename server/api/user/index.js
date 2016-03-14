@@ -12,7 +12,7 @@ var router = express.Router();
 //router.get('/me', auth.isAuthenticated(), controller.me);
 //router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 //router.get('/:id', auth.isAuthenticated(), controller.show);
-//router.post('/', controller.create);
+router.post('/', controller.create);
 router.post('/me', auth.isAuthenticated(), controller.update);
 
 module.exports = router;

@@ -511,7 +511,8 @@ module.exports = function (grunt) {
         },
         files: {
           '.tmp/app/app.css' : '<%= yeoman.client %>/app/app.scss',
-          '.tmp/app/landing.css' : '<%= yeoman.client %>/app/landing.scss'
+          '.tmp/app/landing.css' : '<%= yeoman.client %>/app/landing.scss',
+          '.tmp/app/login.css' : '<%= yeoman.client %>/app/login.scss'
         }
       }
     },
@@ -538,6 +539,7 @@ module.exports = function (grunt) {
                  '!{.tmp,<%= yeoman.client %>}/app/app.js',
                  '!{.tmp,<%= yeoman.client %>}/app/dev-app.js',
                  '!{.tmp,<%= yeoman.client %>}/app/landing.js',
+                 '!{.tmp,<%= yeoman.client %>}/app/login.js',
                  '!{.tmp,<%= yeoman.client %>}/components/vendor/js.cookie.js',
                  '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.spec.js',
                  '!{.tmp,<%= yeoman.client %>}/{app,components}/**/*.mock.js'
@@ -561,7 +563,11 @@ module.exports = function (grunt) {
           '<%= yeoman.client %>/app/app.scss': [
             '<%= yeoman.client %>/{app,components}/**/*.{scss,sass}',
             '!<%= yeoman.client %>/app/app.{scss,sass}',
-            '!<%= yeoman.client %>/app/landing.{scss,sass}'
+            '!<%= yeoman.client %>/app/_base.{scss,sass}',
+            '!<%= yeoman.client %>/app/_logoweb.{scss,sass}',
+            '!<%= yeoman.client %>/app/_variables.{scss,sass}',
+            '!<%= yeoman.client %>/app/landing.{scss,sass}',
+            '!<%= yeoman.client %>/app/login.{scss,sass}'
           ]
         }
       },

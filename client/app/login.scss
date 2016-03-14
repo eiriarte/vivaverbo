@@ -1,0 +1,21 @@
+@import 'base.scss';
+
+main {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+
+  transition: opacity 1s;
+
+  .error > .unauthorized, .unexpected {
+    display: none;
+    margin-bottom: 1em;
+    text-align: center;
+    color: $color-error;
+  }
+
+  .register {
+    font-size: 0.75em;
+  }
+}
+
