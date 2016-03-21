@@ -2,7 +2,7 @@
 
 angular.module('vivaverboApp')
   .factory('Collection', function ($resource, $q, $timeout, $log, $localStorage,
-        localDB, lodash) {
+        localDB, versions, lodash) {
 
     class Collection {
       /**
@@ -24,13 +24,14 @@ angular.module('vivaverboApp')
         this.api = $resource('/api/' + this._name);
         localDB.whenReady.then(() => {
           this._lokiCollection = localDB.getCollection(this._name);
-          if (null !== this._lokiCollection) {
+          if (null !== this._lokiCollection && !versions.isOutdated(this._name)) {
             deferred.resolve();
             if (options.sync) {
               this.sync();
             }
           } else {
             $log.debug('Creando colección %s.', this._name);
+            localDB.removeCollection(this._name);
             this._lokiCollection =
               localDB.addCollection(this._name, options.collection);
             this.api.query(options.query).$promise.then((docs) => {
@@ -43,6 +44,7 @@ angular.module('vivaverboApp')
                   this.lastSyncDate = lastDoc.date;
                 }
                 localDB.save();
+                versions.setUpToDate(this._name);
                 $log.debug('Cargados datos del servidor en %s.', this._name);
                 deferred.resolve();
               } catch (e) {

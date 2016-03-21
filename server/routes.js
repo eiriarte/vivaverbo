@@ -73,6 +73,10 @@ module.exports = function(app, config) {
         winston.debug('Usuario registrado. Sirviendo index.html');
         view = 'index';
         locals = { user: _.pick(req.user, props) };
+        locals.versions = {
+          cards: '2016-03-21T10:22:47.601Z',
+          categories: '2016-03-21T10:22:47.601Z'
+        };
       } else {
         winston.debug('Usuario anónimo. Sirviendo landing.html');
         view = 'landing';

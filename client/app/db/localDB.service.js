@@ -22,6 +22,11 @@ angular.module('vivaverboApp')
        */
       addCollection(name, options) { return lokiDB.addCollection(name, options); },
       /**
+       * Método addCollection() de LokiDB
+       * @param {string} name - Nombre de la colección
+       */
+      removeCollection(name) { return lokiDB.removeCollection(name); },
+      /**
        * Inicializa la base de datos local
        * @param {object} proto - Opciones de "inflado" de objetos con prototipos.
        */
