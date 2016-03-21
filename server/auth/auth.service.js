@@ -118,7 +118,7 @@ function setTokenCookie(req, res) {
   }
   var token =
     signToken(req.user._id, req.user.role, config.tokenDuration.session);
-  res.cookie('token', JSON.stringify(token));
+  res.cookie('token', token);
   res.redirect('/');
 }
 
