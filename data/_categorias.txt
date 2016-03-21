@@ -136,6 +136,9 @@ ulo  - ( Personas )
 ver  - ( Verdad / Posibilidad )
 vol  - ( Necesidades / Deseos )
 zorg - ( Cuidados / Mantenimiento )
+land - Países
+num  - Números
+help - "Supervivencia"
 
 
 ( Landonomoj… )
