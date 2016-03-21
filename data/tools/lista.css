@@ -56,6 +56,8 @@ body {
     font-style: italic; }
     #info .ekzemploj .fnt, #info .tekstaro .fnt {
       opacity: 0.35; }
+    #info .ekzemploj mark, #info .tekstaro mark {
+      background-color: rgba(255, 255, 0, 0.5); }
   #info .f, #info h1 {
     font-size: 1.2em;
     font-weight: bold; }

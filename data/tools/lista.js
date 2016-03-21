@@ -4,8 +4,93 @@ $(function() {
 
 var terminal;
 var saludo = '<i><b>Vivaverbo cards: ¡¡¡CUIDADO CON LOS GÉNEROS!!!</b></i>';
-var ayuda = 'Comandos disponibles: help, clear, select (sel), next, prev, show, merge, split, revo, piv, rae, diego, tex, ssv, clearinfo, es, eo, addcat, delcat, freq, goto, deleteCard, addCard, save, load';
+var ayuda = 'Comandos disponibles: help, clear, select (sel), next, prev, show, merge, split, revo, piv, rae, diego, tex, ssv, clearinfo (ci), es, eo, addcat, delcat, freq, goto, deleteCard, addCard, save, load, cats';
 var langs = ['es', 'en', 'it', 'fr', 'pt', 'ca', 'gl'];
+var dicCategs = [
+  { id: 'piv', name: 'Plena Ilustrita Vortaro' },
+  { id: 'revo', name: 'Reta Vortaro' },
+  { id: 'hess', name: '¿Sabe usted esperanto?' },
+  { id: 'kont', name: 'Revista Kontakto' },
+  { id: 'reme', name: 'Rekta Metodo' },
+  { id: 'afix', name: 'Afijos' },
+  { id: 'bro1', name: 'Baza Radikaro Oficiala – Grupo 1' },
+  { id: 'bro2', name: 'Baza Radikaro Oficiala – Grupo 2' },
+  { id: 'bro3', name: 'Baza Radikaro Oficiala – Grupo 3' },
+  { id: 'bro4', name: 'Baza Radikaro Oficiala – Grupo 4' },
+  { id: 'bro5', name: 'Baza Radikaro Oficiala – Grupo 5' },
+  { id: 'bro6', name: 'Baza Radikaro Oficiala – Grupo 6' },
+  { id: 'bro7', name: 'Baza Radikaro Oficiala – Grupo 7' },
+  { id: 'bro8', name: 'Baza Radikaro Oficiala – Grupo 8' },
+  { id: 'bro9', name: 'Baza Radikaro Oficiala – Grupo 9' },
+  { id: 'fund', name: 'Fundamento de Esperanto' },
+  { id: '1oa', name: '1-a Oficiala Aldono' },
+  { id: '2oa', name: '2-a Oficiala Aldono' },
+  { id: '3oa', name: '3-a Oficiala Aldono' },
+  { id: '4oa', name: '4-a Oficiala Aldono' },
+  { id: '5oa', name: '5-a Oficiala Aldono' },
+  { id: '6oa', name: '6-a Oficiala Aldono' },
+  { id: '7oa', name: '7-a Oficiala Aldono' },
+  { id: '8oa', name: '8-a Oficiala Aldono' },
+  { id: '9oa', name: '9-a Oficiala Aldono' },
+  { id: 'AGR', name: 'Agricultura / Ganadería' },
+  { id: 'ANA', name: 'Anatomía' },
+  { id: 'ARKI', name: 'Vivienda / Arquitectura' },
+  { id: 'AST', name: 'Astronomía' },
+  { id: 'BELA', name: 'Arte' },
+  { id: 'BIO', name: 'Biología' },
+  { id: 'BOT', name: 'Plantas / Frutos' },
+  { id: 'EKON', name: 'Comercio / Economía' },
+  { id: 'FIL', name: 'Filosofía' },
+  { id: 'FIZ', name: 'Física' },
+  { id: 'FOT', name: 'Fotografía / Óptica' },
+  { id: 'GEN', name: 'Familia' },
+  { id: 'GEOG', name: 'Geografía' },
+  { id: 'GEOL', name: 'Geología' },
+  { id: 'HIS', name: 'Historia / Arqueología' },
+  { id: 'HOR', name: 'Horticultura, Silvicultura' },
+  { id: 'JUR', name: 'Derecho' },
+  { id: 'KAL', name: 'Tiempo / Calendario' },
+  { id: 'KEM', name: 'Química' },
+  { id: 'KOMP', name: 'Informática / Internet' },
+  { id: 'KON', name: 'Construcción' },
+  { id: 'KUI', name: 'Alimentación / Nutrición' },
+  { id: 'LIN', name: 'Lengua / Idiomas' },
+  { id: 'MAT', name: 'Matemáticas' },
+  { id: 'MED', name: 'Medicina' },
+  { id: 'MET', name: 'Meteorología / Climatología' },
+  { id: 'MIL', name: 'Violencia / Guerra' },
+  { id: 'MUZ', name: 'Música' },
+  { id: 'PED', name: 'Pensamiento / Educación' },
+  { id: 'POL', name: 'Política / Sociología' },
+  { id: 'POSX', name: 'Correo' },
+  { id: 'PSI', name: 'Psicología / Psiquiatría' },
+  { id: 'REL', name: 'Religión' },
+  { id: 'SPO', name: 'Deportes / Juegos' },
+  { id: 'TEKS', name: 'Ropa / Textil' },
+  { id: 'TEL', name: 'Telecomunicaciones' },
+  { id: 'TIP', name: 'Escritura / Impresión' },
+  { id: 'TRA', name: 'Viajes / Transportes' },
+  { id: 'ZOO', name: 'Animales' },
+  { id: 'ago', name: 'Acción / Trabajo' },
+  { id: 'ajxo', name: 'Objetos / Manipular / Materiales' },
+  { id: 'eco', name: 'Cualidades / Defectos' },
+  { id: 'form', name: 'Dimensiones / Formas / Posiciones' },
+  { id: 'hav', name: 'Posesión / Pertenencia' },
+  { id: 'kolr', name: 'Colores / Tonos' },
+  { id: 'komp', name: 'Comparaciones' },
+  { id: 'komu', name: 'Comunicación / Colaboración' },
+  { id: 'kvnt', name: 'Cantidades / Conjuntos' },
+  { id: 'loko', name: 'Lugares' },
+  { id: 'mov', name: 'Movimiento' },
+  { id: 'sent', name: 'Sentimientos / Emociones' },
+  { id: 'sntm', name: 'Percepción / Sentidos' },
+  { id: 'ujo', name: 'Recipientes / Contenedores' },
+  { id: 'ulo', name: 'Personas' },
+  { id: 'ver', name: 'Verdad / Posibilidad' },
+  { id: 'vol', name: 'Necesidades / Deseos' },
+  { id: 'land', name: 'Países' },
+  { id: 'zorg', name: 'Cuidados / Mantenimiento' }
+];
 var db, dbTex, idbAdapter, cards, ssv, selection = [], selQuery = '-', current = 0, dupes = [];
 var tekstaro, previousWord = { word: '', offset: 0 }, teksPageSize = 25;
 var $info, $state, changed;
@@ -33,6 +118,7 @@ function execCommand(command, args) {
       case 'clear':
         terminal.clear();
         return saludo;
+      case 'ci':
       case 'clearinfo':
         $info.html('<h1>#info</h1>');
         return '';
@@ -137,7 +223,8 @@ function execCommand(command, args) {
       case 'tex':
         var word = args[0] || selection[current].respuesta.trim();
         var work = args[1] || 'any';
-        addInfo(htmlTekstaro(word, work));
+        var size = args[2] || 0;
+        addInfo(htmlTekstaro(word, work, size));
         return '';
       case 'ssv':
         var word = args[0] || selection[current].respuesta.trim();
@@ -174,7 +261,7 @@ function execCommand(command, args) {
         saveDB();
         return mostrarTarjeta();
       case 'freq':
-        selection[current].freq = parseInt(arg);
+        selection[current].freq = parseInt(arg) || (maxFreq() + 1);
         saveDB();
         return mostrarTarjeta();
       case 'addcat':
@@ -207,7 +294,7 @@ function execCommand(command, args) {
         saveDB();
         updateInfoCategory();
         return mostrarTarjeta();
-      case 'save': 
+      case 'save':
         return saveDatabase();
       case 'load':
         if ('cards.js (yes, I am sure)' === arg) {
@@ -216,12 +303,34 @@ function execCommand(command, args) {
         } else {
           return 'Vas a llorar… ¿estás seguro?';
         }
+      case 'cats':
+        return getCategories();
       default:
         return false;
     }
   } catch (e) {
     return htmlError('ERROR: ' + e.message);
   }
+}
+
+function getCategories() {
+  var categs = {}, out = '<table>';
+
+  cards.find().forEach(function(card) {
+    if (!card.frasePregunta && !card.fraseRespuesta) {
+      card.categorias.forEach(function(categ) {
+        categs[categ] = (categs[categ] + 1) || 0
+      });
+    }
+  });
+  dicCategs.forEach(function(categ) {
+    categ.total = categs[categ.id] || 0;
+  });
+  dicCategs = _.sortBy(dicCategs, 'total');
+  dicCategs.forEach(function(categ) {
+    out += '<tr><td>' + categ.id + '</td><td>' + categ.total + '</td><td>' + categ.name + '</td></tr>';
+  });
+  return out + '</table>';
 }
 
 function saveDatabase() {
@@ -291,7 +400,7 @@ function htmlSSV(word) {
   return html;
 }
 
-function htmlTekstaro(word, work) {
+function htmlTekstaro(word, work, size) {
   var theWord, search, query, results, html;
 
   // Construimos la expresión regular para la palabra
@@ -303,7 +412,7 @@ function htmlTekstaro(word, work) {
     theWord = word;
   }
   theWord = '\\b' + theWord + '\\b';
-  search = new RegExp(theWord, 'i');
+  search = new RegExp(theWord, 'ig');
 
   // Construimos la query a la BD y la ejecutamos
   if (word === previousWord.word) {
@@ -312,9 +421,9 @@ function htmlTekstaro(word, work) {
     previousWord.word = word;
     previousWord.offset = 0;
   }
-  query = { sentence: { $regex: search } };
+  query = { $and: [ { sentence: { $regex: search }}, { length: { $gte: parseInt(size) }}]};
   if ('any' !== work) {
-    query.work = work;
+    query.$and.push({ work: work });
   }
   results = tekstaro.chain().find(query).simplesort('length').
     offset(previousWord.offset).limit(teksPageSize).data();
@@ -323,13 +432,17 @@ function htmlTekstaro(word, work) {
   html = '<h1>Tekstaro: ' + word + '<i class="close">✕</i></h1>';
   html += '<ul class="tekstaro">';
   results.forEach(function(res) {
-    html += '<li title="' + res.work + '">' + res.sentence;
+    html += '<li title="' + res.work + '">' + res.sentence.replace(search, highlight);
     html += ' <i class="fnt">(' + res.date + ')</i>';
     html += '</li>';
   });
   html += '</ul>';
 
   return html;
+}
+
+function highlight(match) {
+  return '<mark>' + match + '</mark>';
 }
 
 function htmlRAE(data) {
@@ -441,7 +554,7 @@ function saveDB() {
     $state.addClass('warning');
     $state.text('Guardando…');
     db.saveDatabase(function(err) {
-      if (err.success !== true) {
+      if (err && !err.success) {
         window.alert('Ooops! No se puede guardar la BD ¿No hay espacio? – ' + err.message);
       } else {
         $state.removeClass('warning');
@@ -457,7 +570,7 @@ function loadDBFromFile() {
   db.removeCollection('cards');
   try {
     db.saveDatabase(function(err) {
-      if (err.success !== true) {
+      if (err && !err.success) {
         window.alert('Ooops! No se puede guardar la BD ¿No hay espacio? – ' + err.message);
       } else {
         document.location.reload();
