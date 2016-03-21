@@ -187,7 +187,7 @@ angular.module('vivaverboApp')
           nuevas = cardsCollection.chain().
             find({ 'categorias': { $contains: category } }).
             where((card) => !memoryCollection.findOne({ card: card._id })).
-            simplesort('freq', true).
+            simplesort('freq').
             limit(numNuevas).
             data();
 
