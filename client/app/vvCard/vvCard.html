@@ -9,7 +9,7 @@
     <p class="frase" ng-show="tarjeta.girada"><em>{{ tarjeta.card.fraseRespuesta }}</em></p>
   </div>
   <md-button class="btn-cerrar md-icon-button" aria-label="{{ 'Ya la sé (no mostrar más)' | translate }}" ng-show="tarjeta.girada" ng-click="tarjeta.eliminar($event)">
-    <md-tooltip md-direction="left">Ya la sé (no mostrar más)</md-tooltip>
+    <md-tooltip md-direction="left">Archivar (no mostrar más)</md-tooltip>
     <md-icon md-font-library="material-icons">&#xE5CD;</md-icon>
   </md-button>
 </md-whiteframe>

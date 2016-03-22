@@ -2,6 +2,9 @@ $altura-baja: 528px;
 
 .repaso {
   padding: 16px;
+  md-whiteframe.tarjeta:focus {
+    outline: none;
+  }
   .loading, .num-tarjeta {
     margin: 8px 0;
   }
@@ -32,7 +35,7 @@ $altura-baja: 528px;
       .palabra {
         margin: 0;
         line-height: 64px;
-        font: 300 32px 'Roboto Slab', serif;
+        font: 300 34px 'Roboto Slab', serif;
         .bracket {
           opacity: 0.6;
           font-size: 0.65em;
