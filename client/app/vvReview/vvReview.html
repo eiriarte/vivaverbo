@@ -1,28 +1,22 @@
 <vv-sidenav layout-fill>
   <vv-toolbar vv-title="{{ repaso.tituloCategoria }}"></vv-toolbar>
   <md-content class="repaso" flex>
-    <div layout layout-align="center" class="loading md-subhead" ng-show="repaso.carga === 'cargando'" translate>Loading…</div>
-    <div layout layout-align="center" class="num-tarjeta md-subhead" ng-hide="repaso.tarjetas.length === 0 || repaso.finalizado">{{ repaso.totalAprendidas }}/{{ repaso.totalTarjetas }}</div>
+    <div layout layout-align="center" class="loading md-subhead" ng-show="repaso.carga === 'cargando'" translate>Cargando…</div>
+    <div layout layout-align="center" class="num-tarjeta md-subhead" ng-hide="repaso.tarjetas.length === 0 || repaso.finalizado">{{ repaso.totalAprendidas }} de {{ repaso.totalTarjetas }}</div>
     <div layout="column" layout-align="center" ng-show="repaso.carga === 'agotado'">
-      <p layout layout-align="center" class="md-headline" translate>No more unlearned cards in this category! Well done!</p>
+      <p layout layout-align="center" class="md-headline" translate>¡Ya has aprendido todas las palabras de esta categoría!</p>
     </div>
     <div layout="column" layout-align="center" ng-show="repaso.finalizado">
-      <p layout layout-align="center" class="md-headline" translate>Awesome! You're done!</p>
-      <md-button class="md-raised" ng-click="repaso.newReview()"><translate>Review more cards!</translate></md-button>
+      <p layout layout-align="center" class="md-headline" translate>Terminaste por hoy. ¡Bien hecho!</p>
+      <md-button class="md-raised" ng-click="repaso.newReview()"><translate>¡Repasar más palabras!</translate></md-button>
     </div>
     <div layout layout-align="center center" ng-hide="repaso.finalizado">
       <vv-card vv-girada="repaso.estado.girada" vv-tarjeta="tarjeta" vv-onclose="repaso.borrar()" ng-repeat="tarjeta in repaso.tarjetas track by tarjeta._id" ng-show="$index === repaso.tarjetaActual"></vv-card>
     </div>
     <div ng-show="repaso.estado.girada" layout layout-padding layout-align="center center">
-      <md-button class="md-icon-button" aria-label="{{ 'Ouch!' | translate }}" ng-click="repaso.marcar(0)">
-        <md-icon md-font-library="material-icons">&#xE8DB;</md-icon>
-      </md-button>
-      <md-button class="md-icon-button" aria-label="{{ 'Yes but…' | translate }}" ng-click="repaso.marcar(0.5)">
-        <md-icon md-font-library="material-icons">&#xE8DD;</md-icon>
-      </md-button>
-      <md-button class="md-icon-button" aria-label="{{ 'Perfect!' | translate }}" ng-click="repaso.marcar(1)">
-        <md-icon md-font-library="material-icons">&#xE8DC;</md-icon>
-      </md-button>
+      <md-button class="md-raised md-warn" ng-click="repaso.marcar(0)">¡Mal!</md-button>
+      <md-button class="md-raised md-warn md-hue-3" ng-click="repaso.marcar(0.5)">Regular</md-button>
+      <md-button class="md-raised md-primary" ng-click="repaso.marcar(1)">Perfecto</md-button>
     </div>
   </md-content>
 </vv-sidenav>
