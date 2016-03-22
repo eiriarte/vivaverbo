@@ -9,9 +9,9 @@ var UserSchema = new Schema({
   name: String,
   email: { type: String, lowercase: true },
   prefs: {
-    tarjetasPorRepaso: Number,
-    nuevasPorRepaso: Number,
-    maxFallosPorRound: Number
+    tarjetasPorRepaso: { type: Number, default: 15 },
+    nuevasPorRepaso: { type: Number, default: 5 },
+    maxFallosPorRound: { type: Number, default: 4 }
   },
   reviews: [{
     category: String,
