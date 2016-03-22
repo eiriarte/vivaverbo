@@ -170,8 +170,10 @@ angular.module('vivaverboApp')
           // siguientes repasos
           repaso = memoryCollection.chain().
             where((memory) => {
-              const cats = cards.findById(memory.card).categorias;
-              return cats.indexOf(category) !== -1;
+              const card = cards.findById(memory.card);
+              if (card) {
+                return card.categorias.indexOf(category) !== -1;
+              }
             }).
             find({ 'removed': { $ne: true } }).
             simplesort('recallProbability').
