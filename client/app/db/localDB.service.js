@@ -2,8 +2,8 @@
 
 angular.module('vivaverboApp')
   .factory('localDB', function ($q, Loki) {
-    const idbAdapter = new LokiIndexedAdapter('vivaverbo');
-    const lokiDB = new Loki('vivaverbo.db', { adapter: idbAdapter });
+    const lfAdapter = new LokiLocalForageAdapter('vivaverbo');
+    const lokiDB = new Loki('vivaverbo.db', { adapter: lfAdapter });
     let whenReady;
 
     /**
