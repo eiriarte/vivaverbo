@@ -80,7 +80,7 @@ angular.module('vivaverboApp')
             });
             db.updateUser(user);
           }).catch((e) => {
-            const msg = gettextCatalog.getString('Could not generate a review. Try reloading the app.');
+            const msg = gettextCatalog.getString('No se pudo generar el repaso. Prueba a recargar la página. :(');
             $log.error('Error en newReview', e);
             $mdToast.showSimple(msg);
           });
