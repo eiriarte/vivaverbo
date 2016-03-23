@@ -2,7 +2,7 @@
 
 angular.module('vivaverboApp')
   .factory('cards', function (Collection) {
-    const brackets = /\(.*\)/;
+    const brackets = /\(.*?\)\s*$/;
     const cards = new Collection('cards');
 
     /**
