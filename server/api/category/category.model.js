@@ -5,7 +5,9 @@ var mongoose = require('mongoose'),
 
 var CategorySchema = new Schema({
   _id: String, // slug
-  titulo: String
+  titulo: String,
+  descripcion: String,
+  orden: Number
 });
 
 module.exports = mongoose.model('Category', CategorySchema);

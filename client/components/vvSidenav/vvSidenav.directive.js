@@ -9,7 +9,7 @@ angular.module('vivaverboApp')
       transclude: true,
       controller: function($mdSidenav, $state, categories) {
         this.categorias = [];
-        categories.find({}, this.categorias);
+        categories.find({}, this.categorias, 'orden');
 
         this.select = (categoria) => {
           $mdSidenav('left').close();

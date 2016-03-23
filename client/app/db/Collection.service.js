@@ -222,12 +222,16 @@ angular.module('vivaverboApp')
        * Devuelve los documentos de la colección que encajen con las condiciones.
        * @param {object} query - (Opcional) Condiciones de búsqueda
        * @param {array} ref - (Opcional) Referencia al array donde volcar el array de documentos
+       * @param {string} sort - (Opcional) Campo por el que se desea ordenar (ascendente)
        * @param {boolean} one - (Opcional) True para devolver sólo un objeto, en lugar de un array
        * @returns {promise} Promesa del array de documentos encontrados
        */
-      find(query, ref, one = false) {
+      find(query, ref, sort, one = false) {
         return this.onDataReady(() => {
-          const result = one ? this._lokiCollection.findOne(query) : this._lokiCollection.find(query);
+          let result = one ? this._lokiCollection.findOne(query) : this._lokiCollection.chain().find(query);
+          if (!one) {
+            result = sort ? result.simplesort(sort).data() : result.data();
+          }
           if (undefined !== ref && result !== ref) {
             angular.copy(result, ref);
           }
@@ -241,7 +245,7 @@ angular.module('vivaverboApp')
        * @returns {promise} Promesa del array de documentos encontrados
        */
       findOne(query, ref) {
-        return this.find(query, ref, true);
+        return this.find(query, ref, undefined, true);
       }
       /**
        * Devuelve el documento con el ID indicado
