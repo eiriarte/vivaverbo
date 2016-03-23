@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('vivaverboApp').value('defaultCategory', 'kont');
+angular.module('vivaverboApp').value('defaultCategory', 'help');
