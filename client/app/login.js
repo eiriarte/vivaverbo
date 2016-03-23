@@ -5,6 +5,8 @@
 Zepto(function($){
   const $form = $('main form');
   const $btnSubmit = $form.find('.btn-cta');
+  const $btnFacebook = $('main .btn-facebook');
+
   $form.on('submit', function (event) {
     event.preventDefault();
     $btnSubmit.text('Procesando…').attr('disabled', 'disabled');
@@ -28,5 +30,9 @@ Zepto(function($){
         }
       }
     });
+  });
+
+  $btnFacebook.on('click', function() {
+    window.location.href = '/auth/facebook';
   });
 });
