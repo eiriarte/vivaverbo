@@ -17,7 +17,7 @@ angular.module('vivaverboApp', [
     $httpProvider.interceptors.push('authInterceptor');
     $logProvider.debugEnabled(window.vivaverboConfig.debug);
     $animateProvider.classNameFilter(/(vv-anim|md-sidenav-backdrop)/);
-    $localStorageProvider.setKeyPrefix('vv');
+    $localStorageProvider.setKeyPrefix('vv_');
     if (!$localStorageProvider.get('syncDates')) {
       $localStorageProvider.set('syncDates', { 'memory': 0 });
     }

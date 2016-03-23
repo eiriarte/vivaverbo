@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('vivaverboApp')
-  .factory('db', function ($log, $window, User, dateTime) {
+  .factory('db', function ($log, $localStorage, User, localDB, dateTime) {
 
     // Public API
     return {
@@ -11,35 +11,40 @@ angular.module('vivaverboApp')
        * serverUser: objeto User del servidor
        * *******************************************************************/
       syncUser(serverUser) {
-        const localUser = angular.fromJson($window.localStorage.getItem('usr'));
-        if (null === localUser) {
+        const localUser = $localStorage.user;
+        if (!localUser) {
           // Aún no hay copia local: la creamos
           $log.debug('Creando copia de User en localStorage');
-          $window.localStorage.setItem('usr', angular.toJson(serverUser));
+          $localStorage.user = serverUser;
           return serverUser;
         } else {
-          serverUser.updated = new Date(serverUser.updated);
-          localUser.updated = new Date(localUser.updated);
-          setDates(serverUser.reviews);
-          setDates(localUser.reviews);
-          if (localUser.updated < serverUser.updated) {
-            // El objeto en el cliente está desactualizado
-            $log.debug('Actualizando copia de User en localStorage');
-            $window.localStorage.setItem('usr', angular.toJson(serverUser));
-            return serverUser;
-          } else if (localUser.updated > serverUser.updated) {
-            // El objeto en el servidor está desactualizado
-            $log.debug('Actualizando objeto User en el servidor');
-            User.update(localUser).$promise.then(() => {
-              $log.debug('Objeto User actualizado en el servidor');
-            }).catch(() =>{
-              $log.error('Actualización de objeto User en el servidor falló');
-            });
-            return localUser;
+          if (localUser.email === serverUser.email) {
+            serverUser.updated = new Date(serverUser.updated);
+            localUser.updated = new Date(localUser.updated);
+            setDates(serverUser.reviews);
+            setDates(localUser.reviews);
+            if (localUser.updated < serverUser.updated) {
+              // El objeto en el cliente está desactualizado
+              $log.debug('Actualizando copia de User en localStorage');
+              $localStorage.usr = serverUser;
+              return serverUser;
+            } else if (localUser.updated > serverUser.updated) {
+              // El objeto en el servidor está desactualizado
+              $log.debug('Actualizando objeto User en el servidor');
+              User.update(localUser).$promise.then(() => {
+                $log.debug('Objeto User actualizado en el servidor');
+              }).catch(() =>{
+                $log.error('Actualización de objeto User en el servidor falló');
+              });
+              return localUser;
+            } else {
+              // Los objetos en cliente y servidor coinciden
+              $log.debug('Objetos User en servidor y cliente coinciden.');
+              return localUser;
+            }
           } else {
-            // Los objetos en cliente y servidor coinciden
-            $log.debug('Objetos User en servidor y cliente coinciden.');
-            return localUser;
+            $log.debug('Entrando con distinto usuario. RESET!');
+            return resetUser(serverUser);
           }
         }
       },
@@ -49,7 +54,7 @@ angular.module('vivaverboApp')
        * *********************************************************************/
       updateUser(user) {
         user.updated = dateTime.now();
-        $window.localStorage.setItem('usr', angular.toJson(user));
+        $localStorage.user = user;
         User.update(user).$promise.then(() => {
           $log.debug('Cambios en User persistidos en el servidor.');
         }).catch(() => {
@@ -69,5 +74,21 @@ angular.module('vivaverboApp')
           review.fecha = new Date(review.fecha);
         }
       });
+    }
+
+    /**
+     * Resetea los datos del usuario (anterior)
+     * @param {object} serverUser - Usuario actual
+     */
+    function resetUser(serverUser) {
+      localDB.whenReady.then(() => {
+        localDB.removeCollection('memory');
+        localDB.save();
+        if ($localStorage.syncDates) {
+          delete $localStorage.syncDates.memory;
+        }
+        $localStorage.usr = serverUser;
+      });
+      return serverUser;
     }
   });
