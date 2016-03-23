@@ -5,6 +5,28 @@
     </md-button>
     <h1>{{ toolbar.title }}</h1>
     <span flex></span>
-    <md-button class="logout-btn" ng-click="toolbar.logout()"><translate>Salir</translate></md-button>
+    <md-menu md-position-mode="target-right target">
+      <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="Menú secundario">
+        <md-icon md-menu-origin md-font-library="material-icons">&#xE5D4;</md-icon>
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ng-click="">
+            <div layout="row" flex>
+              <p flex><translate>Enviar comentario</translate></p>
+              <md-icon md-menu-align-target md-font-library="material-icons" style="margin: auto 3px auto 0;">&#xE87F;</md-icon>
+            </div>
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="toolbar.logout()">
+            <div layout="row" flex>
+              <p flex><translate>Cerrar sesión</translate></p>
+              <md-icon md-menu-align-target md-font-library="material-icons" style="margin: auto 3px auto 0;">&#xE8AC;</md-icon>
+            </div>
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
   </div>
 </md-toolbar>
