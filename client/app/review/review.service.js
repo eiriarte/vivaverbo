@@ -25,6 +25,7 @@ angular.module('vivaverboApp')
       // Si borrar es true, la tarjeta no se volverá a mostrar en el futuro
       marcar(recuerdo, borrar = false) {
         const review = getReview(currentCategory);
+        const tarjetaPrevia = review.tarjetaActual;
         const firstTry = review.tarjetas[review.tarjetaActual].firstTry;
         const id = review.tarjetas[review.tarjetaActual].cardId;
         const prob = memory.addRecall(id, recuerdo, borrar);
@@ -54,6 +55,11 @@ angular.module('vivaverboApp')
           review.numFallos = 0;
           review.tarjetaActual = -1;
           review.tarjetaActual = siguienteTarjeta();
+        }
+
+        // Si era la última por aprender, no volvemos a insistir en ella
+        if (review.tarjetaActual === tarjetaPrevia) {
+          review.finalizado = true;
         }
 
         // Persistimos los cambios en el repaso
@@ -199,9 +205,7 @@ angular.module('vivaverboApp')
           repaso = reviewFromCards(repaso.slice(0, numRepaso));
           nuevas = reviewFromCards(nuevas);
 
-          // 'repaso' y 'nuevas' son arrays vacíos!!!!??????
-          // ¿por qué? ¿de dónde salen??? ¿de localStorage????
-          return repaso.concat(nuevas);
+          return nuevas.concat(repaso);
         });
       });
     }
