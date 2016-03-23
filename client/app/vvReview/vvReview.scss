@@ -6,8 +6,12 @@ $altura-baja: 528px;
   md-whiteframe.tarjeta:focus {
     outline: none;
   }
-  .loading, .num-tarjeta {
+  .loading {
     margin: 8px 0;
+  }
+  .num-tarjeta {
+    width: 320px;
+    margin: 8px auto;
   }
   .tarjeta {
     cursor: pointer;

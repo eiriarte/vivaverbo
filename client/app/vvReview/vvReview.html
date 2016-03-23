@@ -2,7 +2,9 @@
   <vv-toolbar vv-title="{{ repaso.tituloCategoria }}"></vv-toolbar>
   <md-content class="repaso" flex>
     <div layout layout-align="center" class="loading md-subhead" ng-show="repaso.carga === 'cargando'" translate>Cargando…</div>
-    <div layout layout-align="center" class="num-tarjeta md-subhead" ng-hide="repaso.tarjetas.length === 0 || repaso.finalizado">{{ repaso.totalAprendidas }} de {{ repaso.totalTarjetas }}</div>
+    <div layout layout-align="center" class="num-tarjeta md-subhead" ng-hide="repaso.tarjetas.length === 0 || repaso.finalizado">
+      <md-progress-linear md-mode="determinate" value="{{ repaso.totalAprendidas * 100 / repaso.totalTarjetas }}"></md-progress-linear>
+    </div>
     <div layout="column" layout-align="center" ng-show="repaso.carga === 'agotado'">
       <p layout layout-align="center" class="md-headline" translate>¡Ya has aprendido todas las palabras de esta categoría!</p>
     </div>
