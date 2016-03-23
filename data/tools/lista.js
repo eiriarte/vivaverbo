@@ -89,6 +89,8 @@ var dicCategs = [
   { id: 'ver', name: 'Verdad / Posibilidad' },
   { id: 'vol', name: 'Necesidades / Deseos' },
   { id: 'land', name: 'Países' },
+  { id: 'num', name: 'Números' },
+  { id: 'help', name: '"Supervivencia"' },
   { id: 'zorg', name: 'Cuidados / Mantenimiento' }
 ];
 var db, dbTex, idbAdapter, cards, ssv, selection = [], selQuery = '-', current = 0, dupes = [];
