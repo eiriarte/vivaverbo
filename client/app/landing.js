@@ -16,12 +16,12 @@ Zepto(function($){
       type: 'POST',
       url: $form.attr('action'),
       data: $form.serialize(),
-      success: (data) => {
+      success: function(data) {
         $btnSubmit.attr('disabled', null);
         Cookies.set('token', data.token, { expires: 30 });
         window.location.pathname = '/';
       },
-      error: (xhr) => {
+      error: function(xhr) {
         var errors, message = [];
         $btnSubmit.text('Regístrate gratis').attr('disabled', null);
         try {
@@ -30,7 +30,7 @@ Zepto(function($){
           errors = {};
         }
         if (422 === xhr.status) {
-          ['name', 'email', 'hashedPassword'].forEach((field) => {
+          ['name', 'email', 'hashedPassword'].forEach(function(field) {
             if (errors[field]) {
               $form.find('.field-' + field).addClass('field-error');
               message.push(errors[field].message);

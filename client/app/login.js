@@ -15,12 +15,12 @@ Zepto(function($){
       type: 'POST',
       url: $form.attr('action'),
       data: $form.serialize(),
-      success: (data) => {
+      success: function(data) {
         $btnSubmit.attr('disabled', null);
         Cookies.set('token', data.token, { expires: 30 });
         window.location.pathname = '/';
       },
-      error: (xhr) => {
+      error: function(xhr) {
         $btnSubmit.text('Iniciar sesión').attr('disabled', null);
         Cookies.remove('token');
         if (401 === xhr.status) {
