@@ -74,8 +74,8 @@ module.exports = function(app, config) {
         view = 'index';
         locals = { user: _.pick(req.user, props) };
         locals.versions = {
-          cards: '2016-03-21T10:22:47.601Z',
-          categories: '2016-03-21T10:22:47.601Z'
+          cards: '2016-03-21T19:22:47.601Z',
+          categories: '2016-03-22T21:22:47.601Z'
         };
       } else {
         winston.debug('Usuario anónimo. Sirviendo landing.html');
