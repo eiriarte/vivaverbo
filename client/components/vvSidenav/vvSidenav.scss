@@ -1,0 +1,15 @@
+.sidenav {
+  .loading {
+    left: 32%;
+  }
+  md-content {
+    padding-top: 8px;
+  }
+  md-list md-list-item button.md-button {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  md-list md-list-item button.md-button:not([disabled]):hover {
+    background-color: #E8E8E8;
+  }
+}

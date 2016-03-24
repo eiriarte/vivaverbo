@@ -1,0 +1,1227 @@
+(np)-matrico
+abako
+abela
+absciso
+absoluta valoro
+absolute konverĝa
+adhera
+adheraĵo
+adiciato
+adicii
+adicio
+afina
+afina ebeno
+afina hiperebeno
+afina rekto
+afina rotacio
+afina spaco
+afina subspaco
+ajgena
+ajgeno
+ajgensubspaco
+ajgenvaloro
+ajgenvektoro
+ajna
+aksiomo
+akso
+akumuliĝa
+akuta
+akuta angulo
+akutangula
+algebra
+algebra dualo
+algebra frakcio
+algebra strukturo
+algebro
+algoritmo
+alikvanto
+alikvoto
+alpreni
+alterna
+alterna grupo
+alto
+altocentro
+alĝebro
+ambaŭdirekta implikacio
+analitika funkcio
+analitika geometrio
+analitiko
+angula distanco
+angula koeficiento
+angula krampo
+angulfidela
+angulmezurilo
+angulo
+antaŭanto
+antaŭkompakta
+antisimetria
+aparteni
+apartiga
+apartigebla
+aperaĵo
+apotemo
+aproksimi
+apuda
+aranĝaĵo
+arbo
+areaĵo
+arekosinuso
+arekotangento
+areo
+aresinuso
+aretangento
+argumento
+aritmetika
+aritmetika progresio
+aritmetika vico
+aritmetiko
+arkkosekanto
+arkkosinuso
+arkkotangento
+arko
+arksekanto
+arksinuso
+arktangento
+aro
+arteorio 
+arĥimeda
+arĥimeda spiralo
+asimptoto
+asocieca
+averaĝo
+aŭo
+aŭtomato
+aŭtomorfio
+banaĥa algebro
+banaĥa spaco
+barita
+baro
+bazo
+bidualo
+bijekcia
+bijekcio
+bildaro
+bildigo
+bildo
+binomo
+bisekcanto
+bisekci
+bona ordo
+bonorda
+borela sigma-algebro
+buklo
+bulea algebro
+celo-aro
+centra angulo
+centra projekcio
+centro
+cifero
+cikla
+ciklo
+cikloido
+ciklometria funkcio
+cilindra koordinato
+cilindro
+cirkelo
+cirkla funkcio
+cirklego
+cirklo
+cirkonferenca angulo
+cirkonferenco
+cirkvito
+cisoido
+decimala
+decimalo
+dedekinda tranĉo
+deksesuma
+dekstra klaso
+dekstruma
+dekuma
+dekuma logaritmo
+delokigo
+deltoido
+demonstracio
+demonstri
+demonstro
+denominatoro
+densa
+dependa
+derivado
+derivaĵo
+derivebla
+derivi
+determinanto
+detranĉi
+diagonala
+diagonaligebla
+diagonalo
+diametro
+diferenciala
+diferenciala ekvacio
+diferenciala formo
+diferenciala kalkulo
+diferencialebla
+diferenciali
+diferencialo
+diferencii
+diferenco
+difinita integralo
+dimensinombro
+dimensio
+dinamiko
+diraka distribucio
+diraka kombilo
+diraka mezuro
+direktanto
+direkto
+direktrico
+disa
+disaŭo
+discentreco
+disjunkcio
+disko
+diskreta
+diskriminanto
+dispartigo
+dissurĵeta
+dissurĵeto
+distanco
+distribua funkcio
+distribucio
+distribuebla
+distribueca
+disĵeta
+disĵeto
+diverĝa
+diverĝenco
+diverĝi
+dividanto
+dividato
+dividebla
+dividi
+divido
+divido kun resto
+divizorebla
+divizorhava
+divizori
+divizoro
+duala
+duala bazo
+dualmalforta topologio
+dualo
+dudualo
+duedro
+duloka
+duobla implico
+duonebeno
+duongrupo
+duoniganto
+duonnormo
+duonrekto
+duonsfero
+dusekcanto
+dusekci
+dutermo
+duuma
+ebena
+ebena angulo
+ebeno
+edro
+egala
+egalaĵo
+egali
+egallatera
+ejgen-
+ekarto
+ekskluziva disjunkcio
+ekspekto
+eksponencialo
+eksponento
+ekstera operacio
+ekstera produto
+eksterpoli
+ekstrapoli
+ekstremumejo
+ekstremumiganto
+ekstremumo
+ekvaciaro
+ekvaciigi
+ekvacio
+ekvipolenta
+ekvivalenta
+ekvivalento
+ekvivalento-klaso
+ekvivalento-rilato 
+elementa funkcio
+elementa okazo
+elemento
+elimino
+elimplikaciigo
+elipso
+elipsoido
+elira duongrado
+elvolvanto
+elvolvato
+elvolvi
+endomorfio
+enhavi
+enira duongrado
+enjekcia
+enjekcio
+enskribi
+enskribita
+entjera
+entjera parto
+entjera serio
+entjero
+entropio
+envelopo
+envolvaĵo
+enĵeta
+enĵeto
+epicikloido
+epitroĥoido
+esprimaĵo
+esprimo
+evoluto
+evolvento
+eĝo
+eŭklida algoritmo
+eŭklida divido
+eŭklida ringo
+eŭklida spaco
+eŭlera
+eŭlera cirklo
+eŭlera rekto
+faco
+faktoreca
+faktorgrupo
+faktorialo
+faktoro
+familio
+fazo
+fermaĵo
+fermita
+fermita vojo
+fiksa punkto
+filtrilo
+finia
+finia vico
+finio
+finita
+fino
+flanka klaso
+flanko
+fokusdiseco
+fokuso
+fonto-aro
+formala logiko
+formala polinomo
+formala potencoserio
+formo
+formulo
+frakcia parto
+frakcikorpo
+frakcio
+frakcistreko
+fundamenta grupo
+funkcio
+funkcionalo
+galeza grupo
+galeza korpo
+galeza superkorpo
+gaŭsa entjero
+gaŭsa kurbo
+generi
+geometria
+geometria figuro
+geometria progresio
+geometria serio
+geometria vico
+geometrio
+globo
+globtavolo
+gradiento
+grado
+graduso
+grafeiko
+grafeo
+grafeteorio
+grafika prezento
+grafikaĵo
+grafo
+granda duonakso
+grupo
+grupo de n-modulaj restoklasoj
+grupoido
+guglo
+harmona
+harmona progresio
+harmona serio
+harmona vico
+hazarda variablo
+heksaedro
+heksagono
+helico
+hemisfero
+hermita
+hermita formo
+hermita skalara produto
+hermita spaco
+hevisida funkcio
+hilberta spaco
+hiperbola funkcio
+hiperbola kosinuso
+hiperbola kotangento
+hiperbola sinuso
+hiperbola spiralo
+hiperbola tangento
+hiperbolo
+hiperboloido
+hiperebeno
+hipocikloido
+hipotenuzo
+hipotroĥoido
+holomorfa
+homeomorfia
+homeomorfio
+homogena
+homologa
+homomorfia
+homomorfio
+homotetia
+homotetiaĵo
+homotetio
+homotopa
+horizontalo
+idealo
+identaĵo
+idento
+idento-bildigo
+idento-rilato
+ikso
+imaginara
+imaginara parto
+imaginara unuo
+imaginaro
+implico
+implikacia
+implikacio
+incida
+indico
+indukto
+infimo
+infinita
+infinitezima kalkulo
+infinitezimo
+infinitiĝi
+infinito
+infleksa
+inklino
+inkluzivi
+integra
+integrado
+integrala
+integrala ekvacio
+integrala kalkulo
+integralado
+integralato
+integralebla
+integrali
+integralo
+integralsigno
+integrato
+integraĵo
+integrebla
+integri
+integrilo
+interna
+interna aŭtomorfio
+interna operacio
+interna produto
+interna rilato
+interpoli
+intersekci sin
+intervalo
+intuicio
+invarianta
+invarianto
+invariantokorpo
+inversa
+inversa bildigo
+inversa bildo
+inversa hiperbola funkcio
+inversa hiperbola kosinuso
+inversa hiperbola kotangento
+inversa hiperbola sinuso
+inversa hiperbola tangento
+inversa paro
+inversa rilato
+inversa trigonometria funkcio
+invershava
+inversigebla
+inversigi
+inversigo
+inverso
+involucia
+involucio
+ipsilono
+izocela
+izolita
+izometria
+izometrio
+izomorfia
+izomorfio
+jakobia determinanto
+jakobia matrico
+jakobiano
+kaj-signo
+kajaŭo
+kajo
+kalkuli
+kalkulo
+kaloto
+kampo
+kanona
+kanona bazo
+kanona projekcio
+karakteristiko
+karakteriza funkcio
+karakteriza polinomo
+kardinalo
+kardioido
+kartezia folio
+kartezia koordinato
+kartezia ovalo
+kartezia produto
+kateno
+kateto
+kepleraj leĝoj
+kerno
+kinematiko
+kio estis pruvota
+kirlo
+kliko
+koeficiento
+kofaktoro
+koincidi
+kombinatorikaĵo
+kombinatoriko
+kombinaĵo
+kompakta
+kompleksa
+komplekso
+komplementa
+komplemento
+kompleta
+komponanto
+komunaĵo
+komunona
+komuta
+komutebla
+komuteca
+komuti
+komutiĝi
+kondiĉa probablo
+koneksa
+koneksa komponanto
+koneksega
+konforma
+kongrua
+kongrui
+koniko
+konjekto
+konjugaĵo
+konjugita
+konjugito
+konjuglineara 
+konjugo
+konjunkcio
+konkava
+konkoido
+konoido
+konstanta
+konstanto
+kontinua
+kontinuega
+kontraŭa
+kontraŭegala
+kontraŭegaligebla
+kontraŭegalo
+kontraŭekzemplo
+kontraŭlatera
+kontraŭlogaritmo
+kontraŭpozicio
+kontraŭsigna
+konuso
+konveksa
+konverĝa
+konverĝa en distribuo
+konverĝa en mezuro
+konverĝa en probablo
+konverĝi
+konverĝintervalo
+konverĝocirklo
+konverĝoradiuso
+konĥoido
+koordinata akso
+koordinato
+koordinatsistemo
+korelacio
+korolario
+korpo
+kosekanto
+kosinuso
+kotangento
+kovarianco
+kovro
+koŝia vico
+krampo
+kreskanta
+kruciĝi
+kubo
+kunaĵo
+kuniga krampo
+kunigaĵo
+kunligaĵo
+kunligo
+kunmezurebla
+kuntiro
+kunvarianco
+kuo
+kurbeco
+kurbecocentro
+kurbecocirklo
+kurbecoradiuso
+kurbo
+kvadranto
+kvadrata
+kvadrategala
+kvadratigi
+kvadrato
+kvadraturo
+kvadriko
+kvaredro
+kvarlatero
+kvazaŭkompakta
+kvocienta aro
+kvocienta frakcio
+kvocienta grupo
+kvocienta ringo
+kvociento
+laplaca operatoro
+latero
+latiso
+latitudo
+lebega integralo
+lebega mezuro
+lemniskato
+lemo
+libera
+ligilo
+limesinfimo
+limeso
+limesosupremo
+limi
+limo
+lineara
+lineara algebro
+lineara kombinaĵo
+lineare dependa
+lineare nedependa
+lingvo
+linio
+logaritma derivaĵo
+logaritma spiralo
+logaritmo
+logika operacio
+logiko
+logistiko
+lokaro
+loknombro
+loko
+longigita cikloido
+longigita epicikloido
+longigita hipocikloido
+longitudo
+lozanĝo
+magmo
+maksimuma
+maksimumejo
+maksimumiganto
+maksimumo
+malakuta
+malaŭo
+malbildo
+maldekstra klaso
+maldekstruma
+malderivaĵo
+maldiskreta
+malfermaĵo
+malfermita
+malfinia
+malfinio
+malforta topologio
+malforte konverĝa
+malgranda duonakso
+malkajo
+malkomponi
+malkonverĝi
+malkreskanta
+mallongigita cikloido
+mallongigita epicikloido
+mallongigita hipocikloido
+malplena aro
+malpliigato
+malrefleksiva
+malsimetria
+malvastigaĵo
+mantiso
+matematika logiko
+matematika platonismo
+matematiko
+matrica adicio
+matrica multipliko
+matrico
+matrico de vektora homomorfio
+mediano
+membro
+memkonjugita
+meridiano
+meromorfa
+metrika spaco
+metriko
+meznombro
+mezo
+mezortanto
+mezpunkto
+mezurebla
+mezurhava spaco
+mezuro
+meĥaniko
+minimuma
+minimumejo
+minimumiganto
+minimumo
+minoro
+minus
+minuso
+minuto
+modala logiko
+modulo
+monoido
+monojdo
+monomo
+monotona
+multiplikanto
+multiplikato
+multiplikendo
+multipliki
+multipliko
+multobla
+multobligi
+n-a momanto
+n-a potenco
+n-a radiko
+n-a-grada
+n-argumenta funkcio
+n-argumenta rilato
+n-dimensia
+n-edro
+n-grafeo
+n-latero
+n-lineara
+n-modula restoklaso
+n-obla
+n-opeĝa
+n-opo
+n-termo
+n-uma frakcio
+n-uma prezento
+najbara
+naskanto
+naski
+natura entjero
+natura logaritmo
+natura nombro
+nebarita
+necesa kondiĉo
+nedependa
+nedifinita integralo
+nedivizoro
+neegalaĵo
+neekvacio
+nefinita
+negacio
+negativa
+neinversigebla
+nekonato
+nenegativa
+neordinara
+neorientita grafeo
+nepara
+nepera logaritmo
+nepozitiva
+neracionalo
+nereduktebla
+netransitiva
+neŭtra
+neŭtra elemento
+neŭtriganto
+neŭtrigebla
+nilpotenta
+nombrebla
+nombro
+nombrosistemo
+normala
+normalo
+norme konverĝa
+normhava 
+normi
+normo
+normohava spaco
+normumi
+normumita
+nula
+nuldivizoro
+nulejo
+nuli
+nuliganto
+nuligi
+nuliĝi
+nulmatrico
+nulo
+nulpolinomo
+nulpotenca
+nulvektoro
+numeratoro
+numerebla
+numero
+nur se
+obleco
+obligi
+oblikva projekcio
+oblikva simetrio
+oblo
+obtuza
+obtuza angulo
+obtuzangula
+ofto
+okazalgebro
+okazo
+oktanto
+okuma
+onigi
+onkomo
+ono
+operaciato
+operaciesploro
+operacii
+operacio
+operatoro
+opo
+ora dispartigo
+orda
+orda aro
+ordi
+ordinara logaritmo
+ordinato
+ordo
+ordo-rilato
+orienti
+orientita grafeo
+orientiĝo
+origino
+orta
+orta projekcio
+orta simetrio
+ortangula
+ortangulo
+ortanto
+ortilo
+orto
+ortocentro
+ovalo
+para
+parabolo
+paraboloido
+paralela
+paralela projekcio
+paralelepipedo
+paralelo
+paralelogramo
+parametro
+pareco
+paro
+parta
+parta derivaĵo
+parta sumo
+partuma parto
+partumo
+paskala limako
+paskala triangulo
+paŝo
+pentagono
+perfekta
+periferio
+perimetro
+perioda
+periodo
+permutaĵo
+permuti
+permuto
+perpendiklo
+perpendikulara
+perpendikularo
+pezocentra koordinato
+pezocentro
+piedo
+piramido
+pitagorano
+planimetrio
+platona solido
+plej granda komuna divizoro
+plej malgranda komuna oblo
+plena
+pli fajna
+plurangulo
+pluredro
+plurgrafeo
+plurlatero
+plurobla
+plursenca funkcio
+plurtermo
+plus
+pluso
+podajro
+poli
+poliedro
+poligono
+polinoma adicio
+polinoma funkcio
+polinoma multipliko
+polinomo
+polinomringo
+polusa akso
+polusa angulo
+polusa distanco
+polusa koordinato
+poluso
+postanto
+postulato
+potenci
+potencialhava
+potencialo
+potenciganto
+potencigato
+potencigi
+potencigo
+potenco
+potencoserio
+povo
+pozicia frakcio
+pozitiva
+predikato
+preskaŭ certe konverĝa
+preskaŭ ĉie
+preskaŭ ĉiuj
+prima
+primo
+prismo
+probablo
+probablodenso
+probablodistribuo
+probablokalkulo
+probablospaco
+procento
+produto
+programado
+progresio
+projekciaĵo
+projekcio
+proporcio
+propozicio
+propra divizoro
+pruvi
+pruvo
+pruvo de ekzisto 
+pruvo per indukto
+pruvo per redukto al absurdo
+punkto
+punktoparo
+raciona
+racionala
+racionala frakcio
+racionala funkcio
+racionalo
+raciono
+radiano
+radika korpo
+radiki
+radikigato
+radikigi
+radikilo
+radiko
+radiksigno
+radio
+radiuso
+radiusvektoro
+randa
+randi
+rando
+rango
+realo
+reduktebla
+redukti (frakcion)
+redukto al absurdo
+reela
+reela parto
+reelo
+refleksiva
+reflekto
+regula
+rekta
+rekta angulo
+rekta bildo
+rekta krampo
+rektangulo
+rektara
+rektifebla
+rektifi
+rektilo
+rekto
+renversaĵo
+responda
+resto
+rilato
+rimana integralo
+ringo
+ringo de n-modulaj restoklasoj
+rivolua
+rivoluo
+rombo
+romboedro
+romboido
+rompita linio
+ronda
+ronda krampo
+rondigi
+rondo
+rotacia
+rotacia akso
+rotacia centro
+rotacio
+sago
+samarea
+samcentra
+samebena
+samlatera
+sampova
+samrekta
+samsigna
+samvolumena
+se
+se kaj nur se
+segmento
+sekanto
+sekcanto
+sekci
+sekco
+sektoro
+sekundo
+sekvaĵo
+seminormo
+senbukla
+sencikla
+sendiverĝenca
+senkirla
+serio
+serio de funkcioj
+sesdekuma
+seskvilineara
+seslatero
+sfera koordinato
+sferdisko
+sfero
+sigma-algebro
+signo
+signoŝanĝo
+signumo
+simbola logiko
+simetria
+simetria grupo
+simetriakso
+simetricentro
+simetriebeno
+simetrio
+simila
+simileco
+simpla
+simpla funkcio
+simpla grafeo
+simple koneksa
+simple konverĝa
+sinuso
+sistemo
+skalara
+skalara potencialo
+skalara produto
+skalaro
+skalena
+solida angulo
+solido
+spaco
+spektro
+spiralo
+spuro
+statistiko
+steradiano
+stereometrio
+stokasta variablo
+stokasto
+strebi
+streko
+streĉita
+streĉita angulo
+strofoido
+strukturo
+sub-
+suba baro
+subarbo
+subaro
+subbildigo
+subesprimo
+subgrafeo
+subgrupo
+subkorpo
+submatrico
+submodulo
+subringo
+substituo
+substreko
+substreĉi
+subtenanto
+subtrahato
+subtrahi
+subtraho
+subvico
+sufiĉa kondiĉo
+sumero
+sumo
+super-
+supera baro
+superaro
+supergrafeo
+superkorpo
+suplementa
+suplemento
+supraĵo
+supremo
+surfaco
+surjekcia
+surjekcio
+surĵeta
+surĵeto
+svaga logiko
+tangento
+tanĝa
+tanĝanto
+tanĝi
+tegaĵo
+teoremo
+termo
+testa funkcio
+tetraedro
+tiri
+topologia
+topologia dualo
+topologia dudualo
+topologia spaco
+topologia strukturo
+topologia subspaco
+topologio
+topologio de simpla konverĝo
+topologio de unuforma konverĝo
+toro
+trairi
+traktorio
+transcenda
+transfleksiĝa
+transfleksiĝejo
+transformo
+transitiva
+translacio
+transponato
+transponaĵo
+transponi
+transpono
+tranĉo
+trapezo
+triangula
+triangulo
+triedro
+trigonometria
+trigonometria cirklo
+trigonometria funkcio
+trigonometrio
+trinomo
+tritermo
+troĥoido
+trunko
+tuteca
+unuforme konverĝa
+unuhava
+unuloka
+ununorma
+ununormigi
+unuo
+unuomatrico
+unuopolinomo
+unusenca funkcio
+valoro
+variablo
+varianca devio
+varianco
+varianta
+varianto
+vastigaĵo
+vektora
+vektora ebeno
+vektora hiperebeno
+vektora potencialo
+vektora produto
+vektora projekcio
+vektora rekto
+vektora rotacio
+vektora simetrio
+vektora spaco
+vektora subspaco
+vektoro
+verigi
+vertabelo
+vertico
+vertikalo
+vertoĉapo
+vervaloro
+vico
+vico de funkcioj
+vojkoneksa
+vojo
+volumenaĵo
+volumeno
+vortstatistiko
+zono
+ĉefa
+ĉefcirklo
+ĉefideala
+ĉefinfinitezimo
+ĉena frakcio
+ĉenfrakcio
+ĉeno
+ĉirkaŭaĵo
+ĉirkaŭskribi
+ĉirkaŭskribita
+ĝeneraligita funkcio
+ĵeto
+ŝnuro
+ŝtupara funkcio

@@ -2,20 +2,24 @@
   "name": "vivaverbo",
   "version": "0.0.11",
   "dependencies": {
-    "angular": "1.4.x",
+    "angular": "1.5.x",
     "json3": "~3.3.1",
     "es5-shim": "4.x",
-    "angular-resource": "1.4.x",
-    "angular-cookies": "1.4.x",
+    "angular-resource": "1.5.x",
+    "angular-cookies": "1.5.x",
     "angular-ui-router": "0.2.x",
-    "angular-gettext": "~2.1.0",
-    "angular-material": "0.11.x",
-    "angular-messages": "1.4.x",
+    "angular-gettext": "~2.2.0",
+    "angular-material": "1.0.x",
+    "angular-messages": "1.5.x",
     "lokijs": "~1.3.7",
-    "lodash": "~3.10.1"
+    "lodash": "~3.10.1",
+    "ngstorage": "~0.3.10",
+    "zepto": "1.1.x",
+    "localforage": "^1.4.0",
+    "loki-localforage-adapter": "git://github.com/paulhovey/loki-localforage-adapter.git"
   },
   "devDependencies": {
-    "angular-mocks": "1.4.x",
-    "angular-scenario": "1.4.x"
+    "angular-mocks": "1.5.x",
+    "angular-scenario": "1.5.x"
   }
 }

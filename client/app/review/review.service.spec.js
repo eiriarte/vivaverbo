@@ -11,7 +11,7 @@ describe('Service: reviewService', function () {
   beforeEach(module('vivaverboApp'));
 
   // instantiate service
-  let reviewService, repaso;
+  let reviewService;
   let $httpBackend, $rootScope;
 
   beforeEach(inject(function (_$httpBackend_) {
@@ -21,17 +21,19 @@ describe('Service: reviewService', function () {
   beforeEach(inject(function (_reviewService_, _$rootScope_) {
     $rootScope = _$rootScope_;
     reviewService = _reviewService_;
-    repaso = reviewService.repaso;
+    reviewService.newReview('menosde20');
   }));
 
   afterAll(windowAfterTestSuite);
 
   it('debe cargar y contabilizar el número deseado de tarjetas', function () {
+    $httpBackend.whenGET('/api/categories').respond(getCategories());
     $httpBackend.whenGET('/api/cards').respond(getCards());
     $httpBackend.whenGET(/\/api\/memory/).respond([]);
     $httpBackend.whenPOST('/api/users/me').respond(200);
     $rootScope.$digest();
     $httpBackend.flush();
+    const repaso = reviewService.repaso;
     const lengthTarjetas = repaso.tarjetas.length;
     const total = repaso.totalTarjetas;
 
@@ -41,6 +43,7 @@ describe('Service: reviewService', function () {
   });
 
   it('debe tener la propiedad "repaso"  de sólo lectura', function () {
+    const repaso = reviewService.repaso;
     var f = function() {
       reviewService.repaso = repaso;
     };
@@ -49,10 +52,11 @@ describe('Service: reviewService', function () {
 
   it('debe marcar correctamente el grado de recuerdo', function() {
     $httpBackend.expectPOST('/api/users/me').respond(200);
-    $httpBackend.expectGET(/\/api\/memory/).respond([]);
+    $httpBackend.whenGET(/\/api\/memory/).respond([]);
     $rootScope.$digest();
     $httpBackend.flush();
 
+    const repaso = reviewService.repaso;
     expect(repaso.finalizado).toBe(false, 'porque acabamos de empezar');
     expect(repaso.tarjetaActual).toBe(0);
     expect(repaso.totalAprendidas).toBe(0);

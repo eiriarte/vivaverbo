@@ -1,0 +1,120 @@
+@import 'logoweb.scss';
+@import 'variables.scss';
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.no-movil {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: $color-link;
+}
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  background-color: $color-bg;
+  color: $color-txt;
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+  font-size: 16px;
+}
+
+.toolbar {
+  position: absolute;
+  width: 100%;
+  height: 48px;
+  padding: 8px;
+  .logo {
+    width: 180px;
+    height: 32px;
+    background-image: url(logoweb.png);
+    background-image: url(#{$logo-data-uri});
+    background-repeat: no-repeat;
+    font-size: 1.6em;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    float: left;
+    line-height: 32px;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid;
+  border-radius: 4px;
+  color: $color-btn;
+  padding: 1em;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: $font;
+}
+
+.btn-facebook {
+  background-color: $color-fb;
+  border-color: $color-fb-border;
+
+}
+
+.btn-cta {
+  background-color: $color-register;
+  border-color: $color-reg-border;
+}
+
+.separator {
+  text-align: center;
+  padding: 1em;
+  font-size: 0.75em;
+}
+
+.browsehappy {
+  background-color: #ffffca;
+  color: #000023;
+  margin: 0;
+  padding: 1em;
+  border-bottom: 1px solid #d9d98c;
+}
+
+.textfield {
+  display: block;
+  width: 100%;
+  font-size: 0.875em;
+  font-weight: 500;
+  padding: 1em;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  margin: 0 0 1em 0;
+  font-family: $font;
+  &.field-error {
+    border-color: red;
+  }
+}

@@ -6,16 +6,21 @@ angular.module('vivaverboApp', [
   'ngMessages',
   'ngMaterial',
   'ui.router',
+  'ngStorage',
   'gettext',
   'lokijs'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider,
-        $httpProvider, $logProvider, $animateProvider) {
+        $httpProvider, $logProvider, $animateProvider, $localStorageProvider) {
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
     $logProvider.debugEnabled(window.vivaverboConfig.debug);
-    $animateProvider.classNameFilter(/vv-anim/);
+    $animateProvider.classNameFilter(/(vv-anim|md-sidenav-backdrop)/);
+    $localStorageProvider.setKeyPrefix('vv_');
+    if (!$localStorageProvider.get('syncDates')) {
+      $localStorageProvider.set('syncDates', { 'memory': 0 });
+    }
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookies, $window) {
@@ -44,6 +49,11 @@ angular.module('vivaverboApp', [
     };
   })
 
+  .run(function(MemoryClass, localDB) {
+    // Inicializamos la base de datos local
+    localDB.init({ memory: { proto: MemoryClass } });
+  })
+
   .run(function ($rootScope, $cookies, $window, gettextCatalog, Auth) {
     // Idioma
     const lang = $cookies.get('lang');
@@ -51,6 +61,7 @@ angular.module('vivaverboApp', [
     if ('eo' === lang) {
       gettextCatalog.setCurrentLanguage(lang);
     }
+
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$stateChangeStart', function (event, next) {
       Auth.isLoggedInAsync(function(loggedIn) {
@@ -60,4 +71,5 @@ angular.module('vivaverboApp', [
         }
       });
     });
+
   });

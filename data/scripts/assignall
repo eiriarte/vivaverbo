@@ -1,0 +1,102 @@
+#!/bin/bash
+echo "module.exports = []" > ./data/cards.js
+
+echo Almacenando frecuencias…
+node freqs.js > ./data/fq.js
+
+echo Almacenando traducciones…
+node es.js > ./data/trads.js
+
+echo Agregando listas de palabras…
+node assigncateg.js ../listoj/piv.txt ./data/cards.js piv
+node assigncateg.js ../listoj/revo.txt ./data/cards.js revo
+node assigncateg.js ../listoj/hess.txt ./data/cards.js hess
+node assigncateg.js ../listoj/kontakto.txt ./data/cards.js kont
+node assigncateg.js ../listoj/rekta_metodo.txt ./data/cards.js reme
+node assigncateg.js ../listoj/afijos.txt ./data/cards.js afix
+node assigncateg.js ../listoj/BRO/bro1.txt ./data/cards.js bro1
+node assigncateg.js ../listoj/BRO/bro2.txt ./data/cards.js bro2
+node assigncateg.js ../listoj/BRO/bro3.txt ./data/cards.js bro3
+node assigncateg.js ../listoj/BRO/bro4.txt ./data/cards.js bro4
+node assigncateg.js ../listoj/BRO/bro5.txt ./data/cards.js bro5
+node assigncateg.js ../listoj/BRO/bro6.txt ./data/cards.js bro6
+node assigncateg.js ../listoj/BRO/bro7.txt ./data/cards.js bro7
+node assigncateg.js ../listoj/BRO/bro8.txt ./data/cards.js bro8
+node assigncateg.js ../listoj/BRO/bro9.txt ./data/cards.js bro9
+node assigncateg.js ../listoj/UV/fund.txt ./data/cards.js fund
+node assigncateg.js ../listoj/UV/1oa.txt ./data/cards.js 1oa
+node assigncateg.js ../listoj/UV/2oa.txt ./data/cards.js 2oa
+node assigncateg.js ../listoj/UV/3oa.txt ./data/cards.js 3oa
+node assigncateg.js ../listoj/UV/4oa.txt ./data/cards.js 4oa
+node assigncateg.js ../listoj/UV/5oa.txt ./data/cards.js 5oa
+node assigncateg.js ../listoj/UV/6oa.txt ./data/cards.js 6oa
+node assigncateg.js ../listoj/UV/7oa.txt ./data/cards.js 7oa
+node assigncateg.js ../listoj/UV/8oa.txt ./data/cards.js 8oa
+node assigncateg.js ../listoj/UV/9oa.txt ./data/cards.js 9oa
+node assigncateg.js ../categs/ago.txt     ./data/cards.js ago
+node assigncateg.js ../categs/ajxo.txt    ./data/cards.js ajxo
+node assigncateg.js ../categs/eco.txt     ./data/cards.js eco
+node assigncateg.js ../categs/form.txt    ./data/cards.js form
+node assigncateg.js ../categs/hav.txt     ./data/cards.js hav
+node assigncateg.js ../categs/kolor.txt   ./data/cards.js kolr
+node assigncateg.js ../categs/kompar.txt  ./data/cards.js komp
+node assigncateg.js ../categs/komunik.txt ./data/cards.js komu
+node assigncateg.js ../categs/kvant.txt   ./data/cards.js kvnt
+node assigncateg.js ../categs/loko.txt    ./data/cards.js loko
+node assigncateg.js ../categs/mov.txt     ./data/cards.js mov
+node assigncateg.js ../categs/sent.txt    ./data/cards.js sent
+node assigncateg.js ../categs/sentum.txt  ./data/cards.js sntm
+node assigncateg.js ../categs/ujo.txt     ./data/cards.js ujo
+node assigncateg.js ../categs/ulo.txt     ./data/cards.js ulo
+node assigncateg.js ../categs/ver.txt     ./data/cards.js ver
+node assigncateg.js ../categs/vol.txt     ./data/cards.js vol
+node assigncateg.js ../categs/zorg.txt    ./data/cards.js zorg
+node assigncateg.js ../categs/categs_ReVo/AGR.txt     ./data/cards.js AGR
+node assigncateg.js ../categs/categs_ReVo/ANA.txt     ./data/cards.js ANA
+node assigncateg.js ../categs/categs_ReVo/ARKI.txt    ./data/cards.js ARKI
+node assigncateg.js ../categs/categs_ReVo/AST.txt     ./data/cards.js AST
+node assigncateg.js ../categs/categs_ReVo/BELA.txt    ./data/cards.js BELA
+node assigncateg.js ../categs/categs_ReVo/BIO.txt     ./data/cards.js BIO
+node assigncateg.js ../categs/categs_ReVo/BOT.txt     ./data/cards.js BOT
+node assigncateg.js ../categs/categs_ReVo/EKON.txt    ./data/cards.js EKON
+node assigncateg.js ../categs/categs_ReVo/FIL.txt     ./data/cards.js FIL
+node assigncateg.js ../categs/categs_ReVo/FIZ.txt     ./data/cards.js FIZ
+node assigncateg.js ../categs/categs_ReVo/FOT.txt     ./data/cards.js FOT
+node assigncateg.js ../categs/categs_ReVo/GEN.txt     ./data/cards.js GEN
+node assigncateg.js ../categs/categs_ReVo/GEOG.txt    ./data/cards.js GEOG
+node assigncateg.js ../categs/categs_ReVo/GEOL.txt    ./data/cards.js GEOL
+node assigncateg.js ../categs/categs_ReVo/HIS.txt     ./data/cards.js HIS
+node assigncateg.js ../categs/categs_ReVo/HOR.txt     ./data/cards.js HOR
+node assigncateg.js ../categs/categs_ReVo/JUR.txt     ./data/cards.js JUR
+node assigncateg.js ../categs/categs_ReVo/KAL.txt     ./data/cards.js KAL
+node assigncateg.js ../categs/categs_ReVo/KEM.txt     ./data/cards.js KEM
+node assigncateg.js ../categs/categs_ReVo/KOMP.txt    ./data/cards.js KOMP
+node assigncateg.js ../categs/categs_ReVo/KON.txt     ./data/cards.js KON
+node assigncateg.js ../categs/categs_ReVo/KUI.txt     ./data/cards.js KUI
+node assigncateg.js ../categs/categs_ReVo/LIN.txt     ./data/cards.js LIN
+node assigncateg.js ../categs/categs_ReVo/MAT.txt     ./data/cards.js MAT
+node assigncateg.js ../categs/categs_ReVo/MED.txt     ./data/cards.js MED
+node assigncateg.js ../categs/categs_ReVo/MET.txt     ./data/cards.js MET
+node assigncateg.js ../categs/categs_ReVo/MIL.txt     ./data/cards.js MIL
+node assigncateg.js ../categs/categs_ReVo/MUZ.txt     ./data/cards.js MUZ
+node assigncateg.js ../categs/categs_ReVo/PED.txt     ./data/cards.js PED
+node assigncateg.js ../categs/categs_ReVo/POL.txt     ./data/cards.js POL
+node assigncateg.js ../categs/categs_ReVo/POSX.txt    ./data/cards.js POSX
+node assigncateg.js ../categs/categs_ReVo/PSI.txt     ./data/cards.js PSI
+node assigncateg.js ../categs/categs_ReVo/REL.txt     ./data/cards.js REL
+node assigncateg.js ../categs/categs_ReVo/SPO.txt     ./data/cards.js SPO
+node assigncateg.js ../categs/categs_ReVo/TEKS.txt    ./data/cards.js TEKS
+node assigncateg.js ../categs/categs_ReVo/TEL.txt     ./data/cards.js TEL
+node assigncateg.js ../categs/categs_ReVo/TIP.txt     ./data/cards.js TIP
+node assigncateg.js ../categs/categs_ReVo/TRA.txt     ./data/cards.js TRA
+node assigncateg.js ../categs/categs_ReVo/ZOO.txt     ./data/cards.js ZOO
+
+echo Asignando frecuencias…
+node assignfreqs.js > ./data/temp
+rm ./data/cards.js
+mv ./data/temp ./data/cards.js
+
+echo Asignando traducciones…
+node assigntrads.js > ./data/temp
+rm ./data/cards.js
+mv ./data/temp ./data/cards.js

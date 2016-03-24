@@ -77,7 +77,12 @@ module.exports = function(app) {
       'https://fonts.gstatic.com'
     ],
     connectSrc: [ "'self'" ],
-    imgSrc: [ "'self'", 'https://bam.nr-data.net', 'data:' ]
+    imgSrc: [
+      "'self'",
+      'https://bam.nr-data.net',
+      'https://www.google-analytics.com',
+      'data:'
+    ]
   }
   if ('development' === env) {
     // Livereload

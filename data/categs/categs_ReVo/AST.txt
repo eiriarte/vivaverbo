@@ -1,0 +1,231 @@
+Aerpumpilo
+Aglo
+Akvisto
+Altairo
+Andromedo
+Aŭstrala Krono
+Baleno
+Berenica Hararo
+Boreala Krono
+Bovisto
+Bovo
+Cefeo
+Dejmo
+Delfeno
+Dioskuroj
+Drako
+Eŭropo
+Fiŝoj
+Fobo
+Forno
+Granda Ursino
+Gruo
+Hidro
+Horloĝo
+Indiano
+Jupitero
+Kankro
+Kaprikorno
+Karono
+Kasiopeo
+Kastoro
+Kolombo
+Korvo
+Kruco
+Lakta Vojo
+Leono
+Leporo
+Linko
+Liro
+Lupo
+Malgranda Ursino
+Marso
+Merkura
+Merkuro
+Mikroskopo
+Neptuno
+Oriono
+Pafisto
+Pegazo
+Perseo
+Pesilo
+Plejadoj
+Plutono
+Polukso
+Polusa Stelo
+Ptolemeo
+Saturno
+Serpentisto
+Serpento
+Siriuso
+Skorpio
+Tablomonto
+Tukano
+Urano
+Venusa
+Venuso
+Verŝisto
+Virgulino
+Virhidro
+aberacio
+ablacia aĝo
+ablacio
+aerolito
+afelio
+antarkta aŭroro
+apogeo
+apsido
+arkta aŭroro
+asteroido
+astro
+astrobiologio
+astrofiziko
+astrolabo
+astronomia aŭ geografia latitudo
+astronomiisto
+astronomio
+astronomo
+atmosfero
+azimuto
+aŭroro
+bolido
+duonjaro
+duonluno
+duonsfero
+efemeridoj
+eklipsi
+eklipso
+ekliptiko
+ekspansio
+ekstersunsistema
+ekvatorialo
+ekvinoksa punkto
+ekvinokso
+enorbitigi
+epakto
+falstelo
+fazo
+firmamento
+fotosfero
+galaksio
+geocentra
+geocentrismo
+geodezia latitudo
+gigatuno
+globa stelamaso
+graviti
+haloo
+heliocentra
+heliocentrismo
+heliostato
+hemisfero
+horizonto
+interferometrio
+jarduono
+jaro
+karto
+kepleraj leĝoj
+kiloparseko
+kilotuno
+kometo
+konstelacio
+kosmo
+kosmogenezo
+kosmogonio
+kosmografio
+kosmologio
+kosmoŝipo
+kripo
+kulmini
+kulmino
+kvazaro
+latitudo
+limbo
+longitudo
+lumhoro
+lumjaro
+lumminuto
+lumrapido
+lumsekundo
+lumstrio
+lumtago
+lunarko
+luno
+magnitudo
+malferma stelamaso
+malhela materio
+mapo
+marsa
+matenstelo
+mediĉaj satelitoj
+megatuno
+meteorito
+meteoro
+meteorŝtono
+monato
+nadiro
+nanplanedo
+nebulastro
+nebulozo
+nigra truo
+nordlumo
+novao
+novluno
+observatorio
+oktanto
+okulario
+orbiti
+orbito
+orbo
+parseko
+perigeo
+perihelio
+periodo
+planedo
+planedologo
+plenluno
+polusa aŭroro
+polusa lumo
+praeksplodo
+praknalo
+precesio
+pulsaro
+pulsostelo
+raditeleskopo
+rivoluo
+rotacii
+rotacio
+satelito
+solstico
+stelamaso
+stelaro
+stelfiguro
+stelo
+stelobservejo
+stelŝipo
+suncentra
+suncentrismo
+suno
+sunsistemo
+supernovao
+tagnoktegaleco
+teleskopo
+terano
+tercentra
+tercentrismo
+tero
+titano
+universo
+velaro
+vesperstelo
+zenito
+zodiako
+Ĉaristo
+Ĉashundoj
+ĉiela sfero
+ĉielo
+ĉielosfero
+Ĝemeloj
+Ĥarono
+Ĥirono
+Ŝafo

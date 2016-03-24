@@ -1,0 +1,19 @@
+<div layout="row" layout-fill flex>
+  <md-sidenav md-is-locked-open="$mdMedia('gt-md')" md-swipe-left="menu.hide()" class="md-sidenav-left md-whiteframe-z2 sidenav vv-anim" md-component-id="left">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h1>Vivaverbo</h1>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <md-progress-circular class="loading" ng-show="menu.categorias.length === 0" md-mode="indeterminate" md-diameter="24px"></md-progress-circular>
+      <md-list>
+        <md-list-item ng-click="menu.select(categoria);" ng-repeat="categoria in menu.categorias">
+          <md-icon md-font-library="material-icons">&#xE2C7;</md-icon>
+          <p>{{ categoria.titulo }}</p>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </md-sidenav>
+  <div layout="column" flex ng-transclude></div>
+</div>

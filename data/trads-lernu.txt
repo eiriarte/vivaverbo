@@ -1,0 +1,1263 @@
+blanka: blanco
+blua: azul
+bruna: marrón
+flava: amarillo
+griza: gris
+nigra: negro
+oranĝkolora: anaranjado
+purpura: púrpura
+rozkolora: rosado
+ruĝa: rojo
+verda: verde
+violkolora: violeta, morado
+aglo: águila
+alaŭdo: alondra
+azeno: asno, burro
+birdo: ave
+bovino: vaca
+ĉevalo: caballo
+delfeno: delfín
+drako: dragón
+elefanto: elefante
+falko: halcón
+fiŝo: pez
+gufo: buho real
+ĝirafo: girafa
+hundo: perro
+insekto: insecto
+kamelo: camello
+kapro: cabra
+kato: gato
+koko: gallo
+kolombo: paloma
+korniko: corneja
+kulo: mosquito
+kuniklo: conejo
+leono: león
+leporo: liebre
+lupo: lobo
+mefito: mofeta
+muso: ratón
+muŝo: mosca
+najtingalo: ruiseñor
+pasero: gorrión
+porko: cerdo
+rano: rana
+sciuro: ardilla
+serpento: serpiente
+simio: mono
+strigo: lechuza
+sturno: estornino
+ŝafo: oveja
+ŝarko: tiburón
+testudo: tortuga
+urso: oso
+virbovo: buey, toro
+vulpo: zorro
+zebro: cebra
+aŭto: automóvil
+aviadilo: avión
+biciklo: bicicleta
+boato: bote
+buso: ómnibus
+helikoptero: helicóptero
+kamiono: camión
+metroo: subterráneo
+motorbiciklo: motocicleta
+pramo: balsa
+ŝipo: barco, buque
+trajno: tren
+tramo: tranvía
+velboato: barco a vela
+alŝuti: subir (a la red)
+babilejo: chat
+babili: conversar
+dosiero: archivo
+dosierujo: carpeta
+ekrano: pantalla
+elsaluti: cerrar sesión
+elŝuti: bajar, descargar (de la red)
+ensaluti: iniciar sesión
+fenestro: ventana
+interreto: Internet
+kaŝnomo: seudónimo, sobrenombre, alias
+klaki: clickear
+komputilo: computadora, ordenador
+konektiĝi: conectar
+ligilo: enlace, vínculo
+Linukso: Linux
+Makintoŝo: Mac, Macintosh, Apple
+malkonektiĝi: desconectar
+paĝaro: páginas (de internet)
+pasvorto: contraseña
+retadreso: dirección electrónica
+reto: red
+retpaĝo: página (en la red)
+retpoŝto: correo electrónico
+retumi: navegar (por la red)
+retumilo: navegador
+servilo: servidor
+tujmesaĝilo: mensajero instantáneo
+Unikso: Unix
+uzantnomo: nombre de usuario
+vikio: wiki
+Vindozo: Windows
+bovlo: bol
+forko: tenedor
+glaso: vaso, copa
+kaserolo: cazuela, cacerola
+kirlilo: batidora
+kovrilo: tapa
+kulerego: cucharón
+kulero: cuchara
+manĝobastonetoj: palillos para comer (estilo oriental)
+pato: sartén
+poto: pote, olla
+spatelo: espátula
+taso: tasa
+telero: plato
+tranĉilo: cuchillo
+Afriko: África
+Ameriko: América
+Antarkto: Antártida
+Aŭstralio: Australia
+Azio: Asia
+Eŭropo: Europa
+Nordameriko: América del Norte, Norteamérica
+Oceanio: Oceanía
+Sudameriko: América del Sur, Sudamérica
+brumo: bruma
+ciklono: ciclón
+cunamo: Tsunami
+ĉielarko: arcoiris
+drizelo: llovizna
+griza: gris
+hajlo: granizo
+humida: húmeda
+klara: claro
+klimato: clima
+lumo: luz
+mallumo: obscuridad
+malvarma: frío
+nebulo: neblina
+neĝo: nieve
+nubo: nube
+pluvo: lluvia
+seka: seco,
+suno: sol
+ŝtormo: tormenta
+tajfuno: tifón
+temperaturo: temperatura
+turnventego: tornado
+varma: caliente, calor
+vento: viento
+vetero: tiempo, clima
+agresa: agresivo
+amo: amor
+feliĉa: feliz
+fiera: orgulloso
+gaja: alegre, contento
+ĝoja: gozoso, gozosa
+ĵaluza: celoso
+kolera: enojado, enojada
+malamo: odio
+malfeliĉa: infeliz
+malgaja: triste
+malĝoja: triste
+malsana: enfermo
+maltrankvila: intranquilo, intranquila, nervioso, nerviosa
+plori: llorar
+ravita: embelesado
+rideti: sonreír
+ridi: reír
+sana: sano
+trankvila: tranquilo, tranquila
+bankostumo: traje de baño
+bluzo: blusa
+boto: bota
+butono: botón
+ĉemizo: camiseta, camisa
+ĉapelo: sombrero
+ĉapo: birrete, gorro
+faldo: pliegue
+ganto: guante
+ĝinzo: jean
+jako: americana, chaqueta
+jupo: falda
+kalkanumo: tacón
+kalsono: calzoncillos
+kapuĉo: capucha
+kaskedo: gorro
+kolumo: cuello
+kravato: corbata
+krurumo: pernera
+laĉo: cordón
+mallonga pantalono: pantalones cortos
+mamzono: sujetador, sostén
+maniko: manga
+mantelo: manto, capa, abrigo
+manumo: puño de camisa
+pantalono: pantalón
+piĵamo: pijama
+plandumo: suela
+poŝo: bolsillo
+pulovero: pulóver
+robo: vestido
+sandalo: sandalia
+sportŝuo: zapatillas deportivas
+subĉemizo: camiseta
+subŝtofo: forro
+subvestaĵo: ropa interior
+supertuto: mono
+surtuto: abrigo, sobretodo
+svetero: suéter, jersei
+ŝtrumpeto: calcetín
+ŝtrumpkalsono: media pantalón
+ŝtrumpo: media
+ŝuo: zapato
+ŝalo: chal
+T-ĉemizo: camiseta, remera
+veŝto: chaleco
+zipo: cremallera
+zono: cinturón, cinto, pretina, zona
+aĉ: de mala procedencia
+ĉiesulino: prostituta, ramera
+damne: ¡maldición!
+diable: ¡diablos!
+fek': ¡mierda!
+fi: indecente
+fikiĝu: ¡jódete!
+fiulo: patán
+forfikiĝu: ¡desaparece!
+idioto: idiota
+iru inferen: ¡vete al infierno!
+kaco: guevo
+kreteno: cretino
+piĉo: concha
+putino: puta
+sentaŭgulo: inservible, inútil
+stultulo: estúpido
+aprilo: abril
+aŭgusto: agosto
+decembro: diciembre
+februaro: febrero
+januaro: enero
+julio: julio
+junio: junio
+majo: mayo
+marto: marzo
+novembro: noviembre
+oktobro: octubre
+septembro: septiembre
+afrikansa: afrikáans
+angla: inglés
+araba: árabe
+bosna: bosnio
+bulgara: búlgaro
+ĉeĥa: checo
+ĉina: chino
+dana: danés
+Esperanto: esperanto
+eŭska: vasco
+finna: finlandés
+franca: francés
+gaela: gallego
+germana: alemán
+greka: griego
+hebrea: hebreo
+hispana: español, castellano
+hungara: húngaro
+itala: italiano
+japana: japonés
+kartvela: georgiano
+kataluna: catalán
+kimra: galés
+korea: coreano
+kroata: croata
+litova: lituano
+manĉura: manchú
+norvega: noruego
+persa: persa, farsi
+pola: polaco
+portugala: portugués
+rusa: ruso
+serba: serbio
+slovaka: eslovaco
+slovena: esloveno
+svahila: swahili
+sveda: sueco
+tajvana: taiwanés
+turka: turco
+aveno: avena
+fagopiro: alforfón, trigo sarraceno
+hordeo: cebada
+maizo: maíz
+milio: mijo
+rizo: arroz
+sekalo: centeno
+sorgo: sorgo
+spelto: espelta, escanda
+tritiko: trigo
+Albanujo: Albania
+Andoro: Andorra
+Aŭstrujo: Austria
+Belgujo: Bélgica
+Belorusujo: Bielorusia
+Bosnujo kaj Hercegovino: Bosnia y Herzegovina
+Britujo: Inglaterra
+Bulgarujo: Bulgaria
+Ĉeĥujo: República Checa
+Danujo: Dinamarca
+Estonujo: Estonia
+Finnlando: Finlandia
+Francujo: Francia
+Germanujo: Alemania
+Grekujo: Grecia
+Hispanujo: España
+Hungarujo: Hungría
+Irlando: Irlanda
+Islando: Islandia
+Italujo: Italia
+Kroatujo: Croacia
+Latvujo: Latvia
+Liĥtenŝtejno: Lichestein
+Litovujo: Lituania
+Luksemburgo: Luxemburgo
+Makedonujo: Macedonia
+Malto: Malta
+Moldavujo: Moldavia
+Monako: Mónaco
+Montenegro: Montenegro
+Nederlando: Holanda (Países Bajos)
+Norvegujo: Noruega
+Pollando: Polonia
+Portugalujo: Portugal
+Rumanujo: Rumania
+Rusujo: Rusia
+San-Marino: San Marino
+Serbujo: Serbia, Montenegro (Yugoslavia)
+Slovakujo: Eslovaquia
+Slovenujo: Eslovenia
+Svedujo: Suecia
+Svislando: Suiza
+Turkujo: Turquía
+Ukrainujo: Ucrania
+Afganujo: Afganistán
+Armenujo: Armenia
+Azerbajĝano: Azerbayan
+Bangladeŝo: Bangladesh
+Barejno: Bahrain
+Birmo: Birmania (Myamar)
+Brunejo: Brunei Darussalam
+Butano: Bhután
+Ĉinio: China
+Filipinoj: Filipinas
+Hindujo: India
+Indonezio: Indonesia
+Irako: Irak
+Irano: Irán
+Israelo: Israel
+Japanujo: Japón
+Jemeno: Yemen
+Jordanio: Jordania
+Kamboĝo: Camboya
+Kartvelujo: Georgia
+Kataro: Qatar
+Kazaĥujo: Kazajstán
+Kipro: Chipre
+Kirgizujo: Kirguizistán
+Kuvajto: Kuwait
+Laoso: Laos
+Libano: Líbano
+Malajzio: Malasia
+Maldivoj: Maldivas
+Mongolujo: Mongolia
+Nepalo: Nepal
+Nord-Koreujo: Corea del Norte
+Omano: Omán
+Orienta Timoro: Timor Oriental
+Pakistano: Pakistán
+Rusujo: Rusia
+Saŭda Arabujo: Arabia Saudita
+Singapuro: Singapur
+Sirio: Siria
+Srilanko: Sri Lanka
+Sud-Koreujo: Corea del Sur
+Taĝikujo: Tayikistán
+Tajlando: Tailandia
+Turkmenujo: Turkestán
+Turkujo: Turquía
+Unuiĝintaj Arabaj Emirlandoj: Emiratos Árabes Unidos
+Uzbekujo: Uzbekistán
+Vjetnamujo: Vietnam
+Alando: Åland
+Anglio: Inglaterra
+Angvilo: Anguilla
+Antarkto: Antártica
+Arubo: Aruba
+Bermudoj: Bermudas
+Brita Hindoceana Teritorio: Territorios Británicos del Océano Índico
+Britaj Virgulininsuloj: Islas Vírgenes Británicas
+Buvetinsulo: Isla Bouvet
+Ĉeĉenio: Chechenia
+Falklandoj: Islas Malvinas
+Ferooj: Islas Feroe
+Franca Gvajanujo: Guayana Francesa
+Franca Polinezio: Polinesia Francesa
+Francaj Sudaj Teritorioj: Territorios Franceses sur
+Gronlando: Groenlandia
+Gvadelupo: Guadalupe
+Gvamo: Guam
+Ĝibraltaro: Gibraltar
+Herda kaj Makdonaldaj Insuloj: Islas Heard y McDonald
+Honkongo: Hong Kong
+Jan-Majen-insulo: Jan Mayen
+Kajmanaj Insuloj: Islas Caimanes
+Kimrio: Gales
+Kokosinsuloj: Islas Cocos
+Kosovo: Kosovo
+Kristnaskinsulo: Islas Christmas
+Kukinsuloj: Islas Cook
+Majoto: Mayotte
+Makao: Macao
+Martiniko: Martinica
+Melanezio: Melanesia
+Moncerato: Montserrat
+Nederlandaj Antiloj: Antillas Holandesas
+Niuo: Niue
+Nord-Marianoj: Islas Marianas del Norte
+Norfolkinsulo: Isla Norfolk
+Nov-Kaledonio: Nueva Caledonia
+Okcidenta Saharo: Sahara Occidental
+Palestino: Palestina
+Pitkarna Insularo: Isla Pitcarna
+Polinezio: Polinesia
+Porto-Riko: Puerto Rico
+Reunio: Reunión
+Sankta Petro kaj Mikelono: San Pedro y Miquelón
+Sankta-Heleno: Santa Elena
+Siberio: Siberia
+Skotlando: Escocia
+Spicbergo: Spitzbergen
+Sud-Georgio kaj Sud-Sandviĉinsuloj: Islas Georgias del Sur y Sandwich del Sur
+Svalbardo: Svalbard
+Tajvano: Taiwán
+Tibeto: Tíbet
+Tokelao: Tokelau
+Turkoj kaj Kajkoj: Islas Turcas y Caicos
+Usona Samoo: Samoa Americana
+Usonaj Virgulininsuloj: Islas Vírgenes de Estados Unidos
+Valiso kaj Futuno: Wallis y Futuna
+Vatikano: Vaticano
+bati: batir, pegar, golpear
+ĉifi: arrugar, estrujar, ajar
+doni: dar, donar
+faldi: doblar, plegar
+frapi: golpear, chocar, sorprender
+haki: cortar con acha, picar carne
+ĵeti: lanzar, echar
+meti: meter, poner, colocar
+premi: apretar
+preni: tomar, sostener
+puŝi: empujar
+rompi: romper
+skui: sacudir
+ŝiri: rasgar
+ŝovi: hacer deslizar o resbalar, meter
+ŝuti: echar, arrojar, verter (sólidos)
+tiri: tirar, halar
+tondi: cortar con tijera, esquilar
+tranĉi: cortar con cuchillo
+treni: arrastrar, remolcar
+verŝi: verter, derramar (líquidos)
+aso: as (naipe)
+atuto: palo de triunfo
+briĝo: bridge (baraja)
+fanto, bubo: sota (naipe)
+ĉevalo: caballo, caballero
+damoj, damludo: damas
+damo, reĝino: dama
+disdoni: repartir
+domeno: dominó
+emblemo: emblema
+fako: casilla (ajedrez, etc.)
+goo: go
+ĵokero: comodín
+ĵetkubo, kubo, ludkubo: dado
+karoo: diamante (naipe)
+kartludo: baraja
+kero: corazón (naipe)
+kuriero: alfil
+miksi: mezclar
+peono: peón
+piko: espadas, pique (naipe)
+poentaro: marcador, tabla de puntaje
+poento: punto
+reĝo: rey
+skrablo: Scrable
+ŝogio, japana ŝako: shogi
+ŝako: ajedrez
+ŝaktabulo: tablero de ajedrez
+tabulludo: juegos de tablero
+peco, disko: ficha
+trefo: trébol (naipe)
+triktrako: tablas reales (backgammon)
+turo: torre
+venko: victoria
+malvenko: derrota
+ajatolo: ayatola
+Alaho: Alá, Allah
+antikristo: anticristo
+ateismo: ateísmo
+bahaano: bajano
+bahaismo: bajaismo
+Biblio: Biblia
+budhano: budista
+budhismo: budismo
+Budho: Buda
+ĉefepiskopo: obispo mayor
+Daŭdeĝingo: Daodejing, Camino y Virtud, libro de Lao Tzu
+dio: dios
+eklezio: iglesia
+episkopo: obispo
+evangelio: evangelio
+hinduismo: induísmo
+inkvizicio: inquisición
+islamano: islamita
+islamo: islamismo
+Jehovo: Jeová
+Jesuo Kristo: Jesucristo, Jesús Cristo
+judismo: semitismo
+judo: judío
+katolika: católica/católico
+Konfuceo: Confucio
+Korano: Corán
+kristanismo: cristianismo
+kristano: cristiano
+lamao: Lama
+Laozio: Lao Tzu (creador del taoísmo)
+Muhamado, Mohamedo, Mahometo: Mahoma
+monaĥejo: convento
+Moseo: Moisés
+moskeo: mezquita
+ortodoksa: ortodosa/ortodoso
+paganismo: paganismo
+pagano: pagano
+papo: Papa
+paroĥejo: parroquia
+pastro: pastor
+preĝejo: iglesia
+preĝi: orar
+protestanta: protestante
+rabeno: rabino
+sinagogo: sinagoga
+ŝamanismo: chamanismo
+taoismo: taoísmo
+templo: templo
+Torao: Tora
+galaksio: galaxia
+Jupitero: Jupiter
+kometo: cometa
+Luno: Luna
+Marso: Marte
+Merkuro: Mercurio
+meteorito: meteorito
+meteoro: meteoro
+Neptuno: Neptuno
+Plutono: Plutón
+Saturno: Saturno
+stelo: estrella
+Suno: Sol
+Tero: Tierra
+Urano: Urano
+Venuso: Venus
+adicii: sumar, adición
+akso: eje
+akuta angulo: ángulo agudo
+algebro: álgebra
+angulo: ángulo
+areo: área
+aritmetiko: aritmética
+arko: arco
+aro: conjunto
+bildigo: trazado
+cirklo: círculo
+denominatoro: denominador
+derivaĵo: derivada
+diametro: diámetro
+diferenco: diferencia
+direkto: dirección
+disko: disco
+dividi: dividir
+dusekcanto: bisector
+ebeno: plano, llano
+egali: igualar, es igual
+eĝo: canto, borde
+ekvacio: ecuación
+elipso: elipse
+entjero: entero
+frakcio: fracción
+geometria serio: serie geométrica
+geometrio: geometría
+globo: globo
+grado: grado
+graduso: grado centesimal
+grafeo: gráfico
+grafikaĵo: gráfico/gráfica
+grupo: grupo
+harmona serio: serie harmónica
+imaginaro: número imaginario
+indukto: inducción
+integralo: integral
+intuicio: intuición, intuitivo
+kateto: cateto
+komunaĵo: intersección
+kontinua: continua
+koordinato: coordenada
+kunaĵo: unión
+kurbo: curva
+kvadrato: cuadrado
+kvarlatero: cuadrilátero
+kvociento: cociente
+latero: lado
+limeso: límite
+linio: línea
+logiko: lógica
+matrico: matriz
+mezortanto: mediatriz
+multobligi: multiplicar
+neracionalo: número irracional
+normalo: vector normal
+numeratoro: numerador
+numero: número
+obtuza angulo: ángulo obtuso
+orta: ortogonal
+ortanto: perpendicular
+paralela: paralela
+perimetro: perímetro
+potencigi: calcular la potencia
+potenco: potencia
+produto: producto
+pruvo: prueba, demostración
+punkto: punto
+racionalo: racional
+radiano: radian
+radikigato: radicando
+radikigi: calcular la raíz cuadrada
+radiko: raíz
+radiuso: radio
+redukti (frakcion): reducir (una fracción)
+reelo: número real
+rekta angulo: ángulo recto
+rekto: recta
+resto: resto
+rilato: relación
+seslatero: hexágono
+sfero: esfera
+solido: sólido
+spaco: espacio
+streĉita angulo: ángulo de 180 grados
+streko: segmento de línea
+strukturo: estructura
+subaro: subconjunto
+subtrahi: substraer
+sumo: suma
+ŝnuro: cuerda
+tanĝanto: tangente
+trapezo: trapecio
+triangulo: triángulo
+vektoro: vector
+vertico: vértice
+volumeno: volumen
+bifsteko: bife, bisté
+burgero: hamburguesa
+butero: manteca, mantequilla
+ĉokolado: chocolate
+deserto: postre
+dolĉaĵo: dulce, golosina
+farunaĵo: harina
+fromaĝo: queso
+frukto: fruta
+fungo: hongo
+kuko: torta, tarta
+legomaĵo: plato de vegetales
+legomo: legumbre
+margarino: margarina
+oleo: aceite
+ovo: huevo
+pano: pan
+pastaĵo: pasta
+patkuko, krespo: panqueca
+pico: pizza
+salato: ensalada
+sandviĉo: emparedado (sánguche)
+saŭco: salsa
+spico: especias
+supo: sopa
+ŝinko: jamón (crudo)
+tofuo: tofú
+torto: torta, tarta
+viando: carne
+amaskomunikiloj: medios de comunicación
+baloti: votar (en elecciones)
+civitaneco: ciudadanía
+civitano: ciudadano
+ĉefministro: primer ministro, jefe de gabinete
+federacio: federación
+intertrakti: negociar
+komunumo: comunidad
+lando: país
+minoritato: minoría
+nacio: nación
+novaĵoj: noticias
+parlamento: parlamento
+partio: partido
+popolo: pueblo, gente
+prezidanto: presidente
+prezidento: presidente
+regiono: región
+registaro: gobierno
+reĝo: rey
+ŝtato: Estado
+varbado: alistar, reclutar, conseguir clientes o miembros
+voĉdoni: votar (en general)
+barbo: barba
+brako: brazo
+brovo: ceja
+brusto: pecho
+buŝo: boca
+dento: diente
+dorso: espalda
+femuro: fémur
+fingro: dedo
+frunto: frente
+gambo: pierna
+genuo: rodilla
+haro: pelo
+hepato: higado
+kalkano: tobillo
+kapo: cabeza
+kokso: cadera
+kolo: cuello
+kruro: pierna
+kubuto: codo
+lango: lengua
+lipharo: bigote
+lipo: labio
+mamo: seno, pecho, teta
+mano: mano
+mentono: mentón
+muskolo: músculo
+nazo: nariz
+nuko: nuca
+okulo: ojo
+orelo: oreja
+osto: hueso
+peniso: pene
+piedfingro: dedo del pie
+piedo: pie
+postaĵo: traste
+stomako: estómago
+ŝultro: hombro
+trunko: tronco
+ungo: uña
+vagino: vagina
+vango: mejilla
+ventro: vientre, panza
+vizaĝo: cara
+aikido: aikido
+amerika futbalo: fútbol norteamericano
+arkopafo: arco y flecha
+bazopilko: béisbol
+biciklado: ciclismo, bicicleta
+boksado: box, pugilismo
+flugpilko, retpilko: mosca, de badmington
+gimnastiko: gimnasia
+glacihokeo: hockey sobre hielo
+golfo: golf
+hokeo: hockey
+ĵudo: yudo
+kanuado: canoa
+karateo: karate
+kegloludo: bolos
+korbopilko: básquetbol, balóncesto
+kurado: carrera, correr
+luktado: combate de lucha
+manpilko: pelota a mano
+naĝado: natación
+piedpilko, futbalo: pelota, balón; fútbol
+plankhokeo: hockey callejero
+remado: remo
+skiado: esquí
+tabloteniso: tenis de mesa, ping pong
+teniso: tenis
+altlernejo: universidad, facultad
+atestilo: certificado, documento con los grados obtenidos
+bazlernejo: escuela elemental
+ĉapitro: capítulo
+diplomiĝi: obtener un título, un diploma
+diplomo: diploma
+edukado: educación
+ekzameno: examen
+eraro: error
+ferio: vacaciones
+gimnazio: escuela secundaria
+hejmtasko: deberes, tarea (para hacer en casa)
+instruisto: instructor, maestro
+kajero: cuaderno
+suflorslipeto, kaŝslipeto: chuleta, machete, apunte oculto
+klaso: clase, aula
+krajono: lápiz
+kreto: tiza
+kurso: curso
+leciono: lección
+legi: leer
+lernanto: estudiante, alumno
+lernejestro: director de la escuela
+lerni: aprender
+libro: libro
+malsukcesi: fallar
+mezlernejo: escuela media, secundaria
+noto: nota
+plumo: pluma, lapicera
+prelego: conferencia, discurso
+samklasano: compañero/a de clase
+semestro: semestre
+skrapgumo: borrador, goma de borrar
+skribi: escribir
+skribilo: instrumento para escribir
+studento, universitata studanto: estudiante universitario
+studi: estudiar
+sukcesi: tener éxito, aprobar
+tablo: mesa
+tabulo: pizarrón, tablero, tabla
+testo: prueba, examen
+universitato: universidad
+viŝilo: borrador
+aŭdilo, aŭskultilo: auricular
+kapaŭdiloj, kapaŭskultiloj: cascos (auriculares)
+baterio: bateria
+bito: bit, (plural bits)
+bitoko: byte, octeto
+diskingo: unidad de disco
+disketo: disquete
+nurlega memoro: memoria ROM
+distingivo: resolución
+durdisko: disco duro
+DVD, lumdiskego: DVD
+ekrano: pantalla
+hardvaro: hardware
+interreto: internet
+KD-legilo, lumdiskingo: unidad de CD-ROM
+KD, kompaktdisko, lumdisko: disco compacto
+klavaro: teclado
+labormemoro: memoria RAM
+laŭtparolilo: altavoz, parlante, corneta
+mastrumsistemo: Sistema Operativo
+mikrofono: microfono
+muso: ratón
+papero: papel
+portebla komputilo: computadora portátil
+printi: imprimir
+printilo: impresora
+programaro, softvaro: Software
+programi: programar
+rapideco: velocidad
+retkamerao: cámara web, web cam
+retumi: navegar
+skani: escanear
+skanilo: escaner
+tajpi: teclear
+USB-poŝmemorilo: memoria USB
+akordo: acorde
+aldoviolono: viola
+arĉinstrumento: instrumentos que se ejecutan con un arco
+arĉo: arco
+basgitaro: contrabajo
+blovinstrumento: instrumento de viento
+drumo: batería de tambores
+etudo: estudio
+fluto: flauta
+fortepiano: fortepiano
+frapinstrumento: instrumento de percusión
+gitaro: guitarra
+harpi: tocar el arpa
+harpo: arpa
+ĥorestro: director del coro
+ĥoro: coro
+ĵazo: jazz
+kapelestro: director de la capilla
+klasika: clásico/a
+klavaro: teclado
+klaviceno: clavicémbalo
+klavo: llave, clave
+kontrabaso: kontrabajo
+kordinstrumento: instrumento de cuerdas
+kordo: cuerda
+ludi: tocar, ejecutar
+mandolino: mandolina
+metronomo: metrónomo
+muziki: tocar música, hacer música
+muzikinstrumento: instrumento musical
+noto: nota
+opero: opera
+orgeno: órgano
+orkestro: orquesta
+piano: piano
+popo: pop
+popola: popular
+ritmo: ritmo
+roko: rock
+sakfajfilo: gaita
+simfonio: sinfonía
+sonato: sonata
+takto: tacto
+tamburo: tambor
+trumpeto: trompeta
+valso: vals
+violonĉelo: violonchelo
+violono: violín
+dimanĉo: domingo
+ĵaŭdo: jueves
+lundo: lunes
+mardo: martes
+merkredo: miércoles
+sabato: sábado
+vendredo: viernes
+abrikoto: albaricoque
+akvomelono: sandía
+ananaso: piña
+avokado: aguacate, palta
+banano: plátano, banana
+citrono: limón
+ĉerizo: cereza
+daktilo: dátiles
+figo: higo
+frago: fresa
+frambo: frambuesa
+grioto: cereza ácida
+groso: grosella espinosa
+kivo: kiwi
+mandarino: mandarina
+melono: melón
+mirtelo: (variedad de) arándano
+olivo: aceituna
+oranĝo: naranja
+persiko: melocotón, durazno
+piro: pera
+pomo: manzana
+pruno: ciruela
+ribo: grosella
+rozbero: fruto de la rosa
+rubuso: zarzamora
+vinbero: uva
+ajlo: ajo
+beto: remolacha
+brasiko: col
+cepo: cebolla
+endivio: endivia
+fazeolo: judía, habichuela
+florbrasiko: coliflor
+karoto: zanahoria
+kikero: garbanzo
+kukumo: pepino
+kukurbo: calabaza
+lento: lenteja
+papriko, kapsiko: pimentón, pimiento
+pizo: guisante, poroto
+ruĝa beto: remolacha roja
+sabeliko: col rizada
+salato: ensalada
+sojo: soja
+spinaco: espinaca
+terpomo: patata, papa
+tomato: tomate
+verda/guŝ-fazeolo: habichuela en vaina, chaucha
+Alĝerio: Argelia
+Angolo: Angola
+Benino: Benín
+Bocvano: Botsuana
+Burkino: Burkina Faso
+Burundo: Burundi
+Centr-Afrika Respubliko: República Centroafricana
+Ĉado: Chad
+Ebur-Bordo (oficiale: Kotdivuaro): Costa de Marfil
+Egiptujo: Egipto
+Ekvatora Gvineo: Guinea Ecuatorial
+Eritreo: Eritrea
+Etiopujo: Etiopía
+Gabono: Gabón
+Gambio: Gambia
+Ganao: Ghana
+Gvineo: Guinea
+Gvineo Bisaŭa: Guinea-Bisáu
+Ĝibutio: Yibuti
+Kabo-Verdo: Cabo Verde
+Kameruno: Camerún
+Kenjo: Kenia
+Komoroj: Comoras; Comores
+Kongo Brazavila: República del Congo
+Kongo Kinŝasa: República Democrática del Congo
+Lesoto: Lesoto
+Liberio: Liberia
+Libio: Libia
+Madagaskaro: Madagascar
+Malavio: Malawi; Malaui
+Malio: Mali
+Maroko: Marruecos
+Maŭricio: Mauricio
+Maŭritanio: Mauritania
+Mozambiko: Mozambique
+Namibio: Namibia
+Niĝerio: Nigeria
+Niĝero: Níger
+Ruando: Ruanda
+Sao-Tomeo kaj Principeo: Santo Tomé y Príncipe
+Sejŝeloj: Seychelles
+Senegalo: Senegal
+Siera-Leono: Sierra Leona
+Somalujo: Somalia
+Sud-Afriko: Sudáfrica
+Sudano: Sudán
+Svazilando: Suazilandia
+Tanzanio: Tanzania
+Togo: Togo
+Tunizio: Túnez
+Ugando: Uganda
+Zambio: Zambia
+Zimbabvo: Zimbabue
+Antigvo-Barbudo: Antigua y Barbuda
+Argentino: Argentina
+Bahamoj: Bahamas
+Barbado: Barbados
+Belizo: Belice
+Bolivio: Bolivia
+Brazilo: Brasil
+Ĉilio: Chile
+Domingo: Santo Domingo
+Dominiko: Dominica
+Ekvadoro: Ecuador
+Grenado: Granada
+Gujano: Guayana
+Gvatemalo: Guatemala
+Haitio: Haiti
+Honduro: Honduras
+Jamajko: Jamaica
+Kanado: Canadá
+Kolombio: Colombia
+Kostariko: Costa Rica
+Kubo: Cuba
+Meksiko: México (Méjico)
+Nikaragvo: Nicaragua
+Panamo: Panamá
+Paragvajo: Paraguay
+Peruo: Perú
+Salvadoro: San Salvador
+Sankta-Kito kaj Neviso: San Cristóbal y Nevis
+Sankta-Lucio: Santa Lucía
+Sankta-Vincento kaj Grenadinoj: San Vicente Granadinas
+Surinamo: Suriname
+Trinidado kaj Tobago: Trinidad y Tobago
+Urugvajo: Uruguay
+Usono: Estados Unidos de América
+Venezuelo: Venezuela
+Aŭstralio: Australia
+Fiĝioj: Fiji
+Kiribato: Kiribati
+Marŝaloj: Islas Marshall
+Mikronezio: Micronesia
+Nauro: República de Nauro
+Nov-Zelando: Nueva Zelandia
+Palaŭo: Palau
+Papuo-Nov-Gvineo: Papúa Nueva Guinea
+Salomonoj: Islas Salomon
+Samoo: Samoa
+Tongo: Tonga
+Tuvalo: Tuvalu
+Vanuatuo: Vanuatu
+aktoro: actor
+akvarelo: acuarela
+bildo: figura
+desegnaĵo: dibujo
+desegni: dibujar
+eldoni: publicar
+fabelo: fábula
+filmo: película
+foti: fotografiar
+foto: foto
+komponisto: compositor
+literaturo: literatura
+muzikisto: músico
+muziko: música
+novelo: novela
+pejzaĝo: paisaje
+pentraĵo: pintura, cuadro
+pentri: pintar
+pentristo: pintor
+poemo: poema
+poeto: poeta
+rakonto: cuento
+romano: novela
+skulptaĵo: escultura
+teatraĵo: obra de teatro
+teatro: teatro
+verkisto: escritor
+abio: abeto
+acero: arce
+akacio: acacia, falsa mimosa
+alno: aliso
+betulo: abedul
+cembro: cembro, pino de los Alpes
+fago: haya
+frakseno: fresno
+jasmeno: jazmín
+junipero: enebro
+kanabo: cáñamo
+karpeno: carpe
+kaŝtano: castaña
+kotono: algodón
+kverko: roble
+lariko: alerce
+lino: lino
+papavo: adormidera
+piceo: picea, abeto rojo
+pinio: pino piñonero
+pino: pino
+platano: plátano
+poplo: álamo
+prunelo: endrina, bruño
+saliko: sauce
+siringo: lila
+sorpo: serbal, acerolo
+sunfloro: girasol
+taksuso: tejo
+tilio: tilo
+tremolo: álamo temblón
+ulmo: olmo
+amori: hacer el amor
+brakumi: abrazar
+drinki: beber hasta estar ebrio
+feki: defecar
+furzi: echar un gas
+gluti: tragar
+grati: rascar, rallar
+kapruĝiĝi: enrojecerse
+karesi: acariciar
+kisi: besar
+leki: chupar, lamber
+maĉi: masticar
+manĝi: comer
+mordi: morder
+palpebrumi: parpadear
+piedbati: patear
+pinĉi: pellizcar
+pisi: orinar
+plorsingulti: llorar con angustia
+rukti: eructar
+singulti: hipo
+ŝviti: transpirar
+terni: estornudar
+trinki: beber
+tusi: toser
+vomi: vomitar
+antikveco: antigüedad
+batalo: batalla
+ekzilo: exilio
+epoko: época
+faraono: faraón
+husaro: húsar
+ĥano: khan
+imperiestro: emperador
+imperio: imperio
+kastelo: castillo
+kavaliro: caballero
+kronologio: cronología
+mezepoko: edad media
+mikado: mikado
+milito: guerra
+moderno: (algo) moderno
+palaco: palacio
+princo: príncipe
+reĝo: rey
+revolucio: revolución
+ribelo: rebelación
+tribo: tribu
+adjektivo: adjetivo
+adverbo: adverbio
+akcento: acento, énfasis en una sílaba
+akĉento: acento, manera de hablar
+alfabeto: alfabeto
+alineo: párrafo
+ĉeffrazo: claúsula principal
+deklinacii: declinar
+dialekto: dialecto
+diftongo: diptongo
+elparolo: pronunciación
+epiteto: epíteto
+fleksii: de inflexión
+fonemo: fonema
+frazo: frase
+frazparto: segmento, parte de una oración o frase
+interjekcio: interjección
+komplemento: complemento
+konjugacii: conjugar
+konjunkcio: conjunción
+konsonanto: una consonante
+kopulo: cópula
+lingvo: idioma, lengua
+litero: letra
+morfologio: morfologia
+numeralo: un número
+objekto: objeto
+partikulo: partícula
+postpozicio: preposición al final de la oración
+predikato: predicado
+prepozicio: preposición
+pronomo: pronombre
+propra nomo: nombre propio
+sintakso: sintaxis
+skribo: un escrito
+slango: jerga, idioma de la calle
+subfrazo: claúsula subordinada
+subjekto: sujeto
+substantivo: substantivo
+teksto: texto
+verbo: verbo
+vokalo: una vocal
+vortospeco: clases de palabras (gramática)
+avino: abuela
+avo: abuelo
+bofratino: cuñada
+bofrato: cuñado
+bogepatroj: suegro y suegra
+bopatrino: suegra
+bopatro: suegro
+edzino: esposa
+edzo: esposo
+familiano: miembro de la familia
+fianĉino: novia; prometida
+fianĉo: novio; prometido
+filino: hija
+filo: hijo
+fratino: hermana
+frato: hermano
+geavoj: los abuelos (abuelo y abuela)
+gefiloj: hijos
+gefratoj: hermanos
+geonkloj: tíos (hombres y mujeres)
+gepatroj: los padres (padre y madre)
+kuzino: prima
+kuzo: primo
+nepino: nieta
+nepo: nieto
+nevino: sobrina
+nevo: sobrino
+onklino: tía
+onklo: tío
+parencoj: parientes
+patrino: madre
+patro: padre
+praavino: bisabuela
+praavo: bisabuelo
+vidvino: viuda
+vidvo: viudo

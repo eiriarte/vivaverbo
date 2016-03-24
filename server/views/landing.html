@@ -1,50 +1,59 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
   <head>
     <%- newrelic.getBrowserTimingHeader(); %>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <base href="/">
-    <title>vivaverbo</title>
-    <meta name="description" content="">
+    <title>Vivaverbo: todo el vocabulario del esperanto.</title>
+    <meta name="description" content="¿Aprendiendo esperanto? 'Mojose!' Amplía y afianza tu léxico con Vivaverbo.">
     <meta name="viewport" content="width=device-width">
     <!-- build:css({.tmp,client}) app/landing.css -->
     <link rel="stylesheet" href="app/landing.css">
       <!-- injector:css -->
       <!-- endinjector -->
     <!-- endbuild -->
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   </head>
   <body>
-    <!--[if lt IE 9]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">Estás usando un navegador <strong>obsoleto</strong>. Por favor, <a href="http://browsehappy.com/">actualiza tu navegador</a> para una experiencia mejor y más segura.</p>
     <![endif]-->
 
-    <div id="login">
-      <h1>vivaverbo</h1>
-      <form action="/auth/local">
-        <input type="email" id="email" name="email" placeholder="<%= t('login.email') %>" />
-        <input type="password" name="password" placeholder="<%= t('login.password') %>" />
-        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-        <div class="error">
-          <p class="unauthorized"><%= t('login.unauthorizedError') %></p>
-          <p class="unexpected"><%= t('login.unexpectedError') %></p>
-        </div>
-        <input type="submit" value="<%= t('login.signIn') %>" />
-      </form>
-    </div>
-
+    <header class="toolbar">
+      <h1 class="logo "><span class="screen-reader-text">Vivaverbo</span></h1>
+      <a class="login" href="/login"><span class="movil">Entrar</span> <span class="no-movil">Iniciar sesión</span></a>
+    </header>
+    <main role="main">
+      <section class="pitch">
+        <h2 class="pitch-title">¿Aprendiendo esperanto?</h2>
+        <p class="pitch-mojosa">Mojose!</p>
+        <p class="pitch-text">Afina tu <strong>esperanto</strong>. Amplía y afianza tu <strong>léxico</strong> con Vivaverbo.</p>
+      </section>
+      <section class="register">
+        <button class="btn btn-facebook">Continuar con Facebook</button>
+        <div class="separator">o con tu correo electrónico:</div>
+        <form action="/api/users" method="post">
+          <input class="textfield field-name" type="text" id="name" name="name" placeholder="Nombre" />
+          <input class="textfield field-email" type="email" id="email" name="email" placeholder="Email" />
+          <input class="textfield field-hashedPassword" type="password" name="password" placeholder="Contraseña" />
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <div class="error">
+            <p class="unexpected">Fek! Ha ocurrido un error. ¿Se ha caído la red?</p>
+            <p class="error-message"></p>
+            <p class="name">Hmm… ¿Cómo debo llamarte?</p>
+            <p class="email">Necesito un email válido.</p>
+            <p class="hashedPassword">Por favor, inventa una contraseña (mínimo 6 caracteres).</p>
+          </div>
+          <button type="submit" class="btn btn-cta">Regístrate gratis</button>
+        </form>
+      </section>
+    </main>
     <% if (analytics) { %>
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', '<%= analytics %>');
+        ga('create', '<%= analytics %>', 'auto');
         ga('send', 'pageview');
       </script>
     <% } else { %>
@@ -52,9 +61,8 @@
         var ga = function() {};
       </script>
     <% } %>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- build:js(.tmp) app/landing.js -->
+      <script src="bower_components/zepto/zepto.js"></script>
       <script src="components/vendor/js.cookie.js"></script>
       <script src="app/landing.js"></script>
     <!-- endbuild -->
