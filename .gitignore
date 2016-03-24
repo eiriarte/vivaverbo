@@ -12,3 +12,5 @@ _db
 *.mo
 _misc
 newrelic.js
+data/tools/terminal
+data/tools/tekstaro
