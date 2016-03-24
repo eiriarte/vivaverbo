@@ -11,6 +11,7 @@ Zepto(function($){
   });
   $form.on('submit', function (event) {
     event.preventDefault();
+    event.stopImmediatePropagation();
     $btnSubmit.text('Procesando…').attr('disabled', 'disabled');
     $.ajax({
       type: 'POST',
@@ -47,5 +48,6 @@ Zepto(function($){
         }
       }
     });
+    return false;
   });
 });

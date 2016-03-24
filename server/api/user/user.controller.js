@@ -27,7 +27,7 @@ exports.update = function (req, res) {
       return res.json(user);
     }
   }).then(null, function(err) {
-    winston.error('user.controller::update() Error en req.user.save');
+    winston.error('user.controller::update() Error en req.user.save: %s --- %j', err.message, err, {});
     res.status(500).json({ message: 'Error updating the user state' });
   });
 };
