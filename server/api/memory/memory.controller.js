@@ -23,7 +23,7 @@ exports.index = function(req, res) {
     winston.debug('memory.controller::index() Devolviendo memories');
     return res.status(200).json(memories);
   }).then(null, function(err) {
-    winston.error('memory.controller::index() Error en Memory.find()');
+    winston.error('memory.controller::index() Error en Memory.find(): %s --- %j', err.message, err, {});
     return res.status(500).send({ message: 'Error finding memories' });
   });
 };
