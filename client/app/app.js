@@ -4,6 +4,7 @@ angular.module('vivaverboApp', [
   'ngCookies',
   'ngResource',
   'ngMessages',
+  'ngSanitize',
   'ngMaterial',
   'ui.router',
   'ngStorage',

@@ -34,6 +34,14 @@ md-divider.social {
   margin: 0 0 16px 0;
 }
 
+/**
+* Ancho máximo del diálogo de info de categoría
+*/
+
+md-dialog .md-dialog-content {
+  max-width: 336px;
+}
+
 // Component styles are injected through grunt
 // injector
 @import '_logoapp.scss';

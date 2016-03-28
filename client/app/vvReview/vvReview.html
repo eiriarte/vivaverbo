@@ -1,5 +1,5 @@
 <vv-sidenav layout-fill>
-  <vv-toolbar vv-title="{{ repaso.tituloCategoria }}"></vv-toolbar>
+  <vv-toolbar vv-title="{{ repaso.tituloCategoria }}" vv-info="{{ repaso.descCategoria }}"></vv-toolbar>
   <md-content class="repaso" flex>
     <div layout layout-align="center" class="loading md-subhead" ng-show="repaso.carga === 'cargando'" translate>Cargando…</div>
     <div layout layout-align="center" class="num-tarjeta md-subhead" ng-hide="repaso.tarjetas.length === 0 || repaso.finalizado">

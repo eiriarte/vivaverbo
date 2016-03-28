@@ -16,6 +16,7 @@ angular.module('vivaverboApp')
   .controller('ReviewController', function(reviewService, categories) {
     categories.findOne({ _id: this.categoria }).then((categoria) => {
       this.tituloCategoria = categoria && categoria.titulo;
+      this.descCategoria = categoria && categoria.descripcion;
     });
     this.tarjetas = reviewService.tarjetasRepaso;
     this.estado = { girada: false };
