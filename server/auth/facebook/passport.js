@@ -1,3 +1,4 @@
+var winston = require('winston');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
@@ -30,6 +31,7 @@ exports.setup = function (User, config) {
           });
           user.save(function(err) {
             if (err) return done(err);
+            winston.info('Registrado nuevo usuario vía Facebook…');
             done(err, user);
           });
         } else {

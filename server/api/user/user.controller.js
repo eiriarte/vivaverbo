@@ -54,6 +54,7 @@ exports.create = function (req, res, next) {
     if (err) return validationError(res, err);
     var token = jwt.sign({_id: user._id }, config.secrets.session,
       { expiresIn: config.tokenDuration.session });
+    winston.info('Registrado nuevo usuario con email/pwd…');
     res.json({ token: token });
   });
 };
