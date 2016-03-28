@@ -1,4 +1,12 @@
 .sidenav {
+  .logo {
+    color: transparent;
+    background-image: url($logo-data-uri);
+    background-size: 100%;
+    width: 128px;
+    height: 20px;
+    background-repeat: no-repeat;
+  }
   .loading {
     left: 32%;
   }

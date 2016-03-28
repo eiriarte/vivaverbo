@@ -11,7 +11,8 @@ angular.module('vivaverboApp', [
   'lokijs'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider,
-        $httpProvider, $logProvider, $animateProvider, $localStorageProvider) {
+        $httpProvider, $logProvider, $animateProvider, $localStorageProvider,
+        $mdThemingProvider) {
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
@@ -20,7 +21,10 @@ angular.module('vivaverboApp', [
     $localStorageProvider.setKeyPrefix('vv_');
     if (!$localStorageProvider.get('syncDates')) {
       $localStorageProvider.set('syncDates', { 'memory': 0 });
-    }
+    };
+    $mdThemingProvider.theme('default')
+      .primaryPalette('green')
+      .accentPalette('red');
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookies, $window) {
