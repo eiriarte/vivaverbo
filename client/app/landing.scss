@@ -13,7 +13,7 @@
 
 .toolbar .login {
   float: right;
-  color: transparentize($color-txt, 0.25);
+  color: $color-txt-oscuro;
   background-color: rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 2px;
@@ -22,9 +22,19 @@
   font-weight: 500;
 }
 
+main {
+  display: block;
+  background-image: url(../assets/images/fonfoto.jpg);  
+  background-position: 50%;
+  background-size: cover;
+}
+
 .pitch {
   text-align: center;
-  padding: 1em;
+  padding: 2em;
+  @media screen and (max-width: $ancho-movil) {
+    padding: 1em 2em 0;
+  }
   .pitch-title, .pitch-mojosa, .pitch-text {
     font-size: inherit;
     font-weight: normal;
@@ -46,7 +56,39 @@
 .register {
   text-align: center;
   width: 80%;
+  max-width: 320px;
   margin: 0 auto;
-
+  padding: 32px;
+  @media screen and (max-width: $ancho-movil) {
+    width: 100%;
+  }
 }
 
+.benefits {
+  color: $color-txt-oscuro;
+  display: table-row;
+  padding-top: 1.5em;
+  section {
+    display: table-cell;
+    text-align: center;
+    padding: 2.5em 32px 16px;
+    h2 {
+      font-weight: bold;
+      margin: 0 0 0.5em 0;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  @media screen and (max-width: $ancho-tablet) {
+    display: block;
+    section {
+      display: block;
+    }
+  }
+  @media screen and (max-width: $ancho-xxl) {
+    section {
+      padding: 2.5em 16px 16px;
+    }
+  }
+}

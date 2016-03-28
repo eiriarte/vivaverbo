@@ -1,10 +1,17 @@
 $font: 'Helvetica Neue', Helvetica, arial, sans-serif;
+
 $color-link: rgba(244, 64, 52, 0.9);
-$color-bg: #daecc6;
-$color-txt: #333;
+$color-bg: rgba(255,255,255,0.85);
+$color-txt: white;
+$color-txt-oscuro: #424242;
 $color-fb: #435f9c;
 $color-fb-border: #293e69;
 $color-register: #ab171e;
 $color-reg-border: #820a0f;
 $color-btn: white;
+$color-dlg: #E5E5E5;
 $color-error: red;
+
+$ancho-movil: 400px;
+$ancho-tablet: 600px;
+$ancho-xxl: 1150px;

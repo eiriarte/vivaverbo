@@ -1,11 +1,37 @@
 @import 'base.scss';
 
-main {
+@media screen and (max-width: $ancho-movil) {
+  body {
+    background: $color-dlg;
+  }
+}
+
+.toolbar.login {
+  text-align: center;
+  .logo {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+main.login {
   text-align: center;
   width: 80%;
+  max-width: 320px;
   margin: 0 auto;
-
+  padding: 32px;
   transition: opacity 1s;
+  background: #E5E5E5;
+  border-radius: 6px;
+  color: #333;
+  box-shadow: 0px 1px 6px 1px gray;
+  @media screen and (max-width: $ancho-movil) {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0px;
+    box-shadow: none;
+  }
 
   .error > .unauthorized, .unexpected {
     display: none;

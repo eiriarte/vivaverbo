@@ -1,5 +1,5 @@
 <vv-sidenav layout-fill>
-  <vv-toolbar vv-title="{{ repaso.tituloCategoria }}"></vv-toolbar>
+  <vv-toolbar vv-title="{{ repaso.tituloCategoria }}" vv-info="{{ repaso.descCategoria }}"></vv-toolbar>
   <md-content class="repaso" flex>
     <div layout layout-align="center" class="loading md-subhead" ng-show="repaso.carga === 'cargando'" translate>Cargando…</div>
     <div layout layout-align="center" class="num-tarjeta md-subhead" ng-hide="repaso.tarjetas.length === 0 || repaso.finalizado">
@@ -16,9 +16,9 @@
       <vv-card vv-girada="repaso.estado.girada" vv-tarjeta="tarjeta" vv-onclose="repaso.borrar()" ng-repeat="tarjeta in repaso.tarjetas track by tarjeta._id" ng-show="$index === repaso.tarjetaActual"></vv-card>
     </div>
     <div ng-show="repaso.estado.girada" layout layout-padding layout-align="center center">
-      <md-button class="md-raised md-warn md-hue-2" ng-click="repaso.marcar(0)">¡Mal!</md-button>
-      <md-button class="md-raised md-accent md-hue-3" ng-click="repaso.marcar(0.5)">Regular</md-button>
-      <md-button class="md-raised md-primary" ng-click="repaso.marcar(1)">Perfecto</md-button>
+      <md-button class="md-raised md-primary md-hue-3" ng-click="repaso.marcar(0)">¡Mal!</md-button>
+      <md-button class="md-raised md-primary md-hue-1" ng-click="repaso.marcar(0.5)">Regular</md-button>
+      <md-button class="md-raised md-primary md-hue-2" ng-click="repaso.marcar(1)">Perfecto</md-button>
     </div>
   </md-content>
 </vv-sidenav>
