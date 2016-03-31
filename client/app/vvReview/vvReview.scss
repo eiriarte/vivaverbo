@@ -84,3 +84,20 @@ $altura-baja: 528px;
     }
   }
 }
+
+.onboard {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: table;
+  border-spacing: 16px 24px;
+
+  li {
+    display: table-row;
+
+    .cell {
+      display: table-cell;
+      vertical-align: top;
+    }
+  }
+}
