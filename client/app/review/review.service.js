@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('vivaverboApp')
-  .factory('reviewService', function ($q, $log, $mdToast, gettextCatalog, Auth,
-        db, cards, memory, dateTime, lodash) {
+  .factory('reviewService', function ($q, $log, $mdToast, $mdDialog, $localStorage,
+        gettextCatalog, Auth, db, cards, memory, dateTime, lodash) {
     const user = Auth.getCurrentUser();
     const tarjetasRepaso = [];
     let currentCategory;
@@ -62,8 +62,16 @@ angular.module('vivaverboApp')
           review.finalizado = true;
         }
 
+        onboarding(2);
+
         // Persistimos los cambios en el repaso
         db.updateUser(user);
+      },
+      /**
+       * La tarjeta ha sido girada: ¿Mostrar el paso del onboarding?
+       */
+      tarjetaGirada() {
+        onboarding(1);
       },
       /**
        * Obtiene un nuevo repaso para hoy en la categoría indicada
@@ -96,10 +104,50 @@ angular.module('vivaverboApp')
             estadoCarga = 0 === review.tarjetas.length ? 'agotado' : 'cargado';
           });
         }
+
+        onboarding(0);
       }
     };
 
     // Funciones privadas:
+
+    /**
+     * Muestra el correspondiente paso del onboarding, si no se ha mostrado ya
+     * @param {number} step - paso del onboarding
+     */
+    function onboarding(step) {
+      const review = getReview(currentCategory);
+      const restantes = review.totalTarjetas - review.totalAprendidas;
+      const help = [
+        {
+          item: 'msgHelpClick',
+          title: 'Mira esta palabra',
+          content: '<p>¿Recuerdas cómo se dice en esperanto?</p><p>Haz clic en la tarjeta y mira la respuesta.</p>',
+          action: 'Continuar'
+        },
+        {
+          item: 'msgHelpChoose',
+          title: '¿Cómo de bien la recordabas?',
+          content: '</p>Responde con <i>¡Mal!</i>, <i>Regular</i> o <i>Perfecto</i>.</p>',
+          action: 'Continuar'
+        },
+        {
+          item: 'msgHelpEnd',
+          title: 'Últimos consejos',
+          content: '<p>Te quedan ' + restantes + ' tarjetas por repasar hoy en esta categoría.</p><ul class="onboard"><li><i class="cell material-icons">&#xE5D2;</i><span class="cell">Elige la categoría a repasar en el menú de la izquierda.</span></li><li><i class="cell material-icons">&#xE88E;</i><span class="cell">Información sobre la categoría seleccionada.</span></li><li><i class="cell material-icons">&#xE5D4;</i><span class="cell">Enviar tu opinión / Cerrar tu sesión.</span></li></ul>',
+          action: 'Cerrar'
+        }
+      ];
+      if (!$localStorage[help[step].item]) {
+        $mdDialog.show(
+          $mdDialog.alert()
+          .clickOutsideToClose(true)
+          .title(help[step].title)
+          .htmlContent(help[step].content)
+          .ok(help[step].action));
+        $localStorage[help[step].item] = true;
+      }
+    }
 
     /**
      * Devuelve el repaso actual del usuario para la categoría indicada,

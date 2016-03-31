@@ -11,13 +11,14 @@ angular.module('vivaverboApp')
         'card': '=vvTarjeta',
         'onClose': '&vvOnclose'
       },
-      controller: function () {
+      controller: function (reviewService) {
         this.eliminar = ($event) => {
           $event.stopPropagation();
           this.onClose();
         };
         this.girar = () => {
           this.girada = true;
+          reviewService.tarjetaGirada();
         };
       },
       controllerAs: 'tarjeta'

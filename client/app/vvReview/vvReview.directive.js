@@ -31,7 +31,9 @@ angular.module('vivaverboApp')
     });
 
     // "Gira" la tarjeta para ver la respuesta
-    this.girar = () => this.estado.girada = true;
+    this.girar = () => {
+      this.estado.girada = true;
+    };
 
     // Marca el grado de recuerdo de la respuesta: 0, 0.5, 1
     this.marcar = (recuerdo) => {
