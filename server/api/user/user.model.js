@@ -30,6 +30,10 @@ var UserSchema = new Schema({
   role: { type: String, default: 'user' },
   hashedPassword: String,
   salt: String,
+  forgot: [{
+    token: String,
+    date: Date
+  }],
   provider: String,
   facebook: {},
   google: {},

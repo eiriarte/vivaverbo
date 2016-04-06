@@ -3,11 +3,11 @@
   <head>
     <%- newrelic.getBrowserTimingHeader(); %>
     <meta charset="utf-8">
-    <title>Vivaverbo: Inicio de sesión</title>
-    <meta name="description" content="¿Aprendiendo esperanto? 'Mojose!' Amplía y afianza tu léxico con Vivaverbo.">
+    <title>Nueva contraseña</title>
+    <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width">
     <!-- build:css({.tmp,client}) app/login.css -->
-    <link rel="stylesheet" href="app/login.css">
+    <link rel="stylesheet" href="/app/login.css">
       <!-- injector:css -->
       <!-- endinjector -->
     <!-- endbuild -->
@@ -34,20 +34,23 @@
     </header>
 
     <main class="login">
-      <button class="btn btn-facebook">Iniciar con Facebook</button>
-      <div class="separator">o con tu correo electrónico:</div>
-      <form action="/auth/local">
-        <input class="textfield" type="email" id="email" name="email" placeholder="Email" />
+      <form action="/api/users/recover/password" method="post">
+        <h2>Crea tu nueva contraseña</h2>
         <input class="textfield" type="password" name="password" placeholder="Contraseña" />
+        <input type="hidden" name="token" value="<%= token %>">
+        <input type="hidden" name="email" value="<%= email %>">
+        <input type="hidden" name="ts" value="<%= ts %>">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <div class="error">
-          <p class="unauthorized">El email y/o contraseña no son correctos.</p>
+          <p class="unauthorized">El enlace que has seguido no está correcto. ¿Quizá ha sido al pegarlo en el navegador?</p>
+          <p class="invalid">El enlace que has seguido ya no es válido. Por favor, <a href="/login/forgot">solicita un nuevo enlace</a>.</p>
           <p class="unexpected">Fek! Ha ocurrido un error. ¿Se ha caído la red?</p>
         </div>
-        <button type="submit" class="btn btn-cta">Iniciar sesión</button>
+        <div class="success">
+          <p>¡Todo correcto! Ya puedes <a href="/login">iniciar sesión</a> con tu nueva contraseña.</p>
+        </div>
+        <button type="submit" class="btn btn-cta">Enviar</button>
       </form>
-      <p class="register"><a href="/login/forgot">Olvidé mi contraseña</a>.</p>
-      <p class="register">¿No tienes cuenta? <a href="/">Regístrate gratis</a>.</p>
     </main>
 
     <% if (analytics) { %>
@@ -66,10 +69,9 @@
       </script>
     <% } %>
 
-    <!-- build:js({client,node_modules,.tmp}) app/login.js -->
-      <script src="bower_components/zepto/zepto.js"></script>
-      <script src="components/vendor/js.cookie.js"></script>
-      <script src="app/login.js"></script>
+    <!-- build:js({client,node_modules,.tmp}) app/nova.js -->
+      <script src="/bower_components/zepto/zepto.js"></script>
+      <script src="/app/nova.js"></script>
     <!-- endbuild -->
   </body>
 </html>

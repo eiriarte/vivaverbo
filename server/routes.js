@@ -44,20 +44,15 @@ module.exports = function(app, config) {
   app.use('/api/users', require('./api/user'));
 
   app.use('/auth', require('./auth'));
-
-  app.route('/login').get(function(req, res) {
-    var locals = {};
-    locals.csrfToken = req.csrfToken ? req.csrfToken() : '';
-    locals.analytics = config.analytics;
-    locals.debugON = config.debug;
-    locals.newrelic = newrelic ||
-      { getBrowserTimingHeader: function() { return ''; } };
-    res.header('X-UA-Compatible', 'IE=Edge');
-    res.render('login', locals, function (err, html) {
-      if (err) { errors[500](err, req, res); }
-      res.send(html);
-    });
-  });
+  app.use('/login', auth.getUser(), function(req, res, next) {
+    if (req.user) {
+      winston.debug('/login: Usuario registrado. Redirigiendo a la app…');
+      res.redirect(302, process.env.DOMAIN);
+    } else {
+      winston.debug('/login: Usuario anónimo. Sirviendo…');
+      next();
+    }
+  }, require('./login'));
 
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')

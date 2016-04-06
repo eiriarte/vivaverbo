@@ -33,11 +33,29 @@ main.login {
     box-shadow: none;
   }
 
-  .error > .unauthorized, .unexpected {
+  h2 {
+    font-size: 1.2em;
+  }
+
+  .error > .unauthorized, .invalid, .unexpected {
     display: none;
     margin-bottom: 1em;
     text-align: center;
     color: $color-error;
+  }
+
+  .success {
+    display: none;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: hsl(124, 38%, 41%);
+    background-color: #FFF899;
+    border: 1px solid #d4ac3a;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    p {
+      margin: 0;
+    }
   }
 
   .register {
