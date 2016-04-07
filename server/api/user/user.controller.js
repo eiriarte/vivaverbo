@@ -1,12 +1,16 @@
 'use strict';
 
-var User = require('./user.model');
+var crypto = require('crypto');
 var passport = require('passport');
-var config = require('../../config/environment');
+var _ = require('lodash');
 var jwt = require('jsonwebtoken');
 var winston = require('winston');
+var User = require('./user.model');
+var config = require('../../config/environment');
+var mail = require('../../components/mail/mail.js');
 
 var validationError = function(res, err) {
+  winston.error('user.controller::validationError: %s --- %j', err.message, err, {});
   return res.status(422).json(err);
 };
 
@@ -59,6 +63,90 @@ exports.create = function (req, res, next) {
   });
 };
 
+/**
+ * Contraseña olvidada:
+ * Añade un nuevo token de recuperación de contraseña y lo envía por email
+ */
+exports.recover = function (req, res, next) {
+  winston.debug('user.controller::recover() Añadiendo token de recuperación…');
+
+  var email = String(req.body.email).trim();
+
+  User.findOne({ email: email }, function (err, user) {
+    if (err) return next(err);
+    if (!user) {
+      return res.status(404).json({ message: 'Usuario desconocido' });
+    }
+
+    var timestamp = Date.now();
+    var hmac = crypto.createHmac('sha256', config.secrets.session);
+    hmac.update(timestamp + email);
+    var token = hmac.digest('base64');
+    var url = process.env.DOMAIN + '/login/new';
+    url += '?token=' + encodeURIComponent(token);
+    url += '&email=' + encodeURIComponent(email);
+    url += '&ts=' + timestamp;
+
+    user.forgot.push({ token: token, date: new Date(timestamp) });
+    user.save(function(err) {
+      if (err) return validationError(res, err);
+      winston.debug('user.controller::recover() save() completado. Enviando email con url: %s', url);
+      mail.sendRecoverEmail(email, url, res, function(err, json) {
+        if (err) {
+          winston.error('user.controller::recover() Error enviando email %s --- %j', err.message, err, {});
+          return res.status(500).json({ message: 'Error enviando email' });
+        }
+        winston.debug('user.controller::recover() email enviado a %s. Resultado: %s', email, json.message);
+        res.json({ message: 'OK' });
+      });
+    });
+  });
+};
+
+
+/**
+ * Contraseña olvidada:
+ * Sustituye la password actual por la nueva
+ */
+exports.recoverPassword = function (req, res, next) {
+  winston.debug('user.controller::recoverPassword() Modificando contraseña…');
+
+  var email = decodeURIComponent(String(req.body.email).trim());
+  var userToken = decodeURIComponent(String(req.body.token).trim());
+  var timestamp = new Date(parseInt(req.body.ts));
+  var password = String(req.body.password).trim();
+  var daysAgo = (Date.now() - timestamp.getTime()) / (1000 * 3600 * 24);
+
+  if (daysAgo > 30) {
+    return res.status(410).json({ message: 'Enlace caducado' });
+  }
+
+  var hmac = crypto.createHmac('sha256', config.secrets.session);
+  hmac.update(timestamp.getTime() + email);
+  var token = hmac.digest('base64');
+
+  if (userToken !== token) {
+    winston.debug(userToken + " !== " + token)
+    return res.status(401).json({ message: 'Enlace corrupto' });
+  }
+
+  User.findOne({ email: email }, function (err, user) {
+    if (err) return next(err);
+    if (!user) {
+      return res.status(404).json({ message: 'Usuario desconocido' });
+    }
+    if (!_.find(user.forgot, { token: token, date: timestamp })) {
+      return res.status(410).json({ message: 'Enlace usado' });
+    }
+    user.forgot.splice(0, user.forgot.length);
+    user.password = password;
+    user.save(function(err) {
+      if (err) return validationError(res, err);
+      winston.debug('user.controller::recoverPassword() Contraseña modificada.');
+      res.json({ message: 'OK' });
+    });
+  });
+};
 /**
  * Get a single user
  */

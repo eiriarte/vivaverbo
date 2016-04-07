@@ -3,11 +3,11 @@
   <head>
     <%- newrelic.getBrowserTimingHeader(); %>
     <meta charset="utf-8">
-    <title>Vivaverbo: Inicio de sesión</title>
-    <meta name="description" content="¿Aprendiendo esperanto? 'Mojose!' Amplía y afianza tu léxico con Vivaverbo.">
+    <title>Contraseña olvidada</title>
+    <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width">
     <!-- build:css({.tmp,client}) app/login.css -->
-    <link rel="stylesheet" href="app/login.css">
+    <link rel="stylesheet" href="/app/login.css">
       <!-- injector:css -->
       <!-- endinjector -->
     <!-- endbuild -->
@@ -34,20 +34,20 @@
     </header>
 
     <main class="login">
-      <button class="btn btn-facebook">Iniciar con Facebook</button>
-      <div class="separator">o con tu correo electrónico:</div>
-      <form action="/auth/local">
+      <form action="/api/users/recover" method="post">
+        <h2>¿Olvidaste tu contraseña?</h2>
+        <p class="register">Nos pasa a todos… Introduce tu email:</p>
         <input class="textfield" type="email" id="email" name="email" placeholder="Email" />
-        <input class="textfield" type="password" name="password" placeholder="Contraseña" />
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <div class="error">
-          <p class="unauthorized">El email y/o contraseña no son correctos.</p>
+          <p class="unauthorized">Ese email no está registrado en Vivaverbo.</p>
           <p class="unexpected">Fek! Ha ocurrido un error. ¿Se ha caído la red?</p>
         </div>
-        <button type="submit" class="btn btn-cta">Iniciar sesión</button>
+        <div class="success">
+          <p>¡Correcto! Se te ha enviado un email con instrucciones para crear una nueva contraseña.</p>
+        </div>
+        <button type="submit" class="btn btn-cta">Enviar</button>
       </form>
-      <p class="register"><a href="/login/forgot">Olvidé mi contraseña</a>.</p>
-      <p class="register">¿No tienes cuenta? <a href="/">Regístrate gratis</a>.</p>
     </main>
 
     <% if (analytics) { %>
@@ -66,10 +66,9 @@
       </script>
     <% } %>
 
-    <!-- build:js({client,node_modules,.tmp}) app/login.js -->
-      <script src="bower_components/zepto/zepto.js"></script>
-      <script src="components/vendor/js.cookie.js"></script>
-      <script src="app/login.js"></script>
+    <!-- build:js({client,node_modules,.tmp}) app/forgeso.js -->
+      <script src="/bower_components/zepto/zepto.js"></script>
+      <script src="/app/forgeso.js"></script>
     <!-- endbuild -->
   </body>
 </html>

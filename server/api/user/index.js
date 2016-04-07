@@ -14,5 +14,7 @@ var router = express.Router();
 //router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 router.post('/me', auth.isAuthenticated(), controller.update);
+router.post('/recover', controller.recover);
+router.post('/recover/password', controller.recoverPassword);
 
 module.exports = router;
