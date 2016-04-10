@@ -1,3 +1,4 @@
+@import 'logo.scss';
 @import 'logoweb.scss';
 @import 'variables.scss';
 
@@ -102,7 +103,7 @@ body {
   font-size: 0.75em;
 }
 
-.browsehappy {
+.browsehappy, .browsehappy-ie10 {
   background-color: #ffffca;
   color: #000023;
   margin: 0;

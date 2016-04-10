@@ -3,9 +3,11 @@
 'use strict';
 
 Zepto(function($){
-  const $form = $('.register form');
-  const $btnSubmit = $form.find('.btn-cta');
-  const $btnFacebook = $('.btn-facebook');
+  var $form = $('.register form');
+  var $btnSubmit = $form.find('.btn-cta');
+  var $btnFacebook = $('.btn-facebook');
+  var $mojo = $('.pitch-mojosa');
+  var vorto = 1;
   $btnFacebook.click(function() {
     window.location.pathname = '/auth/facebook';
   });
@@ -50,4 +52,16 @@ Zepto(function($){
     });
     return false;
   });
+  window.setInterval(function() {
+    $mojo.removeClass('mojo01 mojo02 mojo03 mojo04 mojo05');
+    $mojo.addClass('mojo00');
+    window.setTimeout(function() {
+      vorto++;
+      if (vorto > 5) {
+        vorto = 1;
+      }
+      $mojo.removeClass('mojo00');
+      $mojo.addClass('mojo0' + vorto);
+    }, 1000);
+  }, 5000);
 });
