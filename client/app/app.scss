@@ -2,11 +2,19 @@
  * App-wide Styles
  */
 
-.browsehappy {
+.browsehappy, .browsehappy-ie10 {
     margin: 0.2em 0;
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
+}
+
+.browsehappy-ie10 {
+  display: none;
+}
+
+html[data-useragent*='MSIE 10.0'] .browsehappy-ie10 {
+  display: block;
 }
 
 /**

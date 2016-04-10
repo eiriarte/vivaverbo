@@ -21,20 +21,30 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="application-name" content="Vivaverbo">
     <meta name="apple-mobile-web-app-title" content="Vivaverbo">
+    <script>
+      var vv_doc = document.documentElement;
+      vv_doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
   </head>
   <body>
-    <!--[if lt IE 11]>
+    <!--[if lte IE 10]>
       <p class="browsehappy">Estás usando un navegador <strong>obsoleto</strong>. Por favor, <a href="http://browsehappy.com/">actualiza tu navegador</a> para una experiencia mejor y más segura.</p>
     <![endif]-->
-
+      <p class="browsehappy-ie10">Estás usando un navegador <strong>obsoleto</strong>. Por favor, <a href="http://browsehappy.com/">actualiza tu navegador</a> para una experiencia mejor y más segura. Vivaverbo requiere un navegador moderno para funcionar correctamente.</p>
     <header class="toolbar">
-      <h1 class="logo "><span class="screen-reader-text">Vivaverbo</span></h1>
+      <h1 class="logo"><span class="screen-reader-text">Vivaverbo</span></h1>
       <a class="login" href="/login"><span class="movil">Acceder</span> <span class="no-movil">Iniciar sesión</span></a>
     </header>
     <main role="main">
       <section class="pitch">
         <h2 class="pitch-title">¿Aprendiendo esperanto?</h2>
-        <p class="pitch-mojosa">Mojose!</p>
+        <p class="pitch-mojosa mojo01">
+          <span class="mojo01">Bonege!</span>
+          <span class="mojo02">Mirinde!</span>
+          <span class="mojo03">Brave!</span>
+          <span class="mojo04">Laŭdinde!</span>
+          <span class="mojo05">Mojose!</span>
+        </p>
         <p class="pitch-text">Afina tu <strong>esperanto</strong>. Amplía y afianza tu <strong>léxico</strong> con Vivaverbo.</p>
       </section>
       <section class="register">
@@ -56,7 +66,15 @@
         </form>
       </section>
     </main>
+    <section class="screenshots">
+      <h2>Tus repasos, siempre contigo</h2>
+      <p>Repasos del vocabulario de las categorías que más te interesen, en cómodas porciones.</p>
+      <p>Sólo necesitas entrar en <span class="site">vivaverbo.com</span> desde cualquier navegador moderno.</p>
+      <p>Tus próximos repasos te estarán esperando.</p>
+    </section>
     <section class="benefits">
+      <div class="logo">
+      </div>
       <section>
         <header>
           <svg fill="#424242" width="64" height="64" viewBox="-400 0 2500 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1518 836l18 316q4 69-82 128t-235 93.5-323 34.5-323-34.5-235-93.5-82-128l18-316 574 181q22 7 48 7t48-7zm530-324q0 23-22 31l-1120 352q-4 1-10 1t-10-1l-652-206q-43 34-71 111.5t-34 178.5q63 36 63 109 0 69-58 107l58 433q2 14-8 25-9 11-24 11h-192q-15 0-24-11-10-11-8-25l58-433q-58-38-58-107 0-73 65-111 11-207 98-330l-333-104q-22-8-22-31t22-31l1120-352q4-1 10-1t10 1l1120 352q22 8 22 31z"/></svg>
@@ -79,6 +97,10 @@
         <p>Vivaverbo prioriza el repaso de aquellas palabras que más te está costando memorizar.</p>
       </section>
     </section>
+    <footer class="piedo">
+      <p>Farite kun ♥ al Esperanto.</p>
+      <p><script>document.write([30, 67, 2, 74, 84, 71, 72, 31, 4, 79, 67, 75, 78, 86, 81, 28, 75, 80, 72, 81, 34, 88, 75, 88, 67, 88, 71, 84, 68, 81, 16, 69, 81, 79, 4, 32, 75, 80, 72, 81, 34, 88, 75, 88, 67, 88, 71, 84, 68, 81, 16, 69, 81, 79, 30, 17, 67, 32].map(function(c) { return String.fromCharCode(c + 30); }).join(''))</script></p>
+    </footer>
     <% if (analytics) { %>
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

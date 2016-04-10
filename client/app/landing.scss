@@ -11,6 +11,14 @@
   }
 }
 
+.browsehappy-ie10 {
+  display: none;
+}
+
+html[data-useragent*='MSIE 10.0'] .browsehappy-ie10 {
+  display: block;
+}
+
 .toolbar .login {
   float: right;
   color: $color-txt-oscuro;
@@ -42,14 +50,49 @@ main {
     padding: 0;
   }
   .pitch-title {
-    font-size: 1.4em;
-    font-weight: 500;
+    font-size: 2.2em;
+    font-weight: 200;
   }
   .pitch-mojosa {
     font-size: 1.2em;
     font-weight: 500;
     font-style: italic;
+    height: 23px;
     margin: 0.5em 0;
+
+    .mojo01, .mojo02, .mojo03, .mojo04, .mojo05 {
+      transition: opacity 1s;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+    &.mojo01 {
+      .mojo01 {
+        opacity: 1;
+      }
+    }
+    &.mojo02 {
+      .mojo02 {
+        opacity: 1;
+      }
+    }
+    &.mojo03 {
+      .mojo03 {
+        opacity: 1;
+      }
+    }
+    &.mojo04 {
+      .mojo04 {
+        opacity: 1;
+      }
+    }
+    &.mojo05 {
+      .mojo05 {
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -64,16 +107,60 @@ main {
   }
 }
 
-.benefits {
+.screenshots {
   color: $color-txt-oscuro;
-  display: table-row;
-  padding-top: 1.5em;
+  background-image: url(../assets/images/77ff2972.screenshots.jpg);
+  background-repeat: no-repeat;
+  background-position: 100px 32px;
+  height: 512px;
+  padding: 32px 32px 32px 900px;
+  h2 {
+    font-size: 2em;
+    font-weight: 200;
+  }
+  .site {
+    font-weight: bold;
+  }
+  @media screen and (max-width: $ancho-xxl) {
+    background-position: 5% 50%;
+    background-size: 70%;
+    padding: 32px 32px 32px 75%;
+  }
+  @media screen and (max-width: $ancho-xl) {
+    background-position: 50% 32px;
+    background-size: 90%;
+    height: auto;
+    padding: 55% 32px 32px;
+  }
+}
+
+.benefits {
+  position: relative;
+  display: table;
+  color: $color-txt-oscuro;
+  background-color: #9DCCD4;
+  padding: 2em 0 1.5em 0;
+  .logo {
+    background-image: url(#{$leaves-data-uri});
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    position: absolute;
+    width: 100%;
+    height: 64px;
+    top: -32px;
+    text-align: center;
+    @media screen and (max-width: $ancho-movil) {
+      height: 48px;
+      top: -24px;
+    }
+  }
   section {
     display: table-cell;
     text-align: center;
-    padding: 2.5em 32px 16px;
+    padding: 16px 32px;
     h2 {
-      font-weight: bold;
+      font-weight: 200;
       margin: 0 0 0.5em 0;
     }
     p {
@@ -88,7 +175,18 @@ main {
   }
   @media screen and (max-width: $ancho-xxl) {
     section {
-      padding: 2.5em 16px 16px;
+      padding: 16px;
     }
   }
+}
+
+.piedo {
+    padding: 8px;
+    text-align: center;
+    font-size: 0.9em;
+    background-color: #56838A;
+    color: rgba(255, 255, 255, 0.85);
+    a {
+      color: rgba(255, 255, 255, 0.85);
+    }
 }
