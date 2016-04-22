@@ -3,9 +3,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
+var uuid = require('node-uuid');
 var authTypes = ['facebook', 'google'];
 
 var UserSchema = new Schema({
+  trackId: { type: String, default: function() { return uuid.v4(); } },
   name: String,
   email: { type: String, lowercase: true },
   prefs: {
@@ -37,7 +39,8 @@ var UserSchema = new Schema({
   provider: String,
   facebook: {},
   google: {},
-  updated: { type: Date, default: Date.now }
+  updated: { type: Date, default: Date.now },
+  since: { type: Date, default: Date.now }
 });
 
 /**

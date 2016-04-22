@@ -10,6 +10,6 @@ exports.index = function(req, res) {
       winston.error('category.controller::index() Error en Category.find()');
       return res.status(500).send({ message: 'Error finding categories' });
     }
-    return res.json(200, categories);
+    return res.status(200).json(categories);
   });
 };

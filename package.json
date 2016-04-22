@@ -25,6 +25,7 @@
     "mongoose": "4.2.x",
     "morgan": "^1.6.0",
     "newrelic": "^1.22.1",
+    "node-uuid": "^1.4.7",
     "passport": "^0.3.0",
     "passport-facebook": "latest",
     "passport-google-oauth": "latest",

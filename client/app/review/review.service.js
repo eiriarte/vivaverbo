@@ -2,7 +2,7 @@
 
 angular.module('vivaverboApp')
   .factory('reviewService', function ($q, $log, $mdToast, $mdDialog, $localStorage,
-        gettextCatalog, Auth, db, cards, memory, dateTime, lodash) {
+        gettextCatalog, Auth, db, cards, memory, dateTime, lodash, track) {
     const user = Auth.getCurrentUser();
     const tarjetasRepaso = [];
     let currentCategory;
@@ -60,6 +60,10 @@ angular.module('vivaverboApp')
         // Si era la última por aprender, no volvemos a insistir en ella
         if (review.tarjetaActual === tarjetaPrevia) {
           review.finalizado = true;
+        }
+
+        if (review.finalizado) {
+          track.registerEvent('repaso', 'completado', currentCategory, review.totalTarjetas);
         }
 
         onboarding(2);

@@ -69,6 +69,7 @@ module.exports = function(app, config) {
         winston.debug('Usuario registrado. Sirviendo index.html');
         view = 'index';
         locals = { user: _.pick(req.user, props) };
+        locals.trackId = req.user.trackId;
         locals.versions = {
           cards: '2016-04-18T19:22:47.601Z',
           categories: '2016-04-18T23:55:47.601Z'
