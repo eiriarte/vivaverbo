@@ -63,11 +63,13 @@ module.exports = function(app, config) {
     .get(auth.getUser(), function(req, res) {
       var props = ['prefs', 'reviews', 'updated', 'email', 'name', 'provider'];
       var view, locals;
+      var optout = req.query.optout === '1' || req.cookies.vv_ga_optout;
 
       if (req.user) {
         winston.debug('Usuario registrado. Sirviendo index.html');
         view = 'index';
         locals = { user: _.pick(req.user, props) };
+        locals.trackId = req.user.trackId;
         locals.versions = {
           cards: '2016-04-18T19:22:47.601Z',
           categories: '2016-04-18T23:55:47.601Z'
@@ -78,12 +80,16 @@ module.exports = function(app, config) {
         locals = { csrfToken: req.csrfToken ? req.csrfToken() : '' };
       }
 
-      locals.analytics = config.analytics;
+      locals.analytics = !optout && config.analytics;
       locals.debugON = config.debug;
       locals.newrelic = newrelic ||
         { getBrowserTimingHeader: function() { return ''; } };
       res.header('X-UA-Compatible', 'IE=Edge');
       winston.debug('user = %j', req.user, {});
+
+      if ('1' === req.query.optout) {
+        res.cookie('vv_ga_optout', Date.now(), { maxAge: 94608000000 });
+      }
 
       res.render(view, locals, function (err, html) {
         if (err) { errors[500](err, req, res); }
