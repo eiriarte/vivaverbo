@@ -54,8 +54,8 @@ module.exports = function(app) {
 
   if ('development' === env || 'test' === env) {
     app.use(require('connect-livereload')());
-    app.use(express.static(path.join(config.root, '.tmp'), { setHeaders: ieHeader, index: false }));
-    app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader, index: false }));
+    app.use(express.static(path.join(config.root, '.tmp'), { setHeaders: ieHeader }));
+    app.use(express.static(path.join(config.root, 'client'), { setHeaders: ieHeader }));
     app.set('appPath', path.join(config.root, 'client'));
 
     require('../routes')(app, config);

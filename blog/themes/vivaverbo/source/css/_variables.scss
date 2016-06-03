@@ -1,0 +1,55 @@
+$color_text: #212121; /* opacity: 87% */
+$color_secondary_text: #757575; /* opacity: 54% */
+$color_paper: #FFF;
+$color_background: #EEE;
+
+$color_primary: #388E3C; /* Green 700 */
+$color_accent: #FF1744; /* Red A400 */
+$color_accent_highlight: #FF8A80; /* Red A100 */
+
+$color_divider: #E0E0E0; /* opacity: 12% */
+
+$color_facebook: #3b5998;
+$color_twitter: #55acee;
+$color_whatsapp: #28a619;
+$color_google_plus: #dd4b39;
+
+// $font-content: Ubuntu, sans-serif;
+// $font-header: Oswald, Impact, "Trebuchet MS", sans-serif;
+// $font-ui: "Helvetica Neue", "Franklin Gothic Medium", Helvetica, Arial, sans-serif;
+
+$font-content: 'Roboto', sans-serif;
+$font-header: 'Roboto Slab', serif;
+$font-ui: 'Roboto', sans-serif;
+
+$font-size: 16px;
+
+$max-width-card: 656px;
+$min-width-tablet: 480px;
+$min-width-desktop: 720px;
+
+$toolbar-height-mobile: 3.5em;
+
+@mixin md-font($style) {
+  @if $style == 'Button' {
+    text-transform: uppercase;
+    font-size: 0.875rem; /* 14dp */
+    font-weight: 500; /* Medium */
+  } @elseif $style == "Title" {
+    font-size: 1.25rem; /* 20dp */
+    font-weight: 500;
+  } @elseif $style == "Caption" {
+    font-size: 0.75rem; /* 12dp */
+  } @elseif $style == "Body_1" {
+    font-size: 0.875rem; /* 14dp */
+  } @elseif $style == "Body_2" {
+    font-size: 0.875rem; /* 14dp */
+    font-weight: 500;
+  } @elseif $style == "Display_1" {
+    font-size: 2.125rem; /* 34dp */
+  } @elseif $style == "Display_2" {
+    font-size: 2.8125rem; /* 45dp */
+  } @elseif $style == "Headline" {
+    font-size: 1.5rem; /* 24dp */
+  }
+}

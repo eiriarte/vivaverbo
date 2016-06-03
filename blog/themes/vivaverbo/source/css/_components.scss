@@ -1,0 +1,164 @@
+@mixin btn-colors($color) {
+  color: $color;
+  transition: background-color 350ms;
+  &:focus, &:hover {
+    color: $color;
+    text-decoration: none;
+    background-color: transparentize($color, 0.88);
+  }
+}
+
+@mixin btn-inv-colors($color) {
+  background-color: $color;
+  color: rgba(255, 255, 255, 0.87);
+  &:focus, &:hover {
+    color: rgba(255, 255, 255, 0.87);
+    text-decoration: none;
+    background-color: darken($color, 0.12);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.btn {
+  @include md-font(Button);
+  font-family: $font-ui;
+  white-space: nowrap;
+  display: inline-block;
+  height: 2.25em; /* 36dp */
+  line-height: 2.25em;
+  border-radius: 2px;
+  padding: 0 1em;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  @include btn-colors($color_text);
+
+  &.right {
+    float: right;
+  }
+
+  &.icon-btn {
+    @include btn-colors($color_secondary_text);
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    width: 2.5rem;
+    height: 2.25rem;
+    padding: 0;
+    text-align: center;
+    .zmdi {
+      vertical-align: middle;
+    }
+  }
+
+  &.color-primary {
+    @include btn-inv-colors($color_primary);
+  }
+
+  &.accent {
+    @include btn-colors($color_accent);
+  }
+}
+
+.textfield {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1em;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.117647);
+  padding: 0.5em 0.5em 0.5em 0;
+  margin: 0.5em 0.5em 0.5em 0;
+  transition: border-bottom-color 250ms, border-bottom-width 250ms;
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid $color_accent;
+  }
+}
+
+.paginator {
+  text-align: center;
+  margin: 1rem 0;
+
+  .page-number, .extend {
+    @include md-font(Button);
+    text-align: center;
+    line-height: 30px;
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0 0.25rem;
+    border-radius: 2px;
+    color: $color_text;
+    &:hover {
+      text-decoration: none;
+      background-color: transparentize($color_text, 0.88);
+    }
+  }
+  .page-number.current {
+    background-color: $color_primary;
+    color: white;
+    &:hover {
+      background-color: $color_primary;
+    }
+    &:only-child {
+      display: none;
+    }
+  }
+}
+
+@mixin menu {
+  display: block;
+  margin: 0;
+  position: fixed;
+  right: 3.5rem; /* padding del header + width del btn search */
+  z-index: 99999;
+  background: white;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+  ul {
+    display: block;
+    margin: 0;
+    padding: 0.5em 0;
+
+    li {
+      @include md-font(Button);
+      @include btn-colors(black);
+      height: 3rem;
+      line-height: 3rem;
+      min-width: 7.5rem;
+      display: block;
+      text-transform: none;
+      text-align: left;
+      padding: 0 1.5rem;
+      float: none;
+
+      .zmdi {
+        font-size: 1.2rem;
+        height: 3rem;
+        line-height: 3rem;
+        margin-right: 1rem;
+      }
+      a {
+        color: rgba(0, 0, 0, 0.7) !important;
+        display: inline-block;
+        min-width: 6rem;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      &.selected {
+        border: none;
+        a {
+          color: rgba(0, 0, 0, 0.7);
+        }
+      }
+      &.selected:hover {
+        background-color: rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+}
+
+.dropdown-menu {
+  @include menu;
+}

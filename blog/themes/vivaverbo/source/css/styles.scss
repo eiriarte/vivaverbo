@@ -1,0 +1,79 @@
+@import "variables";
+
+html {
+  box-sizing: border-box;
+  background-color: $color_background;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+body {
+  margin: $toolbar-height-mobile + 1em 0 0;
+  padding: 0;
+  font-family: $font-ui;
+  font-size: $font-size;
+  color: $color_text;
+  -ms-user-select: none;
+}
+
+.centered {
+  margin: 0 auto;
+  max-width: $max-width-card + 64px;
+  position: relative;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-header;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: $color_accent;
+  &:hover {
+    text-decoration: underline;
+    color: $color_accent_highlight;
+  }
+}
+
+main {
+  background-color: $color_background;
+  padding: 0.5rem;
+
+  .archive {
+    @include md-font(Display_1);
+    margin: 0 auto 2rem auto;
+    text-transform: capitalize;
+    max-width: $max-width-card;
+    color: rgba(0, 0, 0, 0.6);
+
+    @media screen and (min-width: $min-width-tablet) {
+      &.category {
+        display: none;
+      }
+    }
+
+    .zmdi {
+      margin-right: 1.5rem;
+    }
+  }
+}
+//
+@import "components";
+@import "md_shadows";
+@import "toolbar";
+@import "footer";
+@import "posts";
+@import "sidebar";
+@import "dialog";
+@import "esperanto";

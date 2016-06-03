@@ -6,6 +6,8 @@
     <title>Vivaverbo: todo el vocabulario del esperanto.</title>
     <meta name="description" content="¿Aprendiendo esperanto? 'Mojose!' Amplía y afianza tu léxico con Vivaverbo.">
     <meta name="viewport" content="width=device-width">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Roboto+Slab:400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- build:css({.tmp,client}) app/landing.css -->
     <link rel="stylesheet" href="/app/landing.css">
       <!-- injector:css -->
@@ -33,7 +35,7 @@
       <p class="browsehappy-ie10">Estás usando un navegador <strong>obsoleto</strong>. Por favor, <a href="http://browsehappy.com/">actualiza tu navegador</a> para una experiencia mejor y más segura. Vivaverbo requiere un navegador moderno para funcionar correctamente.</p>
     <header class="toolbar">
       <h1 class="logo"><span class="screen-reader-text">Vivaverbo</span></h1>
-      <a class="login" href="/login"><span class="movil">Acceder</span> <span class="no-movil">Iniciar sesión</span></a>
+      <a class="login btn-material" href="/login"><span class="movil">Acceder</span> <span class="no-movil">Iniciar sesión</span></a>
     </header>
     <main role="main">
       <section class="pitch">
@@ -98,8 +100,37 @@
       </section>
     </section>
     <footer class="piedo">
-      <p>Farite kun ♥ al Esperanto.</p>
-      <p><script>document.write([30, 67, 2, 74, 84, 71, 72, 31, 4, 79, 67, 75, 78, 86, 81, 28, 75, 80, 72, 81, 34, 88, 75, 88, 67, 88, 71, 84, 68, 81, 16, 69, 81, 79, 4, 32, 75, 80, 72, 81, 34, 88, 75, 88, 67, 88, 71, 84, 68, 81, 16, 69, 81, 79, 30, 17, 67, 32].map(function(c) { return String.fromCharCode(c + 30); }).join(''))</script></p>
+      <div class="footer">
+        <div class="navigation">
+          <section role="navigation" class="ft-vivaverbo">
+            <h1>Vivaverbo</h1>
+            <ul class="zmdi-hc-ul">
+              <li><i class="zmdi-hc-li zmdi zmdi-home"></i><a href="/">Inicio</a></li>
+              <li><i class="zmdi-hc-li zmdi zmdi-comment-outline"></i><a href="/blog/">Blog</a></li>
+              <li><i class="zmdi-hc-li zmdi zmdi-info-outline"></i><a href="/blog/prie/">Acerca de</a></li>
+              <li><i class="zmdi-hc-li zmdi zmdi-email"></i><script>document.write([30, 67, 2, 74, 84, 71, 72, 31, 4, 79, 67, 75, 78, 86, 81, 28, 75, 80, 72, 81, 34, 88, 75, 88, 67, 88, 71, 84, 68, 81, 16, 69, 81, 79, 4, 32, 37, 81, 80, 86, 67, 69, 86, 81, 30, 17, 67, 32].map(function(c) { return String.fromCharCode(c + 30); }).join(''));</script></li>
+              <li><i class="zmdi-hc-li zmdi zmdi-lock-outline"></i><a href="/blog/private/">Aviso legal</a></li>
+            </ul>
+          </section>
+          <section role="navigation" class="ft-follow">
+            <h1>¿Me sigues?</h1>
+            <ul class="zmdi-hc-ul">
+              <li><i class="zmdi-hc-li zmdi zmdi-notifications-none"></i><a href="http://eepurl.com/b18WXj">Suscripción</a></li>
+              <li><i class="zmdi-hc-li zmdi zmdi-facebook"></i><a href="https://www.facebook.com/vivaverbo/" target="_blank">Facebook</a></li>
+              <li><i class="zmdi-hc-li zmdi zmdi-twitter"></i><a href="https://twitter.com/vivaverbo" target="_blank">Twitter</a></li>
+              <li><i class="zmdi-hc-li zmdi zmdi-rss"></i><a href="/">RSS</a></li>
+            </ul>
+          </section>
+        </div>
+        <section class="ft-mission">
+          <h1>Vivaverbo es...</h1>
+          <p>
+            Vivaverbo tiene como misión luchar contra el fenómeno
+            de los <em>eternaj komencantoj</em>, proporcionando materiales
+            de aprendizaje de calidad, y adaptados al siglo XXI.
+          </p>
+        </section>
+      </div>
     </footer>
     <% if (analytics) { %>
       <script>

@@ -1,0 +1,48 @@
+.site-footer {
+  font-family: $font-ui;
+  font-size: 0.75rem;
+  margin-top: 2em;
+  background-color: $color_paper;
+  padding-bottom: 3.5rem;
+
+  section {
+    opacity: 0.75;
+  }
+
+  li, li>i {
+    padding: 8px;
+  }
+
+  .ft-vivaverbo, .ft-follow {
+    display: none;
+  }
+
+  .ft-mission {
+    padding: 16px;
+  }
+
+  @media screen and (min-width: $min-width-tablet) {
+    .footer {
+      display: table;
+      margin: 0 auto;
+
+      ul {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      h1 {
+        margin: 0.83 0 0.5em;
+      }
+    }
+
+    .ft-vivaverbo, .ft-follow, .ft-mission {
+      display: table-cell;
+      padding: 1em;
+    }
+
+    .ft-mission p {
+      max-width: 10em;
+    }
+  }
+}

@@ -58,29 +58,46 @@ module.exports = function(app) {
   // Protección contra ataques XSS
   var csp = {
     defaultSrc: [ "'none'" ],
+    frameSrc: [
+      'https://cse.google.com',
+      'https://disqus.com'
+    ],
     scriptSrc: [
       "'self'",
       "'unsafe-inline'",
       "'unsafe-eval'",
-      'https://linkhelp.clients.google.com',
-      'https://ajax.googleapis.com',
-      'https://www.google-analytics.com',
+      'http://*.google.com',
+      'https://*.google.com',
+      'https://*.googleapis.com',
+      'https://*.google-analytics.com',
+      'https://*.disqus.com',
       'https://js-agent.newrelic.com',
-      'https://bam.nr-data.net'
+      'https://bam.nr-data.net',
+      'https://cdnjs.cloudflare.com'
     ],
     styleSrc: [
       "'self'",
       "'unsafe-inline'",
-      'https://fonts.googleapis.com'
+      'https://*.google.com',
+      'https://*.googleapis.com',
+      'http://*.disquscdn.com',
+      'https://cdnjs.cloudflare.com',
     ],
     fontSrc: [
-      'https://fonts.gstatic.com'
+      'https://*.gstatic.com',
+      'https://cdnjs.cloudflare.com'
     ],
     connectSrc: [ "'self'" ],
     imgSrc: [
       "'self'",
+      'http://*.google.com',
+      'https://*.google.com',
+      'https://*.gstatic.com',
+      'https://*.googleapis.com',
+      'https://*.google-analytics.com',
+      'https://*.disqus.com',
+      'https://*.disquscdn.com',
       'https://bam.nr-data.net',
-      'https://www.google-analytics.com',
       'data:'
     ]
   }

@@ -21,13 +21,7 @@ html[data-useragent*='MSIE 10.0'] .browsehappy-ie10 {
 
 .toolbar .login {
   float: right;
-  color: $color-txt-oscuro;
-  background-color: rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: 2px;
-  padding: 0 0.5em;
   line-height: 32px;
-  font-weight: 500;
 }
 
 main {
@@ -181,12 +175,54 @@ main {
 }
 
 .piedo {
-    padding: 8px;
-    text-align: center;
-    font-size: 0.9em;
-    background-color: #56838A;
+  font-size: 0.75rem;
+  padding: 8px;
+  background-color: #56838A;
+  color: rgba(255, 255, 255, 0.85);
+  a {
     color: rgba(255, 255, 255, 0.85);
-    a {
-      color: rgba(255, 255, 255, 0.85);
+  }
+
+  li, li>i {
+    padding: 8px;
+  }
+
+  .navigation {
+    display: table;
+    margin: 0 auto;
+  }
+  .ft-vivaverbo, .ft-follow {
+    display: table-cell;
+    padding: 1em;
+  }
+
+  .ft-mission {
+    max-width: 16em;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $ancho-tablet) {
+    .footer {
+      display: table;
+      margin: 0 auto;
+
+      ul {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      h1 {
+        margin: 0.83 0 0.5em;
+      }
     }
+
+    .ft-vivaverbo, .ft-follow, .ft-mission {
+      display: table-cell;
+      padding: 1em;
+    }
+
+    .ft-mission p {
+      max-width: 10em;
+    }
+  }
 }
