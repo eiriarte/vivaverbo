@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Vivaverbo</title>
+  
+  <link href="/blog/feed.xml" rel="self"/>
+  
+  <link href="https://vivaverbo.com/blog/"/>
+  <updated>2016-06-02T13:05:01.000Z</updated>
+  <id>https://vivaverbo.com/blog/</id>
+  
+  <author>
+    <name>Eduardo Iriarte Gahete</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sexo en esperanto. ¿Lo estás haciendo bien?</title>
+    <link href="https://vivaverbo.com/blog/2016/05/11/sexo-y-esperanto/"/>
+    <id>https://vivaverbo.com/blog/2016/05/11/sexo-y-esperanto/</id>
+    <published>2016-05-10T22:00:00.000Z</published>
+    <updated>2016-06-02T13:05:01.000Z</updated>
+    
+    <summary type="html">
+    
+      Los afijos -in- y ge- resultan muy prácticos para cuestiones de sexo. Es frecuente que se usen incorrectamente.
+    
+    </summary>
+    
+      <category term="Gramática" scheme="https://vivaverbo.com/blog/secciones/Gramatica/"/>
+    
+    
+      <category term="errores" scheme="https://vivaverbo.com/blog/etiquetas/errores/"/>
+    
+      <category term="básico" scheme="https://vivaverbo.com/blog/etiquetas/basico/"/>
+    
+      <category term="afijos" scheme="https://vivaverbo.com/blog/etiquetas/afijos/"/>
+    
+  </entry>
+  
+</feed>

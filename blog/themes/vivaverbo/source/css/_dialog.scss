@@ -1,0 +1,50 @@
+.dialog {
+  padding: 1em;
+  margin: auto;
+  border-radius: 2px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 10%;
+  width: 80%;
+  max-width: 28.75rem;
+  background-color: white;
+  z-index: 99999;
+  box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2);
+  will-change: transition;
+  transition: top 250ms, opacity 250ms;
+  opacity: 1;
+  &.hidden {
+    display: none;
+    top: 0%;
+    opacity: 0;
+  }
+  .dlg-actions {
+    button.right {
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  &.subscribe {
+    .textfield {
+      width: 100%;
+    }
+
+    .btn-subscribe {
+      height: 3.5rem;
+      line-height: 3.5rem;
+      width: 100%;
+    }
+
+    .pitch {
+      color: rgba(0, 0, 0, 0.7);
+    }
+
+    .note {
+      text-align: center;
+      font-size: 0.75rem;
+      margin: 1em 0 2em;
+      opacity: 0.75;
+    }
+  }
+}

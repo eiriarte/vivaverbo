@@ -1,0 +1,45 @@
+:lang(eo) {
+  font-style: italic;
+  color: $color_primary;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+
+  & > * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+  }
+  b {
+    font-weight: normal;
+    white-space: nowrap;
+    i::before {
+      content: '·';
+      display: inline-block;
+      width: 0px;
+      opacity: 0;
+      transition: width 800ms, opacity 800ms 300ms;
+    }
+    &:hover i::before, &:active i::before {
+      width: 4px;
+      opacity: 1;
+    }
+  }
+  strong {
+    font-weight: bold;
+    font-style: normal;
+    & > * {
+      font-style: normal !important;
+    }
+  }
+}
+
+.vortolisto li > :lang(eo) {
+  margin-right: 4px;
+  * {
+    font-style: normal;
+    font-weight: bold;
+  }
+}
