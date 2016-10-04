@@ -95,7 +95,7 @@ var dicCategs = [
 ];
 var db, dbTex, idbAdapter, cards, ssv, selection = [], selQuery = '-', current = 0, dupes = [];
 var tekstaro, previousWord = { word: '', offset: 0 }, teksPageSize = 25;
-var $info, $state, changed;
+var $info, $state, changed, $count, startTime;
 
 function init() {
   $state = $('#toolbar .state');
@@ -106,11 +106,33 @@ function init() {
   var options = {
     welcome: saludo,
     theme: 'white'
-  }
+  };
   terminal = new Terminal('consola', options, { execute: execCommand });
+  $('.cmdline').before('<span class="countdown" id="countdown">…</span>');
+  $count = $('#countdown');
+  startTime = Date.now();
+  window.setInterval(tic, 1000);
+}
+
+function tic() {
+  var seconds = Math.floor((Date.now() - startTime) / 1000);
+  var minutes = Math.floor(seconds / 60);
+  seconds = seconds % 60;
+  if (minutes < 10) {
+    minutes = '0' + minutes;
+  }
+  if (seconds < 10) {
+    seconds = '0' + seconds;
+  }
+  $count.text(minutes + ':' + seconds);
+}
+
+function resetCount() {
+  startTime = Date.now();
 }
 
 function execCommand(command, args) {
+  var word, url;
   var arg = args.join(' ');
   var result = '';
   try {
@@ -198,8 +220,8 @@ function execCommand(command, args) {
         findDuplicates(selection[current]);
         return mostrarTarjeta();
       case 'revo':
-        var word = args[0] || selection[current].respuesta.trim();
-        var url = 'http://www.simplavortaro.org/api/v1/vorto/' + word;
+        word = args[0] || selection[current].respuesta.trim();
+        url = 'http://www.simplavortaro.org/api/v1/vorto/' + word;
         $.getJSON(url, function(data) {
           addInfo(htmlReVo(data));
         }).fail(function(jqxhr, textStatus, err) {
@@ -208,8 +230,8 @@ function execCommand(command, args) {
         });
         return '';
       case 'rae':
-        var word = args[0] || selection[current].pregunta.trim();
-        var url = 'http://dle.rae.es/srv/search?w=' + word + '&m=form';
+        word = args[0] || selection[current].pregunta.trim();
+        url = 'http://dle.rae.es/srv/search?w=' + word + '&m=form';
         $.get(url, function(data) {
           addInfo(htmlRAE(data));
         }).fail(function(jqxhr, textStatus, err) {
@@ -218,23 +240,23 @@ function execCommand(command, args) {
         });
         return '';
       case 'piv':
-        var word = args[0] || selection[current].respuesta.trim();
-        var url = 'http://vortaro.net/#' + word;
+        word = args[0] || selection[current].respuesta.trim();
+        url = 'http://vortaro.net/#' + word;
         $("<a>").attr("href", url).attr("target", "_blank")[0].click();
         return '';
       case 'tex':
-        var word = args[0] || selection[current].respuesta.trim();
+        word = args[0] || selection[current].respuesta.trim();
         var work = args[1] || 'any';
         var size = args[2] || 0;
         addInfo(htmlTekstaro(word, work, size));
         return '';
       case 'ssv':
-        var word = args[0] || selection[current].respuesta.trim();
+        word = args[0] || selection[current].respuesta.trim();
         addInfo(htmlSSV(word));
         return '';
       case 'diego':
-        var word = args[0] || selection[current].pregunta.trim();
-        var url = 'http://www.esperanto.es:8080/diccionario/inicio.jsp?que=' + word;
+        word = args[0] || selection[current].pregunta.trim();
+        url = 'http://www.esperanto.es:8080/diccionario/inicio.jsp?que=' + word;
         $.get(url, function(data) {
           var $html = $(data);
           var titulo = '<h1>Diego: ' + word + '<i class="close">✕</i></h1>';
@@ -285,14 +307,14 @@ function execCommand(command, args) {
         saveDB();
         return mostrarTarjeta();
       case 'addCard':
-        var card = {
+        var newCard = {
           pregunta: 'nueva palabra',
           respuesta: 'nova vorto',
           freq: maxFreq() + 1,
           categorias: [ arg ]
         };
-        card = cards.insert(card);
-        selection.splice(current, 0, card);
+        newCard = cards.insert(newCard);
+        selection.splice(current, 0, newCard);
         saveDB();
         updateInfoCategory();
         return mostrarTarjeta();
@@ -305,6 +327,7 @@ function execCommand(command, args) {
         } else {
           return 'Vas a llorar… ¿estás seguro?';
         }
+        return 0;
       case 'cats':
         return getCategories();
       default:
@@ -321,7 +344,7 @@ function getCategories() {
   cards.find().forEach(function(card) {
     if (!card.frasePregunta && !card.fraseRespuesta) {
       card.categorias.forEach(function(categ) {
-        categs[categ] = (categs[categ] + 1) || 0
+        categs[categ] = (categs[categ] + 1) || 0;
       });
     }
   });
@@ -505,13 +528,13 @@ function htmlReVoDifs(difinoj) {
           case 'Zamenhof': fnt = '[Z]'; break;
           case null: fnt = '[?]'; break;
           default: fnt = '';
-        };
+        }
         if (_.startsWith(ekz.fonto, 'Fundamento de Esperanto')) {
           fnt = '[Fund]';
         }
         result += '<li title="' + ekz.fonto + '">' + ekz.ekzemplo + ' <i class="fnt">' + fnt + '</i></li>';
       });
-      result += '</ul>'
+      result += '</ul>';
     }
     if (dif.tradukoj) {
       dif.tradukoj.forEach(function(trad) {
@@ -616,7 +639,7 @@ function fusionarTarjetas() {
 
 function duplicarTarjeta() {
   var newCard = _.cloneDeep(selection[current]);
-  delete newCard._id
+  delete newCard._id;
   delete newCard.$loki;
   delete newCard.meta;
   selection.splice(current + 1, 0, cards.insert(newCard));
@@ -675,6 +698,7 @@ function irA(pos) {
   findDuplicates(selection[index]);
 
   current = index;
+  resetCount();
   return true;
 }
 

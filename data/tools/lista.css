@@ -68,3 +68,8 @@ body {
     cursor: pointer;
     font-style: normal;
     float: right; }
+
+.countdown {
+  position: absolute;
+  right: 8px;
+  color: darkgray; }
