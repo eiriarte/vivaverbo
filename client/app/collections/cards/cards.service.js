@@ -17,8 +17,8 @@ angular.module('vivaverboApp')
         const lokiCollection = this.lokiCollection;
         const reviewCards = review.map((rCard) => {
           const card = lokiCollection.findOne({ _id: rCard.cardId });
-          [ card.pregunta, card.bracketP ] = spotBrackets(card.pregunta);
-          [ card.respuesta, card.bracketR ] = spotBrackets(card.respuesta);
+          [ card.wordP, card.bracketP ] = spotBrackets(card.pregunta);
+          [ card.wordR, card.bracketR ] = spotBrackets(card.respuesta);
           return card;
         });
         if (undefined !== ref && ref !== reviewCards) {

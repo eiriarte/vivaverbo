@@ -1,8 +1,8 @@
 <md-whiteframe class="tarjeta md-whiteframe-z3" ng-class="{ reverso: tarjeta.girada }" ng-click="tarjeta.girar()">
   <div class="contenido" layout="column" layout-fill="" layout-align="center center">
-    <h1 class="palabra" ng-class="{ reverso: tarjeta.girada }">{{ tarjeta.card.pregunta }} <span class="bracket">{{ tarjeta.card.bracketP }}</span></h1>
+    <h1 class="palabra" ng-class="{ reverso: tarjeta.girada }">{{ tarjeta.card.wordP }} <span class="bracket">{{ tarjeta.card.bracketP }}</span></h1>
     <h2 class="sinonimos" ng-class="{ reverso: tarjeta.girada }">{{ tarjeta.card.sinP.join(' · ') }}</h2>
-    <h1 class="palabra" ng-show="tarjeta.girada">{{ tarjeta.card.respuesta }} <span class="bracket">{{ tarjeta.card.bracketR }}</span></h1>
+    <h1 class="palabra" ng-show="tarjeta.girada">{{ tarjeta.card.wordR }} <span class="bracket">{{ tarjeta.card.bracketR }}</span></h1>
     <h2 class="sinonimos" ng-show="tarjeta.girada">{{ tarjeta.card.sinR.join(' · ')}}</h2>
     <div class="separacion"></div>
     <p class="frase" ng-class="{ reverso: tarjeta.girada }"><em>{{ tarjeta.card.frasePregunta }}</em></p>
