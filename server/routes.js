@@ -71,8 +71,8 @@ module.exports = function(app, config) {
         locals = { user: _.pick(req.user, props) };
         locals.trackId = req.user.trackId;
         locals.versions = {
-          cards: '2016-10-03T19:22:47.601Z',
-          categories: '2016-10-03T23:55:47.601Z'
+          cards: '2016-10-07T13:02:47.601Z',
+          categories: '2016-10-07T13:02:47.601Z'
         };
       } else {
         winston.debug('Usuario anónimo. Sirviendo landing.html');
