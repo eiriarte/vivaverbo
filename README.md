@@ -1,3 +1,5 @@
+**DISCLAIMER**: This repository has seriously outdated dependencies. They may contain **security vulnerabilities**. I'm not maintaining this project anymore. Use at your own risk.
+
 # Vivaverbo
 
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) (branch 'master')
