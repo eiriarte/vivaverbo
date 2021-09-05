@@ -20,7 +20,7 @@
     "hpp": "^0.2.0",
     "i18next": "^1.10.4",
     "jsonwebtoken": "^5.0.0",
-    "lodash": "^3.0.0",
+    "lodash": "^4.17.19",
     "method-override": "^2.3.0",
     "mongoose": "5.7.x",
     "morgan": "^1.6.0",
